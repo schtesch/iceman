@@ -1,0 +1,99 @@
+---
+title: ""
+toc: false
+---
+
+```{=html}
+<div class="hero">
+  <h1>ICEMAN</h1>
+  <p class="lead">
+    <strong>Instrument for the Credibility of Effect Modification Analyses</strong>
+    in randomized controlled trials and meta-analyses &mdash; Version 1.0
+  </p>
+  <p style="margin-top:1rem;color:#555;font-size:0.95rem;">
+    Schandelmaier S, Briel M, Varadhan R, Schmid CH, Devasenapathy N, Hayward RA,
+    Gagnier JJ, Borenstein M, VanDerHeijden GJMG, Dahabreh IJ, Sun X, Sauerbrei W,
+    Walsh M, Ioannidis JPA, Thabane L, Guyatt GH.
+  </p>
+  <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+    <a href="tool.qmd" class="btn btn-primary">Open assessment tool →</a>
+    <a href="manual/index.qmd" class="btn btn-outline-secondary">Read the manual</a>
+  </div>
+</div>
+```
+
+## What is ICEMAN?
+
+ICEMAN is a validated instrument for systematically assessing the **credibility of claimed effect modification** (subgroup effects) in randomized controlled trials and meta-analyses. It provides structured criteria and response options to help researchers, clinicians, and guideline developers evaluate whether an apparent subgroup effect is likely to be real or a chance (or biased) finding.
+
+Effect modification claims are common but often unreliable. ICEMAN addresses this by rating each claim across key credibility dimensions, culminating in an overall credibility rating on a continuous scale from **very low** to **high**.
+
+---
+
+## Downloads
+
+```{=html}
+<div class="download-grid">
+  <div class="download-card">
+    <div class="icon">📄</div>
+    <h5>ICEMAN form — RCTs</h5>
+    <p>Assessment form for randomized controlled trials</p>
+    <a href="ICEMAN RCT 1.1 (6).docx" class="btn btn-sm btn-outline-primary">Download DOCX</a>
+  </div>
+  <div class="download-card">
+    <div class="icon">📄</div>
+    <h5>ICEMAN form — Meta-analyses</h5>
+    <p>Assessment form for systematic reviews and meta-analyses</p>
+    <a href="ICEMAN MA 1.1 (8).docx" class="btn btn-sm btn-outline-primary">Download DOCX</a>
+  </div>
+  <div class="download-card">
+    <div class="icon">📘</div>
+    <h5>Full manual</h5>
+    <p>Complete ICEMAN manual with explanations, examples, and references</p>
+    <a href="ICEMAN manual .pdf" class="btn btn-sm btn-outline-secondary">Download PDF</a>
+  </div>
+  <div class="download-card">
+    <div class="icon">📊</div>
+    <h5>Reference list</h5>
+    <p>BibTeX file with all 149 references cited in the manual</p>
+    <a href="references.bib" class="btn btn-sm btn-outline-secondary">Download .bib</a>
+  </div>
+</div>
+```
+
+---
+
+## How to cite
+
+```{=html}
+<div class="cite-box">
+  <strong>Cite ICEMAN as:</strong><br><br>
+  Schandelmaier S, Briel M, Varadhan R, Schmid CH, Devasenapathy N, Hayward RA,
+  Gagnier JJ, Borenstein M, VanDerHeijden GJMG, Dahabreh IJ, Sun X, Sauerbrei W,
+  Walsh M, Ioannidis JPA, Thabane L, Guyatt GH.
+  ICEMAN: a novel tool for assessing the credibility of effect modification analyses
+  in randomized trials and systematic reviews.
+  <em>CMAJ</em> 2020;192(32):E901–E906.
+  <a href="https://doi.org/10.1503/cmaj.200077" target="_blank">https://doi.org/10.1503/cmaj.200077</a>
+  <br><br>
+  <button class="btn btn-sm btn-outline-secondary copy-btn"
+    onclick="navigator.clipboard.writeText('Schandelmaier S, et al. ICEMAN: a novel tool for assessing the credibility of effect modification analyses in randomized trials and systematic reviews. CMAJ 2020;192(32):E901–E906. https://doi.org/10.1503/cmaj.200077'); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',2000)">
+    Copy citation
+  </button>
+</div>
+```
+
+---
+
+## Site overview
+
+| Page | Description |
+|------|-------------|
+| [Manual](manual/index.qmd) | Full searchable manual with all items, response options, and worked examples |
+| [Assessment tool](tool.qmd) | Interactive forms for RCTs and meta-analyses with downloadable report |
+
+---
+
+## License and version
+
+ICEMAN Version 1.0. This instrument is freely available for use in research and clinical guideline development. Please cite the original publication when using ICEMAN.

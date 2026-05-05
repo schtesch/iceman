@@ -1,0 +1,92 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "ICEMAN manual .pdf"
+    - "ICEMAN RCT 1.1 (6).docx"
+    - "ICEMAN MA 1.1 (8).docx"
+
+website:
+  title: "ICEMAN"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Complete ICEMAN online"
+        href: tool.qmd
+      - text: "Users manual"
+        href: manual/index.qmd
+
+  sidebar:
+    - title: "Users manual"
+      style: "docked"
+      search: true
+      collapse-level: 1
+      contents:
+        - text: "Preliminary considerations"
+          href: manual/index.qmd
+        - section: "ICEMAN for RCTs"
+          href: manual/rct.qmd
+          contents:
+            - text: "Item 1 — Direction a priori"
+              href: manual/rct.qmd#rct-item1
+            - text: "Item 2 — Prior evidence"
+              href: manual/rct.qmd#rct-item2
+            - text: "Item 3 — Interaction test"
+              href: manual/rct.qmd#rct-item3
+            - text: "Item 4 — Multiplicity"
+              href: manual/rct.qmd#rct-item4
+            - text: "Item 5 — Cut points"
+              href: manual/rct.qmd#rct-item5
+            - text: "Item 6 — Additional"
+              href: manual/rct.qmd#rct-item6
+            - text: "Item 7 — Overall rating"
+              href: manual/rct.qmd#rct-item7
+            - text: "Worked example (CRASH-2)"
+              href: manual/rct.qmd#rct-example
+        - section: "ICEMAN for meta-analyses"
+          href: manual/meta.qmd
+          contents:
+            - text: "Item 1 — Within vs between"
+              href: manual/meta.qmd#meta-item1
+            - text: "Item 2 — Similarity across trials"
+              href: manual/meta.qmd#meta-item2
+            - text: "Item 3 — Number of studies"
+              href: manual/meta.qmd#meta-item3
+            - text: "Items 4–6 — Direction, test, multiplicity"
+              href: manual/meta.qmd#meta-items4-6
+            - text: "Item 7 — Random effects model"
+              href: manual/meta.qmd#meta-item7
+            - text: "Item 8 — Cut points"
+              href: manual/meta.qmd#meta-item8
+            - text: "Item 9 — Additional"
+              href: manual/meta.qmd#meta-item9
+            - text: "Item 10 — Overall rating"
+              href: manual/meta.qmd#meta-item10
+            - text: "Worked example (cervical cancer)"
+              href: manual/meta.qmd#meta-example
+        - section: "Practical considerations"
+          href: manual/practical.qmd
+          contents:
+            - text: "Assessment in duplicate"
+              href: manual/practical.qmd#assessment-in-duplicate
+            - text: "Reporting"
+              href: manual/practical.qmd#reporting
+            - text: "Using ICEMAN with other instruments"
+              href: manual/practical.qmd#using-iceman-with-other-instruments
+        - text: "Concept and scope of ICEMAN"
+          href: manual/concepts.qmd
+
+bibliography: references.bib
+link-citations: true
+suppress-bibliography: true
+
+format:
+  html:
+    theme: cosmo
+    css: assets/custom.css
+    toc: true
+    toc-depth: 3
+    citations-hover: true
+
+csl: assets/vancouver.csl

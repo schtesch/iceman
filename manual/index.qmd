@@ -1,0 +1,27 @@
+---
+title: "Preliminary considerations"
+---
+
+The assessment starts with a set of preliminary considerations to clarify the sources of information and help define the effect modification under consideration.
+
+**Study reference(s):** Use this section to provide a link to the study or publication(s) under consideration. It may also be helpful to specify the comparison of interest, especially if a study includes more than two arms.
+
+**Protocol reference(s):** For optimal assessment, some credibility considerations require that the authors have produced an accessible study protocol or statistical analysis plan, ideally time-stamped. If available, provide a link to a study protocol (e.g. a published protocol or an entry in a study registry such as ClinicalTrials.gov). Many protocols, however, provide insufficient information regarding analyses of effect modification.
+
+**State a single outcome and time-point of interest:** Because ICEMAN refers to a single outcome at a time, users must specify the outcome of interest and, if applicable, the time-point of outcome assessment (e.g. mortality at 1 year follow-up).
+
+**State a single effect measure of interest:** Specify a single effect measure of interest (e.g. relative risk, risk difference, odds ratio, or hazard ratio for binary outcomes, or difference or ratio of means for continuous outcomes). The type of effect measure is a key consideration because the magnitude of effect modification typically differs between effect measures, and in particular between measures of relative versus absolute effect [@Engels2000heterogeneity-0001; @Venekamp2014subgroup-0001; @Rhodes2016empirical-0001; @White2005assessing-0001]. Therefore, the credibility rating is likely to differ depending on the chosen effect measure.
+
+::: {.example-block}
+**Example:** An RCT showed that a lifestyle modification program can prevent diabetes [@Knowler2002reduction]. A subgroup analysis divided patients into four groups according to their predicted risk of developing diabetes. On the relative hazard ratio scale, the effect was consistent across risk groups (no suggestion of effect modification). On the absolute risk difference scale, however, the effect was much greater in high-risk than in low-risk patients [@Kent2018personalized-0001].
+:::
+
+**State a single potential effect modifier of interest:** Specify the potential effect modifier of interest (only one effect modifier per ICEMAN form). Effect modifiers may be patient characteristics (e.g. disease severity, age, or type of tumour), intervention alternatives (e.g. different doses, co-interventions, or modes of administration), or, in a meta-analysis, methodological study characteristics (e.g. risk of bias, outcome definition, type of funding). Note that the instrument does not apply when the effect modifier is another outcome. Note that an effect modifier (e.g. sex) is different from a particular subgroup (e.g. women).
+
+**Was the effect modifier measured before randomization?** The instrument applies to potential effect modifiers assessed before randomization, e.g. baseline variables or a stratification variable at randomization. If the effect modifier was measured after randomization, e.g. an intermediate outcome, the assessment of effect modification is complicated and potentially misleading [@VanderWeele2009on-0001; @Yusuf1991analysis-0001; @Sun2010is-0001; @Sun2014how-0001; @Oxman1992a-0001; @Simon1982patient-0001; @Matsuyama2006estimation-0001; @Hirji2009outcome-0001; @Cuzick1982the-0001; @Cook2004subgroup-0001; @Desai2014challenges-0001; @vanHoorn2017the-0001; @Grady2007chapter-0002; @Moye200721; @Rosenbaum1984the-0001]. Those analyses require different methods [@Matsuyama2006estimation-0001; @Desai2014challenges-0001; @Korn2017assessing-0001] and result in less secure conclusions.
+
+There are exceptions in which the instrument does apply to effect modifiers measured after randomization: (1) the effect modifier is a non-modifiable characteristic such as sex or age; (2) for meta-analyses: the effect modifier is a study characteristic such as risk of bias, length of follow-up, or mean received dose.
+
+::: {.example-block}
+**Example:** An RCT testing strict or conventional management of hyperglycaemia with insulin therapy in ICU patients claimed an effect modification by length of hospital stay [@VanDenBerghe2006intensive-0001]. Length of ICU stay (the apparent effect modifier), however, was shortened by the intervention. This prognostic imbalance between intervention and control group within the length-of-stay subgroups likely created the differences in mortality.
+:::

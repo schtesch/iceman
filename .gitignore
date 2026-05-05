@@ -1,0 +1,15 @@
+.DS_Store
+.quarto/
+_site/
+node_modules/
+
+# Local duplicate backup files.
+* 2.*
+
+# Root-level render artifacts from single-page previews.
+*_files/
+tool_files/
+files/
+
+# Local editor/plugin state.
+handbook/claude/settings.json.local

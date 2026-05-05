@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ICEMAN Assessment Tool – ICEMAN</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-629c56ba100745318e9dcb35146191d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="assets/custom.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ICEMAN</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./tool.html" aria-current="page"> 
+<span class="menu-text">Complete ICEMAN online</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./manual/index.html"> 
+<span class="menu-text">Users manual</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ICEMAN Assessment Tool</h1>
+<p class="subtitle lead">Interactive forms for RCTs and meta-analyses — Version 1.1</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+.tab-btns { display:flex; gap:8px; margin-bottom:1.5rem; flex-wrap:wrap; }
+.tab-btn {
+  padding:8px 20px; border-radius:8px; border:1px solid #ced4da;
+  background:transparent; cursor:pointer; font-size:0.9rem; font-weight:500;
+  transition:all 0.15s;
+}
+.tab-btn.active { background:#185FA5; color:#fff; border-color:#185FA5; }
+.tab-pane { display:none; }
+.tab-pane.active { display:block; }
+
+.iceman-item {
+  border:1px solid #dee2e6; border-radius:10px;
+  padding:1.25rem 1.25rem 1rem; margin-bottom:1.25rem; background:#fff;
+}
+.item-num {
+  font-size:0.72rem; font-weight:700; color:#185FA5;
+  text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.2rem;
+}
+.item-q { font-weight:600; font-size:1rem; margin-bottom:0.3rem; }
+.item-hint { font-size:0.84rem; color:#666; margin-bottom:1rem; line-height:1.5; }
+.manual-link {
+  font-size:0.72rem; color:#185FA5; text-decoration:none;
+  border:1px solid #185FA5; border-radius:4px; padding:1px 7px; margin-left:8px;
+}
+.manual-link:hover { background:#e6f1fb; }
+
+.radio-row {
+  display:flex; align-items:flex-start; gap:10px;
+  padding:8px 10px; border-radius:7px; cursor:pointer;
+  border:1px solid transparent; margin-bottom:4px; transition:all 0.1s;
+}
+.radio-row:hover { background:#f0f4f8; border-color:#b8d0e8; }
+.radio-row.selected { background:#e6f1fb; border-color:#185FA5; }
+.radio-row input[type=radio] { margin-top:3px; flex-shrink:0; }
+.rl { font-weight:600; font-size:0.9rem; }
+.rd { font-size:0.82rem; color:#666; }
+
+.cred-wrap { position:relative; margin:0.75rem 0 0.25rem; }
+.cred-bar {
+  height:10px; border-radius:5px;
+  background:linear-gradient(to right,#E24B4A,#FAC775,#1D9E75,#0F6E56);
+}
+.cred-labels {
+  display:flex; justify-content:space-between;
+  font-size:0.7rem; color:#888; margin-top:3px;
+}
+.cred-thumb {
+  position:absolute; top:5px; width:18px; height:18px;
+  border-radius:50%; background:#fff; border:2px solid #333;
+  transform:translateX(-50%); pointer-events:none; transition:left 0.05s;
+}
+input.cred-slider {
+  width:100%; position:relative; z-index:2;
+  opacity:0; cursor:pointer; height:24px; margin-top:-17px; display:block;
+}
+.scale-interp { text-align:center; font-size:0.82rem; color:#555; margin-top:0.4rem; }
+
+textarea.comment-box {
+  width:100%; margin-top:10px; font-size:0.84rem;
+  padding:7px 10px; border-radius:7px; border:1px solid #dee2e6;
+  resize:vertical; min-height:48px; background:#f8f9fa;
+}
+
+.result-section {
+  border:1px solid #dee2e6; border-radius:10px;
+  padding:1.5rem; margin-top:1.5rem; background:#fff;
+}
+.result-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:6px 0; border-bottom:1px solid #f0f0f0; font-size:0.875rem;
+}
+.result-row:last-child { border-bottom:none; }
+.b-low  { background:#FDEAEA; color:#C03535; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+.b-ok   { background:#FEF5E0; color:#9A6C00; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+.b-good { background:#E0F5EE; color:#148055; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+.b-high { background:#D4EDE3; color:#0A5C3C; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+.b-na   { background:#f0f0f0; color:#666;    font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+
+.verdict-box {
+  text-align:center; padding:1.5rem; margin-top:1rem;
+  border-radius:8px; background:#f8f9fa; border:1px solid #dee2e6;
+}
+.verdict-label { font-size:1.3rem; font-weight:700; }
+.verdict-sub   { font-size:0.88rem; color:#555; margin-top:5px; }
+
+.live-summary {
+  border:1px solid #c5d8ef; border-radius:10px;
+  padding:1.25rem; margin-bottom:1.25rem; background:#f4f8fd;
+}
+.live-summary-title {
+  font-size:0.72rem; font-weight:700; color:#185FA5;
+  text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.75rem;
+}
+.summary-row {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  padding:5px 0; border-bottom:1px solid #dde8f5; gap:12px; font-size:0.875rem;
+}
+.summary-row:last-child { border-bottom:none; }
+.s-label { color:#333; flex:1; }
+.s-comment { font-size:0.78rem; color:#777; margin-top:2px; font-style:italic; }
+
+.prelim-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:1rem; }
+@media(max-width:600px){ .prelim-grid{ grid-template-columns:1fr; } }
+.fgroup { display:flex; flex-direction:column; gap:4px; }
+.fgroup label { font-size:0.82rem; color:#555; font-weight:600; }
+.fgroup input, .fgroup select, .fgroup textarea {
+  font-size:0.9rem; padding:6px 10px; border-radius:7px;
+  border:1px solid #dee2e6; background:#f8f9fa; color:inherit; width:100%;
+}
+.action-row { display:flex; gap:10px; margin-top:1.5rem; flex-wrap:wrap; }
+.btn-tool { padding:9px 20px; border-radius:8px; border:1px solid #ced4da; cursor:pointer; font-size:0.9rem; font-weight:500; background:#fff; }
+.btn-tool.primary { background:#185FA5; color:#fff; border-color:#185FA5; }
+.btn-tool.primary:hover { background:#0d4a80; }
+.btn-tool:hover { background:#f0f4f8; }
+.stopped-msg { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:1rem 1.25rem; margin-top:1rem; font-size:0.9rem; }
+</style>
+
+<div style="background:#f0f5fb;border-left:4px solid #185FA5;border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:0.875rem;">
+  <strong>Important instructions — Version 1.1</strong>
+  <ul style="margin:0.5rem 0 0;padding-left:1.25rem;line-height:1.75;">
+    <li>Complete a <strong>separate</strong> credibility assessment for each effect modifier, outcome, time-point, and effect measure.</li>
+    <li><strong>Do not apply ICEMAN if the interaction p-value is 0.1 or larger</strong> — ICEMAN addresses possible claims of effect modification, not claims of no effect modification.</li>
+    <li>Response options on the <strong>left</strong> indicate reduced credibility; options on the <strong>right</strong> indicate increased credibility.</li>
+    <li>"Completely unclear" should be interpreted as probably reduced credibility.</li>
+    <li>Provide a supporting comment under each question for transparency.</li>
+    <li>Provide a copy of the completed form in the supplement of your article.</li>
+  </ul>
+</div>
+
+Select the study type to begin:
+
+<div class="tab-btns">
+  <button class="tab-btn active" onclick="switchTab('rct',this)">Randomized controlled trial (RCT)</button>
+  <button class="tab-btn" onclick="switchTab('meta',this)">Meta-analysis / Systematic review</button>
+</div>
+
+<!-- ══════════════════════ RCT TAB ══════════════════════ -->
+<div id="tab-rct" class="tab-pane active">
+
+<div class="iceman-item">
+  <div class="item-num">Preliminary considerations</div>
+  <div class="fgroup" style="margin-bottom:0.75rem">
+    <label>Effect modifier</label>
+    <input type="text" id="r-mod" placeholder="e.g. age, disease severity, dose">
+  </div>
+  <div class="fgroup" style="max-width:380px;margin-bottom:0.75rem">
+    <label>Effect modifier measured before or at randomization?</label>
+    <select id="r-prerando" onchange="showRCTItems()">
+      <option value="">Select…</option>
+      <option value="yes">Yes — continue</option>
+      <option value="no">No — stop here</option>
+    </select>
+  </div>
+  <div class="prelim-grid">
+    <div class="fgroup"><label>Outcome and time-point</label><input type="text" id="r-outcome" placeholder="e.g. mortality at 1 year"></div>
+    <div class="fgroup"><label>Effect measure</label><input type="text" id="r-measure" placeholder="e.g. relative risk"></div>
+    <div class="fgroup"><label>Study reference</label><input type="text" id="r-ref" placeholder="Author, journal, year…"></div>
+    <div class="fgroup"><label>Protocol reference (if available)</label><input type="text" id="r-proto" placeholder="ClinicalTrials.gov, URL…"></div>
+  </div>
+  <div id="r-stopped" class="stopped-msg" style="display:none">
+    ⚠️ ICEMAN does not apply when the effect modifier was measured after randomization (e.g. an intermediate outcome). Consult the manual for exceptions and alternative methods. <a href="./manual/index.html" class="manual-link">Manual ↗</a>
+  </div>
+</div>
+
+<div id="r-items" style="display:none">
+
+<div class="iceman-item">
+  <div class="item-num">Item 1 of 6</div>
+  <div class="item-q">Was the direction of effect modification correctly hypothesized a priori? <a href="./manual/rct.html#rct-item1" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">Credibility is higher if investigators correctly anticipated the direction, lower if they failed to anticipate a direction, and lowest if they anticipated the opposite direction.</div>
+  <div id="r-q1">
+    <label class="radio-row"><input type="radio" name="r-q1" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Clearly post-hoc, results inconsistent with hypothesized direction, or biologically very implausible</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q1" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">Vague hypothesis or hypothesized direction unclear</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q1" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">No protocol but unequivocal statement of a priori hypothesis with correct direction</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q1" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Prior protocol with correct specification of direction based on biologic rationale</span></span></label>
+  </div>
+  <textarea class="comment-box" id="r-q1c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 2 of 6</div>
+  <div class="item-q">Was the effect modification supported by prior evidence? <a href="./manual/rct.html#rct-item2" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">Credibility is higher if the effect modification is supported by prior direct or indirect evidence, lower if observed for the first time, lowest if inconsistent with prior evidence.</div>
+  <div id="r-q2">
+    <label class="radio-row"><input type="radio" name="r-q2" value="0"><span><span class="rl">Inconsistent with prior evidence</span><br><span class="rd">Prior evidence suggested a different direction of effect modification</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q2" value="1"><span><span class="rl">Little or no support or unclear</span><br><span class="rd">No prior evidence, or consistent with weak/very indirect evidence, or unclear</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q2" value="2"><span><span class="rl">Some support</span><br><span class="rd">Consistent with more limited or indirect prior evidence</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q2" value="3"><span><span class="rl">Strong support</span><br><span class="rd">Consistent with strong prior evidence directly applicable to the clinical scenario</span></span></label>
+  </div>
+  <textarea class="comment-box" id="r-q2c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 3 of 6</div>
+  <div class="item-q">Does a test for interaction suggest that chance is an unlikely explanation of the apparent effect modification? <small style="font-weight:400;color:#666">(consider irrespective of number of effect modifiers)</small> <a href="./manual/rct.html#rct-item3" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">Consider the interaction p-value as reported. Note: showing significance in one subgroup and not another does not indicate whether chance explains differences across subgroups.</div>
+  <div id="r-q3">
+    <label class="radio-row"><input type="radio" name="r-q3" value="0"><span><span class="rl">Chance a very likely explanation</span><br><span class="rd">Interaction p-value &gt; 0.05</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q3" value="1"><span><span class="rl">Chance a likely explanation or unclear</span><br><span class="rd">p ≤ 0.05 and &gt; 0.01, or no test reported and not computable</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q3" value="2"><span><span class="rl">Chance may not explain</span><br><span class="rd">p ≤ 0.01 and &gt; 0.005</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q3" value="3"><span><span class="rl">Chance an unlikely explanation</span><br><span class="rd">p ≤ 0.005</span></span></label>
+  </div>
+  <textarea class="comment-box" id="r-q3c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 4 of 6</div>
+  <div class="item-q">Did the authors test only a small number of effect modifiers, or consider multiplicity? <a href="./manual/rct.html#rct-item4" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">Credibility is higher if investigators tested only a small number of effect modifiers, or statistically adjusted for multiplicity.</div>
+  <div id="r-q4">
+    <label class="radio-row"><input type="radio" name="r-q4" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Explicitly exploratory or &gt;10 modifiers tested; multiplicity not considered</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q4" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">No mention of number, or 4–10 modifiers tested; not considered</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q4" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">No protocol but unequivocal statement of ≤3 modifiers tested</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q4" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Protocol with ≤3 modifiers, or multiplicity considered in analysis</span></span></label>
+  </div>
+  <textarea class="comment-box" id="r-q4c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 5 of 6 — only if effect modifier is continuous</div>
+  <div class="item-q">Were arbitrary cut points avoided? <a href="./manual/rct.html#rct-item5" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">Analyses using the full spectrum of values are most credible. Data-driven cut points maximising the interaction are associated with high false-positive rates.</div>
+  <div id="r-q5">
+    <label class="radio-row"><input type="radio" name="r-q5" value="na"><span><span class="rl">Not applicable — effect modifier is not continuous</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q5" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Analysis based on exploratory cut point (e.g. maximising interaction p-value)</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q5" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">Analysis based on cut point(s) of unclear origin</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q5" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">Analysis based on pre-specified cut points (e.g. from prior RCT)</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q5" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Analysis based on full continuum (linear/logarithmic relationship)</span></span></label>
+  </div>
+  <textarea class="comment-box" id="r-q5c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 6 — optional</div>
+  <div class="item-q">Are there additional considerations that may increase or decrease credibility? <a href="./manual/rct.html#rct-item6" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">Consider: sensitivity analyses, dose-response pattern, persistence after adjustment, power, consistency across related outcomes, risk of bias.</div>
+  <div id="r-q6">
+    <label class="radio-row"><input type="radio" name="r-q6" value="dec"><span><span class="rl">Yes — probably decrease credibility</span></span></label>
+    <label class="radio-row"><input type="radio" name="r-q6" value="inc"><span><span class="rl">Yes — probably increase credibility</span></span></label>
+  </div>
+  <textarea class="comment-box" id="r-q6c" placeholder="Describe considerations…"></textarea>
+</div>
+
+<div class="live-summary" id="r-live-summary">
+  <div class="live-summary-title">Summary of responses</div>
+  <div class="s-label" style="color:#888;font-size:0.84rem;">— Fill in the items above to see a summary —</div>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 7 — overall rating</div>
+  <div class="item-q">How would you rate the overall credibility of the proposed effect modification? <a href="./manual/rct.html#rct-item7" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">The overall rating should be driven by items that <em>decrease</em> credibility. Place a mark on the continuous scale below.</div>
+  <div class="cred-wrap">
+    <div class="cred-bar">
+      <div class="cred-thumb" id="r-thumb" style="left:50%"></div>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="cred-slider" id="r-scale" oninput="moveThumb('r')">
+    <div class="cred-labels"><span>Very low</span><span>Low</span><span>Moderate</span><span>High</span></div>
+    <div class="scale-interp" id="r-interp">Likely no effect modification — use overall estimate but note remaining uncertainty</div>
+  </div>
+  <textarea class="comment-box" id="r-overallc" placeholder="Justify your overall rating…"></textarea>
+</div>
+
+<div class="action-row">
+  <button class="btn-tool primary" onclick="printReport('r')">Print / save as PDF</button>
+  <button class="btn-tool" onclick="resetForm('r')">Reset form</button>
+</div>
+<div id="r-report"></div>
+
+</div><!-- end r-items -->
+</div><!-- end tab-rct -->
+
+<!-- ══════════════════════ META TAB ══════════════════════ -->
+<div id="tab-meta" class="tab-pane">
+
+<div class="iceman-item">
+  <div class="item-num">Preliminary considerations</div>
+  <div class="fgroup" style="margin-bottom:0.75rem">
+    <label>Effect modifier</label>
+    <input type="text" id="m-mod" placeholder="e.g. tumour stage, age, risk of bias">
+  </div>
+  <div class="fgroup" style="max-width:380px;margin-bottom:0.75rem">
+    <label>Effect modifier measured before or at randomization?</label>
+    <select id="m-prerando" onchange="showMetaItems()">
+      <option value="">Select…</option>
+      <option value="yes">Yes — continue</option>
+      <option value="no">No — stop here</option>
+    </select>
+  </div>
+  <div class="prelim-grid">
+    <div class="fgroup"><label>Outcome and time-point</label><input type="text" id="m-outcome" placeholder="e.g. mortality at 1 year"></div>
+    <div class="fgroup"><label>Effect measure</label><input type="text" id="m-measure" placeholder="e.g. hazard ratio"></div>
+    <div class="fgroup"><label>Study reference</label><input type="text" id="m-ref" placeholder="Author, journal, year…"></div>
+    <div class="fgroup"><label>Protocol reference (if available)</label><input type="text" id="m-proto" placeholder="PROSPERO ID or URL…"></div>
+  </div>
+  <div id="m-stopped" class="stopped-msg" style="display:none">
+    ⚠️ ICEMAN does not apply when the effect modifier was measured after randomization. Consult the manual for exceptions. <a href="./manual/index.html" class="manual-link">Manual ↗</a>
+  </div>
+</div>
+
+<div id="m-items" style="display:none">
+
+<div class="iceman-item">
+  <div class="item-num">Item 1 of 10</div>
+  <div class="item-q">Is the effect modification based on comparison within rather than between RCTs? <a href="./manual/meta.html#meta-item1" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">Between-study comparisons are usually much less credible due to study-level confounding.</div>
+  <div id="m-q1">
+    <label class="radio-row"><input type="radio" name="m-q1" value="0"><span><span class="rl">Completely between</span><br><span class="rd">Subgroup analysis or meta-regression comparing overall effects of each individual trial</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q1" value="1"><span><span class="rl">Mostly between or unclear</span><br><span class="rd">Most information from overall effects; some trials provide within-trial subgroup information</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q1" value="2"><span><span class="rl">Mostly within</span><br><span class="rd">Most trials provide within-trial subgroup information; or IPD combining within and between</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q1" value="3"><span><span class="rl">Completely within</span><br><span class="rd">IPD analysis separating within from between trial information (e.g. meta-analysis of interactions)</span></span></label>
+  </div>
+  <textarea class="comment-box" id="m-q1c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 2 of 10</div>
+  <div class="item-q">If ≥2 within-trial comparisons available: is the effect modification similar from trial to trial? <a href="./manual/meta.html#meta-item2" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div id="m-q2">
+    <label class="radio-row"><input type="radio" name="m-q2" value="na"><span><span class="rl">Not applicable — no or one within-RCT comparison</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q2" value="0"><span><span class="rl">Definitely not similar</span><br><span class="rd">Reported for ≥2 trials with clearly different directions</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q2" value="1"><span><span class="rl">Probably not similar or unclear</span><br><span class="rd">Not reported for individual trials, or too imprecise to tell</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q2" value="2"><span><span class="rl">Mostly similar</span><br><span class="rd">Reported for ≥2 trials, mostly similar direction, considerable differences in magnitude</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q2" value="3"><span><span class="rl">Definitely similar</span><br><span class="rd">Reported for ≥2 trials, similar direction, only some differences in magnitude</span></span></label>
+  </div>
+  <textarea class="comment-box" id="m-q2c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 3 of 10 — for between-RCT comparisons</div>
+  <div class="item-q">Is the number of studies large? <a href="./manual/meta.html#meta-item3" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div id="m-q3">
+    <label class="radio-row"><input type="radio" name="m-q3" value="na"><span><span class="rl">Not applicable — no between-RCT comparison</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q3" value="0"><span><span class="rl">Very small</span><br><span class="rd">1–2 in smallest subgroup; ≤5 in continuous meta-regression</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q3" value="1"><span><span class="rl">Rather small or unclear</span><br><span class="rd">3–4 in smallest subgroup; 6–10 in continuous meta-regression</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q3" value="2"><span><span class="rl">Rather large</span><br><span class="rd">5–9 in smallest subgroup; 11–15 in continuous meta-regression</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q3" value="3"><span><span class="rl">Large</span><br><span class="rd">≥10 in smallest subgroup; &gt;15 in continuous meta-regression</span></span></label>
+  </div>
+  <textarea class="comment-box" id="m-q3c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 4 of 10</div>
+  <div class="item-q">Was the direction of effect modification correctly hypothesized a priori? <a href="./manual/rct.html#rct-item1" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">Because meta-analyses are retrospective, investigators may already know key trials and promising effect modifiers.</div>
+  <div id="m-q4">
+    <label class="radio-row"><input type="radio" name="m-q4" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Clearly post-hoc, inconsistent with hypothesized direction, or biologically very implausible</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q4" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">Vague hypothesis or direction unclear</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q4" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">No protocol but unequivocal a priori statement with correct direction</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q4" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Prior protocol with correct direction based on biologic rationale</span></span></label>
+  </div>
+  <textarea class="comment-box" id="m-q4c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 5 of 10</div>
+  <div class="item-q">Does a test for interaction suggest that chance is an unlikely explanation of the apparent effect modification? <small style="font-weight:400;color:#666">(consider irrespective of number of effect modifiers)</small> <a href="./manual/rct.html#rct-item3" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div id="m-q5">
+    <label class="radio-row"><input type="radio" name="m-q5" value="0"><span><span class="rl">Chance a very likely explanation</span><br><span class="rd">Interaction/meta-regression p-value &gt; 0.05</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q5" value="1"><span><span class="rl">Chance a likely explanation or unclear</span><br><span class="rd">p ≤ 0.05 and &gt; 0.01, or no test available</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q5" value="2"><span><span class="rl">Chance may not explain</span><br><span class="rd">p ≤ 0.01 and &gt; 0.005</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q5" value="3"><span><span class="rl">Chance an unlikely explanation</span><br><span class="rd">p ≤ 0.005</span></span></label>
+  </div>
+  <textarea class="comment-box" id="m-q5c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 6 of 10</div>
+  <div class="item-q">Did the authors test only a small number of effect modifiers, or consider multiplicity? <a href="./manual/rct.html#rct-item4" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div id="m-q6">
+    <label class="radio-row"><input type="radio" name="m-q6" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Explicitly exploratory or &gt;10 modifiers; multiplicity not considered</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q6" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">No mention of number, or 4–10 modifiers; not considered</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q6" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">No protocol but unequivocal statement of ≤3 modifiers</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q6" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Protocol with ≤3 modifiers, or multiplicity considered in analysis</span></span></label>
+  </div>
+  <textarea class="comment-box" id="m-q6c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 7 of 10</div>
+  <div class="item-q">Did the authors use a random effects model? <a href="./manual/meta.html#meta-item7" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">Credibility is higher if a random effects model was used within subgroups. Fixed effect models increase the risk of false-positive claims.</div>
+  <div id="m-q7">
+    <label class="radio-row"><input type="radio" name="m-q7" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Fixed (or common) effect model explicitly stated</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q7" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">Probably no random effects model, or unclear</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q7" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">Probably random (or mixed) effects model</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q7" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Random (or mixed) effects model explicitly stated</span></span></label>
+  </div>
+  <textarea class="comment-box" id="m-q7c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 8 of 10 — only if effect modifier is continuous</div>
+  <div class="item-q">Were arbitrary cut points avoided? <a href="./manual/meta.html#meta-item8" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div id="m-q8">
+    <label class="radio-row"><input type="radio" name="m-q8" value="na"><span><span class="rl">Not applicable — effect modifier is not continuous</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q8" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Analysis based on exploratory cut point</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q8" value="1"><span><span class="rl">Probably no</span><br><span class="rd">Analysis based on cut point(s) of unclear origin</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q8" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">Analysis based on pre-specified cut points</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q8" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Analysis based on full continuum</span></span></label>
+  </div>
+  <textarea class="comment-box" id="m-q8c" placeholder="Comment (optional)…"></textarea>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 9 of 10 — optional</div>
+  <div class="item-q">Are there additional considerations? <a href="./manual/meta.html#meta-item9" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div id="m-q9">
+    <label class="radio-row"><input type="radio" name="m-q9" value="na"><span><span class="rl">Not applicable</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q9" value="dec"><span><span class="rl">Yes — probably decrease credibility</span></span></label>
+    <label class="radio-row"><input type="radio" name="m-q9" value="inc"><span><span class="rl">Yes — probably increase credibility</span></span></label>
+  </div>
+  <textarea class="comment-box" id="m-q9c" placeholder="Describe considerations…"></textarea>
+</div>
+
+<div class="live-summary" id="m-live-summary">
+  <div class="live-summary-title">Summary of responses</div>
+  <div class="s-label" style="color:#888;font-size:0.84rem;">— Fill in the items above to see a summary —</div>
+</div>
+
+<div class="iceman-item">
+  <div class="item-num">Item 10 of 10 — overall rating</div>
+  <div class="item-q">How would you rate the overall credibility? <a href="./manual/meta.html#meta-item10" class="manual-link" target="_blank">Manual ↗</a></div>
+  <div class="item-hint">The overall rating should be driven by items that decrease credibility.</div>
+  <div class="cred-wrap">
+    <div class="cred-bar">
+      <div class="cred-thumb" id="m-thumb" style="left:50%"></div>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="cred-slider" id="m-scale" oninput="moveThumb('m')">
+    <div class="cred-labels"><span>Very low</span><span>Low</span><span>Moderate</span><span>High</span></div>
+    <div class="scale-interp" id="m-interp">Likely no effect modification — use overall estimate but note remaining uncertainty</div>
+  </div>
+  <textarea class="comment-box" id="m-overallc" placeholder="Justify your overall rating…"></textarea>
+</div>
+
+<div class="action-row">
+  <button class="btn-tool primary" onclick="printReport('m')">Print / save as PDF</button>
+  <button class="btn-tool" onclick="resetForm('m')">Reset form</button>
+</div>
+<div id="m-report"></div>
+
+</div><!-- end m-items -->
+</div><!-- end tab-meta -->
+
+<script>
+function switchTab(t, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + t).classList.add('active');
+  btn.classList.add('active');
+}
+
+function showRCTItems() {
+  const v = document.getElementById('r-prerando').value;
+  document.getElementById('r-items').style.display = v === 'yes' ? 'block' : 'none';
+  document.getElementById('r-stopped').style.display = v === 'no' ? 'block' : 'none';
+  if (v === 'yes') updateLiveSummary('r');
+}
+function showMetaItems() {
+  const v = document.getElementById('m-prerando').value;
+  document.getElementById('m-items').style.display = v === 'yes' ? 'block' : 'none';
+  document.getElementById('m-stopped').style.display = v === 'no' ? 'block' : 'none';
+  if (v === 'yes') updateLiveSummary('m');
+}
+
+document.addEventListener('click', e => {
+  const row = e.target.closest('.radio-row');
+  if (!row) return;
+  const input = row.querySelector('input[type=radio]');
+  if (!input) return;
+  const name = input.name;
+  document.querySelectorAll(`input[name="${name}"]`).forEach(i => {
+    i.closest('.radio-row').classList.remove('selected');
+  });
+  row.classList.add('selected');
+  input.checked = true;
+  if (name.startsWith('r-')) updateLiveSummary('r');
+  else if (name.startsWith('m-')) updateLiveSummary('m');
+});
+
+document.addEventListener('input', e => {
+  if (e.target.tagName === 'TEXTAREA') {
+    const id = e.target.id || '';
+    if (id.startsWith('r-') && id !== 'r-overallc') updateLiveSummary('r');
+    if (id.startsWith('m-') && id !== 'm-overallc') updateLiveSummary('m');
+  }
+});
+
+const interpLabels = [
+  'Minimal to no support for effect modification — use overall effect for each subgroup',
+  'Some but insufficient support for effect modification — use overall effect for each subgroup but note remaining uncertainty',
+  'Likely effect modification — use separate effects for each subgroup but note remaining uncertainty',
+  'Very likely effect modification — use separate effects for each subgroup'
+];
+function moveThumb(p) {
+  const val = +document.getElementById(p + '-scale').value;
+  document.getElementById(p + '-thumb').style.left = val + '%';
+  const idx = val < 25 ? 0 : val < 50 ? 1 : val < 75 ? 2 : 3;
+  document.getElementById(p + '-interp').textContent = interpLabels[idx];
+}
+
+function getVal(name) {
+  const el = document.querySelector(`input[name="${name}"]:checked`);
+  return el ? el.value : null;
+}
+function badge(v) {
+  if (v === null) return ['Not answered', 'b-na'];
+  if (v === 'na' || v === 'none') return ['N/A', 'b-na'];
+  if (v === 'inc') return ['Probably increases credibility', 'b-good'];
+  if (v === 'dec') return ['Probably decreases credibility', 'b-low'];
+  const n = parseInt(v);
+  if (n === 0) return ['Definitely no / lowest credibility', 'b-low'];
+  if (n === 1) return ['Probably no or unclear', 'b-low'];
+  if (n === 2) return ['Probably yes / supported', 'b-ok'];
+  if (n === 3) return ['Definitely yes / highest credibility', 'b-good'];
+  return [v, 'b-na'];
+}
+function verdictFromScale(val) {
+  if (val < 25) return { label: 'Very low credibility', sub: 'Minimal to no support for effect modification — use overall effect for each subgroup', color: '#A32D2D' };
+  if (val < 50) return { label: 'Low credibility', sub: 'Some but insufficient support for effect modification — use overall effect for each subgroup but note remaining uncertainty', color: '#854F0B' };
+  if (val < 75) return { label: 'Moderate credibility', sub: 'Likely effect modification — use separate effects for each subgroup but note remaining uncertainty', color: '#3B6D11' };
+  return { label: 'High credibility', sub: 'Very likely effect modification — use separate effects for each subgroup', color: '#0F6E56' };
+}
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, ch => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[ch]));
+}
+
+function buildRows(items) {
+  return items.map(item => {
+    const [txt, cls] = badge(item.val);
+    const comment = item.comment ? `<div style="font-size:0.8rem;color:#666;padding:3px 0 6px;">${escapeHtml(item.comment)}</div>` : '';
+    return `<div class="result-row"><span>${item.label}</span><span class="${cls}">${txt}</span></div>${comment}`;
+  }).join('');
+}
+
+function genReport(p) {
+  const isRct = p === 'r';
+  const scaleVal = +document.getElementById(p + '-scale').value;
+  const verdict = verdictFromScale(scaleVal);
+  const ref = document.getElementById(p + '-ref').value;
+  const outcome = document.getElementById(p + '-outcome').value;
+  const mod = document.getElementById(p + '-mod').value;
+  const overallComment = document.getElementById(p + '-overallc').value;
+
+  let items;
+  if (isRct) {
+    items = [
+      { label: '1. Direction hypothesized a priori', val: getVal('r-q1'), comment: document.getElementById('r-q1c').value },
+      { label: '2. Supported by prior evidence', val: getVal('r-q2'), comment: document.getElementById('r-q2c').value },
+      { label: '3. Interaction test — chance unlikely', val: getVal('r-q3'), comment: document.getElementById('r-q3c').value },
+      { label: '4. Small number of modifiers tested', val: getVal('r-q4'), comment: document.getElementById('r-q4c').value },
+      { label: '5. Arbitrary cut points avoided', val: getVal('r-q5'), comment: document.getElementById('r-q5c').value },
+      { label: '6. Additional considerations (optional)', val: getVal('r-q6'), comment: document.getElementById('r-q6c').value },
+    ];
+  } else {
+    items = [
+      { label: '1. Within vs between comparison', val: getVal('m-q1'), comment: document.getElementById('m-q1c').value },
+      { label: '2. Similar across trials', val: getVal('m-q2'), comment: document.getElementById('m-q2c').value },
+      { label: '3. Number of studies (between)', val: getVal('m-q3'), comment: document.getElementById('m-q3c').value },
+      { label: '4. Direction a priori', val: getVal('m-q4'), comment: document.getElementById('m-q4c').value },
+      { label: '5. Interaction test — chance unlikely', val: getVal('m-q5'), comment: document.getElementById('m-q5c').value },
+      { label: '6. Small number of modifiers', val: getVal('m-q6'), comment: document.getElementById('m-q6c').value },
+      { label: '7. Random effects model', val: getVal('m-q7'), comment: document.getElementById('m-q7c').value },
+      { label: '8. Arbitrary cut points avoided', val: getVal('m-q8'), comment: document.getElementById('m-q8c').value },
+      { label: '9. Additional considerations (optional)', val: getVal('m-q9'), comment: document.getElementById('m-q9c').value },
+    ];
+  }
+
+  const meta = [ref, outcome ? 'Outcome: ' + outcome : '', mod ? 'Effect modifier: ' + mod : ''].filter(Boolean).join(' | ');
+  const safeMeta = escapeHtml(meta);
+  const safeOverallComment = escapeHtml(overallComment);
+  const html = `
+  <div class="result-section" id="${p}-report-content">
+    <div style="font-weight:700;font-size:1.05rem;margin-bottom:0.25rem">ICEMAN Assessment Report</div>
+    <div style="font-size:0.78rem;color:#888;margin-bottom:1rem;">${isRct ? 'Randomized controlled trial' : 'Meta-analysis / Systematic review'} · ${new Date().toLocaleDateString()}</div>
+    ${safeMeta ? `<div style="font-size:0.82rem;color:#555;margin-bottom:1rem;padding:6px 10px;background:#f8f9fa;border-radius:6px;">${safeMeta}</div>` : ''}
+    ${buildRows(items)}
+    <div class="verdict-box">
+      <div class="verdict-label" style="color:${verdict.color}">${verdict.label}</div>
+      <div class="verdict-sub">${verdict.sub}</div>
+      ${safeOverallComment ? `<div style="font-size:0.84rem;margin-top:0.75rem;text-align:left;border-top:1px solid #dee2e6;padding-top:0.75rem;"><strong>Comment:</strong> ${safeOverallComment}</div>` : ''}
+    </div>
+    <div style="font-size:0.72rem;color:#aaa;margin-top:1rem;">Generated with ICEMAN web tool · Version 1.1 · Schandelmaier et al. CMAJ 2020;192:E901–E906</div>
+  </div>`;
+  document.getElementById(p + '-report').innerHTML = html;
+  document.getElementById(p + '-report').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function printReport(p) {
+  genReport(p);
+  setTimeout(() => window.print(), 300);
+}
+
+function updateLiveSummary(p) {
+  const isRct = p === 'r';
+  const defs = isRct ? [
+    { name:'r-q1', label:'1. Direction a priori',       cid:'r-q1c' },
+    { name:'r-q2', label:'2. Prior evidence',           cid:'r-q2c' },
+    { name:'r-q3', label:'3. Interaction test',         cid:'r-q3c' },
+    { name:'r-q4', label:'4. Multiplicity',             cid:'r-q4c' },
+    { name:'r-q5', label:'5. Cut points',               cid:'r-q5c' },
+    { name:'r-q6', label:'6. Additional (optional)',    cid:'r-q6c' },
+  ] : [
+    { name:'m-q1', label:'1. Within vs between',        cid:'m-q1c' },
+    { name:'m-q2', label:'2. Similar across trials',    cid:'m-q2c' },
+    { name:'m-q3', label:'3. Number of studies',        cid:'m-q3c' },
+    { name:'m-q4', label:'4. Direction a priori',       cid:'m-q4c' },
+    { name:'m-q5', label:'5. Interaction test',         cid:'m-q5c' },
+    { name:'m-q6', label:'6. Multiplicity',             cid:'m-q6c' },
+    { name:'m-q7', label:'7. Random effects model',     cid:'m-q7c' },
+    { name:'m-q8', label:'8. Cut points',               cid:'m-q8c' },
+    { name:'m-q9', label:'9. Additional (optional)',    cid:'m-q9c' },
+  ];
+  const rows = defs.map(d => {
+    const [txt, cls] = badge(getVal(d.name));
+    const comment = document.getElementById(d.cid).value.trim();
+    const commentHtml = comment ? `<div class="s-comment">${comment}</div>` : '';
+    return `<div class="summary-row"><div><div class="s-label">${d.label}</div>${commentHtml}</div><span class="${cls}">${txt}</span></div>`;
+  }).join('');
+  document.getElementById(p + '-live-summary').innerHTML =
+    `<div class="live-summary-title">Summary of responses</div>${rows}`;
+}
+
+function resetForm(p) {
+  document.querySelectorAll(`input[name^="${p}-"]`).forEach(i => {
+    i.checked = false;
+    i.closest && i.closest('.radio-row') && i.closest('.radio-row').classList.remove('selected');
+  });
+  document.querySelectorAll(`[id^="${p}-"]`).forEach(el => {
+    if (el.tagName === 'TEXTAREA') el.value = '';
+    if (el.tagName === 'INPUT' && el.type === 'text') el.value = '';
+    if (el.tagName === 'SELECT') el.value = '';
+  });
+  document.getElementById(p + '-scale').value = 50;
+  moveThumb(p);
+  document.getElementById(p + '-report').innerHTML = '';
+  const prefix = p === 'r' ? 'r' : 'm';
+  document.getElementById(prefix + '-items').style.display = 'none';
+  document.getElementById(prefix + '-stopped').style.display = 'none';
+  document.getElementById(p + '-live-summary').innerHTML =
+    '<div class="live-summary-title">Summary of responses</div>' +
+    '<div class="s-label" style="color:#888;font-size:0.84rem;">— Fill in the items above to see a summary —</div>';
+}
+</script>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

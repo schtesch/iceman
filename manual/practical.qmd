@@ -1,0 +1,29 @@
+---
+title: "Practical Considerations"
+---
+
+## Practical considerations {#practical}
+
+### Assessment in duplicate
+
+Confidence in the assessment increases if two investigators independently apply ICEMAN, discuss discrepancies, and present a consensus version.
+
+### Reporting
+
+We recommend specifying use of ICEMAN in the study protocol, and in the methods, results, and interpretation sections of the final publication:
+
+- **Protocol:** "We will assess the credibility of potentially relevant effect modification using ICEMAN."
+- **Methods:** "We used ICEMAN to assess the credibility of potentially relevant effect modification."
+- **Results:** "We judged the credibility of the potential effect modification as low, with uncertainty arising from lack of prior evidence and an inconclusive test of interaction (see supplement)."
+- **Interpretation:** "A formal credibility assessment rated the apparent effect modification as likely spurious. We recommend considering the overall effect estimate for all patients."
+
+::: {.callout-warning}
+We do not recommend reporting overall credibility as a percentage (e.g. "30% credible").
+:::
+
+### Using ICEMAN with other instruments
+
+ICEMAN can be combined with the Cochrane Risk of Bias tool for RCTs [@Higgins2016a-0001] or the ROBIS tool for systematic reviews [@Whiting2016robis-0001], and with the GRADE framework [@Guyatt2011grade-0007]:
+
+- **Moderate or high credibility:** Apply GRADE to subgroup-specific estimates. Note remaining uncertainty if moderate. Considering subgroup-specific estimates may sometimes resolve concerns due to heterogeneity and consequently increase certainty of evidence and strength of recommendation.
+- **Low or very low credibility:** Apply GRADE to the overall effect estimate. Note remaining uncertainty if low, especially if the potential effect modification appears to explain heterogeneity.
