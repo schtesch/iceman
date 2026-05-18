@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Item-by-item guidance for applying ICEMAN to apparent effect modification in meta-analyses of randomized controlled trials.">
 
 <title>ICEMAN for Meta-analyses – ICEMAN</title>
 <style>
@@ -23,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,16 +53,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-629c56ba100745318e9dcb35146191d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b8143a5af30aa0587ead8c64582f750.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,11 +118,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../tool.html"> 
-<span class="menu-text">Complete ICEMAN online</span></a>
+<span class="menu-text">ICEMAN online</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../manual/index.html" aria-current="page"> 
-<span class="menu-text">Users manual</span></a>
+<span class="menu-text">Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -300,6 +324,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Concept and scope of ICEMAN</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manual/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently asked questions</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -330,6 +360,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">ICEMAN for Meta-analyses</h1>
 </div>
 
+<div>
+  <div class="description">
+    Item-by-item guidance for applying ICEMAN to apparent effect modification in meta-analyses of randomized controlled trials.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -345,13 +380,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="meta-item1" class="level2">
-<h2 class="anchored" data-anchor-id="meta-item1">Item 1 — Within vs between-RCT comparison?</h2>
+<h2 data-anchor-id="meta-item1">Item 1 — Within vs between-RCT comparison?</h2>
 <p><strong>Item explanation:</strong> Effect modification suggested by a comparison between studies (subgroups of studies) are usually much less credible than effect modification suggested by a comparison within studies (subgroups of individuals).</p>
-<p>An important concern with between-study comparisons is <strong>study-level confounding</strong>: an association observed between a study-level variable and an outcome may be confounded by other study-level variables <span class="citation" data-cites="Sun2014how-0001 Fisher2017meta-analytical-0001 Thompson2002how-0001 DaveySmith1997meta-analysis-0001 Berlin1995invited-0001 Borenstein2009introduction-0001 Smith2008going Hingorani2013prognosis-0001 Simmonds2007covariate-0001 Lambert2002a-0001">[1–10]</span>. The power to identify a true within-trial effect modification can be very low and an apparent effect modification might be largely driven by study-level confounding <span class="citation" data-cites="Simmonds2007covariate-0001 Lambert2002a-0001 Berlin2002individual-0001">[9–11]</span>.</p>
+<p>An important concern with between-study comparisons is <strong>study-level confounding</strong>: an association observed between a study-level variable and an outcome may be confounded by other study-level variables.<span class="citation" data-cites="Sun2014how-0001 Fisher2017meta-analytical-0001 Thompson2002how-0001 DaveySmith1997meta-analysis-0001 Berlin1995invited-0001 Borenstein2009introduction-0001 Smith2008going Hingorani2013prognosis-0001 Simmonds2007covariate-0001 Lambert2002a-0001"><sup><a href="#ref-Sun2014how-0001" role="doc-biblioref">1</a>, <a href="#ref-Fisher2017meta-analytical-0001" role="doc-biblioref">2</a>, <a href="#ref-Thompson2002how-0001" role="doc-biblioref">3</a>, <a href="#ref-DaveySmith1997meta-analysis-0001" role="doc-biblioref">4</a>, <a href="#ref-Berlin1995invited-0001" role="doc-biblioref">5</a>, <a href="#ref-Borenstein2009introduction-0001" role="doc-biblioref">6</a>, <a href="#ref-Smith2008going" role="doc-biblioref">7</a>, <a href="#ref-Hingorani2013prognosis-0001" role="doc-biblioref">8</a>, <a href="#ref-Simmonds2007covariate-0001" role="doc-biblioref">9</a>, <a href="#ref-Lambert2002a-0001" role="doc-biblioref">10</a></sup></span> The power to identify a true within-trial effect modification can be very low and an apparent effect modification might be largely driven by study-level confounding.<span class="citation" data-cites="Simmonds2007covariate-0001 Lambert2002a-0001 Berlin2002individual-0001"><sup><a href="#ref-Simmonds2007covariate-0001" role="doc-biblioref">9</a>, <a href="#ref-Lambert2002a-0001" role="doc-biblioref">10</a>, <a href="#ref-Berlin2002individual-0001" role="doc-biblioref">11</a></sup></span></p>
 <p>Most common are aggregate-data meta-analyses in which analyses of effect modification are completely based on between-study comparisons, e.g.&nbsp;using meta-regression. Those analyses are at a high risk of study-level confounding and consequently lower credibility.</p>
-<p>Sometimes, investigators combine within- and between-trial information using one of the following approaches <span class="citation" data-cites="Fisher2017meta-analytical-0001 Fisher2011a-0001">[2,12]</span>: (1) estimate within- and between-trial effect modification separately, then combine both; (2) include a simple interaction term in a one-stage IPD meta-analysis; (3) first combine trials within subgroups, then compare summary effects between subgroups.</p>
-<p>An analysis of effect modification is definitely free of study-level confounding if it is completely based on within-trial information, possible if all trials provide (or allow estimation of) within-trial effect modification and, in a separate step, one combines the estimates across trials <span class="citation" data-cites="Fisher2017meta-analytical-0001 Fisher2011a-0001 Song2016cumulative-0001">[2,12,13]</span>. Alternatively, there are more complex methods available for individual-participant data meta-analyses <span class="citation" data-cites="Fisher2017meta-analytical-0001 Fisher2011a-0001 Hua2017one-stage-0001">[2,12,14]</span>.</p>
-<p>A survey of published IPD meta-analyses suggested that only a small proportion of analyses of effect modification separate within- from between-trial information; instead, most analyses seem to combine within and between trial information <span class="citation" data-cites="Fisher2017meta-analytical-0001">[2]</span>. Therefore, unless there is a statement to the contrary, analyses of effect modification in an IPD meta-analysis likely combine within and between trial information and might not be free of study-level confounding.</p>
+<p>Sometimes, investigators combine within- and between-trial information using one of the following approaches<span class="citation" data-cites="Fisher2017meta-analytical-0001 Fisher2011a-0001"><sup><a href="#ref-Fisher2017meta-analytical-0001" role="doc-biblioref">2</a>, <a href="#ref-Fisher2011a-0001" role="doc-biblioref">12</a></sup></span>: (1) estimate within- and between-trial effect modification separately, then combine both; (2) include a simple interaction term in a one-stage IPD meta-analysis; (3) first combine trials within subgroups, then compare summary effects between subgroups.</p>
+<p>An analysis of effect modification is definitely free of study-level confounding if it is completely based on within-trial information, possible if all trials provide (or allow estimation of) within-trial effect modification and, in a separate step, one combines the estimates across trials.<span class="citation" data-cites="Fisher2017meta-analytical-0001 Fisher2011a-0001 Song2016cumulative-0001"><sup><a href="#ref-Fisher2017meta-analytical-0001" role="doc-biblioref">2</a>, <a href="#ref-Fisher2011a-0001" role="doc-biblioref">12</a>, <a href="#ref-Song2016cumulative-0001" role="doc-biblioref">13</a></sup></span> Alternatively, there are more complex methods available for individual-participant data meta-analyses.<span class="citation" data-cites="Fisher2017meta-analytical-0001 Fisher2011a-0001 Hua2017one-stage-0001"><sup><a href="#ref-Fisher2017meta-analytical-0001" role="doc-biblioref">2</a>, <a href="#ref-Fisher2011a-0001" role="doc-biblioref">12</a>, <a href="#ref-Hua2017one-stage-0001" role="doc-biblioref">14</a></sup></span></p>
+<p>A survey of published IPD meta-analyses suggested that only a small proportion of analyses of effect modification separate within- from between-trial information; instead, most analyses seem to combine within and between trial information.<span class="citation" data-cites="Fisher2017meta-analytical-0001"><sup><a href="#ref-Fisher2017meta-analytical-0001" role="doc-biblioref">2</a></sup></span> Therefore, unless there is a statement to the contrary, analyses of effect modification in an IPD meta-analysis likely combine within and between trial information and might not be free of study-level confounding.</p>
 <p><strong>Response options:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -384,19 +419,19 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <div class="example-block">
-<p><strong>Completely between — Example 1:</strong> A meta-analysis assessing the effect of inpatient versus usual care found patients undergoing orthopaedic focused rehabilitation had a substantially larger functional benefit than patients undergoing geriatric focused rehabilitation (interaction p = 0.01) <span class="citation" data-cites="Bachmann2010inpatient-0001">[15]</span>. The analysis was based on between-study comparison only and therefore at high risk of confounding.</p>
+<p><strong>Completely between — Example 1:</strong> A meta-analysis assessing the effect of inpatient versus usual care found patients undergoing orthopaedic focused rehabilitation had a substantially larger functional benefit than patients undergoing geriatric focused rehabilitation (interaction p = 0.01).<span class="citation" data-cites="Bachmann2010inpatient-0001"><sup><a href="#ref-Bachmann2010inpatient-0001" role="doc-biblioref">15</a></sup></span> The analysis was based on between-study comparison only and therefore at high risk of confounding.</p>
 <p><strong>Completely between — Example 2:</strong> An IPD meta-analysis based on three RCTs suggested that mobile phone text messages can improve adherence to antiretroviral therapy. Because the type of text message varied only between but not within studies, the significant interaction (p=0.01) reflects a between-study comparison at high risk of study-level confounding — even though individual participant data were used.</p>
-<p><strong>Mostly between — Example:</strong> A meta-analysis assessing the effect of preoperative chemotherapy for gastroesophageal adenocarcinoma on survival combined individual patient and aggregate data <span class="citation" data-cites="Ronellenfitsch2013preoperative-0001">[16]</span>. The analysis suggested a potentially larger treatment effect in tumours of the gastroesophageal junction (interaction p=0.08). The apparent effect modification might be explained by study-level confounders, e.g.&nbsp;risk of bias.</p>
-<p><strong>Mostly within — Example:</strong> An IPD meta-analysis combined 13 trials comparing radiochemotherapy versus radiotherapy alone in patients with cervical cancer <span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing">[17]</span>. The authors first pooled subgroup-specific effects of each trial, then applied a chi-square test for trend (p=0.017). This method combines within- and between-trial information and is therefore potentially affected by study-level confounding <span class="citation" data-cites="Fisher2017meta-analytical-0001">[2]</span>.</p>
-<p><strong>Completely within — Example:</strong> A meta-analysis of individual patient data from 16 trials compared low intensity interventions for depression with usual care <span class="citation" data-cites="Bower2013influence-0001">[18]</span>. The investigators chose a model that estimated the effect modification within each trial and separated out between-trial comparisons, including a forest plot illustrating the heterogeneity of effect modifications across trials.</p>
+<p><strong>Mostly between — Example:</strong> A meta-analysis assessing the effect of preoperative chemotherapy for gastroesophageal adenocarcinoma on survival combined individual patient and aggregate data.<span class="citation" data-cites="Ronellenfitsch2013preoperative-0001"><sup><a href="#ref-Ronellenfitsch2013preoperative-0001" role="doc-biblioref">16</a></sup></span> The analysis suggested a potentially larger treatment effect in tumours of the gastroesophageal junction (interaction p=0.08). The apparent effect modification might be explained by study-level confounders, e.g.&nbsp;risk of bias.</p>
+<p><strong>Mostly within — Example:</strong> An IPD meta-analysis combined 13 trials comparing radiochemotherapy versus radiotherapy alone in patients with cervical cancer.<span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing"><sup><a href="#ref-ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing" role="doc-biblioref">17</a></sup></span> The authors first pooled subgroup-specific effects of each trial, then applied a chi-square test for trend (p=0.017). This method combines within- and between-trial information and is therefore potentially affected by study-level confounding.<span class="citation" data-cites="Fisher2017meta-analytical-0001"><sup><a href="#ref-Fisher2017meta-analytical-0001" role="doc-biblioref">2</a></sup></span></p>
+<p><strong>Completely within — Example:</strong> A meta-analysis of individual patient data from 16 trials compared low intensity interventions for depression with usual care.<span class="citation" data-cites="Bower2013influence-0001"><sup><a href="#ref-Bower2013influence-0001" role="doc-biblioref">18</a></sup></span> The investigators chose a model that estimated the effect modification within each trial and separated out between-trial comparisons, including a forest plot illustrating the heterogeneity of effect modifications across trials.</p>
 </div>
 <hr>
 </section>
 <section id="meta-item2" class="level2">
-<h2 class="anchored" data-anchor-id="meta-item2">Item 2 — Effect modification similar from trial to trial?</h2>
+<h2 data-anchor-id="meta-item2">Item 2 — Effect modification similar from trial to trial?</h2>
 <p><strong>Item explanation:</strong> Credibility of effect modification increases if the effect modification has been replicated across independent studies. Replication provides the strongest protection against random error and decreases the likelihood of confounding.</p>
-<p>If the item applies, it is helpful to quantify the magnitude of effect modification for each trial, e.g.&nbsp;by calculating a ratio of risk ratios <span class="citation" data-cites="Song2016cumulative-0001">[13]</span>.</p>
-<p>Note that this credibility consideration is different from assessing consistency (or heterogeneity) of treatment effects across studies (e.g.&nbsp;expressed by the I²-measure <span class="citation" data-cites="Higgins2003measuring-0001">[19]</span>).</p>
+<p>If the item applies, it is helpful to quantify the magnitude of effect modification for each trial, e.g.&nbsp;by calculating a ratio of risk ratios.<span class="citation" data-cites="Song2016cumulative-0001"><sup><a href="#ref-Song2016cumulative-0001" role="doc-biblioref">13</a></sup></span></p>
+<p>Note that this credibility consideration is different from assessing consistency (or heterogeneity) of treatment effects across studies (e.g.&nbsp;expressed by the I²-measure<span class="citation" data-cites="Higgins2003measuring-0001"><sup><a href="#ref-Higgins2003measuring-0001" role="doc-biblioref">19</a></sup></span>).</p>
 <p><strong>Response options:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -433,15 +468,15 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <div class="example-block">
-<p><strong>Probably not similar — Example:</strong> An IPD meta-analysis combined 13 trials comparing radiochemotherapy versus radiotherapy alone in patients with cervical cancer <span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing">[17]</span>. The authors reported the effect modification only for the combined dataset, not for individual trials. It was therefore not possible to assess consistency across trials.</p>
-<p><strong>Mostly similar — Example:</strong> A meta-analysis of individual patient data from 16 trials of low intensity interventions for depression <span class="citation" data-cites="Bower2013influence-0001">[18]</span>. Considering the point estimates within the 16 trials, 12 suggested a direction consistent with the overall finding, 1 suggested no effect modification, and 3 were in the opposite direction but with wide confidence intervals.</p>
-<p><strong>Definitely similar — Example:</strong> An IPD meta-analysis of fixed-dose aspirin for primary prevention of cardiovascular events found a significant interaction with body weight <span class="citation" data-cites="Rothwell2018effects-0001">[20]</span>. All six trials showed the same direction (more effective in lighter patients) with ratios of hazard ratios ranging between 0.5 and 0.9.</p>
+<p><strong>Probably not similar — Example:</strong> An IPD meta-analysis combined 13 trials comparing radiochemotherapy versus radiotherapy alone in patients with cervical cancer.<span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing"><sup><a href="#ref-ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing" role="doc-biblioref">17</a></sup></span> The authors reported the effect modification only for the combined dataset, not for individual trials. It was therefore not possible to assess consistency across trials.</p>
+<p><strong>Mostly similar — Example:</strong> A meta-analysis of individual patient data from 16 trials of low intensity interventions for depression.<span class="citation" data-cites="Bower2013influence-0001"><sup><a href="#ref-Bower2013influence-0001" role="doc-biblioref">18</a></sup></span> Considering the point estimates within the 16 trials, 12 suggested a direction consistent with the overall finding, 1 suggested no effect modification, and 3 were in the opposite direction but with wide confidence intervals.</p>
+<p><strong>Definitely similar — Example:</strong> An IPD meta-analysis of fixed-dose aspirin for primary prevention of cardiovascular events found a significant interaction with body weight.<span class="citation" data-cites="Rothwell2018effects-0001"><sup><a href="#ref-Rothwell2018effects-0001" role="doc-biblioref">20</a></sup></span> All six trials showed the same direction (more effective in lighter patients) with ratios of hazard ratios ranging between 0.5 and 0.9.</p>
 </div>
 <hr>
 </section>
 <section id="meta-item3" class="level2">
-<h2 class="anchored" data-anchor-id="meta-item3">Item 3 — Number of studies large? (between-RCT comparisons)</h2>
-<p><strong>Item explanation:</strong> For analysis of effect modification based on between-study comparisons, the credibility increases with the number of studies (analogous to number of observations in a regression analysis). A large number of studies also increases the power of the analysis and improves modelling of between-study dispersion in a random effects model <span class="citation" data-cites="Brookes2001subgroup-0001 Higgins2004controlling-0001 Alosh2017tutorial-0001 Rubio-Aparicio2017analysis-0001">[21–24]</span>.</p>
+<h2 data-anchor-id="meta-item3">Item 3 — Number of studies large? (between-RCT comparisons)</h2>
+<p><strong>Item explanation:</strong> For analysis of effect modification based on between-study comparisons, the credibility increases with the number of studies (analogous to number of observations in a regression analysis). A large number of studies also increases the power of the analysis and improves modelling of between-study dispersion in a random effects model.<span class="citation" data-cites="Brookes2001subgroup-0001 Higgins2004controlling-0001 Alosh2017tutorial-0001 Rubio-Aparicio2017analysis-0001"><sup><a href="#ref-Brookes2001subgroup-0001" role="doc-biblioref">21</a>, <a href="#ref-Higgins2004controlling-0001" role="doc-biblioref">22</a>, <a href="#ref-Alosh2017tutorial-0001" role="doc-biblioref">23</a>, <a href="#ref-Rubio-Aparicio2017analysis-0001" role="doc-biblioref">24</a></sup></span></p>
 <p><strong>Response options:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -480,15 +515,15 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <div class="example-block">
-<p><strong>Very small — Example:</strong> A meta-analysis comparing transcatheter versus surgical aortic valve replacement found a qualitative interaction (interaction p=0.01 using random effect model). The smallest subgroup included only two studies <span class="citation" data-cites="Siemieniuk2016transcatheter-0001">[25]</span>.</p>
-<p><strong>Rather small — Example:</strong> In a meta-analysis investigating the effect of low-intensity pulsed ultrasound on bone healing, the subgroup of 3 studies at low risk of bias suggested no benefit (interaction p&lt;0.001) <span class="citation" data-cites="Schandelmaier2017low-0001">[26]</span>.</p>
-<p><strong>Rather large — Example:</strong> In a meta-analysis assessing the effect of inpatient rehabilitation versus usual care, both subgroups included 6 studies per subgroup <span class="citation" data-cites="Bachmann2010inpatient-0001">[15]</span>.</p>
-<p><strong>Large — Example:</strong> A meta-analysis comparing interventions for preventing hospital readmission performed a subgroup analysis by number of activities. The small subgroup included 16 and the larger subgroup 26 studies <span class="citation" data-cites="Leppin2014preventing-0001">[27]</span>.</p>
+<p><strong>Very small — Example:</strong> A meta-analysis comparing transcatheter versus surgical aortic valve replacement found a qualitative interaction (interaction p=0.01 using random effect model). The smallest subgroup included only two studies.<span class="citation" data-cites="Siemieniuk2016transcatheter-0001"><sup><a href="#ref-Siemieniuk2016transcatheter-0001" role="doc-biblioref">25</a></sup></span></p>
+<p><strong>Rather small — Example:</strong> In a meta-analysis investigating the effect of low-intensity pulsed ultrasound on bone healing, the subgroup of 3 studies at low risk of bias suggested no benefit (interaction p&lt;0.001).<span class="citation" data-cites="Schandelmaier2017low-0001"><sup><a href="#ref-Schandelmaier2017low-0001" role="doc-biblioref">26</a></sup></span></p>
+<p><strong>Rather large — Example:</strong> In a meta-analysis assessing the effect of inpatient rehabilitation versus usual care, both subgroups included 6 studies per subgroup.<span class="citation" data-cites="Bachmann2010inpatient-0001"><sup><a href="#ref-Bachmann2010inpatient-0001" role="doc-biblioref">15</a></sup></span></p>
+<p><strong>Large — Example:</strong> A meta-analysis comparing interventions for preventing hospital readmission performed a subgroup analysis by number of activities. The small subgroup included 16 and the larger subgroup 26 studies.<span class="citation" data-cites="Leppin2014preventing-0001"><sup><a href="#ref-Leppin2014preventing-0001" role="doc-biblioref">27</a></sup></span></p>
 </div>
 <hr>
 </section>
 <section id="meta-items4-6" class="level2">
-<h2 class="anchored" data-anchor-id="meta-items4-6">Items 4–6 — Direction, interaction test, number of modifiers</h2>
+<h2 data-anchor-id="meta-items4-6">Items 4–6 — Direction, interaction test, number of modifiers</h2>
 <p>These items are conceptually identical to RCT items 1, 3, and 4 respectively. See <a href="../manual/rct.html#rct-item1">RCT items 1–4</a> for full explanations and response options.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -500,32 +535,32 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Meta-analysis note on Item 4 (direction a priori):</strong> Because meta-analyses are retrospective, investigators may already know the key trials and most promising effect modifiers when they plan the analysis <span class="citation" data-cites="Thompson2002how-0001">[3]</span>. If so, this item loses some of its value if it suggests increased credibility. Correct anticipation of direction would essentially be data-driven. The item is more relevant if none of the key trials has tested the effect modifier of interest, and if the analysis is completely based on between-trial comparisons.</p>
+<p><strong>Meta-analysis note on Item 4 (direction a priori):</strong> Because meta-analyses are retrospective, investigators may already know the key trials and most promising effect modifiers when they plan the analysis.<span class="citation" data-cites="Thompson2002how-0001"><sup><a href="#ref-Thompson2002how-0001" role="doc-biblioref">3</a></sup></span> If so, this item loses some of its value if it suggests increased credibility. Correct anticipation of direction would essentially be data-driven. The item is more relevant if none of the key trials has tested the effect modifier of interest, and if the analysis is completely based on between-trial comparisons.</p>
 <p><strong>Meta-analysis note on Item 6 (number of modifiers):</strong> A potential limitation is that the meta-analysts might have scanned key trials for promising effect modifiers before planning the meta-analysis. If so, a small number of tested effect modifiers might obscure potential multiplicity issues introduced in earlier selection processes in the individual trials.</p>
 <p>Response option examples for Item 6 (number of modifiers tested):</p>
 <ul>
-<li><strong>Definitely no:</strong> A meta-analysis investigating interventions to reduce early hospital readmissions reported results for 12 effect modifiers <span class="citation" data-cites="Leppin2014preventing-0001">[27]</span>. The authors correctly highlighted the possibility of chance findings due to multiplicity.</li>
-<li><strong>Probably no:</strong> In a meta-analysis assessing inpatient rehabilitation versus usual care, all reported meta-regression analyses were pre-specified in an analysis plan. Nevertheless, 9 effect modifiers were tested for 3 outcomes at 2 time points <span class="citation" data-cites="Bachmann2010inpatient-0001">[15]</span>.</li>
-<li><strong>Probably yes:</strong> An IPD meta-analysis assessed the effect of adding whole brain radiation therapy to stereotactic radiosurgery in patients with brain metastases. The report includes an explicit statement that age was one of three pre-planned effect modifiers <span class="citation" data-cites="Sahgal2015phase-0001">[28]</span>.</li>
-<li><strong>Definitely yes:</strong> A meta-analysis comparing the effect of low-intensity pulsed ultrasound versus sham ultrasound on bone healing. The investigators had pre-specified the analysis in the published protocol <span class="citation" data-cites="Schandelmaier2016prospero">[29]</span> together with two other subgroup hypotheses. The low number of tested effect modifiers and the pre-specified definition makes multiplicity issues less likely <span class="citation" data-cites="Schandelmaier2017low-0001">[26]</span>.</li>
+<li><strong>Definitely no:</strong> A meta-analysis investigating interventions to reduce early hospital readmissions reported results for 12 effect modifiers.<span class="citation" data-cites="Leppin2014preventing-0001"><sup><a href="#ref-Leppin2014preventing-0001" role="doc-biblioref">27</a></sup></span> The authors correctly highlighted the possibility of chance findings due to multiplicity.</li>
+<li><strong>Probably no:</strong> In a meta-analysis assessing inpatient rehabilitation versus usual care, all reported meta-regression analyses were pre-specified in an analysis plan. Nevertheless, 9 effect modifiers were tested for 3 outcomes at 2 time points.<span class="citation" data-cites="Bachmann2010inpatient-0001"><sup><a href="#ref-Bachmann2010inpatient-0001" role="doc-biblioref">15</a></sup></span></li>
+<li><strong>Probably yes:</strong> An IPD meta-analysis assessed the effect of adding whole brain radiation therapy to stereotactic radiosurgery in patients with brain metastases. The report includes an explicit statement that age was one of three pre-planned effect modifiers.<span class="citation" data-cites="Sahgal2015phase-0001"><sup><a href="#ref-Sahgal2015phase-0001" role="doc-biblioref">28</a></sup></span></li>
+<li><strong>Definitely yes:</strong> A meta-analysis comparing the effect of low-intensity pulsed ultrasound versus sham ultrasound on bone healing. The investigators had pre-specified the analysis in the published protocol<span class="citation" data-cites="Schandelmaier2016prospero"><sup><a href="#ref-Schandelmaier2016prospero" role="doc-biblioref">29</a></sup></span> together with two other subgroup hypotheses. The low number of tested effect modifiers and the pre-specified definition makes multiplicity issues less likely.<span class="citation" data-cites="Schandelmaier2017low-0001"><sup><a href="#ref-Schandelmaier2017low-0001" role="doc-biblioref">26</a></sup></span></li>
 </ul>
 <p>Response option examples for direction (Item 4):</p>
 <ul>
-<li><strong>Probably no:</strong> An IPD meta-analysis of fixed-dose aspirin for primary prevention of cardiovascular events found a significant interaction with body weight <span class="citation" data-cites="Rothwell2018effects-0001">[20]</span>. The paper does not clarify whether the effect modification was hypothesized a priori.</li>
-<li><strong>Probably yes:</strong> An IPD meta-analysis combined three trials comparing high versus low PEEP in ventilated patients. A subgroup analysis suggested that higher pressure was associated with longer survival in patients with ARDS (interaction p=0.02). The authors explicitly stated that they correctly anticipated the effect modification in their protocol which, however, was not published <span class="citation" data-cites="Briel2010higher-0001">[30]</span>.</li>
-<li><strong>Definitely yes:</strong> A meta-analysis comparing transcatheter versus surgical aortic valve replacement. The investigators had anticipated this interaction with correct direction in a published protocol <span class="citation" data-cites="Siemieniuk2016transcatheter-0001">[25]</span>.</li>
+<li><strong>Probably no:</strong> An IPD meta-analysis of fixed-dose aspirin for primary prevention of cardiovascular events found a significant interaction with body weight.<span class="citation" data-cites="Rothwell2018effects-0001"><sup><a href="#ref-Rothwell2018effects-0001" role="doc-biblioref">20</a></sup></span> The paper does not clarify whether the effect modification was hypothesized a priori.</li>
+<li><strong>Probably yes:</strong> An IPD meta-analysis combined three trials comparing high versus low PEEP in ventilated patients. A subgroup analysis suggested that higher pressure was associated with longer survival in patients with ARDS (interaction p=0.02). The authors explicitly stated that they correctly anticipated the effect modification in their protocol which, however, was not published.<span class="citation" data-cites="Briel2010higher-0001"><sup><a href="#ref-Briel2010higher-0001" role="doc-biblioref">30</a></sup></span></li>
+<li><strong>Definitely yes:</strong> A meta-analysis comparing transcatheter versus surgical aortic valve replacement. The investigators had anticipated this interaction with correct direction in a published protocol.<span class="citation" data-cites="Siemieniuk2016transcatheter-0001"><sup><a href="#ref-Siemieniuk2016transcatheter-0001" role="doc-biblioref">25</a></sup></span></li>
 </ul>
 </div>
 </div>
 <hr>
 </section>
 <section id="meta-item7" class="level2">
-<h2 class="anchored" data-anchor-id="meta-item7">Item 7 — Random effects model used?</h2>
-<p><strong>Item explanation:</strong> The credibility of claimed effect modification is higher if investigators used a <strong>random effects model</strong> within subgroups, allowing true effects to differ among studies within subgroups and allowing generalisation of results beyond the included studies; this is almost always the model that should be used <span class="citation" data-cites="Borenstein2013meta-analysis-0001 Borenstein2019common-0001">[31,32]</span>.</p>
-<p>The credibility is lower if investigators used: (a) a <strong>common effect (fixed effect, singular) model</strong> — implying all studies within subgroups are based on the same population <span class="citation" data-cites="Borenstein2013meta-analysis-0001 Borenstein2019common-0001">[31,32]</span>; or (b) a <strong>fixed effects model</strong> — implying results will only apply to the studies included in the subgroup but cannot be generalised beyond them <span class="citation" data-cites="Borenstein2013meta-analysis-0001 Borenstein2019common-0001">[31,32]</span>.</p>
-<p>Simulation studies have shown that failure to assume random effects increases the risk of false positive claims for both study-level and individual participant-level meta-analysis <span class="citation" data-cites="Higgins2004controlling-0001 Hua2017one-stage-0001 Rubio-Aparicio2017analysis-0001">[14,22,24]</span>. A random effects model strengthens a test of interaction because a significant result is usually harder to achieve <span class="citation" data-cites="Higgins2004controlling-0001 Thompson2002how-0001 Borenstein2009introduction-0001 Borenstein2013meta-analysis-0001 Thompson1999explaining-0001">[3,6,22,31,33]</span>.</p>
-<p>If investigators state that they used a <strong>mixed effects model</strong> without further specification, it usually implies they used a random effects model for between-study differences within subgroups (appropriate) and a fixed effects model for between-subgroup differences (also appropriate <span class="citation" data-cites="Borenstein2009introduction-0001 Borenstein2013meta-analysis-0001 Borenstein2019common-0001">[6,31,32]</span>). Therefore, the appropriate answer is usually definitely yes.</p>
-<p>The question also applies to individual-participant data meta-analysis, for which an empirical study has shown that most do not apply a random effects model <span class="citation" data-cites="Simmonds2015a-0001">[34]</span>.</p>
+<h2 data-anchor-id="meta-item7">Item 7 — Random effects model used?</h2>
+<p><strong>Item explanation:</strong> The credibility of claimed effect modification is higher if investigators used a <strong>random effects model</strong> within subgroups, allowing true effects to differ among studies within subgroups and allowing generalisation of results beyond the included studies; this is almost always the model that should be used.<span class="citation" data-cites="Borenstein2013meta-analysis-0001 Borenstein2019common-0001"><sup><a href="#ref-Borenstein2013meta-analysis-0001" role="doc-biblioref">31</a>, <a href="#ref-Borenstein2019common-0001" role="doc-biblioref">32</a></sup></span></p>
+<p>The credibility is lower if investigators used: (a) a <strong>common effect (fixed effect, singular) model</strong> — implying all studies within subgroups are based on the same population;<span class="citation" data-cites="Borenstein2013meta-analysis-0001 Borenstein2019common-0001"><sup><a href="#ref-Borenstein2013meta-analysis-0001" role="doc-biblioref">31</a>, <a href="#ref-Borenstein2019common-0001" role="doc-biblioref">32</a></sup></span> or (b) a <strong>fixed effects model</strong> — implying results will only apply to the studies included in the subgroup but cannot be generalised beyond them.<span class="citation" data-cites="Borenstein2013meta-analysis-0001 Borenstein2019common-0001"><sup><a href="#ref-Borenstein2013meta-analysis-0001" role="doc-biblioref">31</a>, <a href="#ref-Borenstein2019common-0001" role="doc-biblioref">32</a></sup></span></p>
+<p>Simulation studies have shown that failure to assume random effects increases the risk of false positive claims for both study-level and individual participant-level meta-analysis.<span class="citation" data-cites="Higgins2004controlling-0001 Hua2017one-stage-0001 Rubio-Aparicio2017analysis-0001"><sup><a href="#ref-Hua2017one-stage-0001" role="doc-biblioref">14</a>, <a href="#ref-Higgins2004controlling-0001" role="doc-biblioref">22</a>, <a href="#ref-Rubio-Aparicio2017analysis-0001" role="doc-biblioref">24</a></sup></span> A random effects model strengthens a test of interaction because a significant result is usually harder to achieve.<span class="citation" data-cites="Higgins2004controlling-0001 Thompson2002how-0001 Borenstein2009introduction-0001 Borenstein2013meta-analysis-0001 Thompson1999explaining-0001"><sup><a href="#ref-Thompson2002how-0001" role="doc-biblioref">3</a>, <a href="#ref-Borenstein2009introduction-0001" role="doc-biblioref">6</a>, <a href="#ref-Higgins2004controlling-0001" role="doc-biblioref">22</a>, <a href="#ref-Borenstein2013meta-analysis-0001" role="doc-biblioref">31</a>, <a href="#ref-Thompson1999explaining-0001" role="doc-biblioref">33</a></sup></span></p>
+<p>If investigators state that they used a <strong>mixed effects model</strong> without further specification, it usually implies they used a random effects model for between-study differences within subgroups (appropriate) and a fixed effects model for between-subgroup differences (also appropriate<span class="citation" data-cites="Borenstein2009introduction-0001 Borenstein2013meta-analysis-0001 Borenstein2019common-0001"><sup><a href="#ref-Borenstein2009introduction-0001" role="doc-biblioref">6</a>, <a href="#ref-Borenstein2013meta-analysis-0001" role="doc-biblioref">31</a>, <a href="#ref-Borenstein2019common-0001" role="doc-biblioref">32</a></sup></span>). Therefore, the appropriate answer is usually definitely yes.</p>
+<p>The question also applies to individual-participant data meta-analysis, for which an empirical study has shown that most do not apply a random effects model.<span class="citation" data-cites="Simmonds2015a-0001"><sup><a href="#ref-Simmonds2015a-0001" role="doc-biblioref">34</a></sup></span></p>
 <p><strong>Response options:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -558,62 +593,62 @@ Note
 </tbody>
 </table>
 <div class="example-block">
-<p><strong>Definitely no — Example:</strong> An IPD meta-analysis of aspirin for primary prevention of cardiovascular events. The authors explicitly state that they used a fixed effects model <span class="citation" data-cites="Rothwell2018effects-0001">[20]</span>.</p>
-<p><strong>Probably no — Example:</strong> An IPD meta-analysis combined 13 studies comparing radiochemotherapy versus radiotherapy alone in patients with cervical cancer <span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing">[17]</span>. The authors did not explicitly report how they modelled between-study differences. Because they used a fixed effect model for the overall analysis, it is most likely that they also used a fixed effect model within subgroups.</p>
-<p><strong>Definitely yes — Example:</strong> In a meta-analysis assessing the effect of inpatient rehabilitation versus usual care, the authors explicitly specified a random effects model for between-study differences in the methods section <span class="citation" data-cites="Bachmann2010inpatient-0001">[15]</span>.</p>
+<p><strong>Definitely no — Example:</strong> An IPD meta-analysis of aspirin for primary prevention of cardiovascular events. The authors explicitly state that they used a fixed effects model.<span class="citation" data-cites="Rothwell2018effects-0001"><sup><a href="#ref-Rothwell2018effects-0001" role="doc-biblioref">20</a></sup></span></p>
+<p><strong>Probably no — Example:</strong> An IPD meta-analysis combined 13 studies comparing radiochemotherapy versus radiotherapy alone in patients with cervical cancer.<span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing"><sup><a href="#ref-ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing" role="doc-biblioref">17</a></sup></span> The authors did not explicitly report how they modelled between-study differences. Because they used a fixed effect model for the overall analysis, it is most likely that they also used a fixed effect model within subgroups.</p>
+<p><strong>Definitely yes — Example:</strong> In a meta-analysis assessing the effect of inpatient rehabilitation versus usual care, the authors explicitly specified a random effects model for between-study differences in the methods section.<span class="citation" data-cites="Bachmann2010inpatient-0001"><sup><a href="#ref-Bachmann2010inpatient-0001" role="doc-biblioref">15</a></sup></span></p>
 </div>
 <hr>
 </section>
 <section id="meta-item8" class="level2">
-<h2 class="anchored" data-anchor-id="meta-item8">Item 8 — Arbitrary cut points avoided? (continuous, meta-analyses)</h2>
-<p><strong>Item explanation:</strong> Categorising continuous effect modifiers is common <span class="citation" data-cites="Fisher2017meta-analytical-0001">[2]</span> but associated with problems <span class="citation" data-cites="Royston2006dichotomizing-0001 Altman2006the-0001">[35,36]</span>. In the context of meta-analysis, cut points can cause additional problems: if two studies assessed the same continuous effect modifier but used different cut points, it may be impossible to combine the within-study results in a meaningful way unless individual patient data are available. Credibility is low if investigators selected the best-fitting data-driven cut point <span class="citation" data-cites="Royston2006dichotomizing-0001 Altman1994dangers-0001">[35,37]</span>.</p>
-<p>Provided individual participant data is available, it is also possible to average functions across several studies and base conclusions on the resulting mean function (i.e.&nbsp;a meta-analysis of interactions <span class="citation" data-cites="Wang2016meta-stepp-0001 Kasenda2016multivariable-0001">[38,39]</span>).</p>
+<h2 data-anchor-id="meta-item8">Item 8 — Arbitrary cut points avoided? (continuous, meta-analyses)</h2>
+<p><strong>Item explanation:</strong> Categorising continuous effect modifiers is common<span class="citation" data-cites="Fisher2017meta-analytical-0001"><sup><a href="#ref-Fisher2017meta-analytical-0001" role="doc-biblioref">2</a></sup></span> but associated with problems.<span class="citation" data-cites="Royston2006dichotomizing-0001 Altman2006the-0001"><sup><a href="#ref-Royston2006dichotomizing-0001" role="doc-biblioref">35</a>, <a href="#ref-Altman2006the-0001" role="doc-biblioref">36</a></sup></span> In the context of meta-analysis, cut points can cause additional problems: if two studies assessed the same continuous effect modifier but used different cut points, it may be impossible to combine the within-study results in a meaningful way unless individual patient data are available. Credibility is low if investigators selected the best-fitting data-driven cut point.<span class="citation" data-cites="Royston2006dichotomizing-0001 Altman1994dangers-0001"><sup><a href="#ref-Royston2006dichotomizing-0001" role="doc-biblioref">35</a>, <a href="#ref-Altman1994dangers-0001" role="doc-biblioref">37</a></sup></span></p>
+<p>Provided individual participant data is available, it is also possible to average functions across several studies and base conclusions on the resulting mean function (i.e.&nbsp;a meta-analysis of interactions<span class="citation" data-cites="Wang2016meta-stepp-0001 Kasenda2016multivariable-0001"><sup><a href="#ref-Wang2016meta-stepp-0001" role="doc-biblioref">38</a>, <a href="#ref-Kasenda2016multivariable-0001" role="doc-biblioref">39</a></sup></span>).</p>
 <p>See <a href="../manual/rct.html#rct-item5">RCT Item 5</a> for full response option descriptions.</p>
 <div class="example-block">
-<p><strong>Probably no — Example:</strong> A meta-analysis investigating interventions to reduce early hospital readmissions reported a potential effect modification by the number of intervention components <span class="citation" data-cites="Leppin2014preventing-0001">[27]</span>. The published protocol did not specify cut points and the investigators explicitly highlighted the exploratory character of the analysis.</p>
-<p><strong>Probably yes — Example:</strong> In a meta-analysis on inpatient rehabilitation versus usual care, the intervention was better in preventing nursing home admissions in patients younger than 80 than in patients older than 80 (p=0.045) <span class="citation" data-cites="Bachmann2010inpatient-0001">[15]</span>. According to the authors, the threshold was pre-specified.</p>
-<p><strong>Definitely yes — Example:</strong> An IPD meta-analysis investigated whether patients with ARDS benefit from higher PEEP ventilation strategies <span class="citation" data-cites="Kasenda2016multivariable-0001">[39]</span>. A continuous analysis suggested a non-linear effect modification by degree of hypoxaemia. A previous analysis dichotomised the effect modifier and could not reveal the potential non-linear relationship <span class="citation" data-cites="Briel2010higher-0001">[30]</span>.</p>
+<p><strong>Probably no — Example:</strong> A meta-analysis investigating interventions to reduce early hospital readmissions reported a potential effect modification by the number of intervention components.<span class="citation" data-cites="Leppin2014preventing-0001"><sup><a href="#ref-Leppin2014preventing-0001" role="doc-biblioref">27</a></sup></span> The published protocol did not specify cut points and the investigators explicitly highlighted the exploratory character of the analysis.</p>
+<p><strong>Probably yes — Example:</strong> In a meta-analysis on inpatient rehabilitation versus usual care, the intervention was better in preventing nursing home admissions in patients younger than 80 than in patients older than 80 (p=0.045).<span class="citation" data-cites="Bachmann2010inpatient-0001"><sup><a href="#ref-Bachmann2010inpatient-0001" role="doc-biblioref">15</a></sup></span> According to the authors, the threshold was pre-specified.</p>
+<p><strong>Definitely yes — Example:</strong> An IPD meta-analysis investigated whether patients with ARDS benefit from higher PEEP ventilation strategies.<span class="citation" data-cites="Kasenda2016multivariable-0001"><sup><a href="#ref-Kasenda2016multivariable-0001" role="doc-biblioref">39</a></sup></span> A continuous analysis suggested a non-linear effect modification by degree of hypoxaemia. A previous analysis dichotomised the effect modifier and could not reveal the potential non-linear relationship.<span class="citation" data-cites="Briel2010higher-0001"><sup><a href="#ref-Briel2010higher-0001" role="doc-biblioref">30</a></sup></span></p>
 </div>
 <hr>
 </section>
 <section id="meta-item9" class="level2">
-<h2 class="anchored" data-anchor-id="meta-item9">Item 9 — Optional: Additional considerations</h2>
+<h2 data-anchor-id="meta-item9">Item 9 — Optional: Additional considerations</h2>
 <p>Similar to <a href="../manual/rct.html#rct-item6">RCT Item 6</a>, with additional meta-analysis-specific considerations.</p>
-<p><strong>Sensitivity analysis suggesting robustness</strong> <span class="citation" data-cites="Desai2014challenges-0001 VanderWeele2015explanation-0001 Pearce2014confounding-0001">[40–42]</span>:</p>
+<p><strong>Sensitivity analysis suggesting robustness</strong><span class="citation" data-cites="Desai2014challenges-0001 VanderWeele2015explanation-0001 Pearce2014confounding-0001"><sup><a href="#ref-Desai2014challenges-0001" role="doc-biblioref">40</a>, <a href="#ref-VanderWeele2015explanation-0001" role="doc-biblioref">41</a>, <a href="#ref-Pearce2014confounding-0001" role="doc-biblioref">42</a></sup></span>:</p>
 <div class="example-block">
-<p><strong>Example:</strong> A meta-analysis comparing the effect of low-intensity pulsed ultrasound versus sham on bone healing <span class="citation" data-cites="Schandelmaier2017low-0001">[26]</span>. In a sensitivity analysis requested by the editors, the investigators applied a stricter threshold for missing data (≥10%). Although different criteria led to reclassification of one trial, the effect modification remained significant (p=0.004).</p>
+<p><strong>Example:</strong> A meta-analysis comparing the effect of low-intensity pulsed ultrasound versus sham on bone healing.<span class="citation" data-cites="Schandelmaier2017low-0001"><sup><a href="#ref-Schandelmaier2017low-0001" role="doc-biblioref">26</a></sup></span> In a sensitivity analysis requested by the editors, the investigators applied a stricter threshold for missing data (≥10%). Although different criteria led to reclassification of one trial, the effect modification remained significant (p=0.004).</p>
 </div>
 <p><strong>Effect modification supported by external evidence:</strong></p>
 <div class="example-block">
-<p><strong>Example:</strong> A meta-analysis comparing transcatheter versus surgical aortic valve replacement <span class="citation" data-cites="Siemieniuk2016transcatheter-0001">[25]</span>. A prior cohort study of 501 patients using propensity score matching had suggested that the transapical approach was associated with more adverse events and higher mortality <span class="citation" data-cites="Blackstone2015propensity-matched-0001">[43]</span>.</p>
+<p><strong>Example:</strong> A meta-analysis comparing transcatheter versus surgical aortic valve replacement.<span class="citation" data-cites="Siemieniuk2016transcatheter-0001"><sup><a href="#ref-Siemieniuk2016transcatheter-0001" role="doc-biblioref">25</a></sup></span> A prior cohort study of 501 patients using propensity score matching had suggested that the transapical approach was associated with more adverse events and higher mortality.<span class="citation" data-cites="Blackstone2015propensity-matched-0001"><sup><a href="#ref-Blackstone2015propensity-matched-0001" role="doc-biblioref">43</a></sup></span></p>
 </div>
 <p><strong>Dose-response effect across levels of the effect modifier:</strong></p>
 <div class="example-block">
-<p><strong>Example:</strong> An IPD meta-analysis combined 13 trials comparing radiochemotherapy versus radiotherapy alone in patients with cervical cancer <span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing">[17]</span>. A subgroup analysis based on tumour stage suggested that the relative benefit decreased with increasing tumour stage across three stages, suggesting a possible “dose-response” effect (chi-square test for trend, p=0.017).</p>
+<p><strong>Example:</strong> An IPD meta-analysis combined 13 trials comparing radiochemotherapy versus radiotherapy alone in patients with cervical cancer.<span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing"><sup><a href="#ref-ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing" role="doc-biblioref">17</a></sup></span> A subgroup analysis based on tumour stage suggested that the relative benefit decreased with increasing tumour stage across three stages, suggesting a possible “dose-response” effect (chi-square test for trend, p=0.017).</p>
 </div>
-<p><strong>Risk of bias of the main effects of the individual RCTs or the meta-analysis:</strong> A commonly used instrument to formally assess the overall risk of bias is the Cochrane risk of bias tool for individual trials <span class="citation" data-cites="Higgins2016a-0001">[44]</span> and the ROBIS tool for systematic reviews <span class="citation" data-cites="Whiting2016robis-0001">[45]</span>. Note that reporting bias can be introduced if only some studies report an effect modifier but not others <span class="citation" data-cites="Hahn2000assessing-0001">[46]</span>. Also, industry-funded trials are at higher risk of spurious claims of effect modification <span class="citation" data-cites="Sun2011the-0001 Barton2015the-0001 Gabler2016no-0001">[47–49]</span>.</p>
+<p><strong>Risk of bias of the main effects of the individual RCTs or the meta-analysis:</strong> A commonly used instrument to formally assess the overall risk of bias is the Cochrane risk of bias tool for individual trials<span class="citation" data-cites="Higgins2016a-0001"><sup><a href="#ref-Higgins2016a-0001" role="doc-biblioref">44</a></sup></span> and the ROBIS tool for systematic reviews.<span class="citation" data-cites="Whiting2016robis-0001"><sup><a href="#ref-Whiting2016robis-0001" role="doc-biblioref">45</a></sup></span> Note that reporting bias can be introduced if only some studies report an effect modifier but not others.<span class="citation" data-cites="Hahn2000assessing-0001"><sup><a href="#ref-Hahn2000assessing-0001" role="doc-biblioref">46</a></sup></span> Also, industry-funded trials are at higher risk of spurious claims of effect modification.<span class="citation" data-cites="Sun2011the-0001 Barton2015the-0001 Gabler2016no-0001"><sup><a href="#ref-Sun2011the-0001" role="doc-biblioref">47</a>, <a href="#ref-Barton2015the-0001" role="doc-biblioref">48</a>, <a href="#ref-Gabler2016no-0001" role="doc-biblioref">49</a></sup></span></p>
 <div class="example-block">
-<p><strong>Example:</strong> An IPD meta-analysis combined three trials comparing high versus low PEEP in ventilated patients with lung injury or ARDS <span class="citation" data-cites="Briel2010higher-0001">[30]</span>. A subgroup analysis suggested that higher pressure was associated with longer survival in patients with but not in patients without ARDS (interaction p=0.02). Although the p-value provides only modest support against chance, the high methodological quality of all three trials is reassuring.</p>
+<p><strong>Example:</strong> An IPD meta-analysis combined three trials comparing high versus low PEEP in ventilated patients with lung injury or ARDS.<span class="citation" data-cites="Briel2010higher-0001"><sup><a href="#ref-Briel2010higher-0001" role="doc-biblioref">30</a></sup></span> A subgroup analysis suggested that higher pressure was associated with longer survival in patients with but not in patients without ARDS (interaction p=0.02). Although the p-value provides only modest support against chance, the high methodological quality of all three trials is reassuring.</p>
 </div>
-<p><strong>Exceptionally high power</strong> <span class="citation" data-cites="Burke2015three-0001 Alosh2017tutorial-0001">[23,50]</span>.</p>
-<p><strong>Persistence after adjustment for other potential effect modifiers</strong> <span class="citation" data-cites="Varadhan2014standardization-0001">[51]</span>:</p>
+<p><strong>Exceptionally high power</strong>.<span class="citation" data-cites="Burke2015three-0001 Alosh2017tutorial-0001"><sup><a href="#ref-Alosh2017tutorial-0001" role="doc-biblioref">23</a>, <a href="#ref-Burke2015three-0001" role="doc-biblioref">50</a></sup></span></p>
+<p><strong>Persistence after adjustment for other potential effect modifiers</strong><span class="citation" data-cites="Varadhan2014standardization-0001"><sup><a href="#ref-Varadhan2014standardization-0001" role="doc-biblioref">51</a></sup></span>:</p>
 <div class="example-block">
-<p><strong>Example:</strong> An IPD meta-analysis of fixed-dose aspirin for primary prevention of cardiovascular events <span class="citation" data-cites="Rothwell2018effects-0001">[20]</span>. The effect modification by weight remained when the investigators stratified their analysis by both weight and age.</p>
+<p><strong>Example:</strong> An IPD meta-analysis of fixed-dose aspirin for primary prevention of cardiovascular events.<span class="citation" data-cites="Rothwell2018effects-0001"><sup><a href="#ref-Rothwell2018effects-0001" role="doc-biblioref">20</a></sup></span> The effect modification by weight remained when the investigators stratified their analysis by both weight and age.</p>
 </div>
 <p><strong>Consistency across related outcomes:</strong></p>
 <div class="example-block">
-<p><strong>Example:</strong> A meta-analysis comparing transcatheter versus surgical aortic valve replacement <span class="citation" data-cites="Siemieniuk2016transcatheter-0001">[25]</span>. The qualitative interaction was consistent across outcomes mortality, stroke, acute kidney injury, and bleeding.</p>
+<p><strong>Example:</strong> A meta-analysis comparing transcatheter versus surgical aortic valve replacement.<span class="citation" data-cites="Siemieniuk2016transcatheter-0001"><sup><a href="#ref-Siemieniuk2016transcatheter-0001" role="doc-biblioref">25</a></sup></span> The qualitative interaction was consistent across outcomes mortality, stroke, acute kidney injury, and bleeding.</p>
 </div>
 <hr>
 </section>
 <section id="meta-item10" class="level2">
-<h2 class="anchored" data-anchor-id="meta-item10">Item 10 — Overall credibility rating</h2>
+<h2 data-anchor-id="meta-item10">Item 10 — Overall credibility rating</h2>
 <p>Same continuous scale and decision strategy as <a href="../manual/rct.html#rct-item7">RCT Item 7</a>. See that section for the full strategy table and interpretation.</p>
 <hr>
 </section>
 <section id="meta-example" class="level2">
-<h2 class="anchored" data-anchor-id="meta-example">Worked example — Meta-analysis (cervical cancer)</h2>
-<p>An individual patient data meta-analysis of 13 trials compared radiochemotherapy versus radiotherapy alone in women with cervical cancer <span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing">[17]</span>. The authors report “a suggestion of a difference in the size of the survival benefit with tumour stage.” The credibility assessment suggested <strong>low credibility</strong>.</p>
+<h2 data-anchor-id="meta-example">Worked example — Meta-analysis (cervical cancer)</h2>
+<p>An individual patient data meta-analysis of 13 trials compared radiochemotherapy versus radiotherapy alone in women with cervical cancer.<span class="citation" data-cites="ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing"><sup><a href="#ref-ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing" role="doc-biblioref">17</a></sup></span> The authors report “a suggestion of a difference in the size of the survival benefit with tumour stage.” The credibility assessment suggested <strong>low credibility</strong>.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 24%">
@@ -682,18 +717,166 @@ Note
 </table>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-Sun2014how-0001" class="csl-entry" role="listitem">
+1. Sun X, Ioannidis JPA, Agoritsas T, Alba AC, Guyatt G. How to use a subgroup analysis: Users’ guide to the medical literature: Users’ guide to the medical literature [Internet]. JAMA. 2014 ;311(4):405–411.Available from: <a href="http://dx.doi.org/10.1001/jama.2013.285063">http://dx.doi.org/10.1001/jama.2013.285063</a>
+</div>
+<div id="ref-Fisher2017meta-analytical-0001" class="csl-entry" role="listitem">
+2. Fisher DJ, Carpenter JR, Morris TP, Freeman SC, Tierney JF. Meta-analytical methods to identify who benefits most from treatments: Daft, deluded, or deft approach? [Internet]. BMJ. 2017 ;356j573.Available from: <a href="http://dx.doi.org/10.1136/bmj.j573">http://dx.doi.org/10.1136/bmj.j573</a>
+</div>
+<div id="ref-Thompson2002how-0001" class="csl-entry" role="listitem">
+3. Thompson SG, Higgins JPT. How should meta-regression analyses be undertaken and interpreted? [Internet]. Stat. Med. 2002 ;21(11):1559–1573.Available from: <a href="https://doi.org/10.1002/sim.1187">https://doi.org/10.1002/sim.1187</a>
+</div>
+<div id="ref-DaveySmith1997meta-analysis-0001" class="csl-entry" role="listitem">
+4. Davey Smith G, Egger M, Phillips AN. Meta-analysis. Beyond the grand mean? [Internet]. BMJ. 1997 ;315(7122):1610–1614.Available from: <a href="https://doi.org/10.1136/bmj.315.7122.1610">https://doi.org/10.1136/bmj.315.7122.1610</a>
+</div>
+<div id="ref-Berlin1995invited-0001" class="csl-entry" role="listitem">
+5. Berlin JA. Invited commentary: Benefits of heterogeneity in meta-analysis of data from epidemiologic studies [Internet]. Am. J. Epidemiol. 1995 ;142(4):383–387.Available from: <a href="http://dx.doi.org/10.1093/oxfordjournals.aje.a117645">http://dx.doi.org/10.1093/oxfordjournals.aje.a117645</a>
+</div>
+<div id="ref-Borenstein2009introduction-0001" class="csl-entry" role="listitem">
+6. Borenstein M, Hedges L, Higgins JP, Rothstein H. Introduction to meta-analysis. 1 ed Chichester: John Wiley &amp; Sons. 2009 ;
+</div>
+<div id="ref-Smith2008going" class="csl-entry" role="listitem">
+7. Smith GD, Egger M. Going beyond the grand mean: Subgroup analysis in meta-analysis of randomised trials [Internet]. In: Egger M, Davey Smith G, Altman DG, editor(s). Systematic reviews in health care. London, UK: BMJ Publishing Group; 2008. p. 143–156.Available from: <a href="https://doi.org/10.1002/9780470693926.ch8">https://doi.org/10.1002/9780470693926.ch8</a>
+</div>
+<div id="ref-Hingorani2013prognosis-0001" class="csl-entry" role="listitem">
+8. Hingorani AD, Windt DA van der, Riley RD, Abrams K, Moons KGM, Steyerberg EW, Schroter S, Sauerbrei W, Altman DG, Hemingway H, PROGRESS Group. Prognosis research strategy (<span>PROGRESS</span>) 4: Stratified medicine research [Internet]. BMJ. 2013 ;346(feb05 1):e5793.Available from: <a href="http://dx.doi.org/10.1136/bmj.e5793">http://dx.doi.org/10.1136/bmj.e5793</a>
+</div>
+<div id="ref-Simmonds2007covariate-0001" class="csl-entry" role="listitem">
+9. Simmonds MC, Higgins JPT. Covariate heterogeneity in meta-analysis: Criteria for deciding between meta-regression and individual patient data [Internet]. Stat. Med. 2007 ;26(15):2982–2999.Available from: <a href="http://dx.doi.org/10.1002/sim.2768">http://dx.doi.org/10.1002/sim.2768</a>
+</div>
+<div id="ref-Lambert2002a-0001" class="csl-entry" role="listitem">
+10. Lambert PC, Sutton AJ, Abrams KR, Jones DR. A comparison of summary patient-level covariates in meta-regression with individual patient data meta-analysis [Internet]. J. Clin. Epidemiol. 2002 Jan. ;55(1):86–94.Available from: <a href="http://dx.doi.org/10.1016/s0895-4356(01)00414-0">http://dx.doi.org/10.1016/s0895-4356(01)00414-0</a>
+</div>
+<div id="ref-Berlin2002individual-0001" class="csl-entry" role="listitem">
+11. Berlin JA, Santanna J, Schmid CH, Szczech LA, Feldman HI, Anti-Lymphocyte Antibody Induction Therapy Study Group. Individual patient- versus group-level data meta-regressions for the investigation of treatment effect modifiers: Ecological bias rears its ugly head [Internet]. Stat. Med. 2002 ;21(3):371–387.Available from: <a href="http://dx.doi.org/10.1002/sim.1023">http://dx.doi.org/10.1002/sim.1023</a>
+</div>
+<div id="ref-Fisher2011a-0001" class="csl-entry" role="listitem">
+12. Fisher DJ, Copas AJ, Tierney JF, Parmar MKB. A critical review of methods for the assessment of patient-level interactions in individual participant data meta-analysis of randomized trials, and guidance for practitioners [Internet]. J. Clin. Epidemiol. 2011 Sept. ;64(9):949–967.Available from: <a href="http://dx.doi.org/10.1016/j.jclinepi.2010.11.016">http://dx.doi.org/10.1016/j.jclinepi.2010.11.016</a>
+</div>
+<div id="ref-Song2016cumulative-0001" class="csl-entry" role="listitem">
+13. Song F, Bachmann MO. Cumulative subgroup analysis to reduce waste in clinical research for individualised medicine [Internet]. BMC Med. 2016 ;14(1):197.Available from: <a href="http://dx.doi.org/10.1186/s12916-016-0744-x">http://dx.doi.org/10.1186/s12916-016-0744-x</a>
+</div>
+<div id="ref-Hua2017one-stage-0001" class="csl-entry" role="listitem">
+14. Hua H, Burke DL, Crowther MJ, Ensor J, Tudur Smith C, Riley RD. One-stage individual participant data meta-analysis models: Estimation of treatment-covariate interactions must avoid ecological bias by separating out within-trial and across-trial information: One-stage <span>IPD</span> meta-analysis models must avoid ecological bias [Internet]. Stat. Med. 2017 ;36(5):772–789.Available from: <a href="http://dx.doi.org/10.1002/sim.7171">http://dx.doi.org/10.1002/sim.7171</a>
+</div>
+<div id="ref-Bachmann2010inpatient-0001" class="csl-entry" role="listitem">
+15. Bachmann S, Finger C, Huss A, Egger M, Stuck AE, Clough-Gorr KM. Inpatient rehabilitation specifically designed for geriatric patients: Systematic review and meta-analysis of randomised controlled trials [Internet]. BMJ. 2010 ;340(jun30 2):c3484.Available from: <a href="http://dx.doi.org/10.1136/bmj.c3484">http://dx.doi.org/10.1136/bmj.c3484</a>
+</div>
+<div id="ref-Ronellenfitsch2013preoperative-0001" class="csl-entry" role="listitem">
+16. Ronellenfitsch U, Schwarzbach M, Hofheinz R, Kienle P, Kieser M, Slanger TE, Burmeister B, Kelsen D, Niedzwiecki D, Schuhmacher C, Urba S, Velde C van de, Walsh TN, Ychou M, Jensen K. Preoperative chemo(radio)therapy versus primary surgery for gastroesophageal adenocarcinoma: Systematic review with meta-analysis combining individual patient and aggregate data [Internet]. Eur. J. Cancer. 2013 Oct. ;49(15):3149–3158.Available from: <a href="http://dx.doi.org/10.1016/j.ejca.2013.05.029">http://dx.doi.org/10.1016/j.ejca.2013.05.029</a>
+</div>
+<div id="ref-ChemoradiotherapyForCervicalCancerMeta-Analysis2008reducing" class="csl-entry" role="listitem">
+17. Chemoradiotherapy for Cervical Cancer Meta-Analysis C. Reducing uncertainties about the effects of chemoradiotherapy for cervical cancer: A systematic review and meta-analysis of individual patient data from 18 randomized trials. J. Clin. Oncol. 2008 ;26(35):5802–5812.
+</div>
+<div id="ref-Bower2013influence-0001" class="csl-entry" role="listitem">
+18. Bower P, Kontopantelis E, Sutton A, Kendrick T, Richards DA, Gilbody S, Knowles S, Cuijpers P, Andersson G, Christensen H, Meyer B, Huibers M, Smit F, Straten A van, Warmerdam L, Barkham M, Bilich L, Lovell K, Liu ET-H. Influence of initial severity of depression on effectiveness of low intensity interventions: Meta-analysis of individual patient data [Internet]. BMJ. 2013 ;346(feb26 2):f540.Available from: <a href="http://dx.doi.org/10.1136/bmj.f540">http://dx.doi.org/10.1136/bmj.f540</a>
+</div>
+<div id="ref-Higgins2003measuring-0001" class="csl-entry" role="listitem">
+19. Higgins JPT, Thompson SG, Deeks JJ, Altman DG. Measuring inconsistency in meta-analyses [Internet]. BMJ. 2003 ;327(7414):557–560.Available from: <a href="http://dx.doi.org/10.1136/bmj.327.7414.557">http://dx.doi.org/10.1136/bmj.327.7414.557</a>
+</div>
+<div id="ref-Rothwell2018effects-0001" class="csl-entry" role="listitem">
+20. Rothwell PM, Cook NR, Gaziano JM, Price JF, Belch JFF, Roncaglioni MC, Morimoto T, Mehta Z. Effects of aspirin on risks of vascular events and cancer according to bodyweight and dose: Analysis of individual patient data from randomised trials [Internet]. Lancet. 2018 ;392(10145):387–399.Available from: <a href="http://dx.doi.org/10.1016/S0140-6736(18)31133-4">http://dx.doi.org/10.1016/S0140-6736(18)31133-4</a>
+</div>
+<div id="ref-Brookes2001subgroup-0001" class="csl-entry" role="listitem">
+21. Brookes ST, Whitley E, Peters TJ, Mulheran PA, Egger M, Davey Smith G. Subgroup analyses in randomised controlled trials: Quantifying the risks of false-positives and false-negatives [Internet]. Health Technol. Assess. 2001 ;5(33):1–56.Available from: <a href="http://dx.doi.org/10.3310/hta5330">http://dx.doi.org/10.3310/hta5330</a>
+</div>
+<div id="ref-Higgins2004controlling-0001" class="csl-entry" role="listitem">
+22. Higgins JPT, Thompson SG. Controlling the risk of spurious findings from meta-regression [Internet]. Stat. Med. 2004 ;23(11):1663–1682.Available from: <a href="http://dx.doi.org/10.1002/sim.1752">http://dx.doi.org/10.1002/sim.1752</a>
+</div>
+<div id="ref-Alosh2017tutorial-0001" class="csl-entry" role="listitem">
+23. Alosh M, Huque MF, Bretz F, D’Agostino RB Sr. Tutorial on statistical considerations on subgroup analysis in confirmatory clinical trials [Internet]. Stat. Med. 2017 ;36(8):1334–1360.Available from: <a href="http://dx.doi.org/10.1002/sim.7167">http://dx.doi.org/10.1002/sim.7167</a>
+</div>
+<div id="ref-Rubio-Aparicio2017analysis-0001" class="csl-entry" role="listitem">
+24. Rubio-Aparicio M, Sánchez-Meca J, López-López JA, Botella J, Marín-Martínez F. Analysis of categorical moderators in mixed-effects meta-analysis: Consequences of using pooled versus separate estimates of the residual between-studies variances [Internet]. Br. J. Math. Stat. Psychol. 2017 Nov. ;70(3):439–456.Available from: <a href="http://dx.doi.org/10.1111/bmsp.12092">http://dx.doi.org/10.1111/bmsp.12092</a>
+</div>
+<div id="ref-Siemieniuk2016transcatheter-0001" class="csl-entry" role="listitem">
+25. Siemieniuk RA, Agoritsas T, Manja V, Devji T, Chang Y, Bala MM, Thabane L, Guyatt GH. Transcatheter versus surgical aortic valve replacement in patients with severe aortic stenosis at low and intermediate risk: Systematic review and meta-analysis [Internet]. BMJ. 2016 ;354i5130.Available from: <a href="http://dx.doi.org/10.1136/bmj.i5130">http://dx.doi.org/10.1136/bmj.i5130</a>
+</div>
+<div id="ref-Schandelmaier2017low-0001" class="csl-entry" role="listitem">
+26. Schandelmaier S, Kaushal A, Lytvyn L, Heels-Ansdell D, Siemieniuk RAC, Agoritsas T, Guyatt GH, Vandvik PO, Couban R, Mollon B, Busse JW. Low intensity pulsed ultrasound for bone healing: Systematic review of randomized controlled trials [Internet]. BMJ. 2017 ;356j656.Available from: <a href="http://dx.doi.org/10.1136/bmj.j656">http://dx.doi.org/10.1136/bmj.j656</a>
+</div>
+<div id="ref-Leppin2014preventing-0001" class="csl-entry" role="listitem">
+27. Leppin AL, Gionfriddo MR, Kessler M, Brito JP, Mair FS, Gallacher K, Wang Z, Erwin PJ, Sylvester T, Boehmer K, Ting HH, Murad MH, Shippee ND, Montori VM. Preventing 30-day hospital readmissions: A systematic review and meta-analysis of randomized trials: A systematic review and meta-analysis of randomized trials [Internet]. JAMA Intern. Med. 2014 July ;174(7):1095–1107.Available from: <a href="http://dx.doi.org/10.1001/jamainternmed.2014.1608">http://dx.doi.org/10.1001/jamainternmed.2014.1608</a>
+</div>
+<div id="ref-Sahgal2015phase-0001" class="csl-entry" role="listitem">
+28. Sahgal A, Aoyama H, Kocher M, Neupane B, Collette S, Tago M, Shaw P, Beyene J, Chang EL. Phase 3 trials of stereotactic radiosurgery with or without whole-brain radiation therapy for 1 to 4 brain metastases: Individual patient data meta-analysis [Internet]. Int. J. Radiat. Oncol. Biol. Phys. 2015 ;91(4):710–717.Available from: <a href="http://dx.doi.org/10.1016/j.ijrobp.2014.10.024">http://dx.doi.org/10.1016/j.ijrobp.2014.10.024</a>
+</div>
+<div id="ref-Schandelmaier2016prospero" class="csl-entry" role="listitem">
+29. Schandelmaier S, Busse JW, Lytvyn L, Kaushal A, Agoritsas T, Mollon B. <span>PROSPERO</span>. 2016 ;
+</div>
+<div id="ref-Briel2010higher-0001" class="csl-entry" role="listitem">
+30. Briel M, Meade M, Mercat A, Brower RG, Talmor D, Walter SD, Slutsky AS, Pullenayegum E, Zhou Q, Cook D, Brochard L, Richard J-CM, Lamontagne F, Bhatnagar N, Stewart TE, Guyatt G. Higher vs lower positive end-expiratory pressure in patients with acute lung injury and acute respiratory distress syndrome: Systematic review and meta-analysis: Systematic review and meta-analysis [Internet]. JAMA. 2010 ;303(9):865–873.Available from: <a href="http://dx.doi.org/10.1001/jama.2010.218">http://dx.doi.org/10.1001/jama.2010.218</a>
+</div>
+<div id="ref-Borenstein2013meta-analysis-0001" class="csl-entry" role="listitem">
+31. Borenstein M, Higgins JPT. Meta-analysis and subgroups [Internet]. Prev. Sci. 2013 Apr. ;14(2):134–143.Available from: <a href="http://dx.doi.org/10.1007/s11121-013-0377-7">http://dx.doi.org/10.1007/s11121-013-0377-7</a>
+</div>
+<div id="ref-Borenstein2019common-0001" class="csl-entry" role="listitem">
+32. Borenstein M. Common mistakes in meta-analysis: And how to avoid them. Biostat, Inc.; 2019.
+</div>
+<div id="ref-Thompson1999explaining-0001" class="csl-entry" role="listitem">
+33. Thompson SG, Sharp SJ. Explaining heterogeneity in meta-analysis: A comparison of methods [Internet]. Stat. Med. 1999 ;18(20):2693–2708.Available from: <a href="http://dx.doi.org/10.1002/(sici)1097-0258(19991030)18:20<2693::aid-sim235>3.0.co;2-v">http://dx.doi.org/10.1002/(sici)1097-0258(19991030)18:20&lt;2693::aid-sim235&gt;3.0.co;2-v</a>
+</div>
+<div id="ref-Simmonds2015a-0001" class="csl-entry" role="listitem">
+34. Simmonds M, Stewart G, Stewart L. A decade of individual participant data meta-analyses: A review of current practice [Internet]. Contemp. Clin. Trials. 2015 Nov. ;45(Pt A):76–83.Available from: <a href="http://dx.doi.org/10.1016/j.cct.2015.06.012">http://dx.doi.org/10.1016/j.cct.2015.06.012</a>
+</div>
+<div id="ref-Royston2006dichotomizing-0001" class="csl-entry" role="listitem">
+35. Royston P, Altman DG, Sauerbrei W. Dichotomizing continuous predictors in multiple regression: A bad idea [Internet]. Stat. Med. 2006 ;25(1):127–141.Available from: <a href="http://dx.doi.org/10.1002/sim.2331">http://dx.doi.org/10.1002/sim.2331</a>
+</div>
+<div id="ref-Altman2006the-0001" class="csl-entry" role="listitem">
+36. Altman DG, Royston P. The cost of dichotomising continuous variables [Internet]. BMJ. 2006 ;332(7549):1080.Available from: <a href="http://dx.doi.org/10.1136/bmj.332.7549.1080">http://dx.doi.org/10.1136/bmj.332.7549.1080</a>
+</div>
+<div id="ref-Altman1994dangers-0001" class="csl-entry" role="listitem">
+37. Altman DG, Lausen B, Sauerbrei W, Schumacher M. Dangers of using <span>“optimal”</span> cutpoints in the evaluation of prognostic factors [Internet]. J. Natl. Cancer Inst. 1994 ;86(11):829–835.Available from: <a href="http://dx.doi.org/10.1093/jnci/86.11.829">http://dx.doi.org/10.1093/jnci/86.11.829</a>
+</div>
+<div id="ref-Wang2016meta-stepp-0001" class="csl-entry" role="listitem">
+38. Wang XV, Cole B, Bonetti M, Gelber RD. Meta-<span>STEPP</span>: Subpopulation treatment effect pattern plot for individual patient data meta-analysis [Internet]. Stat. Med. 2016 ;35(21):3704–3716.Available from: <a href="http://dx.doi.org/10.1002/sim.6958">http://dx.doi.org/10.1002/sim.6958</a>
+</div>
+<div id="ref-Kasenda2016multivariable-0001" class="csl-entry" role="listitem">
+39. Kasenda B, Sauerbrei W, Royston P, Mercat A, Slutsky AS, Cook D, Guyatt GH, Brochard L, Richard J-CM, Stewart TE, Meade M, Briel M. Multivariable fractional polynomial interaction to investigate continuous effect modifiers in a meta-analysis on higher versus lower <span>PEEP</span> for patients with <span>ARDS</span> [Internet]. BMJ Open. 2016 ;6(9):e011148.Available from: <a href="http://dx.doi.org/10.1136/bmjopen-2016-011148">http://dx.doi.org/10.1136/bmjopen-2016-011148</a>
+</div>
+<div id="ref-Desai2014challenges-0001" class="csl-entry" role="listitem">
+40. Desai M, Pieper KS, Mahaffey K. Challenges and solutions to pre- and post-randomization subgroup analyses [Internet]. Curr. Cardiol. Rep. 2014 ;16(10):531.Available from: <a href="http://dx.doi.org/10.1007/s11886-014-0531-2">http://dx.doi.org/10.1007/s11886-014-0531-2</a>
+</div>
+<div id="ref-VanderWeele2015explanation-0001" class="csl-entry" role="listitem">
+41. VanderWeele T. Explanation in causal inference: Methods for mediation and interaction. 1st ed. New York, NY: Oxford University Press; 2015.
+</div>
+<div id="ref-Pearce2014confounding-0001" class="csl-entry" role="listitem">
+42. Pearce N, Greenland S. Confounding and interaction [Internet]. In: Ahrens W, Pigeot I, editor(s). Handbook of epidemiology. New York, NY: Springer New York; 2014. p. 659–684.Available from: <a href="https://doi.org/10.1007/978-1-4614-6625-3_10">https://doi.org/10.1007/978-1-4614-6625-3_10</a>
+</div>
+<div id="ref-Blackstone2015propensity-matched-0001" class="csl-entry" role="listitem">
+43. Blackstone EH, Suri RM, Rajeswaran J, Babaliaros V, Douglas PS, Fearon WF, Miller DC, Hahn RT, Kapadia S, Kirtane AJ, Kodali SK, Mack M, Szeto WY, Thourani VH, Tuzcu EM, Williams MR, Akin JJ, Leon MB, Svensson LG. Propensity-matched comparisons of clinical outcomes after transapical or transfemoral transcatheter aortic valve replacement: A placement of aortic transcatheter valves (<span>PARTNER</span>)-<span>I</span> trial substudy: A placement of aortic transcatheter valves (<span>PARTNER</span>)-<span>I</span> trial substudy [Internet]. Circulation. 2015 ;131(22):1989–2000.Available from: <a href="http://dx.doi.org/10.1161/CIRCULATIONAHA.114.012525">http://dx.doi.org/10.1161/CIRCULATIONAHA.114.012525</a>
+</div>
+<div id="ref-Higgins2016a-0001" class="csl-entry" role="listitem">
+44. Higgins J, Sterne J, Savović J, Page M, Hrõbjartsson A, Boutron I, Reeves B, Eldridge S. A revised tool for assessing risk of bias in randomized trials. Cochrane Database of Systematic Reviews. 2016 ;1029–31.
+</div>
+<div id="ref-Whiting2016robis-0001" class="csl-entry" role="listitem">
+45. Whiting P, Savović J, Higgins JPT, Caldwell DM, Reeves BC, Shea B, Davies P, Kleijnen J, Churchill R, ROBIS group. <span>ROBIS</span>: A new tool to assess risk of bias in systematic reviews was developed [Internet]. J. Clin. Epidemiol. 2016 Jan. ;69225–234.Available from: <a href="http://dx.doi.org/10.1016/j.jclinepi.2015.06.005">http://dx.doi.org/10.1016/j.jclinepi.2015.06.005</a>
+</div>
+<div id="ref-Hahn2000assessing-0001" class="csl-entry" role="listitem">
+46. Hahn S, Williamson PR, Hutton JL, Garner P, Flynn EV. Assessing the potential for bias in meta-analysis due to selective reporting of subgroup analyses within studies [Internet]. Stat. Med. 2000 ;19(24):3325–3336.Available from: <a href="http://dx.doi.org/10.1002/1097-0258(20001230)19:24<3325::aid-sim827>3.0.co;2-d">http://dx.doi.org/10.1002/1097-0258(20001230)19:24&lt;3325::aid-sim827&gt;3.0.co;2-d</a>
+</div>
+<div id="ref-Sun2011the-0001" class="csl-entry" role="listitem">
+47. Sun X, Briel M, Busse JW, You JJ, Akl EA, Mejza F, Bala MM, Bassler D, Mertz D, Diaz-Granados N, Vandvik PO, Malaga G, Srinathan SK, Dahm P, Johnston BC, Alonso-Coello P, Hassouneh B, Truong J, Dattani ND, Walter SD, Heels-Ansdell D, Bhatnagar N, Altman DG, Guyatt GH. The influence of study characteristics on reporting of subgroup analyses in randomised controlled trials: Systematic review [Internet]. BMJ. 2011 ;342(mar28 1):d1569.Available from: <a href="https://doi.org/10.1136/bmj.d1569">https://doi.org/10.1136/bmj.d1569</a>
+</div>
+<div id="ref-Barton2015the-0001" class="csl-entry" role="listitem">
+48. Barton S, Peckitt C, Sclafani F, Cunningham D, Chau I. The influence of industry sponsorship on the reporting of subgroup analyses within phase <span>III</span> randomised controlled trials in gastrointestinal oncology [Internet]. Eur. J. Cancer. 2015 Dec. ;51(18):2732–2739.Available from: <a href="http://dx.doi.org/10.1016/j.ejca.2015.08.030">http://dx.doi.org/10.1016/j.ejca.2015.08.030</a>
+</div>
+<div id="ref-Gabler2016no-0001" class="csl-entry" role="listitem">
+49. Gabler NB, Duan N, Raneses E, Suttner L, Ciarametaro M, Cooney E, Dubois RW, Halpern SD, Kravitz RL. No improvement in the reporting of clinical trial subgroup effects in high-impact general medical journals [Internet]. Trials. 2016 ;17(1):320.Available from: <a href="http://dx.doi.org/10.1186/s13063-016-1447-5">http://dx.doi.org/10.1186/s13063-016-1447-5</a>
+</div>
+<div id="ref-Burke2015three-0001" class="csl-entry" role="listitem">
+50. Burke JF, Sussman JB, Kent DM, Hayward RA. Three simple rules to ensure reasonably credible subgroup analyses [Internet]. BMJ. 2015 ;351h5651.Available from: <a href="http://dx.doi.org/10.1136/bmj.h5651">http://dx.doi.org/10.1136/bmj.h5651</a>
+</div>
+<div id="ref-Varadhan2014standardization-0001" class="csl-entry" role="listitem">
+51. Varadhan R, Wang S-J. Standardization for subgroup analysis in randomized controlled trials [Internet]. J. Biopharm. Stat. 2014 ;24(1):154–167.Available from: <a href="http://dx.doi.org/10.1080/10543406.2013.856023">http://dx.doi.org/10.1080/10543406.2013.856023</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -758,7 +941,7 @@ Note
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/www\.iceman\.help");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

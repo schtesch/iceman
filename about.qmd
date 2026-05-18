@@ -1,5 +1,117 @@
 ---
-title: "About"
+title: "About ICEMAN"
+description: "Versions, development group, ongoing projects, publications, endorsements, funding, and contact information for ICEMAN."
+toc: true
 ---
 
-About this site
+## Versions
+
+ICEMAN is available in two versions:
+
+- **Randomized controlled trials:** for assessing apparent effect modification in a single randomized trial.
+- **Meta-analyses of randomized controlled trials:** for assessing apparent effect modification in a meta-analysis of randomized trials.
+
+The original CMAJ publication includes ICEMAN version 1.0. This website provides the slightly updated version 1.1, updated in 2022.
+
+---
+
+## Development group
+
+The ICEMAN development group included methodologists, clinical trialists, systematic review experts, statisticians, and guideline methodologists.
+
+The group included Stefan Schandelmaier, Matthias Briel, Ravi Varadhan, Christopher H. Schmid, Niveditha Devasenapathy, R. Allan Hayward, Joel J. Gagnier, Michael Borenstein, Geert J. M. G. Van der Heijden, Issa J. Dahabreh, Xin Sun, Willi Sauerbrei, Michael Walsh, John P. A. Ioannidis, Lehana Thabane, and Gordon H. Guyatt.
+
+---
+
+## Ongoing projects {#ongoing-projects}
+
+Together with the ICEMAN development group, Alessio Foschiani and Jonathan Nordmann are currently evaluating how researchers have used and cited ICEMAN since publication. The project combines a review of citing studies with interviews of recent ICEMAN users to identify practical challenges, user needs, possible misapplications, and priorities for future versions. Results expected in 2026.
+
+[OSF project: Evaluating ICEMAN use six years after publication](https://osf.io/zv3jh/overview)
+
+---
+
+## Publications and endorsements {#publications-and-endorsements}
+
+**Primary reference**
+
+```{=html}
+<div class="cite-box">
+  <strong>Cite ICEMAN as:</strong><br><br>
+  Schandelmaier S, Briel M, Varadhan R, Schmid CH, Devasenapathy N, Hayward RA,
+  Gagnier J, Borenstein M, van der Heijden GJMG, Dahabreh IJ, Sun X, Sauerbrei W,
+  Walsh M, Ioannidis JPA, Thabane L, Guyatt GH.
+  Development of the instrument to assess the credibility of effect modification analyses
+  (ICEMAN) in randomized controlled trials and meta-analyses.
+  <a href="https://doi.org/10.1503/cmaj.200077" target="_blank"><em>CMAJ</em> 2020;192(32):E901-E906.</a>
+  <br><br>
+  <button class="btn btn-sm btn-outline-secondary copy-btn"
+    onclick="navigator.clipboard.writeText('Schandelmaier S, Briel M, Varadhan R, Schmid CH, Devasenapathy N, Hayward RA, Gagnier J, Borenstein M, van der Heijden GJMG, Dahabreh IJ, Sun X, Sauerbrei W, Walsh M, Ioannidis JPA, Thabane L, Guyatt GH. Development of the instrument to assess the credibility of effect modification analyses (ICEMAN) in randomized controlled trials and meta-analyses. CMAJ 2020;192(32):E901-E906. https://doi.org/10.1503/cmaj.200077'); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy citation',2000)">
+    Copy citation
+  </button>
+</div>
+```
+
+---
+
+**Background evidence**
+
+Schandelmaier S, Chang Y, Bala MM, Devasenapathy N, Devji T, Kwong JSW, Colunga Lozano LE, Lee Y, Agarwal A, Bhatnagar N, Ewald H, Zhang Y, Sun X, Thabane L, Walsh M, Briel M, Guyatt GH.
+A systematic survey identified 36 criteria for assessing effect modification claims in randomized trials or meta-analyses.
+[*Journal of Clinical Epidemiology* 2019;113:159-167.](https://doi.org/10.1016/j.jclinepi.2019.05.014)
+
+---
+
+**Implementation commentary**
+
+Schandelmaier S, Guyatt G.
+Same Old Challenges in Subgroup Analysis—Should We Do More About Methods Implementation?
+[*JAMA Network Open* 2024;7(3):e243339.](https://doi.org/10.1001/jamanetworkopen.2024.3339)
+
+---
+
+
+**GRADE integration**
+
+Guyatt G, Zhao Y, Mayer M, Briel M, Mustafa R, Izcovich A, Hultcrantz M, Iorio A, Alba AC, Foroutan F, Sun X, Schunemann H, DeBeer H, Akl EA, Christensen R, Schandelmaier S.
+GRADE guidance 36: updates to GRADE's approach to addressing inconsistency.
+[*Journal of Clinical Epidemiology* 2023;158:70-83.](https://doi.org/10.1016/j.jclinepi.2023.03.003)
+
+
+Guyatt G, Schandelmaier S, Brignardello-Petersen R, de Beer H, Prasad M, Murad MH, Eachempati P, Chu DK, D'Souza R, Iorio A, Agoritsas T, Yao L, Mustafa R, Parpia S, Santaguida P, Vandvik PO, Hultcrantz M, Montori VM.
+Core GRADE 3: rating certainty of evidence—assessing inconsistency.
+[*BMJ* 2025;389:e081905.](https://doi.org/10.1136/bmj-2024-081905)
+
+---
+
+**Cochrane Handbook**
+
+Deeks JJ, Higgins JPT, Altman DG, McKenzie JE, Veroniki AA.
+Chapter 10: Analysing data and undertaking meta-analyses. Section 10.11.6: Interpretation of subgroup analyses and meta-regressions.
+In: *Cochrane Handbook for Systematic Reviews of Interventions*, version 6.5. Cochrane; 2024.
+[Cochrane Handbook, section 10.11.6](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10#section-10-11-6)
+
+---
+
+**IQWiG methods**
+
+The Institute for Quality and Efficiency in Health Care (IQWiG) recommends ICEMAN criteria in its *Allgemeine Methoden* for assessing the reliability of subgroup analyses in RCTs and meta-analyses.
+[IQWiG Allgemeine Methoden](https://www.iqwig.de/ueber-uns/methoden/methodenpapier/)
+
+
+---
+
+## Funding
+
+The following organizations supported the development of ICEMAN:
+
+- Swiss National Science Foundation
+- Gottfried and Julia Bangerter-Rhyner-Foundation
+- Freiwillige Akademische Gesellschaft Basel
+
+---
+
+## Contact
+
+Questions, suggestions, and reports of errors are welcome.
+[Contact the ICEMAN team](mailto:s.schandelmaier@gmail.com)

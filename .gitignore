@@ -13,3 +13,6 @@ files/
 
 # Local editor/plugin state.
 handbook/claude/settings.json.local
+
+/.quarto/
+**/*.quarto_ipynb

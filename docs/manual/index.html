@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Preliminary considerations for applying ICEMAN to an apparent effect modification analysis.">
 
 <title>Preliminary considerations – ICEMAN</title>
 <style>
@@ -23,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,16 +53,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-629c56ba100745318e9dcb35146191d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b8143a5af30aa0587ead8c64582f750.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,11 +118,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../tool.html"> 
-<span class="menu-text">Complete ICEMAN online</span></a>
+<span class="menu-text">ICEMAN online</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../manual/index.html" aria-current="page"> 
-<span class="menu-text">Users manual</span></a>
+<span class="menu-text">Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -300,6 +324,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Concept and scope of ICEMAN</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manual/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently asked questions</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -316,6 +346,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Preliminary considerations</h1>
 </div>
 
+<div>
+  <div class="description">
+    Preliminary considerations for applying ICEMAN to an apparent effect modification analysis.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -331,32 +366,96 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The assessment starts with a set of preliminary considerations to clarify the sources of information and help define the effect modification under consideration.</p>
-<p><strong>Study reference(s):</strong> Use this section to provide a link to the study or publication(s) under consideration. It may also be helpful to specify the comparison of interest, especially if a study includes more than two arms.</p>
-<p><strong>Protocol reference(s):</strong> For optimal assessment, some credibility considerations require that the authors have produced an accessible study protocol or statistical analysis plan, ideally time-stamped. If available, provide a link to a study protocol (e.g.&nbsp;a published protocol or an entry in a study registry such as ClinicalTrials.gov). Many protocols, however, provide insufficient information regarding analyses of effect modification.</p>
-<p><strong>State a single outcome and time-point of interest:</strong> Because ICEMAN refers to a single outcome at a time, users must specify the outcome of interest and, if applicable, the time-point of outcome assessment (e.g.&nbsp;mortality at 1 year follow-up).</p>
-<p><strong>State a single effect measure of interest:</strong> Specify a single effect measure of interest (e.g.&nbsp;relative risk, risk difference, odds ratio, or hazard ratio for binary outcomes, or difference or ratio of means for continuous outcomes). The type of effect measure is a key consideration because the magnitude of effect modification typically differs between effect measures, and in particular between measures of relative versus absolute effect <span class="citation" data-cites="Engels2000heterogeneity-0001 Venekamp2014subgroup-0001 Rhodes2016empirical-0001 White2005assessing-0001">[1–4]</span>. Therefore, the credibility rating is likely to differ depending on the chosen effect measure.</p>
+<p><span id="prelim-ref"></span> <strong>Study or assessment reference:</strong> Use this section to link the completed ICEMAN form to the study, meta-analysis, or publication under consideration, or to assign a custom identifier for tracking completed forms. Examples include an author-year citation, DOI, trial acronym, study registry number. It may also be helpful to specify the comparison of interest, especially if a study includes more than two arms, or to add a link to a published protocol.</p>
+<p><span id="prelim-outcome"></span> <strong>State a single outcome and time-point of interest:</strong> Because ICEMAN refers to a single outcome at a time, users must specify the outcome of interest and, if applicable, the time-point of outcome assessment (e.g.&nbsp;mortality at 1 year follow-up).</p>
+<p><span id="prelim-measure"></span> <strong>State a single effect measure of interest:</strong> Specify a single effect measure of interest (e.g.&nbsp;relative risk, risk difference, odds ratio, or hazard ratio for binary outcomes, or difference or ratio of means for continuous outcomes). The type of effect measure is a key consideration because the magnitude of effect modification typically differs between effect measures, and in particular between measures of relative versus absolute effect.<span class="citation" data-cites="Engels2000heterogeneity-0001 Venekamp2014subgroup-0001 Rhodes2016empirical-0001 White2005assessing-0001"><sup><a href="#ref-Engels2000heterogeneity-0001" role="doc-biblioref">1</a>, <a href="#ref-Venekamp2014subgroup-0001" role="doc-biblioref">2</a>, <a href="#ref-Rhodes2016empirical-0001" role="doc-biblioref">3</a>, <a href="#ref-White2005assessing-0001" role="doc-biblioref">4</a></sup></span> Therefore, the credibility rating is likely to differ depending on the chosen effect measure.</p>
 <div class="example-block">
-<p><strong>Example:</strong> An RCT showed that a lifestyle modification program can prevent diabetes <span class="citation" data-cites="Knowler2002reduction">[5]</span>. A subgroup analysis divided patients into four groups according to their predicted risk of developing diabetes. On the relative hazard ratio scale, the effect was consistent across risk groups (no suggestion of effect modification). On the absolute risk difference scale, however, the effect was much greater in high-risk than in low-risk patients <span class="citation" data-cites="Kent2018personalized-0001">[6]</span>.</p>
+<p><strong>Example:</strong> An RCT showed that a lifestyle modification program can prevent diabetes.<span class="citation" data-cites="Knowler2002reduction"><sup><a href="#ref-Knowler2002reduction" role="doc-biblioref">5</a></sup></span> A subgroup analysis divided patients into four groups according to their predicted risk of developing diabetes. On the relative hazard ratio scale, the effect was consistent across risk groups (no suggestion of effect modification). On the absolute risk difference scale, however, the effect was much greater in high-risk than in low-risk patients.<span class="citation" data-cites="Kent2018personalized-0001"><sup><a href="#ref-Kent2018personalized-0001" role="doc-biblioref">6</a></sup></span></p>
 </div>
-<p><strong>State a single potential effect modifier of interest:</strong> Specify the potential effect modifier of interest (only one effect modifier per ICEMAN form). Effect modifiers may be patient characteristics (e.g.&nbsp;disease severity, age, or type of tumour), intervention alternatives (e.g.&nbsp;different doses, co-interventions, or modes of administration), or, in a meta-analysis, methodological study characteristics (e.g.&nbsp;risk of bias, outcome definition, type of funding). Note that the instrument does not apply when the effect modifier is another outcome. Note that an effect modifier (e.g.&nbsp;sex) is different from a particular subgroup (e.g.&nbsp;women).</p>
-<p><strong>Was the effect modifier measured before randomization?</strong> The instrument applies to potential effect modifiers assessed before randomization, e.g.&nbsp;baseline variables or a stratification variable at randomization. If the effect modifier was measured after randomization, e.g.&nbsp;an intermediate outcome, the assessment of effect modification is complicated and potentially misleading <span class="citation" data-cites="VanderWeele2009on-0001 Yusuf1991analysis-0001 Sun2010is-0001 Sun2014how-0001 Oxman1992a-0001 Simon1982patient-0001 Matsuyama2006estimation-0001 Hirji2009outcome-0001 Cuzick1982the-0001 Cook2004subgroup-0001 Desai2014challenges-0001 vanHoorn2017the-0001 Grady2007chapter-0002 Moye200721 Rosenbaum1984the-0001">[7–21]</span>. Those analyses require different methods <span class="citation" data-cites="Matsuyama2006estimation-0001 Desai2014challenges-0001 Korn2017assessing-0001">[13,17,22]</span> and result in less secure conclusions.</p>
+<p><span id="prelim-modifier"></span> <strong>State a single potential effect modifier of interest:</strong> Specify the potential effect modifier of interest (only one effect modifier per ICEMAN form). Effect modifiers may be patient characteristics (e.g.&nbsp;disease severity, age, or type of tumour), intervention alternatives (e.g.&nbsp;different doses, co-interventions, or modes of administration), or, in a meta-analysis, methodological study characteristics (e.g.&nbsp;risk of bias, outcome definition, type of funding). Note that the instrument does not apply when the effect modifier is another outcome. Note that an effect modifier (e.g.&nbsp;sex) is different from a particular subgroup (e.g.&nbsp;women).</p>
+<p><span id="prelim-prerando"></span> <strong>Was the effect modifier measured before randomization?</strong> The instrument applies to potential effect modifiers assessed before randomization, e.g.&nbsp;baseline variables or a stratification variable at randomization. If the effect modifier was measured after randomization, e.g.&nbsp;an intermediate outcome, the assessment of effect modification is complicated and potentially misleading.<span class="citation" data-cites="VanderWeele2009on-0001 Yusuf1991analysis-0001 Sun2010is-0001 Sun2014how-0001 Oxman1992a-0001 Simon1982patient-0001 Matsuyama2006estimation-0001 Hirji2009outcome-0001 Cuzick1982the-0001 Cook2004subgroup-0001 Desai2014challenges-0001 vanHoorn2017the-0001 Grady2007chapter-0002 Moye200721 Rosenbaum1984the-0001"><sup><a href="#ref-VanderWeele2009on-0001" role="doc-biblioref">7</a>, <a href="#ref-Yusuf1991analysis-0001" role="doc-biblioref">8</a>, <a href="#ref-Sun2010is-0001" role="doc-biblioref">9</a>, <a href="#ref-Sun2014how-0001" role="doc-biblioref">10</a>, <a href="#ref-Oxman1992a-0001" role="doc-biblioref">11</a>, <a href="#ref-Simon1982patient-0001" role="doc-biblioref">12</a>, <a href="#ref-Matsuyama2006estimation-0001" role="doc-biblioref">13</a>, <a href="#ref-Hirji2009outcome-0001" role="doc-biblioref">14</a>, <a href="#ref-Cuzick1982the-0001" role="doc-biblioref">15</a>, <a href="#ref-Cook2004subgroup-0001" role="doc-biblioref">16</a>, <a href="#ref-Desai2014challenges-0001" role="doc-biblioref">17</a>, <a href="#ref-vanHoorn2017the-0001" role="doc-biblioref">18</a>, <a href="#ref-Grady2007chapter-0002" role="doc-biblioref">19</a>, <a href="#ref-Moye200721" role="doc-biblioref">20</a>, <a href="#ref-Rosenbaum1984the-0001" role="doc-biblioref">21</a></sup></span> Those analyses require different methods<span class="citation" data-cites="Matsuyama2006estimation-0001 Desai2014challenges-0001 Korn2017assessing-0001"><sup><a href="#ref-Matsuyama2006estimation-0001" role="doc-biblioref">13</a>, <a href="#ref-Desai2014challenges-0001" role="doc-biblioref">17</a>, <a href="#ref-Korn2017assessing-0001" role="doc-biblioref">22</a></sup></span> and result in less secure conclusions.</p>
 <p>There are exceptions in which the instrument does apply to effect modifiers measured after randomization: (1) the effect modifier is a non-modifiable characteristic such as sex or age; (2) for meta-analyses: the effect modifier is a study characteristic such as risk of bias, length of follow-up, or mean received dose.</p>
 <div class="example-block">
-<p><strong>Example:</strong> An RCT testing strict or conventional management of hyperglycaemia with insulin therapy in ICU patients claimed an effect modification by length of hospital stay <span class="citation" data-cites="VanDenBerghe2006intensive-0001">[23]</span>. Length of ICU stay (the apparent effect modifier), however, was shortened by the intervention. This prognostic imbalance between intervention and control group within the length-of-stay subgroups likely created the differences in mortality.</p>
+<p><strong>Example:</strong> An RCT testing strict or conventional management of hyperglycaemia with insulin therapy in ICU patients claimed an effect modification by length of hospital stay.<span class="citation" data-cites="VanDenBerghe2006intensive-0001"><sup><a href="#ref-VanDenBerghe2006intensive-0001" role="doc-biblioref">23</a></sup></span> Length of ICU stay (the apparent effect modifier), however, was shortened by the intervention. This prognostic imbalance between intervention and control group within the length-of-stay subgroups likely created the differences in mortality.</p>
 </div>
+<p><span id="prelim-possible"></span> <strong>Does the analysis suggest possible effect modification?</strong> Apply ICEMAN version 1.1 only when the analysis indicates possible effect modification. Define this as an interaction test, or, in meta-analyses, an interaction or meta-regression test, with a p-value &lt; 0.1. If the p-value is ≥ 0.1, stop the assessment. ICEMAN evaluates the credibility of suggested effect modification, not the absence of it, and its criteria do not support assessing absence. With p ≥ 0.1, the evidence for effect modification remains very weak. Use the overall effect estimate and state that you did not perform an ICEMAN assessment.</p>
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-Engels2000heterogeneity-0001" class="csl-entry" role="listitem">
+1. Engels EA, Schmid CH, Terrin N, Olkin I, Lau J. Heterogeneity and statistical significance in meta-analysis: An empirical study of 125 meta-analyses [Internet]. Stat. Med. 2000 ;19(13):1707–1728.Available from: <a href="http://dx.doi.org/10.1002/1097-0258(20000715)19:13<1707::aid-sim491>3.0.co;2-p">http://dx.doi.org/10.1002/1097-0258(20000715)19:13&lt;1707::aid-sim491&gt;3.0.co;2-p</a>
+</div>
+<div id="ref-Venekamp2014subgroup-0001" class="csl-entry" role="listitem">
+2. Venekamp RP, Rovers MM, Hoes AW, Knol MJ. Subgroup analysis in randomized controlled trials appeared to be dependent on whether relative or absolute effect measures were used [Internet]. J. Clin. Epidemiol. 2014 Apr. ;67(4):410–415.Available from: <a href="http://dx.doi.org/10.1016/j.jclinepi.2013.11.003">http://dx.doi.org/10.1016/j.jclinepi.2013.11.003</a>
+</div>
+<div id="ref-Rhodes2016empirical-0001" class="csl-entry" role="listitem">
+3. Rhodes KM, Turner RM, Higgins JP. Empirical evidence about inconsistency among studies in a pairwise meta-analysis. Res. Synth. Methods. 2016 ;7(4):346–370.
+</div>
+<div id="ref-White2005assessing-0001" class="csl-entry" role="listitem">
+4. White IR, Elbourne D. Assessing subgroup effects with binary data: Can the use of different effect measures lead to different conclusions? [Internet]. BMC Med. Res. Methodol. 2005 ;515.Available from: <a href="https://doi.org/10.1186/1471-2288-5-15">https://doi.org/10.1186/1471-2288-5-15</a>
+</div>
+<div id="ref-Knowler2002reduction" class="csl-entry" role="listitem">
+5. Knowler WC, Barrett-Connor E, Fowler SE, Hamman RF, Lachin JM, Walker EA, Nathan DM, Diabetes Prevention Program Research Group. Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin [Internet]. N. Engl. J. Med. 2002 ;346(6):393–403.Available from: <a href="http://dx.doi.org/10.1056/NEJMoa012512">http://dx.doi.org/10.1056/NEJMoa012512</a>
+</div>
+<div id="ref-Kent2018personalized-0001" class="csl-entry" role="listitem">
+6. Kent DM, Steyerberg E, Klaveren D van. Personalized evidence based medicine: Predictive approaches to heterogeneous treatment effects [Internet]. BMJ. 2018 ;363k4245.Available from: <a href="http://dx.doi.org/10.1136/bmj.k4245">http://dx.doi.org/10.1136/bmj.k4245</a>
+</div>
+<div id="ref-VanderWeele2009on-0001" class="csl-entry" role="listitem">
+7. VanderWeele TJ. On the distinction between interaction and effect modification [Internet]. Epidemiology. 2009 Nov. ;20(6):863–871.Available from: <a href="http://dx.doi.org/10.1097/EDE.0b013e3181ba333c">http://dx.doi.org/10.1097/EDE.0b013e3181ba333c</a>
+</div>
+<div id="ref-Yusuf1991analysis-0001" class="csl-entry" role="listitem">
+8. Yusuf S, Wittes J, Probstfield J, Tyroler HA. Analysis and interpretation of treatment effects in subgroups of patients in randomized clinical trials [Internet]. JAMA. 1991 ;266(1):93–98.Available from: <a href="http://dx.doi.org/10.1001/jama.1991.03470010097038">http://dx.doi.org/10.1001/jama.1991.03470010097038</a>
+</div>
+<div id="ref-Sun2010is-0001" class="csl-entry" role="listitem">
+9. Sun X, Briel M, Walter SD, Guyatt GH. Is a subgroup effect believable? Updating criteria to evaluate the credibility of subgroup analyses [Internet]. BMJ. 2010 ;340(mar30 3):c117.Available from: <a href="http://dx.doi.org/10.1136/bmj.c117">http://dx.doi.org/10.1136/bmj.c117</a>
+</div>
+<div id="ref-Sun2014how-0001" class="csl-entry" role="listitem">
+10. Sun X, Ioannidis JPA, Agoritsas T, Alba AC, Guyatt G. How to use a subgroup analysis: Users’ guide to the medical literature: Users’ guide to the medical literature [Internet]. JAMA. 2014 ;311(4):405–411.Available from: <a href="http://dx.doi.org/10.1001/jama.2013.285063">http://dx.doi.org/10.1001/jama.2013.285063</a>
+</div>
+<div id="ref-Oxman1992a-0001" class="csl-entry" role="listitem">
+11. Oxman AD, Guyatt GH. A consumer’s guide to subgroup analyses [Internet]. Ann. Intern. Med. 1992 ;116(1):78–84.Available from: <a href="http://dx.doi.org/10.7326/0003-4819-116-1-78">http://dx.doi.org/10.7326/0003-4819-116-1-78</a>
+</div>
+<div id="ref-Simon1982patient-0001" class="csl-entry" role="listitem">
+12. Simon R. Patient subsets and variation in therapeutic efficacy [Internet]. Br. J. Clin. Pharmacol. 1982 Oct. ;14(4):473–482.Available from: <a href="http://dx.doi.org/10.1111/j.1365-2125.1982.tb02015.x">http://dx.doi.org/10.1111/j.1365-2125.1982.tb02015.x</a>
+</div>
+<div id="ref-Matsuyama2006estimation-0001" class="csl-entry" role="listitem">
+13. Matsuyama Y, Morita S. Estimation of the average causal effect among subgroups defined by post-treatment variables [Internet]. Clin. Trials. 2006 ;3(1):1–9.Available from: <a href="http://dx.doi.org/10.1191/1740774506cn135oa">http://dx.doi.org/10.1191/1740774506cn135oa</a>
+</div>
+<div id="ref-Hirji2009outcome-0001" class="csl-entry" role="listitem">
+14. Hirji KF, Fagerland MW. Outcome based subgroup analysis: A neglected concern [Internet]. Trials. 2009 ;10(1):33.Available from: <a href="http://dx.doi.org/10.1186/1745-6215-10-33">http://dx.doi.org/10.1186/1745-6215-10-33</a>
+</div>
+<div id="ref-Cuzick1982the-0001" class="csl-entry" role="listitem">
+15. Cuzick J. The assessment of subgroups in clinical trials [Internet]. Experientia Suppl. 1982 ;41224–235.Available from: <a href="https://www.ncbi.nlm.nih.gov/pubmed/6958512">https://www.ncbi.nlm.nih.gov/pubmed/6958512</a>
+</div>
+<div id="ref-Cook2004subgroup-0001" class="csl-entry" role="listitem">
+16. Cook DI, Gebski VJ, Keech AC. Subgroup analysis in clinical trials [Internet]. Med. J. Aust. 2004 ;180(6):289–291.Available from: <a href="http://dx.doi.org/10.5694/j.1326-5377.2004.tb05928.x">http://dx.doi.org/10.5694/j.1326-5377.2004.tb05928.x</a>
+</div>
+<div id="ref-Desai2014challenges-0001" class="csl-entry" role="listitem">
+17. Desai M, Pieper KS, Mahaffey K. Challenges and solutions to pre- and post-randomization subgroup analyses [Internet]. Curr. Cardiol. Rep. 2014 ;16(10):531.Available from: <a href="http://dx.doi.org/10.1007/s11886-014-0531-2">http://dx.doi.org/10.1007/s11886-014-0531-2</a>
+</div>
+<div id="ref-vanHoorn2017the-0001" class="csl-entry" role="listitem">
+18. Hoorn R van, Tummers M, Booth A, Gerhardus A, Rehfuess E, Hind D, Bossuyt PM, Welch V, Debray TPA, Underwood M, Cuijpers P, Kraemer H, Wilt GJ van der, Kievit W. The development of <span>CHAMP</span>: A checklist for the appraisal of moderators and predictors [Internet]. BMC Med. Res. Methodol. 2017 ;17(1):173.Available from: <a href="http://dx.doi.org/10.1186/s12874-017-0451-0">http://dx.doi.org/10.1186/s12874-017-0451-0</a>
+</div>
+<div id="ref-Grady2007chapter-0002" class="csl-entry" role="listitem">
+19. Grady D, Cummings SR, Hulley SB. Chapter 11: Alternative trial designs and implementation issues. In: Hulley SB, Cummings SR, Browner WS, Grady DG, Newman TB, editor(s). Designing clinical research. Philadelphia: Lippincott Williams &amp; Wilkins; 2007.
+</div>
+<div id="ref-Moye200721" class="csl-entry" role="listitem">
+20. Moyé LA. 21 the multiple comparison issue in health care research [Internet]. In: Handbook of statistics. Elsevier; 2007. p. 616–655.Available from: <a href="http://dx.doi.org/10.1016/s0169-7161(07)27021-x">http://dx.doi.org/10.1016/s0169-7161(07)27021-x</a>
+</div>
+<div id="ref-Rosenbaum1984the-0001" class="csl-entry" role="listitem">
+21. Rosenbaum PR. The consquences of adjustment for a concomitant variable that has been affected by the treatment [Internet]. J. R. Stat. Soc. Ser. A. 1984 ;147(5):656.Available from: <a href="http://dx.doi.org/10.2307/2981697">http://dx.doi.org/10.2307/2981697</a>
+</div>
+<div id="ref-Korn2017assessing-0001" class="csl-entry" role="listitem">
+22. Korn EL, Othus M, Chen T, Freidlin B. Assessing treatment efficacy in the subset of responders in a randomized clinical trial [Internet]. Ann. Oncol. 2017 ;28(7):1640–1647.Available from: <a href="http://dx.doi.org/10.1093/annonc/mdx197">http://dx.doi.org/10.1093/annonc/mdx197</a>
+</div>
+<div id="ref-VanDenBerghe2006intensive-0001" class="csl-entry" role="listitem">
+23. Van den Berghe G, Wilmer A, Hermans G, Meersseman W, Wouters PJ, Milants I, Van Wijngaerden E, Bobbaers H, Bouillon R. Intensive insulin therapy in the medical <span>ICU</span> [Internet]. N. Engl. J. Med. 2006 ;354(5):449–461.Available from: <a href="http://dx.doi.org/10.1056/NEJMoa052521">http://dx.doi.org/10.1056/NEJMoa052521</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -421,7 +520,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/www\.iceman\.help");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

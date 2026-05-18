@@ -14,7 +14,7 @@ iceman-site/
 ├── manual_numbering.csv ← PDF number → BibTeX key mapping
 └── assets/
     ├── custom.css       ← all custom styles
-    └── vancouver.csl    ← Vancouver citation style
+    └── vancouver-superscript.csl ← Vancouver superscript citation style
 ```
 
 ---

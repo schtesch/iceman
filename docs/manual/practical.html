@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Practical guidance for applying, reporting, and interpreting ICEMAN assessments.">
 
 <title>Practical Considerations – ICEMAN</title>
 <style>
@@ -23,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,16 +53,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-629c56ba100745318e9dcb35146191d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b8143a5af30aa0587ead8c64582f750.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,11 +118,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../tool.html"> 
-<span class="menu-text">Complete ICEMAN online</span></a>
+<span class="menu-text">ICEMAN online</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../manual/index.html" aria-current="page"> 
-<span class="menu-text">Users manual</span></a>
+<span class="menu-text">Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -300,6 +324,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Concept and scope of ICEMAN</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manual/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently asked questions</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -327,6 +357,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Practical Considerations</h1>
 </div>
 
+<div>
+  <div class="description">
+    Practical guidance for applying, reporting, and interpreting ICEMAN assessments.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -342,13 +377,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="practical" class="level2">
-<h2 class="anchored" data-anchor-id="practical">Practical considerations</h2>
+<h2 data-anchor-id="practical">Practical considerations</h2>
 <section id="assessment-in-duplicate" class="level3">
-<h3 class="anchored" data-anchor-id="assessment-in-duplicate">Assessment in duplicate</h3>
+<h3 data-anchor-id="assessment-in-duplicate">Assessment in duplicate</h3>
 <p>Confidence in the assessment increases if two investigators independently apply ICEMAN, discuss discrepancies, and present a consensus version.</p>
 </section>
 <section id="reporting" class="level3">
-<h3 class="anchored" data-anchor-id="reporting">Reporting</h3>
+<h3 data-anchor-id="reporting">Reporting</h3>
 <p>We recommend specifying use of ICEMAN in the study protocol, and in the methods, results, and interpretation sections of the final publication:</p>
 <ul>
 <li><strong>Protocol:</strong> “We will assess the credibility of potentially relevant effect modification using ICEMAN.”</li>
@@ -371,27 +406,31 @@ Warning
 </div>
 </section>
 <section id="using-iceman-with-other-instruments" class="level3">
-<h3 class="anchored" data-anchor-id="using-iceman-with-other-instruments">Using ICEMAN with other instruments</h3>
-<p>ICEMAN can be combined with the Cochrane Risk of Bias tool for RCTs <span class="citation" data-cites="Higgins2016a-0001">[1]</span> or the ROBIS tool for systematic reviews <span class="citation" data-cites="Whiting2016robis-0001">[2]</span>, and with the GRADE framework <span class="citation" data-cites="Guyatt2011grade-0007">[3]</span>:</p>
+<h3 data-anchor-id="using-iceman-with-other-instruments">Using ICEMAN with other instruments</h3>
+<p>ICEMAN can be combined with the Cochrane Risk of Bias tool for RCTs<span class="citation" data-cites="Higgins2016a-0001"><sup><a href="#ref-Higgins2016a-0001" role="doc-biblioref">1</a></sup></span> or the ROBIS tool for systematic reviews,<span class="citation" data-cites="Whiting2016robis-0001"><sup><a href="#ref-Whiting2016robis-0001" role="doc-biblioref">2</a></sup></span> and with the GRADE framework<span class="citation" data-cites="Guyatt2011grade-0007"><sup><a href="#ref-Guyatt2011grade-0007" role="doc-biblioref">3</a></sup></span>:</p>
 <ul>
 <li><strong>Moderate or high credibility:</strong> Apply GRADE to subgroup-specific estimates. Note remaining uncertainty if moderate. Considering subgroup-specific estimates may sometimes resolve concerns due to heterogeneity and consequently increase certainty of evidence and strength of recommendation.</li>
 <li><strong>Low or very low credibility:</strong> Apply GRADE to the overall effect estimate. Note remaining uncertainty if low, especially if the potential effect modification appears to explain heterogeneity.</li>
 </ul>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-Higgins2016a-0001" class="csl-entry" role="listitem">
+1. Higgins J, Sterne J, Savović J, Page M, Hrõbjartsson A, Boutron I, Reeves B, Eldridge S. A revised tool for assessing risk of bias in randomized trials. Cochrane Database of Systematic Reviews. 2016 ;1029–31.
+</div>
+<div id="ref-Whiting2016robis-0001" class="csl-entry" role="listitem">
+2. Whiting P, Savović J, Higgins JPT, Caldwell DM, Reeves BC, Shea B, Davies P, Kleijnen J, Churchill R, ROBIS group. <span>ROBIS</span>: A new tool to assess risk of bias in systematic reviews was developed [Internet]. J. Clin. Epidemiol. 2016 Jan. ;69225–234.Available from: <a href="http://dx.doi.org/10.1016/j.jclinepi.2015.06.005">http://dx.doi.org/10.1016/j.jclinepi.2015.06.005</a>
+</div>
+<div id="ref-Guyatt2011grade-0007" class="csl-entry" role="listitem">
+3. Guyatt GH, Oxman AD, Kunz R, Woodcock J, Brozek J, Helfand M, Alonso-Coello P, Glasziou P, Jaeschke R, Akl EA, Norris S, Vist G, Dahm P, Shukla VK, Higgins J, Falck-Ytter Y, Schünemann HJ, GRADE Working Group. <span>GRADE</span> guidelines: 7. Rating the quality of evidence–inconsistency [Internet]. J. Clin. Epidemiol. 2011 Dec. ;64(12):1294–1302.Available from: <a href="http://dx.doi.org/10.1016/j.jclinepi.2011.03.017">http://dx.doi.org/10.1016/j.jclinepi.2011.03.017</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -456,7 +495,7 @@ Warning
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/www\.iceman\.help");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Item-by-item guidance for applying ICEMAN to apparent effect modification in randomized controlled trials.">
 
 <title>ICEMAN for Randomized Controlled Trials – ICEMAN</title>
 <style>
@@ -23,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,16 +53,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-629c56ba100745318e9dcb35146191d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b8143a5af30aa0587ead8c64582f750.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,11 +118,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../tool.html"> 
-<span class="menu-text">Complete ICEMAN online</span></a>
+<span class="menu-text">ICEMAN online</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../manual/index.html" aria-current="page"> 
-<span class="menu-text">Users manual</span></a>
+<span class="menu-text">Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -300,6 +324,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Concept and scope of ICEMAN</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manual/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently asked questions</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -329,6 +359,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">ICEMAN for Randomized Controlled Trials</h1>
 </div>
 
+<div>
+  <div class="description">
+    Item-by-item guidance for applying ICEMAN to apparent effect modification in randomized controlled trials.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -344,11 +379,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="rct-item1" class="level2">
-<h2 class="anchored" data-anchor-id="rct-item1">Item 1 — Direction of effect modification hypothesized a priori?</h2>
+<h2 data-anchor-id="rct-item1">Item 1 — Direction of effect modification hypothesized a priori?</h2>
 <p><strong>Item explanation:</strong> Credibility is higher if investigators correctly anticipated the direction of the effect modification (e.g.&nbsp;that an intervention is more effective in younger than in older patients), lower if they failed to anticipate a direction, and lowest if they anticipated the opposite direction.</p>
-<p>Correct anticipation of an effect modification implies that the investigators had a specific hypothesis in mind — usually based on a biologic or other causal rationale, or sometimes based on prior evidence. In the Bayesian framework, the idea of a specific a priori hypothesis corresponds to using an informative rather than non-informative prior <span class="citation" data-cites="Laber201715 Henderson2016bayesian-0001">[1,2]</span>.</p>
-<p>In addition, the item captures that an explanation stated a priori is much more credible than a post hoc explanation. If post hoc, investigators had likely considered many possible explanations, thereby creating a multiplicity problem <span class="citation" data-cites="Yusuf1991analysis-0001 Oxman1992a-0001 Thompson1994why-0001 Fletcher2007subgroup-0001 Dijkman2009how-0001 Gagnier2013consensus-based-0001 Varadhan2012review-0001">[3–9]</span>. Hypotheses are most credible if verified in a prior, ideally a time-stamped protocol or analysis plan.</p>
-<p>Note that statements of pre-specification may not be reliable <span class="citation" data-cites="Kasenda2014subgroup-0001">[10]</span>, nor do they imply a specific hypothesis, nor do they preclude issues of multiple analyses.</p>
+<p>Correct anticipation of an effect modification implies that the investigators had a specific hypothesis in mind — usually based on a biologic or other causal rationale, or sometimes based on prior evidence. In the Bayesian framework, the idea of a specific a priori hypothesis corresponds to using an informative rather than non-informative prior.<span class="citation" data-cites="Laber201715 Henderson2016bayesian-0001"><sup><a href="#ref-Laber201715" role="doc-biblioref">1</a>, <a href="#ref-Henderson2016bayesian-0001" role="doc-biblioref">2</a></sup></span></p>
+<p>In addition, the item captures that an explanation stated a priori is much more credible than a post hoc explanation. If post hoc, investigators had likely considered many possible explanations, thereby creating a multiplicity problem.<span class="citation" data-cites="Yusuf1991analysis-0001 Oxman1992a-0001 Thompson1994why-0001 Fletcher2007subgroup-0001 Dijkman2009how-0001 Gagnier2013consensus-based-0001 Varadhan2012review-0001"><sup><a href="#ref-Yusuf1991analysis-0001" role="doc-biblioref">3</a>, <a href="#ref-Oxman1992a-0001" role="doc-biblioref">4</a>, <a href="#ref-Thompson1994why-0001" role="doc-biblioref">5</a>, <a href="#ref-Fletcher2007subgroup-0001" role="doc-biblioref">6</a>, <a href="#ref-Dijkman2009how-0001" role="doc-biblioref">7</a>, <a href="#ref-Gagnier2013consensus-based-0001" role="doc-biblioref">8</a>, <a href="#ref-Varadhan2012review-0001" role="doc-biblioref">9</a></sup></span> Hypotheses are most credible if verified in a prior, ideally a time-stamped protocol or analysis plan.</p>
+<p>Note that statements of pre-specification may not be reliable,<span class="citation" data-cites="Kasenda2014subgroup-0001"><sup><a href="#ref-Kasenda2014subgroup-0001" role="doc-biblioref">10</a></sup></span> nor do they imply a specific hypothesis, nor do they preclude issues of multiple analyses.</p>
 <p><strong>Response options:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -381,18 +416,18 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <div class="example-block">
-<p><strong>Definitely no — Example 1:</strong> The ISIS-2 trial testing ASA conducted a provocative post hoc subgroup analysis comparing patients born under different astrological signs <span class="citation" data-cites="RandomisedTrialOfIntravenous1988isis-2">[11]</span>. ASA had a slight adverse effect in patients born under the sign of Gemini or Libra but a substantial benefit in others. The example became famous because the finding was obviously post hoc and not compatible with any biological model.</p>
-<p><strong>Definitely no — Example 2:</strong> In a trial comparing vasopressin versus norepinephrine for septic shock, the authors had hypothesized that the benefit of vasopressin would be larger in more severely ill patients. It turned out that the benefit seemed to be greater in the less severely ill patients (RR 1.04 in more severe vs 0.74 in less severe septic shock, interaction p=0.10). The investigators’ failure to correctly identify the direction weakens any inference about differential benefit <span class="citation" data-cites="Russell2008vasopressin-0001">[12]</span>.</p>
-<p><strong>Probably no — Example:</strong> The investigators of the first large aspirin trial for patients with transient ischaemic attacks reported a beneficial effect in men but not in women <span class="citation" data-cites="RandomisedTrialOfIntravenous1988isis-2">[11]</span>. Although investigators may have planned a priori to explore subgroup effects by sex, they had not anticipated a specific direction based on biologic rationale. Subsequent studies and meta-analyses failed to replicate the subgroup effect <span class="citation" data-cites="AntiplateletTrialistsCollaboration1994collaborative">[13]</span>.</p>
-<p><strong>Probably yes — Example:</strong> A trial in patients requiring dialysis compared jugular versus femoral catheterisation and found no significant difference with respect to catheter colonisation <span class="citation" data-cites="Parienti2008femoral-0001">[14]</span>. An analysis of effect modification suggested that jugular catheters were superior in patients with high BMI but inferior in patients with a low BMI. The authors claimed that they had correctly anticipated the direction but there was no protocol available.</p>
-<p><strong>Definitely yes — Example:</strong> A trial comparing reamed versus unreamed intramedullary nails for tibial shaft fractures suggested that reamed nails were superior for closed but potentially inferior for open fractures <span class="citation" data-cites="StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001">[15]</span>. The investigators correctly anticipated the direction in their published protocol based on a biologic rationale: damage of endosteal blood supply through reamed nails may be more detrimental in open than in closed fractures <span class="citation" data-cites="SPRINTInvestigators2008study">[16]</span>.</p>
+<p><strong>Definitely no — Example 1:</strong> The ISIS-2 trial testing ASA conducted a provocative post hoc subgroup analysis comparing patients born under different astrological signs.<span class="citation" data-cites="RandomisedTrialOfIntravenous1988isis-2"><sup><a href="#ref-RandomisedTrialOfIntravenous1988isis-2" role="doc-biblioref">11</a></sup></span> ASA had a slight adverse effect in patients born under the sign of Gemini or Libra but a substantial benefit in others. The example became famous because the finding was obviously post hoc and not compatible with any biological model.</p>
+<p><strong>Definitely no — Example 2:</strong> In a trial comparing vasopressin versus norepinephrine for septic shock, the authors had hypothesized that the benefit of vasopressin would be larger in more severely ill patients. It turned out that the benefit seemed to be greater in the less severely ill patients (RR 1.04 in more severe vs 0.74 in less severe septic shock, interaction p=0.10). The investigators’ failure to correctly identify the direction weakens any inference about differential benefit.<span class="citation" data-cites="Russell2008vasopressin-0001"><sup><a href="#ref-Russell2008vasopressin-0001" role="doc-biblioref">12</a></sup></span></p>
+<p><strong>Probably no — Example:</strong> The investigators of the first large aspirin trial for patients with transient ischaemic attacks reported a beneficial effect in men but not in women.<span class="citation" data-cites="RandomisedTrialOfIntravenous1988isis-2"><sup><a href="#ref-RandomisedTrialOfIntravenous1988isis-2" role="doc-biblioref">11</a></sup></span> Although investigators may have planned a priori to explore subgroup effects by sex, they had not anticipated a specific direction based on biologic rationale. Subsequent studies and meta-analyses failed to replicate the subgroup effect.<span class="citation" data-cites="AntiplateletTrialistsCollaboration1994collaborative"><sup><a href="#ref-AntiplateletTrialistsCollaboration1994collaborative" role="doc-biblioref">13</a></sup></span></p>
+<p><strong>Probably yes — Example:</strong> A trial in patients requiring dialysis compared jugular versus femoral catheterisation and found no significant difference with respect to catheter colonisation.<span class="citation" data-cites="Parienti2008femoral-0001"><sup><a href="#ref-Parienti2008femoral-0001" role="doc-biblioref">14</a></sup></span> An analysis of effect modification suggested that jugular catheters were superior in patients with high BMI but inferior in patients with a low BMI. The authors claimed that they had correctly anticipated the direction but there was no protocol available.</p>
+<p><strong>Definitely yes — Example:</strong> A trial comparing reamed versus unreamed intramedullary nails for tibial shaft fractures suggested that reamed nails were superior for closed but potentially inferior for open fractures.<span class="citation" data-cites="StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001"><sup><a href="#ref-StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001" role="doc-biblioref">15</a></sup></span> The investigators correctly anticipated the direction in their published protocol based on a biologic rationale: damage of endosteal blood supply through reamed nails may be more detrimental in open than in closed fractures.<span class="citation" data-cites="SPRINTInvestigators2008study"><sup><a href="#ref-SPRINTInvestigators2008study" role="doc-biblioref">16</a></sup></span></p>
 </div>
 <hr>
 </section>
 <section id="rct-item2" class="level2">
-<h2 class="anchored" data-anchor-id="rct-item2">Item 2 — Effect modification supported by prior evidence?</h2>
+<h2 data-anchor-id="rct-item2">Item 2 — Effect modification supported by prior evidence?</h2>
 <p><strong>Item explanation:</strong> Credibility is higher if the effect modification is supported by prior direct or indirect evidence, lower if observed for the first time (often labelled as exploratory), and lowest if inconsistent with prior evidence.</p>
-<p>Replication, ideally in another RCT, makes chance a less likely explanation for an apparent effect modification. Attempts for replication and successful replication, however, seem to be rare <span class="citation" data-cites="Wallach2017evaluation-0001">[17]</span> and prior evidence will be mostly unclear. Direction plays an important role: if two trials show different directions of effect modification, this markedly reduces credibility.</p>
+<p>Replication, ideally in another RCT, makes chance a less likely explanation for an apparent effect modification. Attempts for replication and successful replication, however, seem to be rare<span class="citation" data-cites="Wallach2017evaluation-0001"><sup><a href="#ref-Wallach2017evaluation-0001" role="doc-biblioref">17</a></sup></span> and prior evidence will be mostly unclear. Direction plays an important role: if two trials show different directions of effect modification, this markedly reduces credibility.</p>
 <p><strong>Response options:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -425,16 +460,16 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <div class="example-block">
-<p><strong>Inconsistent — Example:</strong> A trial investigated the efficacy of neratinib in women with breast cancer <span class="citation" data-cites="Chan2016neratinib">[18]</span>. The authors mention two related trials that showed similar survival benefits irrespective of hormone receptor status <span class="citation" data-cites="Perez2014trastuzumab Untch2008estimating">[19,20]</span>, and three other related trials that suggested greater survival in hormone receptor-negative patients, i.e.&nbsp;the opposite direction of effect modification <span class="citation" data-cites="deAzambuja2014lapatinib DeLaurentiis2005a Dowsett2001her-2">[21–23]</span>.</p>
-<p><strong>Little or no support — Example:</strong> A trial comparing jugular versus femoral catheterisation <span class="citation" data-cites="Parienti2008femoral-0001">[14]</span>. The prior evidence was unclear because the cited cohort study <span class="citation" data-cites="Trick2006prospective-0001">[24]</span> provided no direct support for an interaction and was published after the trial had already started.</p>
-<p><strong>Some support — Example:</strong> A trial testing Epoetin Alfa for critically ill patients suggested a reduction in mortality in trauma patients <span class="citation" data-cites="Corwin2007efficacy-0001">[25]</span>. Although the interaction test was not significant (p=0.16), it was consistent with a similar effect modification seen in a previous RCT <span class="citation" data-cites="Corwin2002efficacy-0001">[26]</span>.</p>
-<p><strong>Strong support — Example:</strong> A trial comparing low-carb versus low-fat diet found effect modification by insulin secretion (interaction p=0.01) <span class="citation" data-cites="Ebbeling2007effects-0001">[27]</span>. A previous RCT found a similar, significant effect modification (interaction p=0.02) <span class="citation" data-cites="Pittas2005a-0001">[28]</span>.</p>
+<p><strong>Inconsistent — Example:</strong> A trial investigated the efficacy of neratinib in women with breast cancer.<span class="citation" data-cites="Chan2016neratinib"><sup><a href="#ref-Chan2016neratinib" role="doc-biblioref">18</a></sup></span> The authors mention two related trials that showed similar survival benefits irrespective of hormone receptor status,<span class="citation" data-cites="Perez2014trastuzumab Untch2008estimating"><sup><a href="#ref-Perez2014trastuzumab" role="doc-biblioref">19</a>, <a href="#ref-Untch2008estimating" role="doc-biblioref">20</a></sup></span> and three other related trials that suggested greater survival in hormone receptor-negative patients, i.e.&nbsp;the opposite direction of effect modification.<span class="citation" data-cites="deAzambuja2014lapatinib DeLaurentiis2005a Dowsett2001her-2"><sup><a href="#ref-deAzambuja2014lapatinib" role="doc-biblioref">21</a>, <a href="#ref-DeLaurentiis2005a" role="doc-biblioref">22</a>, <a href="#ref-Dowsett2001her-2" role="doc-biblioref">23</a></sup></span></p>
+<p><strong>Little or no support — Example:</strong> A trial comparing jugular versus femoral catheterisation.<span class="citation" data-cites="Parienti2008femoral-0001"><sup><a href="#ref-Parienti2008femoral-0001" role="doc-biblioref">14</a></sup></span> The prior evidence was unclear because the cited cohort study<span class="citation" data-cites="Trick2006prospective-0001"><sup><a href="#ref-Trick2006prospective-0001" role="doc-biblioref">24</a></sup></span> provided no direct support for an interaction and was published after the trial had already started.</p>
+<p><strong>Some support — Example:</strong> A trial testing Epoetin Alfa for critically ill patients suggested a reduction in mortality in trauma patients.<span class="citation" data-cites="Corwin2007efficacy-0001"><sup><a href="#ref-Corwin2007efficacy-0001" role="doc-biblioref">25</a></sup></span> Although the interaction test was not significant (p=0.16), it was consistent with a similar effect modification seen in a previous RCT.<span class="citation" data-cites="Corwin2002efficacy-0001"><sup><a href="#ref-Corwin2002efficacy-0001" role="doc-biblioref">26</a></sup></span></p>
+<p><strong>Strong support — Example:</strong> A trial comparing low-carb versus low-fat diet found effect modification by insulin secretion (interaction p=0.01).<span class="citation" data-cites="Ebbeling2007effects-0001"><sup><a href="#ref-Ebbeling2007effects-0001" role="doc-biblioref">27</a></sup></span> A previous RCT found a similar, significant effect modification (interaction p=0.02).<span class="citation" data-cites="Pittas2005a-0001"><sup><a href="#ref-Pittas2005a-0001" role="doc-biblioref">28</a></sup></span></p>
 </div>
 <hr>
 </section>
 <section id="rct-item3" class="level2">
-<h2 class="anchored" data-anchor-id="rct-item3">Item 3 — Does a test for interaction suggest that chance is an unlikely explanation?</h2>
-<p><strong>Item explanation:</strong> Credibility is higher if a statistical test for interaction suggests that chance is an unlikely explanation for the apparent effect modification <span class="citation" data-cites="VanderWeele2011interpretation-0001 Brookes2001subgroup-0001 Rockette1988strategies-0001">[29–31]</span>. Credibility is lower if an interaction test is compatible with chance — or no test is available and impossible to compute.</p>
+<h2 data-anchor-id="rct-item3">Item 3 — Does a test for interaction suggest that chance is an unlikely explanation?</h2>
+<p><strong>Item explanation:</strong> Credibility is higher if a statistical test for interaction suggests that chance is an unlikely explanation for the apparent effect modification.<span class="citation" data-cites="VanderWeele2011interpretation-0001 Brookes2001subgroup-0001 Rockette1988strategies-0001"><sup><a href="#ref-VanderWeele2011interpretation-0001" role="doc-biblioref">29</a>, <a href="#ref-Brookes2001subgroup-0001" role="doc-biblioref">30</a>, <a href="#ref-Rockette1988strategies-0001" role="doc-biblioref">31</a></sup></span> Credibility is lower if an interaction test is compatible with chance — or no test is available and impossible to compute.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -445,11 +480,11 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Important:</strong> Showing that an effect is significant in one subgroup and not in another is of little use: it provides no information whether chance might explain differences in effects across subgroups <span class="citation" data-cites="Oxman1992a-0001 Simon1982patient-0001 Brookes2001subgroup-0001 Tanniou2017estimates-0001 Pocock2002subgroup-0001">[4,30,32–34]</span>.</p>
+<p><strong>Important:</strong> Showing that an effect is significant in one subgroup and not in another is of little use: it provides no information whether chance might explain differences in effects across subgroups.<span class="citation" data-cites="Oxman1992a-0001 Simon1982patient-0001 Brookes2001subgroup-0001 Tanniou2017estimates-0001 Pocock2002subgroup-0001"><sup><a href="#ref-Oxman1992a-0001" role="doc-biblioref">4</a>, <a href="#ref-Brookes2001subgroup-0001" role="doc-biblioref">30</a>, <a href="#ref-Simon1982patient-0001" role="doc-biblioref">32</a>, <a href="#ref-Tanniou2017estimates-0001" role="doc-biblioref">33</a>, <a href="#ref-Pocock2002subgroup-0001" role="doc-biblioref">34</a></sup></span></p>
 </div>
 </div>
-<p>If no interaction p-value is reported, it can sometimes be calculated based on the reported data (point estimates of effect and confidence intervals in individual subgroups) <span class="citation" data-cites="Altman2011how-0002 Knol2011the-0001">[35,36]</span>. As a rule of thumb, the interaction p-value must be smaller than 0.05 if 95% confidence intervals of subgroup-specific estimates do not overlap.</p>
-<p>We anchored the response options around typical thresholds for p-values 0.05, 0.01, and 0.005, with a p-value of 0.005 or smaller representing the most credible category. The response options recognise that p-value thresholds of 0.05 or even 0.01 may be too lenient for claiming statistical significance <span class="citation" data-cites="Benjamin2018redefine-0001">[37]</span>.</p>
+<p>If no interaction p-value is reported, it can sometimes be calculated based on the reported data (point estimates of effect and confidence intervals in individual subgroups).<span class="citation" data-cites="Altman2011how-0002 Knol2011the-0001"><sup><a href="#ref-Altman2011how-0002" role="doc-biblioref">35</a>, <a href="#ref-Knol2011the-0001" role="doc-biblioref">36</a></sup></span> As a rule of thumb, the interaction p-value must be smaller than 0.05 if 95% confidence intervals of subgroup-specific estimates do not overlap.</p>
+<p>We anchored the response options around typical thresholds for p-values 0.05, 0.01, and 0.005, with a p-value of 0.005 or smaller representing the most credible category. The response options recognise that p-value thresholds of 0.05 or even 0.01 may be too lenient for claiming statistical significance.<span class="citation" data-cites="Benjamin2018redefine-0001"><sup><a href="#ref-Benjamin2018redefine-0001" role="doc-biblioref">37</a></sup></span></p>
 <p><strong>Response options:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -482,19 +517,19 @@ Warning
 </tbody>
 </table>
 <div class="example-block">
-<p><strong>Very likely — Example:</strong> A trial comparing prostatectomy versus observation for early prostate cancer found interaction p-values of 0.06 and 0.08 for potential benefits in specific subgroups <span class="citation" data-cites="Wilt2017follow-up-0001">[38]</span>. The most likely explanation is chance.</p>
-<p><strong>Likely/unclear — Example:</strong> The PLATO trial suggested Ticagrelor was inferior in patients from North America (interaction p=0.05) <span class="citation" data-cites="Wallentin2009ticagrelor-0001">[39]</span>. The p-value suggests that 1 in 20 trials may show such an effect modification or larger, even if not true.</p>
-<p><strong>May not explain — Example:</strong> A trial comparing reamed versus unreamed intramedullary nailing of tibial shaft fractures. An interaction p-value of 0.01 provided modest support against chance <span class="citation" data-cites="StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001">[15]</span>.</p>
-<p><strong>Unlikely — Example:</strong> The CRASH-2 trial of tranexamic acid in trauma patients found that early treatment (≤1 h) RR 0.68, between 1 and 3 h RR 0.79, and after 3 h RR 1.44. The interaction p-value was smaller than 0.0001 <span class="citation" data-cites="CRASH-2Collaborators2011the">[40]</span>.</p>
+<p><strong>Very likely — Example:</strong> A trial comparing prostatectomy versus observation for early prostate cancer found interaction p-values of 0.06 and 0.08 for potential benefits in specific subgroups.<span class="citation" data-cites="Wilt2017follow-up-0001"><sup><a href="#ref-Wilt2017follow-up-0001" role="doc-biblioref">38</a></sup></span> The most likely explanation is chance.</p>
+<p><strong>Likely/unclear — Example:</strong> The PLATO trial suggested Ticagrelor was inferior in patients from North America (interaction p=0.05).<span class="citation" data-cites="Wallentin2009ticagrelor-0001"><sup><a href="#ref-Wallentin2009ticagrelor-0001" role="doc-biblioref">39</a></sup></span> The p-value suggests that 1 in 20 trials may show such an effect modification or larger, even if not true.</p>
+<p><strong>May not explain — Example:</strong> A trial comparing reamed versus unreamed intramedullary nailing of tibial shaft fractures. An interaction p-value of 0.01 provided modest support against chance.<span class="citation" data-cites="StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001"><sup><a href="#ref-StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001" role="doc-biblioref">15</a></sup></span></p>
+<p><strong>Unlikely — Example:</strong> The CRASH-2 trial of tranexamic acid in trauma patients found that early treatment (≤1 h) RR 0.68, between 1 and 3 h RR 0.79, and after 3 h RR 1.44. The interaction p-value was smaller than 0.0001.<span class="citation" data-cites="CRASH-2Collaborators2011the"><sup><a href="#ref-CRASH-2Collaborators2011the" role="doc-biblioref">40</a></sup></span></p>
 </div>
 <hr>
 </section>
 <section id="rct-item4" class="level2">
-<h2 class="anchored" data-anchor-id="rct-item4">Item 4 — Small number of effect modifiers tested, or multiplicity considered?</h2>
-<p><strong>Item explanation:</strong> Performing multiple tests is a major concern in the context of effect modification analysis. Because multiple tests increase the risk of a chance finding <span class="citation" data-cites="Mills1993data-0001 Counsell1994the-0001 Higgins2004controlling-0001">[41–43]</span>, credibility is higher if investigators have tested only a small number of effect modifiers.</p>
-<p>Multiplicity issues can arise in different ways <span class="citation" data-cites="Li2017an-0001">[44]</span>, including multiple candidate effect modifiers, multiple time points, multiple scales <span class="citation" data-cites="Starr2004assessing-0001">[45]</span>, multiple outcomes, or multiple methods for testing the interaction.</p>
-<p>An alternative to limiting the number of analyses is to statistically adjust the analysis for multiplicity, e.g.&nbsp;using correction of p-values considering the (familywise) type 1 error rate <span class="citation" data-cites="Shaffer1995multiple-0001">[46]</span>, testing all candidate effect modifiers in a common model, or shrinkage estimators <span class="citation" data-cites="Tanniou2017estimates-0001 Varadhan2016treatment-0001">[33,47]</span>. All techniques inevitably reduce power <span class="citation" data-cites="Yusuf1991analysis-0001 Grouin2005subgroup-0001 Burke2015three-0001">[3,48,49]</span>.</p>
-<p>Assessment of multiplicity crucially depends on reporting; reporting guidelines for effect modification are available <span class="citation" data-cites="Kent2010assessing-0001 Wang2007statistics-0001 Knol2012recommendations-0001">[50–52]</span>. Note that retrospective statements about the number of pre-specified subgroup analyses are not always reliable <span class="citation" data-cites="Kasenda2014subgroup-0001">[10]</span>.</p>
+<h2 data-anchor-id="rct-item4">Item 4 — Small number of effect modifiers tested, or multiplicity considered?</h2>
+<p><strong>Item explanation:</strong> Performing multiple tests is a major concern in the context of effect modification analysis. Because multiple tests increase the risk of a chance finding,<span class="citation" data-cites="Mills1993data-0001 Counsell1994the-0001 Higgins2004controlling-0001"><sup><a href="#ref-Mills1993data-0001" role="doc-biblioref">41</a>, <a href="#ref-Counsell1994the-0001" role="doc-biblioref">42</a>, <a href="#ref-Higgins2004controlling-0001" role="doc-biblioref">43</a></sup></span> credibility is higher if investigators have tested only a small number of effect modifiers.</p>
+<p>Multiplicity issues can arise in different ways,<span class="citation" data-cites="Li2017an-0001"><sup><a href="#ref-Li2017an-0001" role="doc-biblioref">44</a></sup></span> including multiple candidate effect modifiers, multiple time points, multiple scales,<span class="citation" data-cites="Starr2004assessing-0001"><sup><a href="#ref-Starr2004assessing-0001" role="doc-biblioref">45</a></sup></span> multiple outcomes, or multiple methods for testing the interaction.</p>
+<p>An alternative to limiting the number of analyses is to statistically adjust the analysis for multiplicity, e.g.&nbsp;using correction of p-values considering the (familywise) type 1 error rate,<span class="citation" data-cites="Shaffer1995multiple-0001"><sup><a href="#ref-Shaffer1995multiple-0001" role="doc-biblioref">46</a></sup></span> testing all candidate effect modifiers in a common model, or shrinkage estimators.<span class="citation" data-cites="Tanniou2017estimates-0001 Varadhan2016treatment-0001"><sup><a href="#ref-Tanniou2017estimates-0001" role="doc-biblioref">33</a>, <a href="#ref-Varadhan2016treatment-0001" role="doc-biblioref">47</a></sup></span> All techniques inevitably reduce power.<span class="citation" data-cites="Yusuf1991analysis-0001 Grouin2005subgroup-0001 Burke2015three-0001"><sup><a href="#ref-Yusuf1991analysis-0001" role="doc-biblioref">3</a>, <a href="#ref-Grouin2005subgroup-0001" role="doc-biblioref">48</a>, <a href="#ref-Burke2015three-0001" role="doc-biblioref">49</a></sup></span></p>
+<p>Assessment of multiplicity crucially depends on reporting; reporting guidelines for effect modification are available.<span class="citation" data-cites="Kent2010assessing-0001 Wang2007statistics-0001 Knol2012recommendations-0001"><sup><a href="#ref-Kent2010assessing-0001" role="doc-biblioref">50</a>, <a href="#ref-Wang2007statistics-0001" role="doc-biblioref">51</a>, <a href="#ref-Knol2012recommendations-0001" role="doc-biblioref">52</a></sup></span> Note that retrospective statements about the number of pre-specified subgroup analyses are not always reliable.<span class="citation" data-cites="Kasenda2014subgroup-0001"><sup><a href="#ref-Kasenda2014subgroup-0001" role="doc-biblioref">10</a></sup></span></p>
 <p><strong>Response options:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -527,20 +562,20 @@ Warning
 </tbody>
 </table>
 <div class="example-block">
-<p><strong>Definitely no — Example:</strong> A trial assessing stroke risk after carotid endarterectomy tested more than 20 baseline factors for potential effect modification without adjustment for multiplicity <span class="citation" data-cites="Barnett1998benefit-0001">[53]</span>. A subsequent trial suggested the opposite association <span class="citation" data-cites="Taylor1999low-dose-0001">[54]</span>, suggesting the original finding was a random result.</p>
-<p><strong>Probably no — Example:</strong> A trial comparing prostatectomy versus observation <span class="citation" data-cites="Wilt2017follow-up-0001">[38]</span>. The investigators did not take into account that they had tested at least seven effect modifiers for this outcome.</p>
-<p><strong>Probably yes — Example:</strong> A trial testing whether training of health professionals reduces caesarean deliveries. The effect modifier was one of two specified in the study protocol <span class="citation" data-cites="Chaillet2015a-0002">[55]</span>.</p>
-<p><strong>Definitely yes — Example:</strong> A trial comparing endarterectomy versus medical therapy. The published study protocol specified only one effect modifier <span class="citation" data-cites="NorthAmericanSymptomaticCarotidEndarterectomy1991methods Barnett1998benefit-0001">[53,56]</span>.</p>
+<p><strong>Definitely no — Example:</strong> A trial assessing stroke risk after carotid endarterectomy tested more than 20 baseline factors for potential effect modification without adjustment for multiplicity.<span class="citation" data-cites="Barnett1998benefit-0001"><sup><a href="#ref-Barnett1998benefit-0001" role="doc-biblioref">53</a></sup></span> A subsequent trial suggested the opposite association,<span class="citation" data-cites="Taylor1999low-dose-0001"><sup><a href="#ref-Taylor1999low-dose-0001" role="doc-biblioref">54</a></sup></span> suggesting the original finding was a random result.</p>
+<p><strong>Probably no — Example:</strong> A trial comparing prostatectomy versus observation.<span class="citation" data-cites="Wilt2017follow-up-0001"><sup><a href="#ref-Wilt2017follow-up-0001" role="doc-biblioref">38</a></sup></span> The investigators did not take into account that they had tested at least seven effect modifiers for this outcome.</p>
+<p><strong>Probably yes — Example:</strong> A trial testing whether training of health professionals reduces caesarean deliveries. The effect modifier was one of two specified in the study protocol.<span class="citation" data-cites="Chaillet2015a-0002"><sup><a href="#ref-Chaillet2015a-0002" role="doc-biblioref">55</a></sup></span></p>
+<p><strong>Definitely yes — Example:</strong> A trial comparing endarterectomy versus medical therapy. The published study protocol specified only one effect modifier.<span class="citation" data-cites="NorthAmericanSymptomaticCarotidEndarterectomy1991methods Barnett1998benefit-0001"><sup><a href="#ref-Barnett1998benefit-0001" role="doc-biblioref">53</a>, <a href="#ref-NorthAmericanSymptomaticCarotidEndarterectomy1991methods" role="doc-biblioref">56</a></sup></span></p>
 </div>
 <hr>
 </section>
 <section id="rct-item5" class="level2">
-<h2 class="anchored" data-anchor-id="rct-item5">Item 5 — Arbitrary cut points avoided? (continuous variables only)</h2>
-<p><strong>Item explanation:</strong> Categorising continuous effect modifiers is common <span class="citation" data-cites="Fisher2017meta-analytical-0001">[57]</span> but associated with a number of problems <span class="citation" data-cites="Royston2006dichotomizing-0001 Altman2006the-0001">[58,59]</span>: cut points can introduce multiplicity, reduce power, mask linear or non-linear associations, and complicate comparisons across studies. Analyses that avoid cut points and make use of the full spectrum of values are the most credible.</p>
-<p>Credibility is low if investigators selected the best-fitting data-driven cut point to maximise the effect modification. Such cut points are associated with a high rate of false positive claims <span class="citation" data-cites="Royston2006dichotomizing-0001 Altman1994dangers-0001">[58,60]</span>.</p>
-<p>There are some challenges when modelling continuous effect modifiers that are not part of the instrument but may lower the credibility: model misspecification can occur if the continuous relationship is driven by a few influential observations <span class="citation" data-cites="Royston2013interaction-0001 Gilthorpe2012statistical-0001 Royston2014interaction-0001">[61–63]</span>. Most credible are therefore continuous analyses for which investigators have pre-specified the type of dependency of the treatment effect on the continuous variable such as a linear or log relationship, or considered a small number of candidate functions <span class="citation" data-cites="Royston2004a-0001">[64]</span>.</p>
-<p>An alternative to use of cut points and potentially complex modelling is to consider overlapping subgroups (e.g.&nbsp;using a sliding window approach) <span class="citation" data-cites="Bonetti2009a-0001">[65]</span>. The credibility is usually much higher than using arbitrary cut points but the interpretation can be difficult.</p>
-<p>The credibility of a continuous analysis usually increases if investigators present a plot with confidence bands around the regression function and carefully checked the proposed model. Formal interaction tests for continuous effect modification are available and should be applied <span class="citation" data-cites="Royston2004a-0001">[64]</span>.</p>
+<h2 data-anchor-id="rct-item5">Item 5 — Arbitrary cut points avoided? (continuous variables only)</h2>
+<p><strong>Item explanation:</strong> Categorising continuous effect modifiers is common<span class="citation" data-cites="Fisher2017meta-analytical-0001"><sup><a href="#ref-Fisher2017meta-analytical-0001" role="doc-biblioref">57</a></sup></span> but associated with a number of problems<span class="citation" data-cites="Royston2006dichotomizing-0001 Altman2006the-0001"><sup><a href="#ref-Royston2006dichotomizing-0001" role="doc-biblioref">58</a>, <a href="#ref-Altman2006the-0001" role="doc-biblioref">59</a></sup></span>: cut points can introduce multiplicity, reduce power, mask linear or non-linear associations, and complicate comparisons across studies. Analyses that avoid cut points and make use of the full spectrum of values are the most credible.</p>
+<p>Credibility is low if investigators selected the best-fitting data-driven cut point to maximise the effect modification. Such cut points are associated with a high rate of false positive claims.<span class="citation" data-cites="Royston2006dichotomizing-0001 Altman1994dangers-0001"><sup><a href="#ref-Royston2006dichotomizing-0001" role="doc-biblioref">58</a>, <a href="#ref-Altman1994dangers-0001" role="doc-biblioref">60</a></sup></span></p>
+<p>There are some challenges when modelling continuous effect modifiers that are not part of the instrument but may lower the credibility: model misspecification can occur if the continuous relationship is driven by a few influential observations.<span class="citation" data-cites="Royston2013interaction-0001 Gilthorpe2012statistical-0001 Royston2014interaction-0001"><sup><a href="#ref-Royston2013interaction-0001" role="doc-biblioref">61</a>, <a href="#ref-Gilthorpe2012statistical-0001" role="doc-biblioref">62</a>, <a href="#ref-Royston2014interaction-0001" role="doc-biblioref">63</a></sup></span> Most credible are therefore continuous analyses for which investigators have pre-specified the type of dependency of the treatment effect on the continuous variable such as a linear or log relationship, or considered a small number of candidate functions.<span class="citation" data-cites="Royston2004a-0001"><sup><a href="#ref-Royston2004a-0001" role="doc-biblioref">64</a></sup></span></p>
+<p>An alternative to use of cut points and potentially complex modelling is to consider overlapping subgroups (e.g.&nbsp;using a sliding window approach).<span class="citation" data-cites="Bonetti2009a-0001"><sup><a href="#ref-Bonetti2009a-0001" role="doc-biblioref">65</a></sup></span> The credibility is usually much higher than using arbitrary cut points but the interpretation can be difficult.</p>
+<p>The credibility of a continuous analysis usually increases if investigators present a plot with confidence bands around the regression function and carefully checked the proposed model. Formal interaction tests for continuous effect modification are available and should be applied.<span class="citation" data-cites="Royston2004a-0001"><sup><a href="#ref-Royston2004a-0001" role="doc-biblioref">64</a></sup></span></p>
 <p><strong>Response options:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -577,38 +612,38 @@ Warning
 </tbody>
 </table>
 <div class="example-block">
-<p><strong>Definitely no — Example:</strong> A trial tested the effect of everolimus in women with a specific type of breast cancer <span class="citation" data-cites="Hortobagyi2016correlative">[66]</span>. The investigators dichotomised the continuous CIN score using the 75th percentile, explicitly selected because it “yielded the maximal difference in HR between high– versus low–CIN score subgroups.”</p>
-<p><strong>Probably no — Example:</strong> A trial comparing prostatectomy versus observation for early prostate cancer <span class="citation" data-cites="Wilt2017follow-up-0001">[38]</span>. The investigators hypothesised a potential effect modification by PSA value below or above 10, but provided no rationale for the chosen threshold.</p>
-<p><strong>Probably yes — Example:</strong> The CRASH-2 trial <span class="citation" data-cites="CRASH-2Collaborators2011the">[40]</span> tested tranexamic acid in bleeding trauma patients. The investigators had pre-specified the three time-based categories in a published protocol <span class="citation" data-cites="TheCRASHTrialsCo-ordinatingCentre2005protocol-0001">[67]</span>.</p>
-<p><strong>Definitely yes — Example:</strong> A trial comparing interferon-alpha versus medroxyprogesterone in patients with renal carcinoma <span class="citation" data-cites="MedicalResearchCouncilRenalCancerCollaborators1999interferon-alpha-0001">[68]</span>. A subsequent analysis treated white cell count as a continuous variable, avoiding arbitrary cut points and maximising the power of the analysis. A plot of the continuous relationship with confidence bands was provided <span class="citation" data-cites="Royston2004is-0001">[69]</span>.</p>
+<p><strong>Definitely no — Example:</strong> A trial tested the effect of everolimus in women with a specific type of breast cancer.<span class="citation" data-cites="Hortobagyi2016correlative"><sup><a href="#ref-Hortobagyi2016correlative" role="doc-biblioref">66</a></sup></span> The investigators dichotomised the continuous CIN score using the 75th percentile, explicitly selected because it “yielded the maximal difference in HR between high– versus low–CIN score subgroups.”</p>
+<p><strong>Probably no — Example:</strong> A trial comparing prostatectomy versus observation for early prostate cancer.<span class="citation" data-cites="Wilt2017follow-up-0001"><sup><a href="#ref-Wilt2017follow-up-0001" role="doc-biblioref">38</a></sup></span> The investigators hypothesised a potential effect modification by PSA value below or above 10, but provided no rationale for the chosen threshold.</p>
+<p><strong>Probably yes — Example:</strong> The CRASH-2 trial<span class="citation" data-cites="CRASH-2Collaborators2011the"><sup><a href="#ref-CRASH-2Collaborators2011the" role="doc-biblioref">40</a></sup></span> tested tranexamic acid in bleeding trauma patients. The investigators had pre-specified the three time-based categories in a published protocol.<span class="citation" data-cites="TheCRASHTrialsCo-ordinatingCentre2005protocol-0001"><sup><a href="#ref-TheCRASHTrialsCo-ordinatingCentre2005protocol-0001" role="doc-biblioref">67</a></sup></span></p>
+<p><strong>Definitely yes — Example:</strong> A trial comparing interferon-alpha versus medroxyprogesterone in patients with renal carcinoma.<span class="citation" data-cites="MedicalResearchCouncilRenalCancerCollaborators1999interferon-alpha-0001"><sup><a href="#ref-MedicalResearchCouncilRenalCancerCollaborators1999interferon-alpha-0001" role="doc-biblioref">68</a></sup></span> A subsequent analysis treated white cell count as a continuous variable, avoiding arbitrary cut points and maximising the power of the analysis. A plot of the continuous relationship with confidence bands was provided.<span class="citation" data-cites="Royston2004is-0001"><sup><a href="#ref-Royston2004is-0001" role="doc-biblioref">69</a></sup></span></p>
 </div>
 <hr>
 </section>
 <section id="rct-item6" class="level2">
-<h2 class="anchored" data-anchor-id="rct-item6">Item 6 — Optional: Additional considerations</h2>
-<p><strong>Item explanation:</strong> Methodologists have suggested a number of additional considerations that could be relevant for assessing the credibility of effect modifiers <span class="citation" data-cites="Schandelmaier2019a-0002">[70]</span>. They are not part of the core items because they either are less relevant, rarely apply, or are difficult to assess. The only response options are probably decreased and probably increased. Leaving this section blank does not affect credibility.</p>
-<p><strong>Sensitivity analysis suggesting robustness:</strong> A sensitivity analysis can help to increase the confidence in a proposed effect modification <span class="citation" data-cites="Desai2014challenges-0001 VanderWeele2015explanation-0001 Pearce2014confounding-0001">[71–73]</span>.</p>
+<h2 data-anchor-id="rct-item6">Item 6 — Optional: Additional considerations</h2>
+<p><strong>Item explanation:</strong> Methodologists have suggested a number of additional considerations that could be relevant for assessing the credibility of effect modifiers.<span class="citation" data-cites="Schandelmaier2019a-0002"><sup><a href="#ref-Schandelmaier2019a-0002" role="doc-biblioref">70</a></sup></span> They are not part of the core items because they either are less relevant, rarely apply, or are difficult to assess. The only response options are probably decreased and probably increased. Leaving this section blank does not affect credibility.</p>
+<p><strong>Sensitivity analysis suggesting robustness:</strong> A sensitivity analysis can help to increase the confidence in a proposed effect modification.<span class="citation" data-cites="Desai2014challenges-0001 VanderWeele2015explanation-0001 Pearce2014confounding-0001"><sup><a href="#ref-Desai2014challenges-0001" role="doc-biblioref">71</a>, <a href="#ref-VanderWeele2015explanation-0001" role="doc-biblioref">72</a>, <a href="#ref-Pearce2014confounding-0001" role="doc-biblioref">73</a></sup></span></p>
 <div class="example-block">
-<p><strong>Example:</strong> The CRASH-2 trial <span class="citation" data-cites="CRASH-2Collaborators2011the">[40]</span> performed a sensitivity analysis treating time as a continuous effect modifier which suggested that results were robust, despite the pre-specified use of two cut points.</p>
+<p><strong>Example:</strong> The CRASH-2 trial<span class="citation" data-cites="CRASH-2Collaborators2011the"><sup><a href="#ref-CRASH-2Collaborators2011the" role="doc-biblioref">40</a></sup></span> performed a sensitivity analysis treating time as a continuous effect modifier which suggested that results were robust, despite the pre-specified use of two cut points.</p>
 </div>
 <p><strong>Dose-response effect across levels of the effect modifier:</strong> Credibility may be higher if effects increase or decrease monotonically with increases in the levels of the modifier, e.g.&nbsp;an effect that increases incrementally across three or more age groups.</p>
 <div class="example-block">
-<p><strong>Example:</strong> The CRASH-2 trial <span class="citation" data-cites="CRASH-2Collaborators2011the">[40]</span> found that the effect on death due to bleeding decreased with increasing time from injury (interaction p&lt;0.0001): early treatment (≤1 h) RR 0.68, between 1 and 3 h RR 0.79, after 3 h RR 1.44. The decrease across levels of the effect modifier strengthens the results.</p>
+<p><strong>Example:</strong> The CRASH-2 trial<span class="citation" data-cites="CRASH-2Collaborators2011the"><sup><a href="#ref-CRASH-2Collaborators2011the" role="doc-biblioref">40</a></sup></span> found that the effect on death due to bleeding decreased with increasing time from injury (interaction p&lt;0.0001): early treatment (≤1 h) RR 0.68, between 1 and 3 h RR 0.79, after 3 h RR 1.44. The decrease across levels of the effect modifier strengthens the results.</p>
 </div>
-<p><strong>Persistence after adjustment for other potential effect modifiers:</strong> Credibility may be higher if a multivariable analysis suggests that the apparent effect modifier is independent of other candidate modifiers <span class="citation" data-cites="Varadhan2014standardization-0001">[74]</span>.</p>
+<p><strong>Persistence after adjustment for other potential effect modifiers:</strong> Credibility may be higher if a multivariable analysis suggests that the apparent effect modifier is independent of other candidate modifiers.<span class="citation" data-cites="Varadhan2014standardization-0001"><sup><a href="#ref-Varadhan2014standardization-0001" role="doc-biblioref">74</a></sup></span></p>
 <div class="example-block">
-<p><strong>Example:</strong> The CRASH-2 trial <span class="citation" data-cites="CRASH-2Collaborators2011the">[40]</span>. When including interaction terms for all four effect modifiers in a common model, the effect modification by time from injury remained highly significant (p&lt;0.0001).</p>
+<p><strong>Example:</strong> The CRASH-2 trial.<span class="citation" data-cites="CRASH-2Collaborators2011the"><sup><a href="#ref-CRASH-2Collaborators2011the" role="doc-biblioref">40</a></sup></span> When including interaction terms for all four effect modifiers in a common model, the effect modification by time from injury remained highly significant (p&lt;0.0001).</p>
 </div>
-<p><strong>Risk of bias of the main effect of the RCTs:</strong> A commonly used instrument to formally assess the overall risk of bias is the Cochrane risk of bias tool <span class="citation" data-cites="Higgins2016a-0001">[75]</span>. Some studies have suggested that industry-funded trials are at higher risk of spurious claims of effect modification than non-industry-funded studies, especially if the overall effect is not significant <span class="citation" data-cites="Sun2011the-0001 Barton2015the-0001 Gabler2016no-0001">[76–78]</span>.</p>
-<p><strong>Exceptionally high power:</strong> Methodologists have argued that the credibility of a proposed effect modification increases with its prospective power <span class="citation" data-cites="Burke2015three-0001 Alosh2017tutorial-0001">[49,79]</span>. A rare situation of increased confidence would be a trial of over 10,000 patients with 80% power to detect a significant effect modification suggested in the study protocol <span class="citation" data-cites="Burke2015three-0001">[49]</span>.</p>
+<p><strong>Risk of bias of the main effect of the RCTs:</strong> A commonly used instrument to formally assess the overall risk of bias is the Cochrane risk of bias tool.<span class="citation" data-cites="Higgins2016a-0001"><sup><a href="#ref-Higgins2016a-0001" role="doc-biblioref">75</a></sup></span> Some studies have suggested that industry-funded trials are at higher risk of spurious claims of effect modification than non-industry-funded studies, especially if the overall effect is not significant.<span class="citation" data-cites="Sun2011the-0001 Barton2015the-0001 Gabler2016no-0001"><sup><a href="#ref-Sun2011the-0001" role="doc-biblioref">76</a>, <a href="#ref-Barton2015the-0001" role="doc-biblioref">77</a>, <a href="#ref-Gabler2016no-0001" role="doc-biblioref">78</a></sup></span></p>
+<p><strong>Exceptionally high power:</strong> Methodologists have argued that the credibility of a proposed effect modification increases with its prospective power.<span class="citation" data-cites="Burke2015three-0001 Alosh2017tutorial-0001"><sup><a href="#ref-Burke2015three-0001" role="doc-biblioref">49</a>, <a href="#ref-Alosh2017tutorial-0001" role="doc-biblioref">79</a></sup></span> A rare situation of increased confidence would be a trial of over 10,000 patients with 80% power to detect a significant effect modification suggested in the study protocol.<span class="citation" data-cites="Burke2015three-0001"><sup><a href="#ref-Burke2015three-0001" role="doc-biblioref">49</a></sup></span></p>
 <p><strong>Consistency across related outcomes:</strong> Credibility might be higher if an effect modification is found for biologically related outcomes.</p>
 <div class="example-block">
-<p><strong>Example:</strong> In a trial of reamed versus unreamed nailing of tibial fractures, the difference in re-operations between smokers and non-smokers co-existed in quality of life outcomes <span class="citation" data-cites="StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001">[15]</span>.</p>
+<p><strong>Example:</strong> In a trial of reamed versus unreamed nailing of tibial fractures, the difference in re-operations between smokers and non-smokers co-existed in quality of life outcomes.<span class="citation" data-cites="StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001"><sup><a href="#ref-StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001" role="doc-biblioref">15</a></sup></span></p>
 </div>
 <hr>
 </section>
 <section id="rct-item7" class="level2">
-<h2 class="anchored" data-anchor-id="rct-item7">Item 7 — Overall credibility rating</h2>
+<h2 data-anchor-id="rct-item7">Item 7 — Overall credibility rating</h2>
 <p><strong>Item explanation:</strong> The overall rating is a continuous visual analogue scale spanning four credibility areas, corresponding roughly to &lt;25%, 25–50%, 50–75%, and &gt;75% confidence that the apparent effect modification is true and not the result of chance or bias. <strong>The overall rating should be driven by the items that decrease credibility.</strong></p>
 <p>Recommended strategy:</p>
 <ul>
@@ -658,8 +693,8 @@ Warning
 <hr>
 </section>
 <section id="rct-example" class="level2">
-<h2 class="anchored" data-anchor-id="rct-example">Worked example — RCT (CRASH-2)</h2>
-<p>A secondary publication of the CRASH-2 trial investigated the effect of tranexamic acid versus placebo on death due to bleeding in trauma patients <span class="citation" data-cites="CRASH-2Collaborators2011the">[40]</span>. The investigators reported that “the effect of tranexamic acid on death due to bleeding varied according to the time from injury to treatment (test for interaction p&lt;0·0001).” Although the investigators labelled their analysis as exploratory, an assessment using ICEMAN suggests <strong>moderate credibility</strong>.</p>
+<h2 data-anchor-id="rct-example">Worked example — RCT (CRASH-2)</h2>
+<p>A secondary publication of the CRASH-2 trial investigated the effect of tranexamic acid versus placebo on death due to bleeding in trauma patients.<span class="citation" data-cites="CRASH-2Collaborators2011the"><sup><a href="#ref-CRASH-2Collaborators2011the" role="doc-biblioref">40</a></sup></span> The investigators reported that “the effect of tranexamic acid on death due to bleeding varied according to the time from injury to treatment (test for interaction p&lt;0·0001).” Although the investigators labelled their analysis as exploratory, an assessment using ICEMAN suggests <strong>moderate credibility</strong>.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 24%">
@@ -677,7 +712,7 @@ Warning
 <tr class="odd">
 <td>1. Direction a priori</td>
 <td>Probably yes</td>
-<td>Subgroups (not direction) pre-specified in published protocol <span class="citation" data-cites="TheCRASHTrialsCo-ordinatingCentre2005protocol-0001">[67]</span>; authors stated they had correctly anticipated direction</td>
+<td>Subgroups (not direction) pre-specified in published protocol;<span class="citation" data-cites="TheCRASHTrialsCo-ordinatingCentre2005protocol-0001"><sup><a href="#ref-TheCRASHTrialsCo-ordinatingCentre2005protocol-0001" role="doc-biblioref">67</a></sup></span> authors stated they had correctly anticipated direction</td>
 </tr>
 <tr class="even">
 <td>2. Prior evidence</td>
@@ -713,18 +748,250 @@ Warning
 </table>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-Laber201715" class="csl-entry" role="listitem">
+1. Laber EB, Qian M. 15. Evaluating personalized treatment regimes [Internet]. In: Methods in comparative effectiveness research. Taylor &amp; Francis Group, 6000 Broken Sound Parkway NW, Suite 300, Boca Raton, FL 33487-2742: CRC Press; 2017. p. 483–498.Available from: <a href="http://dx.doi.org/10.1201/9781315159409-16">http://dx.doi.org/10.1201/9781315159409-16</a>
+</div>
+<div id="ref-Henderson2016bayesian-0001" class="csl-entry" role="listitem">
+2. Henderson NC, Louis TA, Wang C, Varadhan R. Bayesian analysis of heterogeneous treatment effects for patient-centered outcomes research [Internet]. Health Serv. Outcomes Res. Methodol. 2016 ;16(4):213–233.Available from: <a href="http://dx.doi.org/10.1007/s10742-016-0159-3">http://dx.doi.org/10.1007/s10742-016-0159-3</a>
+</div>
+<div id="ref-Yusuf1991analysis-0001" class="csl-entry" role="listitem">
+3. Yusuf S, Wittes J, Probstfield J, Tyroler HA. Analysis and interpretation of treatment effects in subgroups of patients in randomized clinical trials [Internet]. JAMA. 1991 ;266(1):93–98.Available from: <a href="http://dx.doi.org/10.1001/jama.1991.03470010097038">http://dx.doi.org/10.1001/jama.1991.03470010097038</a>
+</div>
+<div id="ref-Oxman1992a-0001" class="csl-entry" role="listitem">
+4. Oxman AD, Guyatt GH. A consumer’s guide to subgroup analyses [Internet]. Ann. Intern. Med. 1992 ;116(1):78–84.Available from: <a href="http://dx.doi.org/10.7326/0003-4819-116-1-78">http://dx.doi.org/10.7326/0003-4819-116-1-78</a>
+</div>
+<div id="ref-Thompson1994why-0001" class="csl-entry" role="listitem">
+5. Thompson SG. Why sources of heterogeneity in meta-analysis should be investigated [Internet]. BMJ. 1994 ;309(6965):1351–1355.Available from: <a href="http://dx.doi.org/10.1136/bmj.309.6965.1351">http://dx.doi.org/10.1136/bmj.309.6965.1351</a>
+</div>
+<div id="ref-Fletcher2007subgroup-0001" class="csl-entry" role="listitem">
+6. Fletcher J. Subgroup analyses: How to avoid being misled [Internet]. BMJ. 2007 ;335(7610):96–97.Available from: <a href="http://dx.doi.org/10.1136/bmj.39265.596262.AD">http://dx.doi.org/10.1136/bmj.39265.596262.AD</a>
+</div>
+<div id="ref-Dijkman2009how-0001" class="csl-entry" role="listitem">
+7. Dijkman B, Kooistra B, Bhandari M, Evidence-Based Surgery Working G. How to work with a subgroup analysis. Canadian journal of surgery Journal canadien de chirurgie. 2009 ;52(6):515–522.
+</div>
+<div id="ref-Gagnier2013consensus-based-0001" class="csl-entry" role="listitem">
+8. Gagnier JJ, Morgenstern H, Altman DG, Berlin J, Chang S, McCulloch P, Sun X, Moher D, Ann Arbor Clinical Heterogeneity Consensus Group. Consensus-based recommendations for investigating clinical heterogeneity in systematic reviews [Internet]. BMC Med. Res. Methodol. 2013 ;13(1):106.Available from: <a href="http://dx.doi.org/10.1186/1471-2288-13-106">http://dx.doi.org/10.1186/1471-2288-13-106</a>
+</div>
+<div id="ref-Varadhan2012review-0001" class="csl-entry" role="listitem">
+9. Varadhan R, Stuart EA, Louis TA, Segal JB, Weiss CO. Review of guidance documents for selected methods in patient centered outcomes research: Standards in addressing heterogeneity of treatment effectiveness in observational and experimental patient centered outcomes research. pcori. org,. 2012 ;
+</div>
+<div id="ref-Kasenda2014subgroup-0001" class="csl-entry" role="listitem">
+10. Kasenda B, Schandelmaier S, Sun X, Elm E von, You J, Blümle A, Tomonaga Y, Saccilotto R, Amstutz A, Bengough T, Meerpohl JJ, Stegert M, Olu KK, Tikkinen KAO, Neumann I, Carrasco-Labra A, Faulhaber M, Mulla SM, Mertz D, Akl EA, Bassler D, Busse JW, Ferreira-González I, Lamontagne F, Nordmann A, Gloy V, Raatz H, Moja L, Rosenthal R, Ebrahim S, Vandvik PO, Johnston BC, Walter MA, Burnand B, Schwenkglenks M, Hemkens LG, Bucher HC, Guyatt GH, Briel M, DISCO Study Group. Subgroup analyses in randomised controlled trials: Cohort study on trial protocols and journal publications [Internet]. BMJ. 2014 ;349(jul16 1):g4539.Available from: <a href="http://dx.doi.org/10.1136/bmj.g4539">http://dx.doi.org/10.1136/bmj.g4539</a>
+</div>
+<div id="ref-RandomisedTrialOfIntravenous1988isis-2" class="csl-entry" role="listitem">
+11. <span class="nocase">Randomised trial of intravenous S, Oral A, Both, Or neither among 17, 187 cases of suspected acute myocardial infarction: I</span>. <span>ISIS</span>-2 (second international study of infarct survival) collaborative group. Lancet. 1988 ;2(8607):349–360.
+</div>
+<div id="ref-Russell2008vasopressin-0001" class="csl-entry" role="listitem">
+12. Russell JA, Walley KR, Singer J, Gordon AC, Hébert PC, Cooper DJ, Holmes CL, Mehta S, Granton JT, Storms MM, Cook DJ, Presneill JJ, Ayers D, VASST Investigators. Vasopressin versus norepinephrine infusion in patients with septic shock [Internet]. N. Engl. J. Med. 2008 ;358(9):877–887.Available from: <a href="http://dx.doi.org/10.1056/NEJMoa067373">http://dx.doi.org/10.1056/NEJMoa067373</a>
+</div>
+<div id="ref-AntiplateletTrialistsCollaboration1994collaborative" class="csl-entry" role="listitem">
+13. Antiplatelet Trialists’ Collaboration. Collaborative overview of randomised trials of antiplatelet therapy prevention of death, myocardial infarction, and stroke by prolonged antiplatelet therapy in various categories of patients [Internet]. BMJ. 1994 ;308(6921):81–106.Available from: <a href="https://doi.org/10.1136/bmj.308.6921.81">https://doi.org/10.1136/bmj.308.6921.81</a>
+</div>
+<div id="ref-Parienti2008femoral-0001" class="csl-entry" role="listitem">
+14. Parienti J-J, Thirion M, Mégarbane B, Souweine B, Ouchikhe A, Polito A, Forel J-M, Marqué S, Misset B, Airapetian N, Daurel C, Mira J-P, Ramakers M, Cheyron D du, Le Coutour X, Daubin C, Charbonneau P, Members of the Cathedia Study Group. Femoral vs jugular venous catheterization and risk of nosocomial events in adults requiring acute renal replacement therapy: A randomized controlled trial: A randomized controlled trial [Internet]. JAMA. 2008 ;299(20):2413–2422.Available from: <a href="http://dx.doi.org/10.1001/jama.299.20.2413">http://dx.doi.org/10.1001/jama.299.20.2413</a>
+</div>
+<div id="ref-StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001" class="csl-entry" role="listitem">
+15. Study to Prospectively Evaluate Reamed Intramedullary Nails in Patients with Tibial Fractures Investigators, Bhandari M, Guyatt G, Tornetta P 3rd, Schemitsch EH, Swiontkowski M, Sanders D, Walter SD. Randomized trial of reamed and unreamed intramedullary nailing of tibial shaft fractures: By the study to prospectively evaluate reamed intramedullary nails in patients with tibial fractures (<span>SPRINT</span>) investigators [Internet]. J. Bone Joint Surg. Am. 2008 Dec. ;90(12):2567–2578.Available from: <a href="http://dx.doi.org/10.2106/JBJS.G.01694">http://dx.doi.org/10.2106/JBJS.G.01694</a>
+</div>
+<div id="ref-SPRINTInvestigators2008study" class="csl-entry" role="listitem">
+16. SPRINT Investigators, Bhandari M, Guyatt G, Tornetta P 3rd, Schemitsch E, Swiontkowski M, Sanders D, Walter SD. Study to prospectively evaluate reamed intramedually nails in patients with tibial fractures (<span>S</span>.<span>P</span>.<span>R</span>.<span>I</span>.<span>N</span>.<span>T</span>.): Study rationale and design [Internet]. BMC Musculoskelet. Disord. 2008 ;9(1):91.Available from: <a href="http://dx.doi.org/10.1186/1471-2474-9-91">http://dx.doi.org/10.1186/1471-2474-9-91</a>
+</div>
+<div id="ref-Wallach2017evaluation-0001" class="csl-entry" role="listitem">
+17. Wallach JD, Sullivan PG, Trepanowski JF, Sainani KL, Steyerberg EW, Ioannidis JPA. Evaluation of evidence of statistical support and corroboration of subgroup claims in randomized clinical trials [Internet]. JAMA Intern. Med. 2017 ;177(4):554–560.Available from: <a href="http://dx.doi.org/10.1001/jamainternmed.2016.9125">http://dx.doi.org/10.1001/jamainternmed.2016.9125</a>
+</div>
+<div id="ref-Chan2016neratinib" class="csl-entry" role="listitem">
+18. Chan A, Delaloge S, Holmes FA, Moy B, Iwata H, Harvey VJ, Robert NJ, Silovski T, Gokmen E, Minckwitz G von, Ejlertsen B, Chia SKL, Mansi J, Barrios CH, Gnant M, Buyse M, Gore I, Smith J 2nd, Harker G, Masuda N, Petrakova K, Zotano AG, Iannotti N, Rodriguez G, Tassone P, Wong A, Bryce R, Ye Y, Yao B, Martin M, ExteNET Study Group. Neratinib after trastuzumab-based adjuvant therapy in patients with <span>HER2</span>-positive breast cancer (<span>ExteNET</span>): A multicentre, randomised, double-blind, placebo-controlled, phase 3 trial [Internet]. Lancet Oncol. 2016 Mar. ;17(3):367–377.Available from: <a href="http://dx.doi.org/10.1016/S1470-2045(15)00551-3">http://dx.doi.org/10.1016/S1470-2045(15)00551-3</a>
+</div>
+<div id="ref-Perez2014trastuzumab" class="csl-entry" role="listitem">
+19. Perez EA, Romond EH, Suman VJ, Jeong J-H, Sledge G, Geyer CE Jr, Martino S, Rastogi P, Gralow J, Swain SM, Winer EP, Colon-Otero G, Davidson NE, Mamounas E, Zujewski JA, Wolmark N. Trastuzumab plus adjuvant chemotherapy for human epidermal growth factor receptor 2-positive breast cancer: Planned joint analysis of overall survival from <span>NSABP</span> <span>B</span>-31 and <span>NCCTG</span> <span>N9831</span> [Internet]. J. Clin. Oncol. 2014 ;32(33):3744–3752.Available from: <a href="http://dx.doi.org/10.1200/JCO.2014.55.5730">http://dx.doi.org/10.1200/JCO.2014.55.5730</a>
+</div>
+<div id="ref-Untch2008estimating" class="csl-entry" role="listitem">
+20. Untch M, Gelber RD, Jackisch C, Procter M, Baselga J, Bell R, Cameron D, Bari M, Smith I, Leyland-Jones B, Azambuja E de, Wermuth P, Khasanov R, Feng-Yi F, Constantin C, Mayordomo JI, Su C-H, Yu S-Y, Lluch A, Senkus-Konefka E, Price C, Haslbauer F, Suarez Sahui T, Srimuninnimit V, Colleoni M, Coates AS, Piccart-Gebhart MJ, Goldhirsch A, HERA Study Team. Estimating the magnitude of trastuzumab effects within patient subgroups in the <span>HERA</span> trial [Internet]. Ann. Oncol. 2008 June ;19(6):1090–1096.Available from: <a href="http://dx.doi.org/10.1093/annonc/mdn005">http://dx.doi.org/10.1093/annonc/mdn005</a>
+</div>
+<div id="ref-deAzambuja2014lapatinib" class="csl-entry" role="listitem">
+21. Azambuja E de, Holmes AP, Piccart-Gebhart M, Holmes E, Di Cosimo S, Swaby RF, Untch M, Jackisch C, Lang I, Smith I, Boyle F, Xu B, Barrios CH, Perez EA, Azim HA Jr, Kim S-B, Kuemmel S, Huang C-S, Vuylsteke P, Hsieh R-K, Gorbunova V, Eniu A, Dreosti L, Tavartkiladze N, Gelber RD, Eidtmann H, Baselga J. Lapatinib with trastuzumab for <span>HER2</span>-positive early breast cancer (<span>NeoALTTO</span>): Survival outcomes of a randomised, open-label, multicentre, phase 3 trial and their association with pathological complete response [Internet]. Lancet Oncol. 2014 Sept. ;15(10):1137–1146.Available from: <a href="http://dx.doi.org/10.1016/S1470-2045(14)70320-1">http://dx.doi.org/10.1016/S1470-2045(14)70320-1</a>
+</div>
+<div id="ref-DeLaurentiis2005a" class="csl-entry" role="listitem">
+22. De Laurentiis M, Arpino G, Massarelli E, Ruggiero A, Carlomagno C, Ciardiello F, Tortora G, D’Agostino D, Caputo F, Cancello G, Montagna E, Malorni L, Zinno L, Lauria R, Bianco AR, De Placido S. A meta-analysis on the interaction between <span>HER</span>-2 expression and response to endocrine treatment in advanced breast cancer [Internet]. Clin. Cancer Res. 2005 ;11(13):4741–4748.Available from: <a href="http://dx.doi.org/10.1158/1078-0432.CCR-04-2569">http://dx.doi.org/10.1158/1078-0432.CCR-04-2569</a>
+</div>
+<div id="ref-Dowsett2001her-2" class="csl-entry" role="listitem">
+23. Dowsett M, Harper-Wynne C, Boeddinghaus I, Salter J, Hills M, Dixon M, Ebbs S, Gui G, Sacks N, Smith I. <span>HER</span>-2 amplification impedes the antiproliferative effects of hormone therapy in estrogen receptor-positive primary breast cancer [Internet]. Cancer Res. 2001 ;61(23):8452–8458.Available from: <a href="https://www.ncbi.nlm.nih.gov/pubmed/11731427">https://www.ncbi.nlm.nih.gov/pubmed/11731427</a>
+</div>
+<div id="ref-Trick2006prospective-0001" class="csl-entry" role="listitem">
+24. Trick WE, Miranda J, Evans AT, Charles-Damte M, Reilly BM, Clarke P. Prospective cohort study of central venous catheters among internal medicine ward patients [Internet]. Am. J. Infect. Control. 2006 Dec. ;34(10):636–641.Available from: <a href="http://dx.doi.org/10.1016/j.ajic.2006.02.008">http://dx.doi.org/10.1016/j.ajic.2006.02.008</a>
+</div>
+<div id="ref-Corwin2007efficacy-0001" class="csl-entry" role="listitem">
+25. Corwin HL, Gettinger A, Fabian TC, May A, Pearl RG, Heard S, An R, Bowers PJ, Burton P, Klausner MA, Corwin MJ, EPO Critical Care Trials Group. Efficacy and safety of epoetin alfa in critically ill patients [Internet]. N. Engl. J. Med. 2007 ;357(10):965–976.Available from: <a href="http://dx.doi.org/10.1056/NEJMoa071533">http://dx.doi.org/10.1056/NEJMoa071533</a>
+</div>
+<div id="ref-Corwin2002efficacy-0001" class="csl-entry" role="listitem">
+26. Corwin HL, Gettinger A, Pearl RG, Fink MP, Levy MM, Shapiro MJ, Corwin MJ, Colton T, EPO Critical Care Trials Group. Efficacy of recombinant human erythropoietin in critically ill patients: A randomized controlled trial: A randomized controlled trial [Internet]. JAMA. 2002 ;288(22):2827–2835.Available from: <a href="http://dx.doi.org/10.1001/jama.288.22.2827">http://dx.doi.org/10.1001/jama.288.22.2827</a>
+</div>
+<div id="ref-Ebbeling2007effects-0001" class="csl-entry" role="listitem">
+27. Ebbeling CB, Leidig MM, Feldman HA, Lovesky MM, Ludwig DS. Effects of a low-glycemic load vs low-fat diet in obese young adults: A randomized trial: A randomized trial [Internet]. JAMA. 2007 ;297(19):2092–2102.Available from: <a href="http://dx.doi.org/10.1001/jama.297.19.2092">http://dx.doi.org/10.1001/jama.297.19.2092</a>
+</div>
+<div id="ref-Pittas2005a-0001" class="csl-entry" role="listitem">
+28. Pittas AG, Das SK, Hajduk CL, Golden J, Saltzman E, Stark PC, Greenberg AS, Roberts SB. A low-glycemic load diet facilitates greater weight loss in overweight adults with high insulin secretion but not in overweight adults with low insulin secretion in the <span>CALERIE</span> trial [Internet]. Diabetes Care. 2005 Dec. ;28(12):2939–2941.Available from: <a href="http://dx.doi.org/10.2337/diacare.28.12.2939">http://dx.doi.org/10.2337/diacare.28.12.2939</a>
+</div>
+<div id="ref-VanderWeele2011interpretation-0001" class="csl-entry" role="listitem">
+29. VanderWeele TJ, Knol MJ. Interpretation of subgroup analyses in randomized trials: Heterogeneity versus secondary interventions [Internet]. Ann. Intern. Med. 2011 ;154(10):680–683.Available from: <a href="http://dx.doi.org/10.7326/0003-4819-154-10-201105170-00008">http://dx.doi.org/10.7326/0003-4819-154-10-201105170-00008</a>
+</div>
+<div id="ref-Brookes2001subgroup-0001" class="csl-entry" role="listitem">
+30. Brookes ST, Whitley E, Peters TJ, Mulheran PA, Egger M, Davey Smith G. Subgroup analyses in randomised controlled trials: Quantifying the risks of false-positives and false-negatives [Internet]. Health Technol. Assess. 2001 ;5(33):1–56.Available from: <a href="http://dx.doi.org/10.3310/hta5330">http://dx.doi.org/10.3310/hta5330</a>
+</div>
+<div id="ref-Rockette1988strategies-0001" class="csl-entry" role="listitem">
+31. Rockette HE, Caplan RJ. Strategies for subgroup analysis in clinical trials [Internet]. Recent Results Cancer Res. 1988 ;11149–54.Available from: <a href="http://dx.doi.org/10.1007/978-3-642-83419-6_6">http://dx.doi.org/10.1007/978-3-642-83419-6_6</a>
+</div>
+<div id="ref-Simon1982patient-0001" class="csl-entry" role="listitem">
+32. Simon R. Patient subsets and variation in therapeutic efficacy [Internet]. Br. J. Clin. Pharmacol. 1982 Oct. ;14(4):473–482.Available from: <a href="http://dx.doi.org/10.1111/j.1365-2125.1982.tb02015.x">http://dx.doi.org/10.1111/j.1365-2125.1982.tb02015.x</a>
+</div>
+<div id="ref-Tanniou2017estimates-0001" class="csl-entry" role="listitem">
+33. Tanniou J, Tweel I van der, Teerenstra S, Roes KCB. Estimates of subgroup treatment effects in overall nonsignificant trials: To what extent should we believe in them? [Internet]. Pharm. Stat. 2017 July ;16(4):280–295.Available from: <a href="https://doi.org/10.1002/pst.1810">https://doi.org/10.1002/pst.1810</a>
+</div>
+<div id="ref-Pocock2002subgroup-0001" class="csl-entry" role="listitem">
+34. Pocock SJ, Assmann SE, Enos LE, Kasten LE. Subgroup analysis, covariate adjustment and baseline comparisons in clinical trial reporting: Current practice and problems [Internet]. Stat. Med. 2002 ;21(19):2917–2930.Available from: <a href="http://dx.doi.org/10.1002/sim.1296">http://dx.doi.org/10.1002/sim.1296</a>
+</div>
+<div id="ref-Altman2011how-0002" class="csl-entry" role="listitem">
+35. Altman DG, Bland JM. How to obtain the <span>P</span> value from a confidence interval [Internet]. BMJ. 2011 ;343(aug08 1):d2304.Available from: <a href="http://dx.doi.org/10.1136/bmj.d2304">http://dx.doi.org/10.1136/bmj.d2304</a>
+</div>
+<div id="ref-Knol2011the-0001" class="csl-entry" role="listitem">
+36. Knol MJ, Pestman WR, Grobbee DE. The (mis)use of overlap of confidence intervals to assess effect modification [Internet]. Eur. J. Epidemiol. 2011 Apr. ;26(4):253–254.Available from: <a href="http://dx.doi.org/10.1007/s10654-011-9563-8">http://dx.doi.org/10.1007/s10654-011-9563-8</a>
+</div>
+<div id="ref-Benjamin2018redefine-0001" class="csl-entry" role="listitem">
+37. Benjamin DJ, Berger JO, Johannesson M, Nosek BA, Wagenmakers E-J, Berk R, Bollen KA, Brembs B, Brown L, Camerer C, Cesarini D, Chambers CD, Clyde M, Cook TD, De Boeck P, Dienes Z, Dreber A, Easwaran K, Efferson C, Fehr E, Fidler F, Field AP, Forster M, George EI, Gonzalez R, Goodman S, Green E, Green DP, Greenwald AG, Hadfield JD, Hedges LV, Held L, Hua Ho T, Hoijtink H, Hruschka DJ, Imai K, Imbens G, Ioannidis JPA, Jeon M, Jones JH, Kirchler M, Laibson D, List J, Little R, Lupia A, Machery E, Maxwell SE, McCarthy M, Moore DA, Morgan SL, Munafó M, Nakagawa S, Nyhan B, Parker TH, Pericchi L, Perugini M, Rouder J, Rousseau J, Savalei V, Schönbrodt FD, Sellke T, Sinclair B, Tingley D, Van Zandt T, Vazire S, Watts DJ, Winship C, Wolpert RL, Xie Y, Young C, Zinman J, Johnson VE. Redefine statistical significance [Internet]. Nat. Hum. Behav. 2018 Jan. ;2(1):6–10.Available from: <a href="http://dx.doi.org/10.1038/s41562-017-0189-z">http://dx.doi.org/10.1038/s41562-017-0189-z</a>
+</div>
+<div id="ref-Wilt2017follow-up-0001" class="csl-entry" role="listitem">
+38. Wilt TJ, Jones KM, Barry MJ, Andriole GL, Culkin D, Wheeler T, Aronson WJ, Brawer MK. Follow-up of prostatectomy versus observation for early prostate cancer [Internet]. N. Engl. J. Med. 2017 ;377(2):132–142.Available from: <a href="http://dx.doi.org/10.1056/NEJMoa1615869">http://dx.doi.org/10.1056/NEJMoa1615869</a>
+</div>
+<div id="ref-Wallentin2009ticagrelor-0001" class="csl-entry" role="listitem">
+39. Wallentin L, Becker RC, Budaj A, Cannon CP, Emanuelsson H, Held C, Horrow J, Husted S, James S, Katus H, Mahaffey KW, Scirica BM, Skene A, Steg PG, Storey RF, Harrington RA, PLATO Investigators, Freij A, Thorsén M. Ticagrelor versus clopidogrel in patients with acute coronary syndromes [Internet]. N. Engl. J. Med. 2009 ;361(11):1045–1057.Available from: <a href="http://dx.doi.org/10.1056/NEJMoa0904327">http://dx.doi.org/10.1056/NEJMoa0904327</a>
+</div>
+<div id="ref-CRASH-2Collaborators2011the" class="csl-entry" role="listitem">
+40. CRASH-2 collaborators, Roberts I, Shakur H, Afolabi A, Brohi K, Coats T, Dewan Y, Gando S, Guyatt G, Hunt BJ, Morales C, Perel P, Prieto-Merino D, Woolley T. The importance of early treatment with tranexamic acid in bleeding trauma patients: An exploratory analysis of the <span>CRASH</span>-2 randomised controlled trial [Internet]. Lancet. 2011 ;377(9771):1096–101, 1101.e1–2.Available from: <a href="http://dx.doi.org/10.1016/S0140-6736(11)60278-X">http://dx.doi.org/10.1016/S0140-6736(11)60278-X</a>
+</div>
+<div id="ref-Mills1993data-0001" class="csl-entry" role="listitem">
+41. Mills JL. Data torturing [Internet]. N. Engl. J. Med. 1993 ;329(16):1196–1199.Available from: <a href="http://dx.doi.org/10.1056/NEJM199310143291613">http://dx.doi.org/10.1056/NEJM199310143291613</a>
+</div>
+<div id="ref-Counsell1994the-0001" class="csl-entry" role="listitem">
+42. Counsell CE, Clarke MJ, Slattery J, Sandercock PA. The miracle of <span>DICE</span> therapy for acute stroke: Fact or fictional product of subgroup analysis? [Internet]. BMJ. 1994 ;309(6970):1677–1681.Available from: <a href="http://dx.doi.org/10.1136/bmj.309.6970.1677">http://dx.doi.org/10.1136/bmj.309.6970.1677</a>
+</div>
+<div id="ref-Higgins2004controlling-0001" class="csl-entry" role="listitem">
+43. Higgins JPT, Thompson SG. Controlling the risk of spurious findings from meta-regression [Internet]. Stat. Med. 2004 ;23(11):1663–1682.Available from: <a href="http://dx.doi.org/10.1002/sim.1752">http://dx.doi.org/10.1002/sim.1752</a>
+</div>
+<div id="ref-Li2017an-0001" class="csl-entry" role="listitem">
+44. Li G, Taljaard M, Van den Heuvel ER, Levine MA, Cook DJ, Wells GA, Devereaux PJ, Thabane L. An introduction to multiplicity issues in clinical trials: The what, why, when and how [Internet]. Int. J. Epidemiol. 2017 ;46(2):746–755.Available from: <a href="http://dx.doi.org/10.1093/ije/dyw320">http://dx.doi.org/10.1093/ije/dyw320</a>
+</div>
+<div id="ref-Starr2004assessing-0001" class="csl-entry" role="listitem">
+45. Starr JR, McKnight B. Assessing interaction in case-control studies: Type <span>I</span> errors when using both additive and multiplicative scales: Type <span>I</span> errors when using both additive and multiplicative scales [Internet]. Epidemiology. 2004 July ;15(4):422–427.Available from: <a href="http://dx.doi.org/10.1097/01.ede.0000129508.82783.94">http://dx.doi.org/10.1097/01.ede.0000129508.82783.94</a>
+</div>
+<div id="ref-Shaffer1995multiple-0001" class="csl-entry" role="listitem">
+46. Shaffer JP. <span>MULTIPLE</span> <span>HYPOTHESIS</span> <span>TESTING</span>. 1995 ;
+</div>
+<div id="ref-Varadhan2016treatment-0001" class="csl-entry" role="listitem">
+47. Varadhan R, Wang S-J. Treatment effect heterogeneity for univariate subgroups in clinical trials: Shrinkage, standardization, or else: Treatment effect heterogeneity for univariate subgroups in clinical trials [Internet]. Biom. J. 2016 Jan. ;58(1):133–153.Available from: <a href="http://dx.doi.org/10.1002/bimj.201400102">http://dx.doi.org/10.1002/bimj.201400102</a>
+</div>
+<div id="ref-Grouin2005subgroup-0001" class="csl-entry" role="listitem">
+48. Grouin J-M, Coste M, Lewis J. Subgroup analyses in randomized clinical trials: Statistical and regulatory issues [Internet]. J. Biopharm. Stat. 2005 ;15(5):869–882.Available from: <a href="http://dx.doi.org/10.1081/BIP-200067988">http://dx.doi.org/10.1081/BIP-200067988</a>
+</div>
+<div id="ref-Burke2015three-0001" class="csl-entry" role="listitem">
+49. Burke JF, Sussman JB, Kent DM, Hayward RA. Three simple rules to ensure reasonably credible subgroup analyses [Internet]. BMJ. 2015 ;351h5651.Available from: <a href="http://dx.doi.org/10.1136/bmj.h5651">http://dx.doi.org/10.1136/bmj.h5651</a>
+</div>
+<div id="ref-Kent2010assessing-0001" class="csl-entry" role="listitem">
+50. Kent DM, Rothwell PM, Ioannidis JPA, Altman DG, Hayward RA. Assessing and reporting heterogeneity in treatment effects in clinical trials: A proposal [Internet]. Trials. 2010 ;11(1):85.Available from: <a href="http://dx.doi.org/10.1186/1745-6215-11-85">http://dx.doi.org/10.1186/1745-6215-11-85</a>
+</div>
+<div id="ref-Wang2007statistics-0001" class="csl-entry" role="listitem">
+51. Wang R, Lagakos SW, Ware JH, Hunter DJ, Drazen JM. Statistics in medicine–reporting of subgroup analyses in clinical trials [Internet]. N. Engl. J. Med. 2007 ;357(21):2189–2194.Available from: <a href="http://dx.doi.org/10.1056/NEJMsr077003">http://dx.doi.org/10.1056/NEJMsr077003</a>
+</div>
+<div id="ref-Knol2012recommendations-0001" class="csl-entry" role="listitem">
+52. Knol MJ, VanderWeele TJ. Recommendations for presenting analyses of effect modification and interaction [Internet]. Int. J. Epidemiol. 2012 Apr. ;41(2):514–520.Available from: <a href="http://dx.doi.org/10.1093/ije/dyr218">http://dx.doi.org/10.1093/ije/dyr218</a>
+</div>
+<div id="ref-Barnett1998benefit-0001" class="csl-entry" role="listitem">
+53. Barnett HJ, Taylor DW, Eliasziw M, Fox AJ, Ferguson GG, Haynes RB. Benefit of carotid endarterectomy in patients with symptomatic moderate or severe stenosis. North American Symptomatic Carotid Endarterectomy Trial Collaborators The New England journal of medicine. 1998 ;339(20):1415–1425.
+</div>
+<div id="ref-Taylor1999low-dose-0001" class="csl-entry" role="listitem">
+54. Taylor DW, Barnett HJ, Haynes RB, Ferguson GG, Sackett DL, Thorpe KE. Low-dose and high-dose acetylsalicylic acid for patients undergoing carotid endarterectomy: A randomised controlled trial. ASA and Carotid Endarterectomy (ACE) Trial Collaborators Lancet. 1999 ;353(9171):2179–2184.
+</div>
+<div id="ref-Chaillet2015a-0002" class="csl-entry" role="listitem">
+55. Chaillet N, Dumont A, Abrahamowicz M, Pasquier JC, Audibert F, Monnier P. A clusterrandomized trial to reduce cesarean delivery rates in quebec. N. Engl. J. Med. 2015 ;372(18):1710–1721.
+</div>
+<div id="ref-NorthAmericanSymptomaticCarotidEndarterectomy1991methods" class="csl-entry" role="listitem">
+56. North American Symptomatic Carotid Endarterectomy T. Methods, patient characteristics, and progress. Stroke. 1991 ;22(6):711–720.
+</div>
+<div id="ref-Fisher2017meta-analytical-0001" class="csl-entry" role="listitem">
+57. Fisher DJ, Carpenter JR, Morris TP, Freeman SC, Tierney JF. Meta-analytical methods to identify who benefits most from treatments: Daft, deluded, or deft approach? [Internet]. BMJ. 2017 ;356j573.Available from: <a href="http://dx.doi.org/10.1136/bmj.j573">http://dx.doi.org/10.1136/bmj.j573</a>
+</div>
+<div id="ref-Royston2006dichotomizing-0001" class="csl-entry" role="listitem">
+58. Royston P, Altman DG, Sauerbrei W. Dichotomizing continuous predictors in multiple regression: A bad idea [Internet]. Stat. Med. 2006 ;25(1):127–141.Available from: <a href="http://dx.doi.org/10.1002/sim.2331">http://dx.doi.org/10.1002/sim.2331</a>
+</div>
+<div id="ref-Altman2006the-0001" class="csl-entry" role="listitem">
+59. Altman DG, Royston P. The cost of dichotomising continuous variables [Internet]. BMJ. 2006 ;332(7549):1080.Available from: <a href="http://dx.doi.org/10.1136/bmj.332.7549.1080">http://dx.doi.org/10.1136/bmj.332.7549.1080</a>
+</div>
+<div id="ref-Altman1994dangers-0001" class="csl-entry" role="listitem">
+60. Altman DG, Lausen B, Sauerbrei W, Schumacher M. Dangers of using <span>“optimal”</span> cutpoints in the evaluation of prognostic factors [Internet]. J. Natl. Cancer Inst. 1994 ;86(11):829–835.Available from: <a href="http://dx.doi.org/10.1093/jnci/86.11.829">http://dx.doi.org/10.1093/jnci/86.11.829</a>
+</div>
+<div id="ref-Royston2013interaction-0001" class="csl-entry" role="listitem">
+61. Royston P, Sauerbrei W. Interaction of treatment with a continuous variable: Simulation study of significance level for several methods of analysis [Internet]. Stat. Med. 2013 ;32(22):3788–3803.Available from: <a href="http://dx.doi.org/10.1002/sim.5813">http://dx.doi.org/10.1002/sim.5813</a>
+</div>
+<div id="ref-Gilthorpe2012statistical-0001" class="csl-entry" role="listitem">
+62. Gilthorpe MS, Clayton DG. Statistical interactions and gene-environment joint effects [Internet]. In: Modern methods for epidemiology. Dordrecht: Springer Netherlands; 2012. p. 291–311.Available from: <a href="http://dx.doi.org/10.1007/978-94-007-3024-3_17">http://dx.doi.org/10.1007/978-94-007-3024-3_17</a>
+</div>
+<div id="ref-Royston2014interaction-0001" class="csl-entry" role="listitem">
+63. Royston P, Sauerbrei W. Interaction of treatment with a continuous variable: Simulation study of power for several methods of analysis [Internet]. Stat. Med. 2014 ;33(27):4695–4708.Available from: <a href="http://dx.doi.org/10.1002/sim.6308">http://dx.doi.org/10.1002/sim.6308</a>
+</div>
+<div id="ref-Royston2004a-0001" class="csl-entry" role="listitem">
+64. Royston P, Sauerbrei W. A new approach to modelling interactions between treatment and continuous covariates in clinical trials by using fractional polynomials [Internet]. Stat. Med. 2004 ;23(16):2509–2525.Available from: <a href="http://dx.doi.org/10.1002/sim.1815">http://dx.doi.org/10.1002/sim.1815</a>
+</div>
+<div id="ref-Bonetti2009a-0001" class="csl-entry" role="listitem">
+65. Bonetti M, Zahrieh D, Cole BF, Gelber RD. A small sample study of the <span>STEPP</span> approach to assessing treatment-covariate interactions in survival data [Internet]. Stat. Med. 2009 ;28(8):1255–1268.Available from: <a href="https://doi.org/10.1002/sim.3524">https://doi.org/10.1002/sim.3524</a>
+</div>
+<div id="ref-Hortobagyi2016correlative" class="csl-entry" role="listitem">
+66. Hortobagyi GN, Chen D, Piccart M, Rugo HS, Burris HA 3rd, Pritchard KI, Campone M, Noguchi S, Perez AT, Deleu I, Shtivelband M, Masuda N, Dakhil S, Anderson I, Robinson DM, He W, Garg A, McDonald ER 3rd, Bitter H, Huang A, Taran T, Bachelot T, Lebrun F, Lebwohl D, Baselga J. Correlative analysis of genetic alterations and everolimus benefit in hormone receptor-positive, human epidermal growth factor receptor 2-negative advanced breast cancer: Results from <span>BOLERO</span>-2 [Internet]. J. Clin. Oncol. 2016 ;34(5):419–426.Available from: <a href="http://dx.doi.org/10.1200/JCO.2014.60.1971">http://dx.doi.org/10.1200/JCO.2014.60.1971</a>
+</div>
+<div id="ref-TheCRASHTrialsCo-ordinatingCentre2005protocol-0001" class="csl-entry" role="listitem">
+67. The CRASH Trials Co-ordinating Centre. Protocol <span>05PRT</span>/1. 2005 ;
+</div>
+<div id="ref-MedicalResearchCouncilRenalCancerCollaborators1999interferon-alpha-0001" class="csl-entry" role="listitem">
+68. Medical Research Council Renal Cancer Collaborators. Interferon-alpha and survival in metastatic renal carcinoma: Early results of a randomised controlled trial. Lancet. 1999 ;353(9146):14–17.
+</div>
+<div id="ref-Royston2004is-0001" class="csl-entry" role="listitem">
+69. Royston P, Sauerbrei W, Ritchie A. Is treatment with interferon-alpha effective in all patients with metastatic renal carcinoma? A new approach to the investigation of interactions [Internet]. Br. J. Cancer. 2004 ;90(4):794–799.Available from: <a href="http://dx.doi.org/10.1038/sj.bjc.6601622">http://dx.doi.org/10.1038/sj.bjc.6601622</a>
+</div>
+<div id="ref-Schandelmaier2019a-0002" class="csl-entry" role="listitem">
+70. Schandelmaier S, Chang Y, Devasenapathy N, Devji T, Kwong JSW, Colunga Lozano LE, Lee Y, Agarwal A, Bhatnagar N, Ewald H, Zhang Y, Sun X, Thabane L, Walsh M, Briel M, Guyatt GH. A systematic survey identified 36 criteria for assessing effect modification claims in randomized trials or meta-analyses [Internet]. J. Clin. Epidemiol. 2019 Sept. ;113159–167.Available from: <a href="http://dx.doi.org/10.1016/j.jclinepi.2019.05.014">http://dx.doi.org/10.1016/j.jclinepi.2019.05.014</a>
+</div>
+<div id="ref-Desai2014challenges-0001" class="csl-entry" role="listitem">
+71. Desai M, Pieper KS, Mahaffey K. Challenges and solutions to pre- and post-randomization subgroup analyses [Internet]. Curr. Cardiol. Rep. 2014 ;16(10):531.Available from: <a href="http://dx.doi.org/10.1007/s11886-014-0531-2">http://dx.doi.org/10.1007/s11886-014-0531-2</a>
+</div>
+<div id="ref-VanderWeele2015explanation-0001" class="csl-entry" role="listitem">
+72. VanderWeele T. Explanation in causal inference: Methods for mediation and interaction. 1st ed. New York, NY: Oxford University Press; 2015.
+</div>
+<div id="ref-Pearce2014confounding-0001" class="csl-entry" role="listitem">
+73. Pearce N, Greenland S. Confounding and interaction [Internet]. In: Ahrens W, Pigeot I, editor(s). Handbook of epidemiology. New York, NY: Springer New York; 2014. p. 659–684.Available from: <a href="https://doi.org/10.1007/978-1-4614-6625-3_10">https://doi.org/10.1007/978-1-4614-6625-3_10</a>
+</div>
+<div id="ref-Varadhan2014standardization-0001" class="csl-entry" role="listitem">
+74. Varadhan R, Wang S-J. Standardization for subgroup analysis in randomized controlled trials [Internet]. J. Biopharm. Stat. 2014 ;24(1):154–167.Available from: <a href="http://dx.doi.org/10.1080/10543406.2013.856023">http://dx.doi.org/10.1080/10543406.2013.856023</a>
+</div>
+<div id="ref-Higgins2016a-0001" class="csl-entry" role="listitem">
+75. Higgins J, Sterne J, Savović J, Page M, Hrõbjartsson A, Boutron I, Reeves B, Eldridge S. A revised tool for assessing risk of bias in randomized trials. Cochrane Database of Systematic Reviews. 2016 ;1029–31.
+</div>
+<div id="ref-Sun2011the-0001" class="csl-entry" role="listitem">
+76. Sun X, Briel M, Busse JW, You JJ, Akl EA, Mejza F, Bala MM, Bassler D, Mertz D, Diaz-Granados N, Vandvik PO, Malaga G, Srinathan SK, Dahm P, Johnston BC, Alonso-Coello P, Hassouneh B, Truong J, Dattani ND, Walter SD, Heels-Ansdell D, Bhatnagar N, Altman DG, Guyatt GH. The influence of study characteristics on reporting of subgroup analyses in randomised controlled trials: Systematic review [Internet]. BMJ. 2011 ;342(mar28 1):d1569.Available from: <a href="https://doi.org/10.1136/bmj.d1569">https://doi.org/10.1136/bmj.d1569</a>
+</div>
+<div id="ref-Barton2015the-0001" class="csl-entry" role="listitem">
+77. Barton S, Peckitt C, Sclafani F, Cunningham D, Chau I. The influence of industry sponsorship on the reporting of subgroup analyses within phase <span>III</span> randomised controlled trials in gastrointestinal oncology [Internet]. Eur. J. Cancer. 2015 Dec. ;51(18):2732–2739.Available from: <a href="http://dx.doi.org/10.1016/j.ejca.2015.08.030">http://dx.doi.org/10.1016/j.ejca.2015.08.030</a>
+</div>
+<div id="ref-Gabler2016no-0001" class="csl-entry" role="listitem">
+78. Gabler NB, Duan N, Raneses E, Suttner L, Ciarametaro M, Cooney E, Dubois RW, Halpern SD, Kravitz RL. No improvement in the reporting of clinical trial subgroup effects in high-impact general medical journals [Internet]. Trials. 2016 ;17(1):320.Available from: <a href="http://dx.doi.org/10.1186/s13063-016-1447-5">http://dx.doi.org/10.1186/s13063-016-1447-5</a>
+</div>
+<div id="ref-Alosh2017tutorial-0001" class="csl-entry" role="listitem">
+79. Alosh M, Huque MF, Bretz F, D’Agostino RB Sr. Tutorial on statistical considerations on subgroup analysis in confirmatory clinical trials [Internet]. Stat. Med. 2017 ;36(8):1334–1360.Available from: <a href="http://dx.doi.org/10.1002/sim.7167">http://dx.doi.org/10.1002/sim.7167</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -789,7 +1056,7 @@ Warning
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/www\.iceman\.help");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

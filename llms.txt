@@ -1,0 +1,21 @@
+# ICEMAN
+
+ICEMAN is the Instrument to assess the Credibility of Effect Modification ANalyses. It helps users assess the credibility of apparent subgroup effects in randomized controlled trials and meta-analyses of randomized controlled trials.
+
+## Main Pages
+
+- [Home](https://www.iceman.help/): Overview, quick links, downloads, and citation.
+- [ICEMAN online](https://www.iceman.help/tool.html): Interactive ICEMAN version 1.1 assessment forms.
+- [User manual](https://www.iceman.help/manual/): Practical and item-by-item guidance for applying ICEMAN.
+- [About ICEMAN](https://www.iceman.help/about.html): Versions, development group, ongoing projects, publications, endorsements, funding, and contact.
+
+## Downloads
+
+- [ICEMAN for RCTs, version 1.1](https://www.iceman.help/files/ICEMAN%20RCT%201.1%20(6).docx)
+- [ICEMAN for meta-analyses, version 1.1](https://www.iceman.help/files/ICEMAN%20MA%201.1%20(8).docx)
+- [Reporting templates](https://www.iceman.help/files/ICEMAN%20table%20templates.docx)
+- [PDF manual](https://www.iceman.help/files/ICEMAN%20manual%20.pdf)
+
+## Primary Citation
+
+Schandelmaier S, Briel M, Varadhan R, Schmid CH, Devasenapathy N, Hayward RA, Gagnier J, Borenstein M, van der Heijden GJMG, Dahabreh IJ, Sun X, Sauerbrei W, Walsh M, Ioannidis JPA, Thabane L, Guyatt GH. Development of the instrument to assess the credibility of effect modification analyses (ICEMAN) in randomized controlled trials and meta-analyses. CMAJ 2020;192(32):E901-E906. https://doi.org/10.1503/cmaj.200077

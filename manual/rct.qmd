@@ -1,5 +1,6 @@
 ---
 title: "ICEMAN for Randomized Controlled Trials"
+description: "Item-by-item guidance for applying ICEMAN to apparent effect modification in randomized controlled trials."
 toc-depth: 3
 ---
 
@@ -7,11 +8,11 @@ toc-depth: 3
 
 **Item explanation:** Credibility is higher if investigators correctly anticipated the direction of the effect modification (e.g. that an intervention is more effective in younger than in older patients), lower if they failed to anticipate a direction, and lowest if they anticipated the opposite direction.
 
-Correct anticipation of an effect modification implies that the investigators had a specific hypothesis in mind — usually based on a biologic or other causal rationale, or sometimes based on prior evidence. In the Bayesian framework, the idea of a specific a priori hypothesis corresponds to using an informative rather than non-informative prior [@Laber201715; @Henderson2016bayesian-0001].
+Correct anticipation of an effect modification implies that the investigators had a specific hypothesis in mind — usually based on a biologic or other causal rationale, or sometimes based on prior evidence. In the Bayesian framework, the idea of a specific a priori hypothesis corresponds to using an informative rather than non-informative prior. [@Laber201715; @Henderson2016bayesian-0001]
 
-In addition, the item captures that an explanation stated a priori is much more credible than a post hoc explanation. If post hoc, investigators had likely considered many possible explanations, thereby creating a multiplicity problem [@Yusuf1991analysis-0001; @Oxman1992a-0001; @Thompson1994why-0001; @Fletcher2007subgroup-0001; @Dijkman2009how-0001; @Gagnier2013consensus-based-0001; @Varadhan2012review-0001]. Hypotheses are most credible if verified in a prior, ideally a time-stamped protocol or analysis plan.
+In addition, the item captures that an explanation stated a priori is much more credible than a post hoc explanation. If post hoc, investigators had likely considered many possible explanations, thereby creating a multiplicity problem. [@Yusuf1991analysis-0001; @Oxman1992a-0001; @Thompson1994why-0001; @Fletcher2007subgroup-0001; @Dijkman2009how-0001; @Gagnier2013consensus-based-0001; @Varadhan2012review-0001] Hypotheses are most credible if verified in a prior, ideally a time-stamped protocol or analysis plan.
 
-Note that statements of pre-specification may not be reliable [@Kasenda2014subgroup-0001], nor do they imply a specific hypothesis, nor do they preclude issues of multiple analyses.
+Note that statements of pre-specification may not be reliable, [@Kasenda2014subgroup-0001] nor do they imply a specific hypothesis, nor do they preclude issues of multiple analyses.
 
 **Response options:**
 
@@ -23,15 +24,15 @@ Note that statements of pre-specification may not be reliable [@Kasenda2014subgr
 | **Definitely yes** | Prior protocol available and includes hypothesis with correct specification of direction, e.g. based on biologic rationale |
 
 ::: {.example-block}
-**Definitely no — Example 1:** The ISIS-2 trial testing ASA conducted a provocative post hoc subgroup analysis comparing patients born under different astrological signs [@RandomisedTrialOfIntravenous1988isis-2]. ASA had a slight adverse effect in patients born under the sign of Gemini or Libra but a substantial benefit in others. The example became famous because the finding was obviously post hoc and not compatible with any biological model.
+**Definitely no — Example 1:** The ISIS-2 trial testing ASA conducted a provocative post hoc subgroup analysis comparing patients born under different astrological signs. [@RandomisedTrialOfIntravenous1988isis-2] ASA had a slight adverse effect in patients born under the sign of Gemini or Libra but a substantial benefit in others. The example became famous because the finding was obviously post hoc and not compatible with any biological model.
 
-**Definitely no — Example 2:** In a trial comparing vasopressin versus norepinephrine for septic shock, the authors had hypothesized that the benefit of vasopressin would be larger in more severely ill patients. It turned out that the benefit seemed to be greater in the less severely ill patients (RR 1.04 in more severe vs 0.74 in less severe septic shock, interaction p=0.10). The investigators' failure to correctly identify the direction weakens any inference about differential benefit [@Russell2008vasopressin-0001].
+**Definitely no — Example 2:** In a trial comparing vasopressin versus norepinephrine for septic shock, the authors had hypothesized that the benefit of vasopressin would be larger in more severely ill patients. It turned out that the benefit seemed to be greater in the less severely ill patients (RR 1.04 in more severe vs 0.74 in less severe septic shock, interaction p=0.10). The investigators' failure to correctly identify the direction weakens any inference about differential benefit. [@Russell2008vasopressin-0001]
 
-**Probably no — Example:** The investigators of the first large aspirin trial for patients with transient ischaemic attacks reported a beneficial effect in men but not in women [@RandomisedTrialOfIntravenous1988isis-2]. Although investigators may have planned a priori to explore subgroup effects by sex, they had not anticipated a specific direction based on biologic rationale. Subsequent studies and meta-analyses failed to replicate the subgroup effect [@AntiplateletTrialistsCollaboration1994collaborative].
+**Probably no — Example:** The investigators of the first large aspirin trial for patients with transient ischaemic attacks reported a beneficial effect in men but not in women. [@RandomisedTrialOfIntravenous1988isis-2] Although investigators may have planned a priori to explore subgroup effects by sex, they had not anticipated a specific direction based on biologic rationale. Subsequent studies and meta-analyses failed to replicate the subgroup effect. [@AntiplateletTrialistsCollaboration1994collaborative]
 
-**Probably yes — Example:** A trial in patients requiring dialysis compared jugular versus femoral catheterisation and found no significant difference with respect to catheter colonisation [@Parienti2008femoral-0001]. An analysis of effect modification suggested that jugular catheters were superior in patients with high BMI but inferior in patients with a low BMI. The authors claimed that they had correctly anticipated the direction but there was no protocol available.
+**Probably yes — Example:** A trial in patients requiring dialysis compared jugular versus femoral catheterisation and found no significant difference with respect to catheter colonisation. [@Parienti2008femoral-0001] An analysis of effect modification suggested that jugular catheters were superior in patients with high BMI but inferior in patients with a low BMI. The authors claimed that they had correctly anticipated the direction but there was no protocol available.
 
-**Definitely yes — Example:** A trial comparing reamed versus unreamed intramedullary nails for tibial shaft fractures suggested that reamed nails were superior for closed but potentially inferior for open fractures [@StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001]. The investigators correctly anticipated the direction in their published protocol based on a biologic rationale: damage of endosteal blood supply through reamed nails may be more detrimental in open than in closed fractures [@SPRINTInvestigators2008study].
+**Definitely yes — Example:** A trial comparing reamed versus unreamed intramedullary nails for tibial shaft fractures suggested that reamed nails were superior for closed but potentially inferior for open fractures. [@StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001] The investigators correctly anticipated the direction in their published protocol based on a biologic rationale: damage of endosteal blood supply through reamed nails may be more detrimental in open than in closed fractures. [@SPRINTInvestigators2008study]
 :::
 
 ---
@@ -52,28 +53,28 @@ Replication, ideally in another RCT, makes chance a less likely explanation for 
 | **Strong support** | Consistent with strong prior evidence directly applicable to the clinical scenario (e.g. significant effect modification in related RCT) |
 
 ::: {.example-block}
-**Inconsistent — Example:** A trial investigated the efficacy of neratinib in women with breast cancer [@Chan2016neratinib]. The authors mention two related trials that showed similar survival benefits irrespective of hormone receptor status [@Perez2014trastuzumab; @Untch2008estimating], and three other related trials that suggested greater survival in hormone receptor-negative patients, i.e. the opposite direction of effect modification [@deAzambuja2014lapatinib; @DeLaurentiis2005a; @Dowsett2001her-2].
+**Inconsistent — Example:** A trial investigated the efficacy of neratinib in women with breast cancer. [@Chan2016neratinib] The authors mention two related trials that showed similar survival benefits irrespective of hormone receptor status, [@Perez2014trastuzumab; @Untch2008estimating] and three other related trials that suggested greater survival in hormone receptor-negative patients, i.e. the opposite direction of effect modification. [@deAzambuja2014lapatinib; @DeLaurentiis2005a; @Dowsett2001her-2]
 
-**Little or no support — Example:** A trial comparing jugular versus femoral catheterisation [@Parienti2008femoral-0001]. The prior evidence was unclear because the cited cohort study [@Trick2006prospective-0001] provided no direct support for an interaction and was published after the trial had already started.
+**Little or no support — Example:** A trial comparing jugular versus femoral catheterisation. [@Parienti2008femoral-0001] The prior evidence was unclear because the cited cohort study [@Trick2006prospective-0001] provided no direct support for an interaction and was published after the trial had already started.
 
-**Some support — Example:** A trial testing Epoetin Alfa for critically ill patients suggested a reduction in mortality in trauma patients [@Corwin2007efficacy-0001]. Although the interaction test was not significant (p=0.16), it was consistent with a similar effect modification seen in a previous RCT [@Corwin2002efficacy-0001].
+**Some support — Example:** A trial testing Epoetin Alfa for critically ill patients suggested a reduction in mortality in trauma patients. [@Corwin2007efficacy-0001] Although the interaction test was not significant (p=0.16), it was consistent with a similar effect modification seen in a previous RCT. [@Corwin2002efficacy-0001]
 
-**Strong support — Example:** A trial comparing low-carb versus low-fat diet found effect modification by insulin secretion (interaction p=0.01) [@Ebbeling2007effects-0001]. A previous RCT found a similar, significant effect modification (interaction p=0.02) [@Pittas2005a-0001].
+**Strong support — Example:** A trial comparing low-carb versus low-fat diet found effect modification by insulin secretion (interaction p=0.01). [@Ebbeling2007effects-0001] A previous RCT found a similar, significant effect modification (interaction p=0.02). [@Pittas2005a-0001]
 :::
 
 ---
 
 ## Item 3 — Does a test for interaction suggest that chance is an unlikely explanation? {#rct-item3}
 
-**Item explanation:** Credibility is higher if a statistical test for interaction suggests that chance is an unlikely explanation for the apparent effect modification [@VanderWeele2011interpretation-0001; @Brookes2001subgroup-0001; @Rockette1988strategies-0001]. Credibility is lower if an interaction test is compatible with chance — or no test is available and impossible to compute.
+**Item explanation:** Credibility is higher if a statistical test for interaction suggests that chance is an unlikely explanation for the apparent effect modification. [@VanderWeele2011interpretation-0001; @Brookes2001subgroup-0001; @Rockette1988strategies-0001] Credibility is lower if an interaction test is compatible with chance — or no test is available and impossible to compute.
 
 ::: {.callout-warning}
-**Important:** Showing that an effect is significant in one subgroup and not in another is of little use: it provides no information whether chance might explain differences in effects across subgroups [@Oxman1992a-0001; @Simon1982patient-0001; @Brookes2001subgroup-0001; @Tanniou2017estimates-0001; @Pocock2002subgroup-0001].
+**Important:** Showing that an effect is significant in one subgroup and not in another is of little use: it provides no information whether chance might explain differences in effects across subgroups. [@Oxman1992a-0001; @Simon1982patient-0001; @Brookes2001subgroup-0001; @Tanniou2017estimates-0001; @Pocock2002subgroup-0001]
 :::
 
-If no interaction p-value is reported, it can sometimes be calculated based on the reported data (point estimates of effect and confidence intervals in individual subgroups) [@Altman2011how-0002; @Knol2011the-0001]. As a rule of thumb, the interaction p-value must be smaller than 0.05 if 95% confidence intervals of subgroup-specific estimates do not overlap.
+If no interaction p-value is reported, it can sometimes be calculated based on the reported data (point estimates of effect and confidence intervals in individual subgroups). [@Altman2011how-0002; @Knol2011the-0001] As a rule of thumb, the interaction p-value must be smaller than 0.05 if 95% confidence intervals of subgroup-specific estimates do not overlap.
 
-We anchored the response options around typical thresholds for p-values 0.05, 0.01, and 0.005, with a p-value of 0.005 or smaller representing the most credible category. The response options recognise that p-value thresholds of 0.05 or even 0.01 may be too lenient for claiming statistical significance [@Benjamin2018redefine-0001].
+We anchored the response options around typical thresholds for p-values 0.05, 0.01, and 0.005, with a p-value of 0.005 or smaller representing the most credible category. The response options recognise that p-value thresholds of 0.05 or even 0.01 may be too lenient for claiming statistical significance. [@Benjamin2018redefine-0001]
 
 **Response options:**
 
@@ -85,26 +86,26 @@ We anchored the response options around typical thresholds for p-values 0.05, 0.
 | **Chance an unlikely explanation** | p ≤ 0.005 |
 
 ::: {.example-block}
-**Very likely — Example:** A trial comparing prostatectomy versus observation for early prostate cancer found interaction p-values of 0.06 and 0.08 for potential benefits in specific subgroups [@Wilt2017follow-up-0001]. The most likely explanation is chance.
+**Very likely — Example:** A trial comparing prostatectomy versus observation for early prostate cancer found interaction p-values of 0.06 and 0.08 for potential benefits in specific subgroups. [@Wilt2017follow-up-0001] The most likely explanation is chance.
 
-**Likely/unclear — Example:** The PLATO trial suggested Ticagrelor was inferior in patients from North America (interaction p=0.05) [@Wallentin2009ticagrelor-0001]. The p-value suggests that 1 in 20 trials may show such an effect modification or larger, even if not true.
+**Likely/unclear — Example:** The PLATO trial suggested Ticagrelor was inferior in patients from North America (interaction p=0.05). [@Wallentin2009ticagrelor-0001] The p-value suggests that 1 in 20 trials may show such an effect modification or larger, even if not true.
 
-**May not explain — Example:** A trial comparing reamed versus unreamed intramedullary nailing of tibial shaft fractures. An interaction p-value of 0.01 provided modest support against chance [@StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001].
+**May not explain — Example:** A trial comparing reamed versus unreamed intramedullary nailing of tibial shaft fractures. An interaction p-value of 0.01 provided modest support against chance. [@StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001]
 
-**Unlikely — Example:** The CRASH-2 trial of tranexamic acid in trauma patients found that early treatment (≤1 h) RR 0.68, between 1 and 3 h RR 0.79, and after 3 h RR 1.44. The interaction p-value was smaller than 0.0001 [@CRASH-2Collaborators2011the].
+**Unlikely — Example:** The CRASH-2 trial of tranexamic acid in trauma patients found that early treatment (≤1 h) RR 0.68, between 1 and 3 h RR 0.79, and after 3 h RR 1.44. The interaction p-value was smaller than 0.0001. [@CRASH-2Collaborators2011the]
 :::
 
 ---
 
 ## Item 4 — Small number of effect modifiers tested, or multiplicity considered? {#rct-item4}
 
-**Item explanation:** Performing multiple tests is a major concern in the context of effect modification analysis. Because multiple tests increase the risk of a chance finding [@Mills1993data-0001; @Counsell1994the-0001; @Higgins2004controlling-0001], credibility is higher if investigators have tested only a small number of effect modifiers.
+**Item explanation:** Performing multiple tests is a major concern in the context of effect modification analysis. Because multiple tests increase the risk of a chance finding, [@Mills1993data-0001; @Counsell1994the-0001; @Higgins2004controlling-0001] credibility is higher if investigators have tested only a small number of effect modifiers.
 
-Multiplicity issues can arise in different ways [@Li2017an-0001], including multiple candidate effect modifiers, multiple time points, multiple scales [@Starr2004assessing-0001], multiple outcomes, or multiple methods for testing the interaction.
+Multiplicity issues can arise in different ways, [@Li2017an-0001] including multiple candidate effect modifiers, multiple time points, multiple scales, [@Starr2004assessing-0001] multiple outcomes, or multiple methods for testing the interaction.
 
-An alternative to limiting the number of analyses is to statistically adjust the analysis for multiplicity, e.g. using correction of p-values considering the (familywise) type 1 error rate [@Shaffer1995multiple-0001], testing all candidate effect modifiers in a common model, or shrinkage estimators [@Tanniou2017estimates-0001; @Varadhan2016treatment-0001]. All techniques inevitably reduce power [@Yusuf1991analysis-0001; @Grouin2005subgroup-0001; @Burke2015three-0001].
+An alternative to limiting the number of analyses is to statistically adjust the analysis for multiplicity, e.g. using correction of p-values considering the (familywise) type 1 error rate, [@Shaffer1995multiple-0001] testing all candidate effect modifiers in a common model, or shrinkage estimators. [@Tanniou2017estimates-0001; @Varadhan2016treatment-0001] All techniques inevitably reduce power. [@Yusuf1991analysis-0001; @Grouin2005subgroup-0001; @Burke2015three-0001]
 
-Assessment of multiplicity crucially depends on reporting; reporting guidelines for effect modification are available [@Kent2010assessing-0001; @Wang2007statistics-0001; @Knol2012recommendations-0001]. Note that retrospective statements about the number of pre-specified subgroup analyses are not always reliable [@Kasenda2014subgroup-0001].
+Assessment of multiplicity crucially depends on reporting; reporting guidelines for effect modification are available. [@Kent2010assessing-0001; @Wang2007statistics-0001; @Knol2012recommendations-0001] Note that retrospective statements about the number of pre-specified subgroup analyses are not always reliable. [@Kasenda2014subgroup-0001]
 
 **Response options:**
 
@@ -116,13 +117,13 @@ Assessment of multiplicity crucially depends on reporting; reporting guidelines 
 | **Definitely yes** | Protocol available and ≤3 effect modifiers tested, or number considered in analysis |
 
 ::: {.example-block}
-**Definitely no — Example:** A trial assessing stroke risk after carotid endarterectomy tested more than 20 baseline factors for potential effect modification without adjustment for multiplicity [@Barnett1998benefit-0001]. A subsequent trial suggested the opposite association [@Taylor1999low-dose-0001], suggesting the original finding was a random result.
+**Definitely no — Example:** A trial assessing stroke risk after carotid endarterectomy tested more than 20 baseline factors for potential effect modification without adjustment for multiplicity. [@Barnett1998benefit-0001] A subsequent trial suggested the opposite association, [@Taylor1999low-dose-0001] suggesting the original finding was a random result.
 
-**Probably no — Example:** A trial comparing prostatectomy versus observation [@Wilt2017follow-up-0001]. The investigators did not take into account that they had tested at least seven effect modifiers for this outcome.
+**Probably no — Example:** A trial comparing prostatectomy versus observation. [@Wilt2017follow-up-0001] The investigators did not take into account that they had tested at least seven effect modifiers for this outcome.
 
-**Probably yes — Example:** A trial testing whether training of health professionals reduces caesarean deliveries. The effect modifier was one of two specified in the study protocol [@Chaillet2015a-0002].
+**Probably yes — Example:** A trial testing whether training of health professionals reduces caesarean deliveries. The effect modifier was one of two specified in the study protocol. [@Chaillet2015a-0002]
 
-**Definitely yes — Example:** A trial comparing endarterectomy versus medical therapy. The published study protocol specified only one effect modifier [@NorthAmericanSymptomaticCarotidEndarterectomy1991methods; @Barnett1998benefit-0001].
+**Definitely yes — Example:** A trial comparing endarterectomy versus medical therapy. The published study protocol specified only one effect modifier. [@NorthAmericanSymptomaticCarotidEndarterectomy1991methods; @Barnett1998benefit-0001]
 :::
 
 ---
@@ -131,13 +132,13 @@ Assessment of multiplicity crucially depends on reporting; reporting guidelines 
 
 **Item explanation:** Categorising continuous effect modifiers is common [@Fisher2017meta-analytical-0001] but associated with a number of problems [@Royston2006dichotomizing-0001; @Altman2006the-0001]: cut points can introduce multiplicity, reduce power, mask linear or non-linear associations, and complicate comparisons across studies. Analyses that avoid cut points and make use of the full spectrum of values are the most credible.
 
-Credibility is low if investigators selected the best-fitting data-driven cut point to maximise the effect modification. Such cut points are associated with a high rate of false positive claims [@Royston2006dichotomizing-0001; @Altman1994dangers-0001].
+Credibility is low if investigators selected the best-fitting data-driven cut point to maximise the effect modification. Such cut points are associated with a high rate of false positive claims. [@Royston2006dichotomizing-0001; @Altman1994dangers-0001]
 
-There are some challenges when modelling continuous effect modifiers that are not part of the instrument but may lower the credibility: model misspecification can occur if the continuous relationship is driven by a few influential observations [@Royston2013interaction-0001; @Gilthorpe2012statistical-0001; @Royston2014interaction-0001]. Most credible are therefore continuous analyses for which investigators have pre-specified the type of dependency of the treatment effect on the continuous variable such as a linear or log relationship, or considered a small number of candidate functions [@Royston2004a-0001].
+There are some challenges when modelling continuous effect modifiers that are not part of the instrument but may lower the credibility: model misspecification can occur if the continuous relationship is driven by a few influential observations. [@Royston2013interaction-0001; @Gilthorpe2012statistical-0001; @Royston2014interaction-0001] Most credible are therefore continuous analyses for which investigators have pre-specified the type of dependency of the treatment effect on the continuous variable such as a linear or log relationship, or considered a small number of candidate functions. [@Royston2004a-0001]
 
-An alternative to use of cut points and potentially complex modelling is to consider overlapping subgroups (e.g. using a sliding window approach) [@Bonetti2009a-0001]. The credibility is usually much higher than using arbitrary cut points but the interpretation can be difficult.
+An alternative to use of cut points and potentially complex modelling is to consider overlapping subgroups (e.g. using a sliding window approach). [@Bonetti2009a-0001] The credibility is usually much higher than using arbitrary cut points but the interpretation can be difficult.
 
-The credibility of a continuous analysis usually increases if investigators present a plot with confidence bands around the regression function and carefully checked the proposed model. Formal interaction tests for continuous effect modification are available and should be applied [@Royston2004a-0001].
+The credibility of a continuous analysis usually increases if investigators present a plot with confidence bands around the regression function and carefully checked the proposed model. Formal interaction tests for continuous effect modification are available and should be applied. [@Royston2004a-0001]
 
 **Response options:**
 
@@ -150,22 +151,22 @@ The credibility of a continuous analysis usually increases if investigators pres
 | **Not applicable** | Effect modifier is not continuous |
 
 ::: {.example-block}
-**Definitely no — Example:** A trial tested the effect of everolimus in women with a specific type of breast cancer [@Hortobagyi2016correlative]. The investigators dichotomised the continuous CIN score using the 75th percentile, explicitly selected because it "yielded the maximal difference in HR between high– versus low–CIN score subgroups."
+**Definitely no — Example:** A trial tested the effect of everolimus in women with a specific type of breast cancer. [@Hortobagyi2016correlative] The investigators dichotomised the continuous CIN score using the 75th percentile, explicitly selected because it "yielded the maximal difference in HR between high– versus low–CIN score subgroups."
 
-**Probably no — Example:** A trial comparing prostatectomy versus observation for early prostate cancer [@Wilt2017follow-up-0001]. The investigators hypothesised a potential effect modification by PSA value below or above 10, but provided no rationale for the chosen threshold.
+**Probably no — Example:** A trial comparing prostatectomy versus observation for early prostate cancer. [@Wilt2017follow-up-0001] The investigators hypothesised a potential effect modification by PSA value below or above 10, but provided no rationale for the chosen threshold.
 
-**Probably yes — Example:** The CRASH-2 trial [@CRASH-2Collaborators2011the] tested tranexamic acid in bleeding trauma patients. The investigators had pre-specified the three time-based categories in a published protocol [@TheCRASHTrialsCo-ordinatingCentre2005protocol-0001].
+**Probably yes — Example:** The CRASH-2 trial [@CRASH-2Collaborators2011the] tested tranexamic acid in bleeding trauma patients. The investigators had pre-specified the three time-based categories in a published protocol. [@TheCRASHTrialsCo-ordinatingCentre2005protocol-0001]
 
-**Definitely yes — Example:** A trial comparing interferon-alpha versus medroxyprogesterone in patients with renal carcinoma [@MedicalResearchCouncilRenalCancerCollaborators1999interferon-alpha-0001]. A subsequent analysis treated white cell count as a continuous variable, avoiding arbitrary cut points and maximising the power of the analysis. A plot of the continuous relationship with confidence bands was provided [@Royston2004is-0001].
+**Definitely yes — Example:** A trial comparing interferon-alpha versus medroxyprogesterone in patients with renal carcinoma. [@MedicalResearchCouncilRenalCancerCollaborators1999interferon-alpha-0001] A subsequent analysis treated white cell count as a continuous variable, avoiding arbitrary cut points and maximising the power of the analysis. A plot of the continuous relationship with confidence bands was provided. [@Royston2004is-0001]
 :::
 
 ---
 
 ## Item 6 — Optional: Additional considerations {#rct-item6}
 
-**Item explanation:** Methodologists have suggested a number of additional considerations that could be relevant for assessing the credibility of effect modifiers [@Schandelmaier2019a-0002]. They are not part of the core items because they either are less relevant, rarely apply, or are difficult to assess. The only response options are probably decreased and probably increased. Leaving this section blank does not affect credibility.
+**Item explanation:** Methodologists have suggested a number of additional considerations that could be relevant for assessing the credibility of effect modifiers. [@Schandelmaier2019a-0002] They are not part of the core items because they either are less relevant, rarely apply, or are difficult to assess. The only response options are probably decreased and probably increased. Leaving this section blank does not affect credibility.
 
-**Sensitivity analysis suggesting robustness:** A sensitivity analysis can help to increase the confidence in a proposed effect modification [@Desai2014challenges-0001; @VanderWeele2015explanation-0001; @Pearce2014confounding-0001].
+**Sensitivity analysis suggesting robustness:** A sensitivity analysis can help to increase the confidence in a proposed effect modification. [@Desai2014challenges-0001; @VanderWeele2015explanation-0001; @Pearce2014confounding-0001]
 
 ::: {.example-block}
 **Example:** The CRASH-2 trial [@CRASH-2Collaborators2011the] performed a sensitivity analysis treating time as a continuous effect modifier which suggested that results were robust, despite the pre-specified use of two cut points.
@@ -177,20 +178,20 @@ The credibility of a continuous analysis usually increases if investigators pres
 **Example:** The CRASH-2 trial [@CRASH-2Collaborators2011the] found that the effect on death due to bleeding decreased with increasing time from injury (interaction p<0.0001): early treatment (≤1 h) RR 0.68, between 1 and 3 h RR 0.79, after 3 h RR 1.44. The decrease across levels of the effect modifier strengthens the results.
 :::
 
-**Persistence after adjustment for other potential effect modifiers:** Credibility may be higher if a multivariable analysis suggests that the apparent effect modifier is independent of other candidate modifiers [@Varadhan2014standardization-0001].
+**Persistence after adjustment for other potential effect modifiers:** Credibility may be higher if a multivariable analysis suggests that the apparent effect modifier is independent of other candidate modifiers. [@Varadhan2014standardization-0001]
 
 ::: {.example-block}
-**Example:** The CRASH-2 trial [@CRASH-2Collaborators2011the]. When including interaction terms for all four effect modifiers in a common model, the effect modification by time from injury remained highly significant (p<0.0001).
+**Example:** The CRASH-2 trial. [@CRASH-2Collaborators2011the] When including interaction terms for all four effect modifiers in a common model, the effect modification by time from injury remained highly significant (p<0.0001).
 :::
 
-**Risk of bias of the main effect of the RCTs:** A commonly used instrument to formally assess the overall risk of bias is the Cochrane risk of bias tool [@Higgins2016a-0001]. Some studies have suggested that industry-funded trials are at higher risk of spurious claims of effect modification than non-industry-funded studies, especially if the overall effect is not significant [@Sun2011the-0001; @Barton2015the-0001; @Gabler2016no-0001].
+**Risk of bias of the main effect of the RCTs:** A commonly used instrument to formally assess the overall risk of bias is the Cochrane risk of bias tool. [@Higgins2016a-0001] Some studies have suggested that industry-funded trials are at higher risk of spurious claims of effect modification than non-industry-funded studies, especially if the overall effect is not significant. [@Sun2011the-0001; @Barton2015the-0001; @Gabler2016no-0001]
 
-**Exceptionally high power:** Methodologists have argued that the credibility of a proposed effect modification increases with its prospective power [@Burke2015three-0001; @Alosh2017tutorial-0001]. A rare situation of increased confidence would be a trial of over 10,000 patients with 80% power to detect a significant effect modification suggested in the study protocol [@Burke2015three-0001].
+**Exceptionally high power:** Methodologists have argued that the credibility of a proposed effect modification increases with its prospective power. [@Burke2015three-0001; @Alosh2017tutorial-0001] A rare situation of increased confidence would be a trial of over 10,000 patients with 80% power to detect a significant effect modification suggested in the study protocol. [@Burke2015three-0001]
 
 **Consistency across related outcomes:** Credibility might be higher if an effect modification is found for biologically related outcomes.
 
 ::: {.example-block}
-**Example:** In a trial of reamed versus unreamed nailing of tibial fractures, the difference in re-operations between smokers and non-smokers co-existed in quality of life outcomes [@StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001].
+**Example:** In a trial of reamed versus unreamed nailing of tibial fractures, the difference in re-operations between smokers and non-smokers co-existed in quality of life outcomes. [@StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001]
 :::
 
 ---
@@ -220,11 +221,11 @@ Section 4 provides more suggestions for using and presenting ICEMAN in context; 
 
 ## Worked example — RCT (CRASH-2) {#rct-example}
 
-A secondary publication of the CRASH-2 trial investigated the effect of tranexamic acid versus placebo on death due to bleeding in trauma patients [@CRASH-2Collaborators2011the]. The investigators reported that "the effect of tranexamic acid on death due to bleeding varied according to the time from injury to treatment (test for interaction p<0·0001)." Although the investigators labelled their analysis as exploratory, an assessment using ICEMAN suggests **moderate credibility**.
+A secondary publication of the CRASH-2 trial investigated the effect of tranexamic acid versus placebo on death due to bleeding in trauma patients. [@CRASH-2Collaborators2011the] The investigators reported that "the effect of tranexamic acid on death due to bleeding varied according to the time from injury to treatment (test for interaction p<0·0001)." Although the investigators labelled their analysis as exploratory, an assessment using ICEMAN suggests **moderate credibility**.
 
 | Item | Response | Comment |
 |------|----------|---------|
-| 1. Direction a priori | Probably yes | Subgroups (not direction) pre-specified in published protocol [@TheCRASHTrialsCo-ordinatingCentre2005protocol-0001]; authors stated they had correctly anticipated direction |
+| 1. Direction a priori | Probably yes | Subgroups (not direction) pre-specified in published protocol; [@TheCRASHTrialsCo-ordinatingCentre2005protocol-0001] authors stated they had correctly anticipated direction |
 | 2. Prior evidence | Little or no support | Three cited papers represent expert opinion but no prior trial or cohort study showing a similar effect modification |
 | 3. Interaction test | Chance unlikely | p < 0.00001 |
 | 4. Number of modifiers | Definitely no | Four pre-specified modifiers but applied to other outcomes than pre-specified (labelled exploratory); however p is very small |

@@ -33,16 +33,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./assets/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-629c56ba100745318e9dcb35146191d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1b8143a5af30aa0587ead8c64582f750.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,6 +73,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="assets/custom.css">
+<meta property="og:title" content="ICEMAN">
+<meta property="og:description" content="A structured instrument for assessing the credibility of subgroup effects in randomized trials and meta-analyses.">
+<meta property="og:image" content="https://www.iceman.help/assets/og-image.png">
+<meta property="og:site_name" content="ICEMAN">
+<meta name="twitter:title" content="ICEMAN">
+<meta name="twitter:description" content="A structured instrument for assessing the credibility of subgroup effects in randomized trials and meta-analyses.">
+<meta name="twitter:image" content="https://www.iceman.help/assets/og-image.png">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -98,11 +106,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./tool.html"> 
-<span class="menu-text">Complete ICEMAN online</span></a>
+<span class="menu-text">ICEMAN online</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./manual/index.html"> 
-<span class="menu-text">Users manual</span></a>
+<span class="menu-text">Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -122,101 +134,79 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="hero">
+<div class="hero-intro">
   
-  <p class="lead">
-    <strong>Instrument for the Credibility of Effect Modification Analyses</strong>
-    in randomized controlled trials and meta-analyses — Version 1.0
-  </p>
-  <p style="margin-top:1rem;color:#555;font-size:0.95rem;">
-    Schandelmaier S, Briel M, Varadhan R, Schmid CH, Devasenapathy N, Hayward RA,
-    Gagnier JJ, Borenstein M, VanDerHeijden GJMG, Dahabreh IJ, Sun X, Sauerbrei W,
-    Walsh M, Ioannidis JPA, Thabane L, Guyatt GH.
-  </p>
-  <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
-    <a href="./tool.html" class="btn btn-primary">Open assessment tool →</a>
-    <a href="./manual/index.html" class="btn btn-outline-secondary">Read the manual</a>
+  <p class="hero-subtitle">Instrument to assess the Credibility of Effect Modification ANalyses</p>
+</div>
+<div class="hero">
+  <p class="lead">Quick links:</p>
+  <div class="hero-cards-row hero-cards-top">
+    <a href="./tool.html" class="hero-card">
+      <div class="hero-card-icon">📋</div>
+      <div class="hero-card-title">ICEMAN online</div>
+      <div class="hero-card-sub">Interactive assessment forms</div>
+    </a>
+    <a href="./manual/index.html" class="hero-card">
+      <div class="hero-card-icon">📘</div>
+      <div class="hero-card-title">User manual</div>
+      <div class="hero-card-sub">Guidance with examples</div>
+    </a>
+  </div>
+  <div class="hero-cards-row hero-cards-bottom">
+    <a href="files/ICEMAN RCT 1.1 (6).docx" class="hero-card">
+      <div class="hero-card-icon">📄</div>
+      <div class="hero-card-title">Download ICEMAN for RCTs</div>
+      <div class="hero-card-sub">Version 1.1 .docx-file</div>
+    </a>
+    <a href="files/ICEMAN MA 1.1 (8).docx" class="hero-card">
+      <div class="hero-card-icon">📄</div>
+      <div class="hero-card-title">Download ICEMAN for Meta-analyses</div>
+      <div class="hero-card-sub">Version 1.1 .docx-file</div>
+    </a>
+    <a href="files/ICEMAN table templates.docx" class="hero-card">
+      <div class="hero-card-icon">📄</div>
+      <div class="hero-card-title">Reporting templates</div>
+      <div class="hero-card-sub">Different summary tables, .docx-file</div>
+    </a>
   </div>
 </div>
 <section id="what-is-iceman" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-iceman">What is ICEMAN?</h2>
-<p>ICEMAN is a validated instrument for systematically assessing the <strong>credibility of claimed effect modification</strong> (subgroup effects) in randomized controlled trials and meta-analyses. It provides structured criteria and response options to help researchers, clinicians, and guideline developers evaluate whether an apparent subgroup effect is likely to be real or a chance (or biased) finding.</p>
-<p>Effect modification claims are common but often unreliable. ICEMAN addresses this by rating each claim across key credibility dimensions, culminating in an overall credibility rating on a continuous scale from <strong>very low</strong> to <strong>high</strong>.</p>
-<hr>
+<h2 data-anchor-id="what-is-iceman">What is ICEMAN?</h2>
+<p>ICEMAN is a formal instrument for assessing the credibility of possible effect modification, also called a subgroup effect. It helps users judge whether an apparent subgroup effect is likely to be real, or a product of chance or bias. ICEMAN uses structured questions and response options and produces an overall credibility rating from <strong>very low</strong> to <strong>high</strong>.</p>
+<p>ICEMAN supports several users and use cases. Trial investigators and systematic reviewers can use it to interpret and report a subgroup effect they found in their study or review. Systematic reviewers can use it to assess subgroup effects reported in included studies. Clinicians, patients, peer reviewers, editors, and others can use it when critically reading a study report that claims a subgroup effect.</p>
+<p>We developed ICEMAN for randomized controlled trials and meta-analyses of randomized controlled trials, but users have also found the instrument helpful for other study types, such as cohort studies or meta-analyses of observational studies. For these applications, users should reflect the additional risk of bias in the overall credibility rating.</p>
+<p>When reporting an ICEMAN assessment in a paper, users can download the fillable form for <a href="files/ICEMAN RCT 1.1 (6).docx">RCTs</a> or <a href="files/ICEMAN MA 1.1 (8).docx">meta-analyses</a> and include it in the appendix of their publication. Alternatively, they can complete the <a href="./tool.html">tool online</a> and download a reporting table. We also provide <a href="files/ICEMAN table templates.docx">templates</a> for summarizing several assessments in a single table. A detailed manual is available as <a href="./manual/index.html">HTML</a> and <a href="files/ICEMAN manual .pdf">PDF</a>.</p>
 </section>
-<section id="downloads" class="level2">
-<h2 class="anchored" data-anchor-id="downloads">Downloads</h2>
-<div class="download-grid">
-  <div class="download-card">
-    <div class="icon">📄</div>
-    <h5 class="anchored">ICEMAN form — RCTs</h5>
-    <p>Assessment form for randomized controlled trials</p>
-    <a href="ICEMAN RCT 1.1 (6).docx" class="btn btn-sm btn-outline-primary">Download DOCX</a>
-  </div>
-  <div class="download-card">
-    <div class="icon">📄</div>
-    <h5 class="anchored">ICEMAN form — Meta-analyses</h5>
-    <p>Assessment form for systematic reviews and meta-analyses</p>
-    <a href="ICEMAN MA 1.1 (8).docx" class="btn btn-sm btn-outline-primary">Download DOCX</a>
-  </div>
-  <div class="download-card">
-    <div class="icon">📘</div>
-    <h5 class="anchored">Full manual</h5>
-    <p>Complete ICEMAN manual with explanations, examples, and references</p>
-    <a href="ICEMAN manual .pdf" class="btn btn-sm btn-outline-secondary">Download PDF</a>
-  </div>
-  <div class="download-card">
-    <div class="icon">📊</div>
-    <h5 class="anchored">Reference list</h5>
-    <p>BibTeX file with all 149 references cited in the manual</p>
-    <a href="references.bib" class="btn btn-sm btn-outline-secondary">Download .bib</a>
-  </div>
-</div>
-<hr>
+<section id="which-version-should-i-use" class="level2">
+<h2 data-anchor-id="which-version-should-i-use">Which version should I use?</h2>
+<ul>
+<li>Use <strong>ICEMAN for RCTs</strong> to assess an apparent subgroup effect in a single randomized controlled trial.</li>
+<li>Use <strong>ICEMAN for meta-analyses</strong> to assess an apparent subgroup effect in a systematic review or meta-analysis of randomized controlled trials.</li>
+</ul>
 </section>
 <section id="how-to-cite" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-cite">How to cite</h2>
+<h2 data-anchor-id="how-to-cite">How to cite</h2>
 <div class="cite-box">
   <strong>Cite ICEMAN as:</strong><br><br>
   Schandelmaier S, Briel M, Varadhan R, Schmid CH, Devasenapathy N, Hayward RA,
   Gagnier JJ, Borenstein M, VanDerHeijden GJMG, Dahabreh IJ, Sun X, Sauerbrei W,
   Walsh M, Ioannidis JPA, Thabane L, Guyatt GH.
-  ICEMAN: a novel tool for assessing the credibility of effect modification analyses
+  Development of a tool to assess the credibility of subgroup analyses (ICEMAN)
   in randomized trials and systematic reviews.
   <em>CMAJ</em> 2020;192(32):E901–E906.
   <a href="https://doi.org/10.1503/cmaj.200077" target="_blank">https://doi.org/10.1503/cmaj.200077</a>
   <br><br>
-  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="navigator.clipboard.writeText('Schandelmaier S, et al. ICEMAN: a novel tool for assessing the credibility of effect modification analyses in randomized trials and systematic reviews. CMAJ 2020;192(32):E901–E906. https://doi.org/10.1503/cmaj.200077'); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',2000)">
+  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="navigator.clipboard.writeText('Schandelmaier S, et al. Development of a tool to assess the credibility of subgroup analyses (ICEMAN) in randomized trials and systematic reviews. CMAJ 2020;192(32):E901–E906. https://doi.org/10.1503/cmaj.200077'); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',2000)">
     Copy citation
   </button>
 </div>
+<p>See <a href="./about.html#ongoing-projects">about page</a> for other publications, endorsements, and related ongoing projects.</p>
 <hr>
-</section>
-<section id="site-overview" class="level2">
-<h2 class="anchored" data-anchor-id="site-overview">Site overview</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Page</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="./manual/index.html">Manual</a></td>
-<td>Full searchable manual with all items, response options, and worked examples</td>
-</tr>
-<tr class="even">
-<td><a href="./tool.html">Assessment tool</a></td>
-<td>Interactive forms for RCTs and meta-analyses with downloadable report</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="license-and-version" class="level2">
-<h2 class="anchored" data-anchor-id="license-and-version">License and version</h2>
-<p>ICEMAN Version 1.0. This instrument is freely available for use in research and clinical guideline development. Please cite the original publication when using ICEMAN.</p>
+<footer class="site-footer">
+  <span>Last updated: May 2026</span>
+  <span class="footer-sep">·</span>
+  <a href="mailto:s.schandelmaier@gmail.com">Contact</a>
+</footer>
 
 
 </section>
@@ -224,13 +214,6 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -295,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/www\.iceman\.help");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

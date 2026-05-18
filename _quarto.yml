@@ -1,24 +1,33 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "manual/*.qmd"
   resources:
-    - "ICEMAN manual .pdf"
-    - "ICEMAN RCT 1.1 (6).docx"
-    - "ICEMAN MA 1.1 (8).docx"
+    - "files/"
+    - "robots.txt"
+    - "llms.txt"
+    - "sitemap.xml"
 
 website:
   title: "ICEMAN"
+  site-url: "https://www.iceman.help"
+  favicon: assets/favicon.svg
+  description: "ICEMAN is an instrument for assessing the credibility of effect modification analyses in randomized trials and meta-analyses."
   navbar:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Complete ICEMAN online"
+      - text: "ICEMAN online"
         href: tool.qmd
-      - text: "Users manual"
+      - text: "Manual"
         href: manual/index.qmd
+      - text: "About"
+        href: about.qmd
 
   sidebar:
-    - title: "Users manual"
+    - title: "Manual"
       style: "docked"
       search: true
       collapse-level: 1
@@ -76,10 +85,11 @@ website:
               href: manual/practical.qmd#using-iceman-with-other-instruments
         - text: "Concept and scope of ICEMAN"
           href: manual/concepts.qmd
+        - text: "Frequently asked questions"
+          href: manual/faq.qmd
 
 bibliography: references.bib
 link-citations: true
-suppress-bibliography: true
 
 format:
   html:
@@ -87,6 +97,8 @@ format:
     css: assets/custom.css
     toc: true
     toc-depth: 3
+    anchor-sections: false
+    link-citations: true
     citations-hover: true
 
-csl: assets/vancouver.csl
+csl: assets/vancouver-superscript.csl

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Interactive ICEMAN version 1.1 forms for assessing the credibility of apparent effect modification in randomized trials and meta-analyses.">
 
 <title>ICEMAN Assessment Tool – ICEMAN</title>
 <style>
@@ -33,16 +34,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./assets/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-629c56ba100745318e9dcb35146191d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1b8143a5af30aa0587ead8c64582f750.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,11 +99,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./tool.html" aria-current="page"> 
-<span class="menu-text">Complete ICEMAN online</span></a>
+<span class="menu-text">ICEMAN online</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./manual/index.html"> 
-<span class="menu-text">Users manual</span></a>
+<span class="menu-text">Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -125,6 +130,11 @@ ul.task-list li input[type="checkbox"] {
 <p class="subtitle lead">Interactive forms for RCTs and meta-analyses — Version 1.1</p>
 </div>
 
+<div>
+  <div class="description">
+    Interactive ICEMAN version 1.1 forms for assessing the credibility of apparent effect modification in randomized trials and meta-analyses.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -175,27 +185,35 @@ ul.task-list li input[type="checkbox"] {
 .radio-row.selected { background:#e6f1fb; border-color:#185FA5; }
 .radio-row input[type=radio] { margin-top:3px; flex-shrink:0; }
 .rl { font-weight:600; font-size:0.9rem; }
+.rl-red    { color:#c0392b; }
+.rl-orange { color:#d35400; }
+.rl-yellow { color:#9a7d0a; }
+.rl-green  { color:#1a7a4a; }
 .rd { font-size:0.82rem; color:#666; }
 
 .cred-wrap { position:relative; margin:0.75rem 0 0.25rem; }
 .cred-bar {
   height:10px; border-radius:5px;
-  background:linear-gradient(to right,#E24B4A,#FAC775,#1D9E75,#0F6E56);
+  background:linear-gradient(to right,#c0392b 0%,#e67e22 25%,#F0C800 55%,#F0C800 70%,#1D9E75 84%,#1a7a4a 100%);
 }
 .cred-labels {
-  display:flex; justify-content:space-between;
-  font-size:0.7rem; color:#888; margin-top:3px;
+  display:grid; grid-template-columns:repeat(4,1fr);
+  font-size:0.78rem; font-weight:700; margin-top:5px; text-align:center;
 }
+.cred-labels span:nth-child(1) { color:#c0392b; }
+.cred-labels span:nth-child(2) { color:#d35400; }
+.cred-labels span:nth-child(3) { color:#9a7d0a; }
+.cred-labels span:nth-child(4) { color:#1a7a4a; }
 .cred-thumb {
-  position:absolute; top:5px; width:18px; height:18px;
+  position:absolute; top:50%; width:18px; height:18px;
   border-radius:50%; background:#fff; border:2px solid #333;
-  transform:translateX(-50%); pointer-events:none; transition:left 0.05s;
+  transform:translate(-50%,-50%); pointer-events:none; transition:left 0.05s;
 }
 input.cred-slider {
   width:100%; position:relative; z-index:2;
   opacity:0; cursor:pointer; height:24px; margin-top:-17px; display:block;
 }
-.scale-interp { text-align:center; font-size:0.82rem; color:#555; margin-top:0.4rem; }
+.scale-interp { text-align:left; font-size:1rem; font-weight:600; color:#333; margin-top:0.6rem; }
 
 textarea.comment-box {
   width:100%; margin-top:10px; font-size:0.84rem;
@@ -212,11 +230,11 @@ textarea.comment-box {
   padding:6px 0; border-bottom:1px solid #f0f0f0; font-size:0.875rem;
 }
 .result-row:last-child { border-bottom:none; }
-.b-low  { background:#FDEAEA; color:#C03535; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
-.b-ok   { background:#FEF5E0; color:#9A6C00; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
-.b-good { background:#E0F5EE; color:#148055; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
-.b-high { background:#D4EDE3; color:#0A5C3C; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
-.b-na   { background:#f0f0f0; color:#666;    font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+.b-0  { background:#FDEAEA; color:#c0392b; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+.b-1  { background:#FEF0E6; color:#d35400; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+.b-2  { background:#FDFAE6; color:#9a7d0a; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+.b-3  { background:#E6F5EE; color:#1a7a4a; font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
+.b-na { background:#f0f0f0; color:#666;    font-size:0.73rem; padding:2px 10px; border-radius:6px; white-space:nowrap; }
 
 .verdict-box {
   text-align:center; padding:1.5rem; margin-top:1rem;
@@ -241,8 +259,30 @@ textarea.comment-box {
 .s-label { color:#333; flex:1; }
 .s-comment { font-size:0.78rem; color:#777; margin-top:2px; font-style:italic; }
 
-.prelim-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:1rem; }
-@media(max-width:600px){ .prelim-grid{ grid-template-columns:1fr; } }
+.prelim-grid { display:flex; flex-direction:column; gap:12px; margin-bottom:1rem; }
+.field-label-row { display:flex; align-items:center; margin-bottom:4px; }
+.field-label-row label { margin-bottom:0; }
+.tip-trigger {
+  font-size:0.72rem; font-weight:700; color:#185FA5; cursor:pointer;
+  border:1px solid #185FA5; border-radius:50%;
+  width:18px; height:18px; padding:0; line-height:1;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:transparent; flex-shrink:0; margin-left:8px;
+}
+.tip-trigger:hover { background:#e6f1fb; }
+#tip-card {
+  display:none; position:fixed; z-index:9999;
+  background:#fff; border:1px solid #c5d8ef; border-radius:10px;
+  padding:1rem; max-width:320px; width:320px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.13);
+  font-size:0.84rem; line-height:1.6; color:#333;
+}
+.tip-card-link {
+  display:block; margin-top:0.75rem; font-size:0.78rem;
+  color:#185FA5; text-decoration:none;
+  border-top:1px solid #dee2e6; padding-top:0.75rem;
+}
+.tip-card-link:hover { text-decoration:underline; }
 .fgroup { display:flex; flex-direction:column; gap:4px; }
 .fgroup label { font-size:0.82rem; color:#555; font-weight:600; }
 .fgroup input, .fgroup select, .fgroup textarea {
@@ -255,133 +295,126 @@ textarea.comment-box {
 .btn-tool.primary:hover { background:#0d4a80; }
 .btn-tool:hover { background:#f0f4f8; }
 .stopped-msg { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:1rem 1.25rem; margin-top:1rem; font-size:0.9rem; }
+.field-invalid { border:2px solid #c0392b !important; background:#fff8f8 !important; }
+.item-invalid { border-color:#c0392b !important; box-shadow:0 0 0 3px #fdeaea; }
+.item-auto-na { opacity: 0.45; pointer-events: none; }
+.comment-warn { border:2px solid #e67e22 !important; background:#fffaf5 !important; box-shadow:0 0 0 2px rgba(230,126,34,0.15); }
+.inline-warn { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:0.75rem 1rem; margin:0.75rem 0; font-size:0.875rem; display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem; }
+.inline-warn button { background:none; border:none; cursor:pointer; font-size:1.1rem; color:#888; padding:0; flex-shrink:0; line-height:1; }
+.no-warn { display:none; background:#fef3cd; border:1px solid #e6a817; border-left:4px solid #e6a817; border-radius:0 8px 8px 0; padding:0.85rem 1rem; margin-top:0.75rem; font-size:0.875rem; line-height:1.55; color:#5a3e00; }
+.no-warn a { color:#185FA5; }
+#val-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:10000; align-items:center; justify-content:center; }
+#val-modal.open { display:flex; }
+#val-modal-box { background:#fff; border-radius:12px; padding:1.5rem 1.75rem; max-width:400px; width:90%; border-top:4px solid #c0392b; }
+#val-modal-box h3 { margin:0 0 0.5rem; font-size:1rem; color:#c0392b; }
+#val-modal-box p { margin:0 0 1.25rem; font-size:0.88rem; color:#444; line-height:1.6; }
+#val-modal-box button { padding:7px 22px; border-radius:7px; background:#c0392b; color:#fff; border:none; cursor:pointer; font-size:0.88rem; font-weight:600; }
+.algo-result  { margin:0.75rem 0; padding:0.75rem 1rem; border-radius:8px; background:#e6f5ee; border:1px solid #a8d5bc; font-size:0.84rem; }
+.algo-blocked { margin:0.75rem 0; padding:0.75rem 1rem; border-radius:8px; background:#fff3cd; border:1px solid #ffc107; font-size:0.84rem; }
+.algo-counts  { font-size:0.78rem; color:#555; margin-top:4px; }
+.algo-shift   { font-size:0.78rem; color:#666; margin-top:2px; font-style:italic; }
+.scale-click-hint {
+  font-size:0.84rem; color:#888;
+}
+.study-type-chooser { margin-bottom:1.5rem; }
+.study-type-chooser .field-label-row { margin-bottom:0.5rem; }
+
+/* Sticky rating bar */
+#sticky-bar {
+  display:none; position:fixed; bottom:0; left:0; right:0; z-index:1000;
+  background:#fff; border-top:1px solid #dee2e6;
+  box-shadow:0 -2px 12px rgba(0,0,0,0.08);
+  padding:0.6rem 1.5rem; justify-content:center; align-items:center;
+}
+#sticky-bar.visible { display:flex; }
+.sb-outer { display:flex; align-items:center; gap:0.75rem; }
+.sb-side { font-size:0.82rem; font-weight:700; white-space:nowrap; width:90px; }
+.sb-left { text-align:right; }
+.sb-right { text-align:left; }
+.sb-bar-wrap { width:220px; flex-shrink:0; position:relative; cursor:pointer; }
+.sb-bar {
+  height:7px; border-radius:4px;
+  background:linear-gradient(to right,#c0392b 0%,#e67e22 25%,#F0C800 55%,#F0C800 70%,#1D9E75 84%,#1a7a4a 100%);
+}
+.sb-thumb {
+  position:absolute; top:50%; width:14px; height:14px;
+  border-radius:50%; background:#fff; border:2px solid #333;
+  transform:translate(-50%,-50%); pointer-events:none;
+  transition:left 0.05s;
+}
 </style>
 
-<div style="background:#f0f5fb;border-left:4px solid #185FA5;border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:0.875rem;">
-  <strong>Important instructions — Version 1.1</strong>
-  <ul style="margin:0.5rem 0 0;padding-left:1.25rem;line-height:1.75;">
-    <li>Complete a <strong>separate</strong> credibility assessment for each effect modifier, outcome, time-point, and effect measure.</li>
-    <li><strong>Do not apply ICEMAN if the interaction p-value is 0.1 or larger</strong> — ICEMAN addresses possible claims of effect modification, not claims of no effect modification.</li>
-    <li>Response options on the <strong>left</strong> indicate reduced credibility; options on the <strong>right</strong> indicate increased credibility.</li>
-    <li>"Completely unclear" should be interpreted as probably reduced credibility.</li>
-    <li>Provide a supporting comment under each question for transparency.</li>
-    <li>Provide a copy of the completed form in the supplement of your article.</li>
-  </ul>
+
+<div id="sticky-bar">
+  <div class="sb-outer">
+    <span class="sb-side sb-left" id="sb-left"></span>
+    <div class="sb-bar-wrap" id="sb-bar-wrap" onclick="sbClick(event)">
+      <div class="sb-bar"></div>
+      <div class="sb-thumb" id="sb-thumb" style="left:37.5%"></div>
+    </div>
+    <span class="sb-side sb-right" id="sb-right"></span>
+  </div>
 </div>
 
-Select the study type to begin:
-
-<div class="tab-btns">
-  <button class="tab-btn active" onclick="switchTab('rct',this)">Randomized controlled trial (RCT)</button>
-  <button class="tab-btn" onclick="switchTab('meta',this)">Meta-analysis / Systematic review</button>
+<div class="study-type-chooser">
+  <div class="field-label-row">
+    <label style="font-weight:600;font-size:1rem">Study type</label>
+    <button class="tip-trigger" data-tip="study-type">?</button>
+  </div>
+  <div class="tab-btns" style="margin-bottom:0">
+    <button class="tab-btn" onclick="switchTab('rct',this)">Randomized controlled trial (RCT)</button>
+    <button class="tab-btn" onclick="switchTab('meta',this)">Meta-analysis / Systematic review</button>
+  </div>
 </div>
 
 <!-- ══════════════════════ RCT TAB ══════════════════════ -->
-<div id="tab-rct" class="tab-pane active">
+<div id="tab-rct" class="tab-pane">
 
 <div class="iceman-item">
   <div class="item-num">Preliminary considerations</div>
-  <div class="fgroup" style="margin-bottom:0.75rem">
-    <label>Effect modifier</label>
-    <input type="text" id="r-mod" placeholder="e.g. age, disease severity, dose">
-  </div>
-  <div class="fgroup" style="max-width:380px;margin-bottom:0.75rem">
-    <label>Effect modifier measured before or at randomization?</label>
-    <select id="r-prerando" onchange="showRCTItems()">
-      <option value="">Select…</option>
-      <option value="yes">Yes — continue</option>
-      <option value="no">No — stop here</option>
-    </select>
-  </div>
   <div class="prelim-grid">
-    <div class="fgroup"><label>Outcome and time-point</label><input type="text" id="r-outcome" placeholder="e.g. mortality at 1 year"></div>
-    <div class="fgroup"><label>Effect measure</label><input type="text" id="r-measure" placeholder="e.g. relative risk"></div>
-    <div class="fgroup"><label>Study reference</label><input type="text" id="r-ref" placeholder="Author, journal, year…"></div>
-    <div class="fgroup"><label>Protocol reference (if available)</label><input type="text" id="r-proto" placeholder="ClinicalTrials.gov, URL…"></div>
+    <div class="fgroup">
+      <div class="field-label-row">
+        <label>Outcome and time-point</label>
+        <button class="tip-trigger" data-tip="outcome">?</button>
+      </div>
+      <input type="text" id="r-outcome">
+    </div>
+    <div class="fgroup">
+      <div class="field-label-row">
+        <label>Effect measure</label>
+        <button class="tip-trigger" data-tip="measure">?</button>
+      </div>
+      <input type="text" id="r-measure">
+    </div>
   </div>
-  <div id="r-stopped" class="stopped-msg" style="display:none">
-    ⚠️ ICEMAN does not apply when the effect modifier was measured after randomization (e.g. an intermediate outcome). Consult the manual for exceptions and alternative methods. <a href="./manual/index.html" class="manual-link">Manual ↗</a>
+  <div class="fgroup" style="margin-bottom:0.75rem">
+    <div class="field-label-row">
+      <label>Effect modifier</label>
+      <button class="tip-trigger" data-tip="modifier">?</button>
+    </div>
+    <input type="text" id="r-mod">
   </div>
+  <div class="fgroup" style="margin-bottom:0.75rem">
+    <div class="field-label-row">
+      <label>Does the analysis suggest a possible effect modification (interaction p &lt; 0.1)?</label>
+      <button class="tip-trigger" data-tip="possible">?</button>
+    </div>
+    <select id="r-possible">
+      <option value="">Select…</option>
+      <option value="yes">Yes</option>
+      <option value="no">No, stop here</option>
+    </select>
+    <div id="r-no-warn" class="no-warn">
+      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction p &lt; 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="_blank">See manual for scope of ICEMAN →</a>
+    </div>
+  </div>
+
 </div>
 
-<div id="r-items" style="display:none">
+<div id="r-items">
 
-<div class="iceman-item">
-  <div class="item-num">Item 1 of 6</div>
-  <div class="item-q">Was the direction of effect modification correctly hypothesized a priori? <a href="./manual/rct.html#rct-item1" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">Credibility is higher if investigators correctly anticipated the direction, lower if they failed to anticipate a direction, and lowest if they anticipated the opposite direction.</div>
-  <div id="r-q1">
-    <label class="radio-row"><input type="radio" name="r-q1" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Clearly post-hoc, results inconsistent with hypothesized direction, or biologically very implausible</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q1" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">Vague hypothesis or hypothesized direction unclear</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q1" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">No protocol but unequivocal statement of a priori hypothesis with correct direction</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q1" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Prior protocol with correct specification of direction based on biologic rationale</span></span></label>
-  </div>
-  <textarea class="comment-box" id="r-q1c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 2 of 6</div>
-  <div class="item-q">Was the effect modification supported by prior evidence? <a href="./manual/rct.html#rct-item2" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">Credibility is higher if the effect modification is supported by prior direct or indirect evidence, lower if observed for the first time, lowest if inconsistent with prior evidence.</div>
-  <div id="r-q2">
-    <label class="radio-row"><input type="radio" name="r-q2" value="0"><span><span class="rl">Inconsistent with prior evidence</span><br><span class="rd">Prior evidence suggested a different direction of effect modification</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q2" value="1"><span><span class="rl">Little or no support or unclear</span><br><span class="rd">No prior evidence, or consistent with weak/very indirect evidence, or unclear</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q2" value="2"><span><span class="rl">Some support</span><br><span class="rd">Consistent with more limited or indirect prior evidence</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q2" value="3"><span><span class="rl">Strong support</span><br><span class="rd">Consistent with strong prior evidence directly applicable to the clinical scenario</span></span></label>
-  </div>
-  <textarea class="comment-box" id="r-q2c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 3 of 6</div>
-  <div class="item-q">Does a test for interaction suggest that chance is an unlikely explanation of the apparent effect modification? <small style="font-weight:400;color:#666">(consider irrespective of number of effect modifiers)</small> <a href="./manual/rct.html#rct-item3" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">Consider the interaction p-value as reported. Note: showing significance in one subgroup and not another does not indicate whether chance explains differences across subgroups.</div>
-  <div id="r-q3">
-    <label class="radio-row"><input type="radio" name="r-q3" value="0"><span><span class="rl">Chance a very likely explanation</span><br><span class="rd">Interaction p-value &gt; 0.05</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q3" value="1"><span><span class="rl">Chance a likely explanation or unclear</span><br><span class="rd">p ≤ 0.05 and &gt; 0.01, or no test reported and not computable</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q3" value="2"><span><span class="rl">Chance may not explain</span><br><span class="rd">p ≤ 0.01 and &gt; 0.005</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q3" value="3"><span><span class="rl">Chance an unlikely explanation</span><br><span class="rd">p ≤ 0.005</span></span></label>
-  </div>
-  <textarea class="comment-box" id="r-q3c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 4 of 6</div>
-  <div class="item-q">Did the authors test only a small number of effect modifiers, or consider multiplicity? <a href="./manual/rct.html#rct-item4" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">Credibility is higher if investigators tested only a small number of effect modifiers, or statistically adjusted for multiplicity.</div>
-  <div id="r-q4">
-    <label class="radio-row"><input type="radio" name="r-q4" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Explicitly exploratory or &gt;10 modifiers tested; multiplicity not considered</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q4" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">No mention of number, or 4–10 modifiers tested; not considered</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q4" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">No protocol but unequivocal statement of ≤3 modifiers tested</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q4" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Protocol with ≤3 modifiers, or multiplicity considered in analysis</span></span></label>
-  </div>
-  <textarea class="comment-box" id="r-q4c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 5 of 6 — only if effect modifier is continuous</div>
-  <div class="item-q">Were arbitrary cut points avoided? <a href="./manual/rct.html#rct-item5" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">Analyses using the full spectrum of values are most credible. Data-driven cut points maximising the interaction are associated with high false-positive rates.</div>
-  <div id="r-q5">
-    <label class="radio-row"><input type="radio" name="r-q5" value="na"><span><span class="rl">Not applicable — effect modifier is not continuous</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q5" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Analysis based on exploratory cut point (e.g. maximising interaction p-value)</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q5" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">Analysis based on cut point(s) of unclear origin</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q5" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">Analysis based on pre-specified cut points (e.g. from prior RCT)</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q5" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Analysis based on full continuum (linear/logarithmic relationship)</span></span></label>
-  </div>
-  <textarea class="comment-box" id="r-q5c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 6 — optional</div>
-  <div class="item-q">Are there additional considerations that may increase or decrease credibility? <a href="./manual/rct.html#rct-item6" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">Consider: sensitivity analyses, dose-response pattern, persistence after adjustment, power, consistency across related outcomes, risk of bias.</div>
-  <div id="r-q6">
-    <label class="radio-row"><input type="radio" name="r-q6" value="dec"><span><span class="rl">Yes — probably decrease credibility</span></span></label>
-    <label class="radio-row"><input type="radio" name="r-q6" value="inc"><span><span class="rl">Yes — probably increase credibility</span></span></label>
-  </div>
-  <textarea class="comment-box" id="r-q6c" placeholder="Describe considerations…"></textarea>
-</div>
+<div id="r-item-cards"></div>
 
 <div class="live-summary" id="r-live-summary">
   <div class="live-summary-title">Summary of responses</div>
@@ -389,22 +422,27 @@ Select the study type to begin:
 </div>
 
 <div class="iceman-item">
-  <div class="item-num">Item 7 — overall rating</div>
-  <div class="item-q">How would you rate the overall credibility of the proposed effect modification? <a href="./manual/rct.html#rct-item7" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">The overall rating should be driven by items that <em>decrease</em> credibility. Place a mark on the continuous scale below.</div>
-  <div class="cred-wrap">
-    <div class="cred-bar">
-      <div class="cred-thumb" id="r-thumb" style="left:50%"></div>
+  <div class="item-num">Overall rating</div>
+  <div class="item-q">How would you rate the overall credibility of the proposed effect modification? <button class="tip-trigger" data-tip-type="overall" data-item-prefix="r">?</button></div>
+  <div style="display:flex;align-items:center;gap:8px;margin:0.5rem 0 0.25rem;flex-wrap:wrap">
+    <button class="btn-tool" onclick="applyComputedRating('r')">Generate rating from responses</button>
+    <span class="scale-click-hint">Click scale to rate manually</span>
+    <button class="tip-trigger" data-tip-type="generate" data-item-prefix="r">?</button>
+  </div>
+  <div id="r-algo-result" style="display:none"></div>
+  <div class="cred-wrap" id="r-cred-wrap">
+    <div class="cred-bar" id="r-cred-bar" onclick="activateScale('r', event)" style="cursor:pointer">
+      <div class="cred-thumb" id="r-thumb" style="left:37.5%;display:none"></div>
     </div>
-    <input type="range" min="0" max="100" value="50" class="cred-slider" id="r-scale" oninput="moveThumb('r')">
+    <input type="range" min="0" max="100" value="37.5" class="cred-slider" id="r-scale" oninput="onSliderDrag('r')" style="pointer-events:none">
     <div class="cred-labels"><span>Very low</span><span>Low</span><span>Moderate</span><span>High</span></div>
-    <div class="scale-interp" id="r-interp">Likely no effect modification — use overall estimate but note remaining uncertainty</div>
+    <div class="scale-interp" id="r-interp" style="display:none"></div>
   </div>
   <textarea class="comment-box" id="r-overallc" placeholder="Justify your overall rating…"></textarea>
 </div>
 
 <div class="action-row">
-  <button class="btn-tool primary" onclick="printReport('r')">Print / save as PDF</button>
+  <button class="btn-tool primary" onclick="genDocx('r')">Download Word (.docx)</button>
   <button class="btn-tool" onclick="resetForm('r')">Reset form</button>
 </div>
 <div id="r-report"></div>
@@ -417,143 +455,49 @@ Select the study type to begin:
 
 <div class="iceman-item">
   <div class="item-num">Preliminary considerations</div>
-  <div class="fgroup" style="margin-bottom:0.75rem">
-    <label>Effect modifier</label>
-    <input type="text" id="m-mod" placeholder="e.g. tumour stage, age, risk of bias">
-  </div>
-  <div class="fgroup" style="max-width:380px;margin-bottom:0.75rem">
-    <label>Effect modifier measured before or at randomization?</label>
-    <select id="m-prerando" onchange="showMetaItems()">
-      <option value="">Select…</option>
-      <option value="yes">Yes — continue</option>
-      <option value="no">No — stop here</option>
-    </select>
-  </div>
   <div class="prelim-grid">
-    <div class="fgroup"><label>Outcome and time-point</label><input type="text" id="m-outcome" placeholder="e.g. mortality at 1 year"></div>
-    <div class="fgroup"><label>Effect measure</label><input type="text" id="m-measure" placeholder="e.g. hazard ratio"></div>
-    <div class="fgroup"><label>Study reference</label><input type="text" id="m-ref" placeholder="Author, journal, year…"></div>
-    <div class="fgroup"><label>Protocol reference (if available)</label><input type="text" id="m-proto" placeholder="PROSPERO ID or URL…"></div>
+    <div class="fgroup">
+      <div class="field-label-row">
+        <label>Outcome and time-point</label>
+        <button class="tip-trigger" data-tip="outcome">?</button>
+      </div>
+      <input type="text" id="m-outcome">
+    </div>
+    <div class="fgroup">
+      <div class="field-label-row">
+        <label>Effect measure</label>
+        <button class="tip-trigger" data-tip="measure">?</button>
+      </div>
+      <input type="text" id="m-measure">
+    </div>
   </div>
-  <div id="m-stopped" class="stopped-msg" style="display:none">
-    ⚠️ ICEMAN does not apply when the effect modifier was measured after randomization. Consult the manual for exceptions. <a href="./manual/index.html" class="manual-link">Manual ↗</a>
+  <div class="fgroup" style="margin-bottom:0.75rem">
+    <div class="field-label-row">
+      <label>Effect modifier</label>
+      <button class="tip-trigger" data-tip="modifier">?</button>
+    </div>
+    <input type="text" id="m-mod">
   </div>
+  <div class="fgroup" style="margin-bottom:0.75rem">
+    <div class="field-label-row">
+      <label>Does the analysis suggest a possible effect modification (interaction p &lt; 0.1)?</label>
+      <button class="tip-trigger" data-tip="possible">?</button>
+    </div>
+    <select id="m-possible">
+      <option value="">Select…</option>
+      <option value="yes">Yes</option>
+      <option value="no">No, stop here</option>
+    </select>
+    <div id="m-no-warn" class="no-warn">
+      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction or meta-regression p &lt; 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="_blank">See manual for scope of ICEMAN →</a>
+    </div>
+  </div>
+
 </div>
 
-<div id="m-items" style="display:none">
+<div id="m-items">
 
-<div class="iceman-item">
-  <div class="item-num">Item 1 of 10</div>
-  <div class="item-q">Is the effect modification based on comparison within rather than between RCTs? <a href="./manual/meta.html#meta-item1" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">Between-study comparisons are usually much less credible due to study-level confounding.</div>
-  <div id="m-q1">
-    <label class="radio-row"><input type="radio" name="m-q1" value="0"><span><span class="rl">Completely between</span><br><span class="rd">Subgroup analysis or meta-regression comparing overall effects of each individual trial</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q1" value="1"><span><span class="rl">Mostly between or unclear</span><br><span class="rd">Most information from overall effects; some trials provide within-trial subgroup information</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q1" value="2"><span><span class="rl">Mostly within</span><br><span class="rd">Most trials provide within-trial subgroup information; or IPD combining within and between</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q1" value="3"><span><span class="rl">Completely within</span><br><span class="rd">IPD analysis separating within from between trial information (e.g. meta-analysis of interactions)</span></span></label>
-  </div>
-  <textarea class="comment-box" id="m-q1c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 2 of 10</div>
-  <div class="item-q">If ≥2 within-trial comparisons available: is the effect modification similar from trial to trial? <a href="./manual/meta.html#meta-item2" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div id="m-q2">
-    <label class="radio-row"><input type="radio" name="m-q2" value="na"><span><span class="rl">Not applicable — no or one within-RCT comparison</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q2" value="0"><span><span class="rl">Definitely not similar</span><br><span class="rd">Reported for ≥2 trials with clearly different directions</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q2" value="1"><span><span class="rl">Probably not similar or unclear</span><br><span class="rd">Not reported for individual trials, or too imprecise to tell</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q2" value="2"><span><span class="rl">Mostly similar</span><br><span class="rd">Reported for ≥2 trials, mostly similar direction, considerable differences in magnitude</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q2" value="3"><span><span class="rl">Definitely similar</span><br><span class="rd">Reported for ≥2 trials, similar direction, only some differences in magnitude</span></span></label>
-  </div>
-  <textarea class="comment-box" id="m-q2c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 3 of 10 — for between-RCT comparisons</div>
-  <div class="item-q">Is the number of studies large? <a href="./manual/meta.html#meta-item3" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div id="m-q3">
-    <label class="radio-row"><input type="radio" name="m-q3" value="na"><span><span class="rl">Not applicable — no between-RCT comparison</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q3" value="0"><span><span class="rl">Very small</span><br><span class="rd">1–2 in smallest subgroup; ≤5 in continuous meta-regression</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q3" value="1"><span><span class="rl">Rather small or unclear</span><br><span class="rd">3–4 in smallest subgroup; 6–10 in continuous meta-regression</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q3" value="2"><span><span class="rl">Rather large</span><br><span class="rd">5–9 in smallest subgroup; 11–15 in continuous meta-regression</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q3" value="3"><span><span class="rl">Large</span><br><span class="rd">≥10 in smallest subgroup; &gt;15 in continuous meta-regression</span></span></label>
-  </div>
-  <textarea class="comment-box" id="m-q3c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 4 of 10</div>
-  <div class="item-q">Was the direction of effect modification correctly hypothesized a priori? <a href="./manual/rct.html#rct-item1" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">Because meta-analyses are retrospective, investigators may already know key trials and promising effect modifiers.</div>
-  <div id="m-q4">
-    <label class="radio-row"><input type="radio" name="m-q4" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Clearly post-hoc, inconsistent with hypothesized direction, or biologically very implausible</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q4" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">Vague hypothesis or direction unclear</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q4" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">No protocol but unequivocal a priori statement with correct direction</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q4" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Prior protocol with correct direction based on biologic rationale</span></span></label>
-  </div>
-  <textarea class="comment-box" id="m-q4c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 5 of 10</div>
-  <div class="item-q">Does a test for interaction suggest that chance is an unlikely explanation of the apparent effect modification? <small style="font-weight:400;color:#666">(consider irrespective of number of effect modifiers)</small> <a href="./manual/rct.html#rct-item3" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div id="m-q5">
-    <label class="radio-row"><input type="radio" name="m-q5" value="0"><span><span class="rl">Chance a very likely explanation</span><br><span class="rd">Interaction/meta-regression p-value &gt; 0.05</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q5" value="1"><span><span class="rl">Chance a likely explanation or unclear</span><br><span class="rd">p ≤ 0.05 and &gt; 0.01, or no test available</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q5" value="2"><span><span class="rl">Chance may not explain</span><br><span class="rd">p ≤ 0.01 and &gt; 0.005</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q5" value="3"><span><span class="rl">Chance an unlikely explanation</span><br><span class="rd">p ≤ 0.005</span></span></label>
-  </div>
-  <textarea class="comment-box" id="m-q5c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 6 of 10</div>
-  <div class="item-q">Did the authors test only a small number of effect modifiers, or consider multiplicity? <a href="./manual/rct.html#rct-item4" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div id="m-q6">
-    <label class="radio-row"><input type="radio" name="m-q6" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Explicitly exploratory or &gt;10 modifiers; multiplicity not considered</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q6" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">No mention of number, or 4–10 modifiers; not considered</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q6" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">No protocol but unequivocal statement of ≤3 modifiers</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q6" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Protocol with ≤3 modifiers, or multiplicity considered in analysis</span></span></label>
-  </div>
-  <textarea class="comment-box" id="m-q6c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 7 of 10</div>
-  <div class="item-q">Did the authors use a random effects model? <a href="./manual/meta.html#meta-item7" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">Credibility is higher if a random effects model was used within subgroups. Fixed effect models increase the risk of false-positive claims.</div>
-  <div id="m-q7">
-    <label class="radio-row"><input type="radio" name="m-q7" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Fixed (or common) effect model explicitly stated</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q7" value="1"><span><span class="rl">Probably no or unclear</span><br><span class="rd">Probably no random effects model, or unclear</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q7" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">Probably random (or mixed) effects model</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q7" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Random (or mixed) effects model explicitly stated</span></span></label>
-  </div>
-  <textarea class="comment-box" id="m-q7c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 8 of 10 — only if effect modifier is continuous</div>
-  <div class="item-q">Were arbitrary cut points avoided? <a href="./manual/meta.html#meta-item8" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div id="m-q8">
-    <label class="radio-row"><input type="radio" name="m-q8" value="na"><span><span class="rl">Not applicable — effect modifier is not continuous</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q8" value="0"><span><span class="rl">Definitely no</span><br><span class="rd">Analysis based on exploratory cut point</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q8" value="1"><span><span class="rl">Probably no</span><br><span class="rd">Analysis based on cut point(s) of unclear origin</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q8" value="2"><span><span class="rl">Probably yes</span><br><span class="rd">Analysis based on pre-specified cut points</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q8" value="3"><span><span class="rl">Definitely yes</span><br><span class="rd">Analysis based on full continuum</span></span></label>
-  </div>
-  <textarea class="comment-box" id="m-q8c" placeholder="Comment (optional)…"></textarea>
-</div>
-
-<div class="iceman-item">
-  <div class="item-num">Item 9 of 10 — optional</div>
-  <div class="item-q">Are there additional considerations? <a href="./manual/meta.html#meta-item9" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div id="m-q9">
-    <label class="radio-row"><input type="radio" name="m-q9" value="na"><span><span class="rl">Not applicable</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q9" value="dec"><span><span class="rl">Yes — probably decrease credibility</span></span></label>
-    <label class="radio-row"><input type="radio" name="m-q9" value="inc"><span><span class="rl">Yes — probably increase credibility</span></span></label>
-  </div>
-  <textarea class="comment-box" id="m-q9c" placeholder="Describe considerations…"></textarea>
-</div>
+<div id="m-item-cards"></div>
 
 <div class="live-summary" id="m-live-summary">
   <div class="live-summary-title">Summary of responses</div>
@@ -561,22 +505,27 @@ Select the study type to begin:
 </div>
 
 <div class="iceman-item">
-  <div class="item-num">Item 10 of 10 — overall rating</div>
-  <div class="item-q">How would you rate the overall credibility? <a href="./manual/meta.html#meta-item10" class="manual-link" target="_blank">Manual ↗</a></div>
-  <div class="item-hint">The overall rating should be driven by items that decrease credibility.</div>
-  <div class="cred-wrap">
-    <div class="cred-bar">
-      <div class="cred-thumb" id="m-thumb" style="left:50%"></div>
+  <div class="item-num">Overall rating</div>
+  <div class="item-q">How would you rate the overall credibility? <button class="tip-trigger" data-tip-type="overall" data-item-prefix="m">?</button></div>
+  <div style="display:flex;align-items:center;gap:8px;margin:0.5rem 0 0.25rem;flex-wrap:wrap">
+    <button class="btn-tool" onclick="applyComputedRating('m')">Generate rating from responses</button>
+    <span class="scale-click-hint">Click scale to rate manually</span>
+    <button class="tip-trigger" data-tip-type="generate" data-item-prefix="m">?</button>
+  </div>
+  <div id="m-algo-result" style="display:none"></div>
+  <div class="cred-wrap" id="m-cred-wrap">
+    <div class="cred-bar" id="m-cred-bar" onclick="activateScale('m', event)" style="cursor:pointer">
+      <div class="cred-thumb" id="m-thumb" style="left:37.5%;display:none"></div>
     </div>
-    <input type="range" min="0" max="100" value="50" class="cred-slider" id="m-scale" oninput="moveThumb('m')">
+    <input type="range" min="0" max="100" value="37.5" class="cred-slider" id="m-scale" oninput="onSliderDrag('m')" style="pointer-events:none">
     <div class="cred-labels"><span>Very low</span><span>Low</span><span>Moderate</span><span>High</span></div>
-    <div class="scale-interp" id="m-interp">Likely no effect modification — use overall estimate but note remaining uncertainty</div>
+    <div class="scale-interp" id="m-interp" style="display:none"></div>
   </div>
   <textarea class="comment-box" id="m-overallc" placeholder="Justify your overall rating…"></textarea>
 </div>
 
 <div class="action-row">
-  <button class="btn-tool primary" onclick="printReport('m')">Print / save as PDF</button>
+  <button class="btn-tool primary" onclick="genDocx('m')">Download Word (.docx)</button>
   <button class="btn-tool" onclick="resetForm('m')">Reset form</button>
 </div>
 <div id="m-report"></div>
@@ -584,26 +533,470 @@ Select the study type to begin:
 </div><!-- end m-items -->
 </div><!-- end tab-meta -->
 
+<div id="val-modal">
+  <div id="val-modal-box">
+    <h3 id="val-modal-title">Required fields missing</h3>
+    <p id="val-modal-msg">Please complete all required fields before continuing.</p>
+    <button onclick="document.getElementById('val-modal').classList.remove('open')">OK</button>
+  </div>
+</div>
+<div id="tip-card"></div>
+
 <script>
+// DEV FLAG — set to true to show the scoring-details box (weighted score,
+// item counts, safety-rule notes) after clicking "Generate rating".
+// For developer use only. Set to false before publishing.
+const DEV_ALGO_BOX = false;
+
+const RCT_PRELIM = {
+  placeholders: {
+    ref:     'e.g. study name, citation, protocol',
+    outcome: 'e.g. mortality at 1 year',
+    measure: 'e.g. relative risk',
+    mod:     'e.g. age, disease severity, dose',
+  },
+  tips: {
+    ref:      { text: 'Link this form to the trial — e.g. author-year citation, DOI, trial acronym, or registry number. You may also note the comparison of interest.', anchor: '#prelim-ref' },
+    outcome:  { text: 'ICEMAN applies to one outcome at a time. Specify the outcome and, where relevant, the time-point of assessment (e.g. mortality at 1 year).', anchor: '#prelim-outcome' },
+    measure:  { text: 'Specify one effect measure (e.g. relative risk, risk difference, hazard ratio). Credibility ratings can differ between relative and absolute measures — complete a separate form for each.', anchor: '#prelim-measure' },
+    modifier: { text: 'State one potential effect modifier — a patient or intervention characteristic. Note: ICEMAN does not apply to effect modifiers measured after randomisation (e.g. another outcome), with exceptions (see manual).', anchor: '#prelim-modifier' },
+    prerando: { text: 'ICEMAN applies to modifiers assessed before or at randomisation (e.g. baseline variables). Post-randomisation modifiers require different methods. See the handbook for exceptions.', anchor: '#prelim-prerando' },
+    possible: { text: 'ICEMAN applies when the statstical analysis shows at least some signal of possible effect modification, such as an interaction p-value of 0.1 or smaller. Do not apply ICEMAN when the p-value is larger than 0.1, or when the data suggest no effect modification.', anchor: '#prelim-possible' },
+  },
+};
+
+const META_PRELIM = {
+  placeholders: {
+    ref:     'e.g. study name, citation, protocol',
+    outcome: 'e.g. mortality at 1 year',
+    measure: 'e.g. hazard ratio',
+    mod:     'e.g. tumour type, mean age, risk of bias',
+  },
+  tips: {
+    ref:      { text: 'Link this form to the review — e.g. author-year citation, DOI, review acronym, or PROSPERO ID. You may also note the comparison of interest.', anchor: '#prelim-ref' },
+    outcome:  { text: 'ICEMAN applies to one outcome at a time. Specify the outcome and, where relevant, the time-point of assessment (e.g. mortality at 1 year).', anchor: '#prelim-outcome' },
+    measure:  { text: 'Specify one effect measure (e.g. relative risk, risk difference, hazard ratio). Credibility ratings can differ between relative and absolute measures — complete a separate form for each.', anchor: '#prelim-measure' },
+    modifier: { text: 'State one potential effect modifier — a patient, intervention, or study characteristic (e.g. risk of bias, follow-up length). Note: ICEMAN does not apply when the modifier is another outcome.', anchor: '#prelim-modifier' },
+    prerando: { text: 'ICEMAN applies to modifiers assessed before or at randomisation. For meta-analyses, study-level characteristics (e.g. risk of bias) are also eligible. See the handbook for exceptions.', anchor: '#prelim-prerando' },
+    possible: { text: 'Apply ICEMAN only when interaction or meta-regression p < 0.1. With p ≥ 0.1, use the overall effect estimate and state that no ICEMAN assessment was performed.', anchor: '#prelim-possible' },
+  },
+};
+
+
+
+const GENERAL_TIPS = {
+  'study-type': {
+    text: 'Select whether you assess effect modification in an individual randomized controlled trial or a meta-analysis of trials. For other study types, such as cohort studies or meta-analyses of observational studies, choose the version that fits best and lower your overall credibility rating to reflect the additional uncertainty.',
+    anchor: 'manual/index.html',
+  },
+};
+
+(function() {
+  Object.entries(RCT_PRELIM.placeholders).forEach(([key, ph]) => {
+    const el = document.getElementById(`r-${key}`);
+    if (el) el.placeholder = ph;
+  });
+  Object.entries(META_PRELIM.placeholders).forEach(([key, ph]) => {
+    const el = document.getElementById(`m-${key}`);
+    if (el) el.placeholder = ph;
+  });
+})();
+
+const card = document.getElementById('tip-card');
+let hideTimer;
+
+function showTip(btn) {
+  clearTimeout(hideTimer);
+  const tipType = btn.dataset.tipType;
+  let tipText, manualHref;
+  if (tipType === 'item') {
+    const pfx = btn.dataset.itemPrefix;
+    const idx = parseInt(btn.dataset.itemIdx);
+    const item = (pfx === 'r' ? RCT_ITEMS : META_ITEMS)[idx];
+    tipText = item.hint;
+    manualHref = item.manualLink.replace('.qmd', '.html');
+  } else if (tipType === 'overall') {
+    const pfx = btn.dataset.itemPrefix;
+    const cfg = pfx === 'r' ? OVERALL_TIPS.rct : OVERALL_TIPS.meta;
+    tipText = cfg.text;
+    manualHref = cfg.manualHref;
+  } else if (tipType === 'generate') {
+    const pfx = btn.dataset.itemPrefix;
+    tipText = 'The calculated score provides an orientation only. It gives equal weight to all core items which may not be appropriate. Click on the scale to adjust manually. When you change a response, the rating will adjust automatically.';
+    manualHref = pfx === 'r' ? 'manual/rct.html#rct-item7' : 'manual/meta.html#meta-item10';
+  } else {
+    const key = btn.dataset.tip;
+    const general = GENERAL_TIPS[key];
+    if (general) {
+      tipText = general.text;
+      manualHref = general.anchor;
+    } else {
+      const isRct = !!btn.closest('#tab-rct');
+      const tip = (isRct ? RCT_PRELIM : META_PRELIM).tips[key];
+      if (!tip) return;
+      tipText = tip.text;
+      manualHref = 'manual/index.html' + tip.anchor;
+    }
+  }
+  const bodyHtml = tipText ? `<div style="margin:0">${tipText}</div>` : '';
+  card.innerHTML = `${bodyHtml}<a class="tip-card-link" href="${manualHref}" target="_blank">Open in handbook for more explanation →</a>`;
+  const r = btn.getBoundingClientRect();
+  card.style.left = Math.min(r.left, window.innerWidth - 332) + 'px';
+  card.style.top  = (r.bottom + 8) + 'px';
+  card.style.display = 'block';
+}
+
+document.body.addEventListener('mouseover', e => {
+  const btn = e.target.closest('.tip-trigger');
+  if (!btn || btn.contains(e.relatedTarget)) return;
+  showTip(btn);
+});
+document.body.addEventListener('mouseout', e => {
+  const btn = e.target.closest('.tip-trigger');
+  if (!btn || btn.contains(e.relatedTarget)) return;
+  hideTimer = setTimeout(() => { card.style.display = 'none'; }, 200);
+});
+card.addEventListener('mouseover', e => { if (!card.contains(e.relatedTarget)) clearTimeout(hideTimer); });
+card.addEventListener('mouseout',  e => { if (!card.contains(e.relatedTarget)) hideTimer = setTimeout(() => { card.style.display = 'none'; }, 200); });
+
+// ── Item content ─────────────────────────────────────────────────────────────
+const OVERALL_TIPS = {
+  rct: {
+    text: 'The overall rating should be driven by the items that decrease credibility. Sensible strategy:<ul style="margin:0.5rem 0 0 1.1rem;padding:0"><li>All responses red or orange → very low</li><li>Two or more responses red → maximum usually low</li><li>One response red → maximum usually moderate</li><li>Two responses orange → maximum usually moderate</li><li>No responses red or orange → high very likely</li></ul>',
+    manualHref: 'manual/rct.html#rct-item7',
+  },
+  meta: {
+    text: 'The overall rating should be driven by the items that decrease credibility. Sensible strategy:<ul style="margin:0.5rem 0 0 1.1rem;padding:0"><li>All responses red or orange → very low</li><li>Two or more responses red → maximum usually low</li><li>One response red → maximum usually moderate</li><li>Two responses orange → maximum usually moderate</li><li>No responses red or orange → high very likely</li></ul>',
+    manualHref: 'manual/meta.html#meta-item10',
+  },
+};
+
+const RCT_ITEMS = [
+  {
+    num: '1 of 6',
+    q: 'Was the direction of effect modification correctly hypothesized a priori?',
+    hint: 'Credibility is higher if investigators correctly anticipated the direction, lower if they failed to anticipate a direction, and lowest if they anticipated the opposite direction.',
+    manualLink: 'manual/rct.qmd#rct-item1',
+    summaryLabel: '1. Direction a priori',
+    tableLabel: 'Direction of effect modification hypothesized a priori?',
+    reportLabel: '1. Direction hypothesized a priori',
+    options: [
+      { value: '1', label: 'Definitely no',             desc: 'Clearly post-hoc, results inconsistent with hypothesized direction, or biologically very implausible' },
+      { value: '2', label: 'Probably no or unclear',    desc: 'Vague hypothesis or hypothesized direction unclear' },
+      { value: '3', label: 'Probably yes',              desc: 'No protocol but unequivocal statement of a priori hypothesis with correct direction' },
+      { value: '4', label: 'Definitely yes',            desc: 'Prior protocol with correct specification of direction based on biologic rationale' },
+    ],
+  },
+  {
+    num: '2 of 6',
+    q: 'Was the effect modification supported by prior evidence?',
+    hint: 'Credibility is higher if the effect modification is supported by prior direct or indirect evidence, lower if observed for the first time, lowest if inconsistent with prior evidence.',
+    manualLink: 'manual/rct.qmd#rct-item2',
+    summaryLabel: '2. Prior evidence',
+    tableLabel: 'Effect modification supported by prior evidence?',
+    reportLabel: '2. Supported by prior evidence',
+    options: [
+      { value: '1', label: 'Inconsistent with prior evidence', desc: 'Prior evidence suggested a different direction of effect modification' },
+      { value: '2', label: 'Little or no support or unclear',  desc: 'No prior evidence, or consistent with weak/very indirect evidence, or unclear' },
+      { value: '3', label: 'Some support',                     desc: 'Consistent with more limited or indirect prior evidence' },
+      { value: '4', label: 'Strong support',                   desc: 'Consistent with strong prior evidence directly applicable to the clinical scenario' },
+    ],
+  },
+  {
+    num: '3 of 6',
+    q: 'Does a test for interaction suggest that chance is an unlikely explanation of the apparent effect modification? <small style="font-weight:400;color:#666">(consider irrespective of number of effect modifiers)</small>',
+    hint: 'Consider the interaction p-value as reported. Note: showing significance in one subgroup and not another does not indicate whether chance explains differences across subgroups.',
+    manualLink: 'manual/rct.qmd#rct-item3',
+    summaryLabel: '3. Interaction test',
+    tableLabel: 'Chance unlikely explanation of effect modification?',
+    reportLabel: '3. Interaction test — chance unlikely',
+    options: [
+      { value: '1', label: 'Chance a very likely explanation',      desc: 'Interaction p-value > 0.05' },
+      { value: '2', label: 'Chance a likely explanation or unclear', desc: 'p ≤ 0.05 and > 0.01, or no test reported and not computable' },
+      { value: '3', label: 'Chance may not explain',               desc: 'p ≤ 0.01 and > 0.005' },
+      { value: '4', label: 'Chance an unlikely explanation',        desc: 'p ≤ 0.005' },
+    ],
+  },
+  {
+    num: '4 of 6',
+    q: 'Did the authors test only a small number of effect modifiers, or consider multiplicity?',
+    hint: 'Credibility is higher if investigators tested only a small number of effect modifiers, or statistically adjusted for multiplicity.',
+    manualLink: 'manual/rct.qmd#rct-item4',
+    summaryLabel: '4. Multiplicity',
+    tableLabel: 'Few effect modifiers tested or multiplicity considered?',
+    reportLabel: '4. Small number of modifiers tested',
+    options: [
+      { value: '1', label: 'Definitely no',          desc: 'Explicitly exploratory or >10 modifiers tested; multiplicity not considered' },
+      { value: '2', label: 'Probably no or unclear', desc: 'No mention of number, or 4–10 modifiers tested; not considered' },
+      { value: '3', label: 'Probably yes',           desc: 'No protocol but unequivocal statement of ≤3 modifiers tested' },
+      { value: '4', label: 'Definitely yes',         desc: 'Protocol with ≤3 modifiers, or multiplicity considered in analysis' },
+    ],
+  },
+  {
+    num: '5 of 6',
+    q: 'Were arbitrary cut points avoided?',
+    hint: 'Analyses using the full spectrum of values are most credible. Data-driven cut points maximising the interaction are associated with high false-positive rates.',
+    manualLink: 'manual/rct.qmd#rct-item5',
+    summaryLabel: '5. Cut points',
+    tableLabel: 'Arbitrary cut points avoided for continuous modifier?',
+    reportLabel: '5. Arbitrary cut points avoided',
+    options: [
+      { value: 'na', label: 'Not applicable — effect modifier is not continuous', desc: null },
+      { value: '1',  label: 'Definitely no',          desc: 'Analysis based on exploratory cut point (e.g. maximising interaction p-value)' },
+      { value: '2',  label: 'Probably no or unclear', desc: 'Analysis based on cut point(s) of unclear origin' },
+      { value: '3',  label: 'Probably yes',           desc: 'Analysis based on pre-specified cut points (e.g. from prior RCT)' },
+      { value: '4',  label: 'Definitely yes',         desc: 'Analysis based on full continuum (linear/logarithmic relationship)' },
+    ],
+  },
+  {
+    num: '6 — optional',
+    q: 'Are there additional considerations that may increase or decrease credibility?',
+    hint: 'Consider: sensitivity analyses, dose-response pattern, persistence after adjustment, power, consistency across related outcomes, risk of bias.',
+    manualLink: 'manual/rct.qmd#rct-item6',
+    summaryLabel: '6. Additional (optional)',
+    tableLabel: 'Additional credibility considerations?',
+    reportLabel: '6. Additional considerations (optional)',
+    commentPlaceholder: 'Describe considerations…',
+    options: [
+      { value: 'na',  label: 'Not applicable', desc: null },
+      { value: 'dec', label: 'Yes — probably decrease credibility', desc: null },
+      { value: 'inc', label: 'Yes — probably increase credibility', desc: null },
+    ],
+  },
+];
+
+const META_ITEMS = [
+  {
+    num: '1 of 9',
+    q: 'Is the analysis of effect modification based on comparison within rather than between trials?',
+    hint: 'Between-study comparisons are usually much less credible due to study-level confounding.',
+    manualLink: 'manual/meta.qmd#meta-item1',
+    summaryLabel: '1. Within vs between',
+    tableLabel: 'Within-trial rather than between-trial comparison?',
+    reportLabel: '1. Within vs between comparison',
+    options: [
+      { value: '1', label: 'Completely between',      desc: 'Subgroup analysis or meta-regression comparing overall effects of each individual trial' },
+      { value: '2', label: 'Mostly between or unclear', desc: 'Most information from overall effects; some trials provide within-trial subgroup information' },
+      { value: '3', label: 'Mostly within',           desc: 'Most trials provide within-trial subgroup information; or IPD combining within and between' },
+      { value: '4', label: 'Completely within',       desc: 'IPD analysis separating within from between trial information (e.g. meta-analysis of interactions)' },
+    ],
+  },
+  {
+    num: '2 of 9',
+    q: 'For within-trial comparisons, is the effect modification similar from trial to trial?',
+    hint: null,
+    manualLink: 'manual/meta.qmd#meta-item2',
+    summaryLabel: '2. Similar across trials',
+    tableLabel: 'Effect modification similar from trial to trial?',
+    reportLabel: '2. Similar across trials',
+    options: [
+      { value: 'na', label: 'Not applicable — no within-RCT comparisons', desc: null },
+      { value: '1',  label: 'Definitely not similar',       desc: 'Reported for ≥2 trials with clearly different directions' },
+      { value: '2',  label: 'Probably not similar or unclear', desc: 'Not reported for individual trials, or too imprecise to tell' },
+      { value: '3',  label: 'Mostly similar',               desc: 'Reported for ≥2 trials, mostly similar direction, considerable differences in magnitude' },
+      { value: '4',  label: 'Definitely similar',           desc: 'Reported for ≥2 trials, similar direction, only some differences in magnitude' },
+    ],
+  },
+  {
+    num: '3 of 9 — for between-RCT comparisons',
+    q: 'For between-trial comparisons, is the number of trials large?',
+    hint: null,
+    manualLink: 'manual/meta.qmd#meta-item3',
+    summaryLabel: '3. Number of studies',
+    tableLabel: 'Number of between-RCT studies large?',
+    reportLabel: '3. Number of studies (between)',
+    options: [
+      { value: 'na', label: 'Not applicable — no between-RCT comparison', desc: null },
+      { value: '1',  label: 'Very small',          desc: '1–2 in smallest subgroup; ≤5 in continuous meta-regression' },
+      { value: '2',  label: 'Rather small or unclear', desc: '3–4 in smallest subgroup; 6–10 in continuous meta-regression' },
+      { value: '3',  label: 'Rather large',        desc: '5–9 in smallest subgroup; 11–15 in continuous meta-regression' },
+      { value: '4',  label: 'Large',               desc: '≥10 in smallest subgroup; >15 in continuous meta-regression' },
+    ],
+  },
+  {
+    num: '4 of 9',
+    q: 'Was the direction of effect modification correctly hypothesized a priori?',
+    hint: 'Because meta-analyses are retrospective, investigators may already know key trials and promising effect modifiers.',
+    manualLink: 'manual/rct.qmd#rct-item1',
+    summaryLabel: '4. Direction a priori',
+    tableLabel: 'Direction of effect modification hypothesized a priori?',
+    reportLabel: '4. Direction a priori',
+    options: [
+      { value: '1', label: 'Definitely no',          desc: 'Clearly post-hoc, inconsistent with hypothesized direction, or biologically very implausible' },
+      { value: '2', label: 'Probably no or unclear', desc: 'Vague hypothesis or direction unclear' },
+      { value: '3', label: 'Probably yes',           desc: 'No protocol but unequivocal a priori statement with correct direction' },
+      { value: '4', label: 'Definitely yes',         desc: 'Prior protocol with correct direction based on biologic rationale' },
+    ],
+  },
+  {
+    num: '5 of 9',
+    q: 'Does a test for interaction suggest that chance is an unlikely explanation of the apparent effect modification? <small style="font-weight:400;color:#666">(consider irrespective of number of effect modifiers)</small>',
+    hint: null,
+    manualLink: 'manual/rct.qmd#rct-item3',
+    summaryLabel: '5. Interaction test',
+    tableLabel: 'Chance unlikely explanation of effect modification?',
+    reportLabel: '5. Interaction test — chance unlikely',
+    options: [
+      { value: '1', label: 'Chance a very likely explanation',      desc: 'Interaction/meta-regression p-value > 0.05' },
+      { value: '2', label: 'Chance a likely explanation or unclear', desc: 'Interaction or meta-regression p-value ≤0.05 and >0.01, or no test of interaction reported and not computable' },
+      { value: '3', label: 'Chance may not explain',               desc: 'p ≤ 0.01 and > 0.005' },
+      { value: '4', label: 'Chance an unlikely explanation',        desc: 'p ≤ 0.005' },
+    ],
+  },
+  {
+    num: '6 of 9',
+    q: 'Did the authors test only a small number of effect modifiers or consider the number in their statistical analysis?',
+    hint: null,
+    manualLink: 'manual/rct.qmd#rct-item4',
+    summaryLabel: '6. Multiplicity',
+    tableLabel: 'Few effect modifiers tested or multiplicity considered?',
+    reportLabel: '6. Small number of modifiers',
+    options: [
+      { value: '1', label: 'Definitely no',          desc: 'Explicitly exploratory or >10 modifiers; multiplicity not considered' },
+      { value: '2', label: 'Probably no or unclear', desc: 'No mention of number, or 4–10 modifiers; not considered' },
+      { value: '3', label: 'Probably yes',           desc: 'No protocol but unequivocal statement of ≤3 modifiers' },
+      { value: '4', label: 'Definitely yes',         desc: 'Protocol with ≤3 modifiers, or multiplicity considered in analysis' },
+    ],
+  },
+  {
+    num: '7 of 9',
+    q: 'Did the authors use a random effects model?',
+    hint: 'Credibility is higher if a random effects model was used within subgroups. Fixed effect models increase the risk of false-positive claims.',
+    manualLink: 'manual/meta.qmd#meta-item7',
+    summaryLabel: '7. Random effects model',
+    tableLabel: 'Random effects model used?',
+    reportLabel: '7. Random effects model',
+    options: [
+      { value: '1', label: 'Definitely no',          desc: 'Fixed (or common) effect or fixed effects model explicitly stated' },
+      { value: '2', label: 'Probably no or unclear', desc: 'Probably fixed effect(s) model' },
+      { value: '3', label: 'Probably yes',           desc: 'Probably random (or mixed) effects model' },
+      { value: '4', label: 'Definitely yes',         desc: 'Random (or mixed) effects model explicitly stated' },
+    ],
+  },
+  {
+    num: '8 of 9',
+    q: 'Were arbitrary cut points avoided?',
+    hint: null,
+    manualLink: 'manual/meta.qmd#meta-item8',
+    summaryLabel: '8. Cut points',
+    tableLabel: 'Arbitrary cut points avoided for continuous modifier?',
+    reportLabel: '8. Arbitrary cut points avoided',
+    options: [
+      { value: 'na', label: 'Not applicable — effect modifier is not continuous', desc: null },
+      { value: '1',  label: 'Definitely no',          desc: 'Analysis based on exploratory cut point(s), e.g., picking cut point associated with highest interaction p-value' },
+      { value: '2',  label: 'Probably no or unclear', desc: 'Analysis based on cut point(s) of unclear origin' },
+      { value: '3',  label: 'Probably yes',   desc: 'Analysis based on pre-specified cut points' },
+      { value: '4',  label: 'Definitely yes', desc: 'Analysis based on full continuum' },
+    ],
+  },
+  {
+    num: '9 of 9 — optional',
+    q: 'Are there any additional considerations that may increase or decrease credibility?',
+    hint: null,
+    manualLink: 'manual/meta.qmd#meta-item9',
+    summaryLabel: '9. Additional (optional)',
+    tableLabel: 'Additional credibility considerations?',
+    reportLabel: '9. Additional considerations (optional)',
+    commentPlaceholder: 'Describe considerations…',
+    options: [
+      { value: 'na',  label: 'Not applicable', desc: null },
+      { value: 'dec', label: 'Yes — probably decrease credibility', desc: null },
+      { value: 'inc', label: 'Yes — probably increase credibility', desc: null },
+    ],
+  },
+];
+
+function rlColor(v) {
+  if (v === '1')   return ' rl-red';
+  if (v === '2' || v === 'dec') return ' rl-orange';
+  if (v === '3' || v === 'inc') return ' rl-yellow';
+  if (v === '4')   return ' rl-green';
+  return '';
+}
+
+function renderItems(items, prefix) {
+  return items.map((item, i) => {
+    const n    = i + 1;
+    const name = `${prefix}-q${n}`;
+    const cid  = `${name}c`;
+    const opts = item.options.map(o =>
+      `<label class="radio-row"><input type="radio" name="${name}" value="${o.value}"><span><span class="rl${rlColor(o.value)}">${o.label}</span>${o.desc ? `<br><span class="rd">${o.desc}</span>` : ''}</span></label>`
+    ).join('');
+    return `
+<div class="iceman-item">
+  <div class="item-num">Item ${item.num}</div>
+  <div class="item-q">${item.q} <button class="tip-trigger" data-tip-type="item" data-item-prefix="${prefix}" data-item-idx="${i}">?</button></div>
+  <div id="${name}">${opts}</div>
+  <textarea class="comment-box" id="${cid}" placeholder="${item.commentPlaceholder || 'Justify your rating…'}"></textarea>
+</div>`;
+  }).join('\n');
+}
+
+document.getElementById('r-item-cards').innerHTML = renderItems(RCT_ITEMS, 'r');
+document.getElementById('m-item-cards').innerHTML = renderItems(META_ITEMS, 'm');
+
+// ── Meta Item 1 → Item 2 / Item 3 dependency ─────────────────────────────────
+// "Completely between" (0) → Item 2 auto-NA + greyed out
+// "Completely within"  (3) → Item 3 auto-NA + greyed out
+function setItemAutoNA(itemNum) {
+  const name = `m-q${itemNum}`;
+  document.querySelectorAll(`input[name="${name}"]`).forEach(inp => {
+    inp.closest('.radio-row').classList.remove('selected');
+    inp.checked = false;
+  });
+  const naInput = document.querySelector(`input[name="${name}"][value="na"]`);
+  if (naInput) {
+    naInput.checked = true;
+    naInput.closest('.radio-row').classList.add('selected');
+  }
+  const itemCard = document.getElementById(name)?.closest('.iceman-item');
+  if (itemCard) itemCard.classList.add('item-auto-na');
+}
+
+function clearItemAutoNA(itemNum) {
+  const name = `m-q${itemNum}`;
+  const itemCard = document.getElementById(name)?.closest('.iceman-item');
+  if (!itemCard?.classList.contains('item-auto-na')) return;
+  itemCard.classList.remove('item-auto-na');
+  document.querySelectorAll(`input[name="${name}"]`).forEach(inp => {
+    inp.closest('.radio-row').classList.remove('selected');
+    inp.checked = false;
+  });
+}
+
+function applyMetaItem1Deps(val) {
+  if (val === '1') {
+    setItemAutoNA(2);
+    clearItemAutoNA(3);
+  } else if (val === '4') {
+    setItemAutoNA(3);
+    clearItemAutoNA(2);
+  } else {
+    clearItemAutoNA(2);
+    clearItemAutoNA(3);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 function switchTab(t, btn) {
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + t).classList.add('active');
   btn.classList.add('active');
+  const ph = document.getElementById('study-placeholder');
+  if (ph) ph.style.display = 'none';
 }
 
-function showRCTItems() {
-  const v = document.getElementById('r-prerando').value;
-  document.getElementById('r-items').style.display = v === 'yes' ? 'block' : 'none';
-  document.getElementById('r-stopped').style.display = v === 'no' ? 'block' : 'none';
-  if (v === 'yes') updateLiveSummary('r');
-}
-function showMetaItems() {
-  const v = document.getElementById('m-prerando').value;
-  document.getElementById('m-items').style.display = v === 'yes' ? 'block' : 'none';
-  document.getElementById('m-stopped').style.display = v === 'no' ? 'block' : 'none';
-  if (v === 'yes') updateLiveSummary('m');
-}
+// Items are always visible; these handlers clear validation state and trigger live rating.
+['r-possible','m-possible'].forEach(id => {
+  document.getElementById(id).addEventListener('change', e => {
+    e.target.classList.remove('field-invalid');
+    const p = id.startsWith('r-') ? 'r' : 'm';
+    const noWarn = document.getElementById(`${p}-no-warn`);
+    if (noWarn) noWarn.style.display = e.target.value === 'no' ? 'block' : 'none';
+    tryLiveRate(p);
+  });
+});
 
 document.addEventListener('click', e => {
   const row = e.target.closest('.radio-row');
@@ -616,12 +1009,19 @@ document.addEventListener('click', e => {
   });
   row.classList.add('selected');
   input.checked = true;
-  if (name.startsWith('r-')) updateLiveSummary('r');
-  else if (name.startsWith('m-')) updateLiveSummary('m');
+  row.closest('.iceman-item')?.classList.remove('item-invalid');
+  if (name === 'm-q1') applyMetaItem1Deps(input.value);
+  const p = name.startsWith('r-') ? 'r' : name.startsWith('m-') ? 'm' : null;
+  if (p === 'r') { autoMode['r'] = true; updateLiveSummary('r'); tryLiveRate('r'); }
+  else if (p === 'm') { autoMode['m'] = true; updateLiveSummary('m'); tryLiveRate('m'); }
 });
 
 document.addEventListener('input', e => {
+  if (e.target.tagName === 'INPUT' && e.target.type === 'text') {
+    e.target.classList.remove('field-invalid');
+  }
   if (e.target.tagName === 'TEXTAREA') {
+    e.target.classList.remove('comment-warn');
     const id = e.target.id || '';
     if (id.startsWith('r-') && id !== 'r-overallc') updateLiveSummary('r');
     if (id.startsWith('m-') && id !== 'm-overallc') updateLiveSummary('m');
@@ -634,34 +1034,573 @@ const interpLabels = [
   'Likely effect modification — use separate effects for each subgroup but note remaining uncertainty',
   'Very likely effect modification — use separate effects for each subgroup'
 ];
+const ratingLabels = ['Very low','Low','Moderate','High'];
+const ratingColors = ['#c0392b','#d35400','#9a7d0a','#1a7a4a'];
+
+function updateStickyBar(val) {
+  const bar = document.getElementById('sticky-bar');
+  const thumb = document.getElementById('sb-thumb');
+  if (!bar) return;
+  bar.classList.add('visible');
+  thumb.style.left = val + '%';
+  const idx = val <= 25 ? 0 : val <= 50 ? 1 : val <= 75 ? 2 : 3;
+  const label = ratingLabels[idx];
+  const color = ratingColors[idx];
+  const leftEl  = document.getElementById('sb-left');
+  const rightEl = document.getElementById('sb-right');
+  if (idx <= 1) {
+    leftEl.textContent  = label; leftEl.style.color  = color;
+    rightEl.textContent = '';    rightEl.style.color = '';
+  } else {
+    leftEl.textContent  = '';    leftEl.style.color  = '';
+    rightEl.textContent = label; rightEl.style.color = color;
+  }
+}
+
+function activePrefix() {
+  return document.getElementById('tab-rct')?.classList.contains('active') ? 'r' : 'm';
+}
+
+function sbClick(e) {
+  const barEl = document.querySelector('#sb-bar-wrap .sb-bar');
+  const rect  = barEl.getBoundingClientRect();
+  const pct   = Math.max(0, Math.min(100, (e.clientX - rect.left) / rect.width * 100));
+  const p     = activePrefix();
+  showScale(p);
+  autoMode[p] = false;
+  document.getElementById(p + '-scale').value = pct;
+  moveThumb(p);
+}
+
 function moveThumb(p) {
   const val = +document.getElementById(p + '-scale').value;
   document.getElementById(p + '-thumb').style.left = val + '%';
-  const idx = val < 25 ? 0 : val < 50 ? 1 : val < 75 ? 2 : 3;
+  const idx = val <= 25 ? 0 : val <= 50 ? 1 : val <= 75 ? 2 : 3;
   document.getElementById(p + '-interp').textContent = interpLabels[idx];
+  updateStickyBar(val);
+}
+
+// Track whether each form is in auto-rating mode.
+// Auto mode is on by default; manual slider drag turns it off;
+// clicking "Generate rating from responses" turns it back on.
+const autoMode = { r: true, m: true };
+const scaleActive = { r: false, m: false };
+
+function onSliderDrag(p) {
+  moveThumb(p);
+  autoMode[p] = false;
+}
+
+function showScale(p) {
+  scaleActive[p] = true;
+  const thumb = document.getElementById(p + '-thumb');
+  if (thumb) thumb.style.display = 'block';
+  const slider = document.getElementById(p + '-scale');
+  if (slider) slider.style.pointerEvents = 'auto';
+  const interp = document.getElementById(p + '-interp');
+  if (interp) interp.style.display = 'block';
+  const bar = document.getElementById(p + '-cred-bar');
+  if (bar) bar.style.cursor = 'default';
+}
+
+function showModal(title, msg) {
+  document.getElementById('val-modal-title').textContent = title;
+  document.getElementById('val-modal-msg').textContent = msg;
+  document.getElementById('val-modal').classList.add('open');
+}
+
+function showInlineWarn(p, msg) {
+  const warnId = `${p}-inline-warn`;
+  let warn = document.getElementById(warnId);
+  if (!warn) {
+    warn = document.createElement('div');
+    warn.id = warnId;
+    warn.className = 'inline-warn';
+    const credWrap = document.getElementById(`${p}-cred-wrap`);
+    credWrap?.parentNode.insertBefore(warn, credWrap);
+  }
+  warn.innerHTML = `<span>${msg}</span><button onclick="this.parentElement.style.display='none'">✕</button>`;
+  warn.style.display = 'flex';
+  setTimeout(() => { if (warn) warn.style.display = 'none'; }, 8000);
+}
+
+// Highlight missing prelim fields + core items. Returns { missingPrelim, missingItems }.
+function highlightMissing(p) {
+  let missingPrelim = false;
+  let missingItems = false;
+  ['outcome', 'measure', 'mod'].forEach(key => {
+    const el = document.getElementById(`${p}-${key}`);
+    if (!el) return;
+    const empty = el.value.trim() === '';
+    el.classList.toggle('field-invalid', empty);
+    if (empty) missingPrelim = true;
+  });
+  const poss = document.getElementById(`${p}-possible`);
+  if (poss && poss.value === '') {
+    poss.classList.add('field-invalid');
+    missingPrelim = true;
+  }
+  const cfg = p === 'r' ? RCT_ITEMS : META_ITEMS;
+  cfg.forEach((item, i) => {
+    if (item.commentPlaceholder) return;
+    const radioGroup = document.getElementById(`${p}-q${i + 1}`);
+    const itemDiv = radioGroup?.closest('.iceman-item');
+    if (!itemDiv) return;
+    const missing = !getVal(`${p}-q${i + 1}`);
+    itemDiv.classList.toggle('item-invalid', missing);
+    if (missing) missingItems = true;
+  });
+  return { missingPrelim, missingItems };
+}
+
+// Highlight comment boxes that are empty and return list of their IDs.
+function highlightMissingJustifications(p) {
+  const cfg = p === 'r' ? RCT_ITEMS : META_ITEMS;
+  const emptyIds = [];
+  cfg.forEach((item, i) => {
+    const cid = `${p}-q${i + 1}c`;
+    const ta = document.getElementById(cid);
+    if (!ta) return;
+    const empty = ta.value.trim() === '';
+    ta.classList.toggle('comment-warn', empty);
+    if (empty) emptyIds.push(cid);
+  });
+  const overallC = document.getElementById(`${p}-overallc`);
+  if (overallC && overallC.value.trim() === '') {
+    overallC.classList.add('comment-warn');
+    emptyIds.push(`${p}-overallc`);
+  }
+  return emptyIds;
+}
+
+function activateScale(p, e) {
+  // Warn about missing items only (not prelim), but still allow manual rating
+  const { missingItems } = highlightMissing(p);
+  if (missingItems) {
+    showInlineWarn(p, 'Some assessment items are not yet answered — please complete all items before finalising your rating.');
+  }
+
+  if (scaleActive[p]) return;
+  if (e) {
+    const bar = document.getElementById(p + '-cred-bar');
+    const rect = bar.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(100, (e.clientX - rect.left) / rect.width * 100));
+    document.getElementById(p + '-scale').value = pct;
+    moveThumb(p);
+  }
+  showScale(p);
+  autoMode[p] = false;
+}
+
+function renderRatingResult(p, result) {
+  const resultDiv = document.getElementById(p + '-algo-result');
+
+  const countsLine = `(--)=${result.D} (-)=${result.Pm} (+)=${result.Pp} (++)=${result.PP} · N=${result.N}`;
+
+  let scoreLine;
+  if (result.addl_adj !== 0) {
+    const adjStr = result.addl_adj > 0 ? `+${result.addl_adj}` : `${result.addl_adj}`;
+    scoreLine = `Weighted score: ${result.weighted_score.toFixed(1)} ${adjStr} (additional) = ${result.adjusted_score.toFixed(1)}`;
+  } else {
+    scoreLine = `Weighted score: ${result.weighted_score.toFixed(1)}`;
+  }
+
+  const ruleNotesList = [];
+  if (result.all_reducing_applied) {
+    ruleNotesList.push('All items reduce or are unclear → Very low');
+  } else if (result.pm4_applied) {
+    ruleNotesList.push('count(-) ≥ 4 → Very low');
+  } else {
+    if (result.pm3_applied)    ruleNotesList.push('count(-) = 3 → capped to Low');
+    if (result.no_high_applied) ruleNotesList.push('count(—) ≥ 1 → capped to Moderate');
+  }
+  const ruleNotes = ruleNotesList.map(r => `<div class="algo-shift">Safety rule: ${r}</div>`).join('');
+
+  const prelimNote = result.final_rating !== result.preliminary_rating
+    ? ` (preliminary: ${result.preliminary_rating})`
+    : '';
+
+  resultDiv.innerHTML = `<div class="algo-result">
+    <strong>${result.final_rating}${prelimNote}:</strong> ${result.rating_meaning}.
+    <div class="algo-counts">${scoreLine} &nbsp;·&nbsp; ${countsLine}</div>
+    ${ruleNotes}
+  </div>`;
+  if (DEV_ALGO_BOX) resultDiv.style.display = 'block';
+  document.getElementById(p + '-scale').value = result.final_slider_score;
+  moveThumb(p);
+}
+
+// Called on every response change. If auto mode is on and all core items
+// are answered, updates the scale live (mirrors the Generate button logic).
+function tryLiveRate(p) {
+  if (!autoMode[p]) return;
+  if (!scaleActive[p]) return;
+  const result = computeOverallRating(p, { ignorePossible: true });
+  if (result.blocked) return;
+  renderRatingResult(p, result);
 }
 
 function getVal(name) {
   const el = document.querySelector(`input[name="${name}"]:checked`);
   return el ? el.value : null;
 }
+
+// ── ICEMAN Step 2: Response coding ───────────────────────────────────────────
+//
+// Maps a raw response value to a credibility-impact code and item_value used
+// in the score formula.
+//
+// item_value represents position on the 0–100 credibility scale:
+//   (--) = 0   (37.5 points below neutral default of 37.5)
+//   (-)  = 25  (12.5 points below neutral default)
+//   (+)  = 75  (37.5 points above neutral default)
+//   (++) = 100 (62.5 points above neutral default)
+//
+// "Unclear" always codes as (-) — value '1' captures every option whose
+// label contains "or unclear" (e.g. "Probably no or unclear").
+// N/A items are excluded from the denominator; they neither help nor hurt.
+// Additional-considerations items ('dec'/'inc') are excluded from core counts;
+// they shift the score by ±25 after the core score is computed.
+// A missing applicable core item blocks the algorithm.
+//
+// Value → label examples:
+//   '0'  → "Definitely no", "Inconsistent with prior evidence", …   → (--)
+//   '1'  → "Probably no or unclear", "Little or no support", …      → (-)
+//   '2'  → "Probably yes", "Some support", …                        → (+)
+//   '3'  → "Definitely yes", "Strong support", …                    → (++)
+//   'na' → "Not applicable" — excluded from denominator
+//   'dec'→ Additional: probably decreases credibility — not a core item
+//   'inc'→ Additional: probably increases credibility — not a core item
+//   null / '' → missing — blocks the algorithm
+
+function codeResponse(val) {
+  if (val == null || val === '') {
+    return { impact_code: null, item_value: null, include_in_core_counts: false, is_missing: true };
+  }
+  switch (val) {
+    case '1':   return { impact_code: '--', item_value: 0,    include_in_core_counts: true,  is_missing: false };
+    case '2':   return { impact_code: '-',  item_value: 25,   include_in_core_counts: true,  is_missing: false };
+    case '3':   return { impact_code: '+',  item_value: 75,   include_in_core_counts: true,  is_missing: false };
+    case '4':   return { impact_code: '++', item_value: 100,  include_in_core_counts: true,  is_missing: false };
+    case 'na':  return { impact_code: 'NA', item_value: null, include_in_core_counts: false, is_missing: false };
+    case 'dec': return { impact_code: '-',  item_value: null, include_in_core_counts: false, is_missing: false };
+    case 'inc': return { impact_code: '+',  item_value: null, include_in_core_counts: false, is_missing: false };
+    default:    return { impact_code: null, item_value: null, include_in_core_counts: false, is_missing: true  };
+  }
+}
+
+// Collect coded responses for all core items of a form prefix ('r' or 'm').
+// Core items = all items except "additional considerations" (flagged by commentPlaceholder).
+function collectCoreResponses(p) {
+  const cfg = p === 'r' ? RCT_ITEMS : META_ITEMS;
+  return cfg
+    .map((item, i) => ({ item, i, val: getVal(`${p}-q${i + 1}`) }))
+    .filter(r => !r.item.commentPlaceholder)
+    .map(r => ({ ...r, coded: codeResponse(r.val) }));
+}
+
+// Compute item counts from an array returned by collectCoreResponses().
+//   D  = count(--)  item_value 0   — definitely reduces credibility
+//   Pm = count(-)   item_value 25  — probably reduces or unclear
+//   Pp = count(+)   item_value 75  — probably increases credibility
+//   PP = count(++)  item_value 100 — definitely increases credibility
+//   N  = D + Pm + Pp + PP (N/A items excluded from denominator)
+// Returns blocked:true if any applicable core item is missing.
+function computeItemCounts(coreResponses) {
+  if (coreResponses.some(r => r.coded.is_missing)) {
+    return { D: null, Pm: null, Pp: null, PP: null, N: null, blocked: true };
+  }
+  const rated = coreResponses.filter(r => r.coded.include_in_core_counts);
+  return {
+    D:  rated.filter(r => r.coded.item_value === 0).length,
+    Pm: rated.filter(r => r.coded.item_value === 25).length,
+    Pp: rated.filter(r => r.coded.item_value === 75).length,
+    PP: rated.filter(r => r.coded.item_value === 100).length,
+    N:  rated.length,
+    blocked: false,
+  };
+}
+
+// Step 2 self-test — runs once at page load; silent on pass, warns on fail.
+(() => {
+  const cases = [
+    { val: '1',  label: 'Definitely no',           code: '--', iv: 0,    core: true,  miss: false },
+    { val: '2',  label: 'Probably no or unclear',  code: '-',  iv: 25,   core: true,  miss: false },
+    { val: '3',  label: 'Probably yes',            code: '+',  iv: 75,   core: true,  miss: false },
+    { val: '4',  label: 'Definitely yes',          code: '++', iv: 100,  core: true,  miss: false },
+    { val: 'na', label: 'Not applicable',          code: 'NA', iv: null, core: false, miss: false },
+    { val: null, label: 'Missing (null)',           code: null, iv: null, core: false, miss: true  },
+    { val: '',   label: 'Missing (empty string)',   code: null, iv: null, core: false, miss: true  },
+  ];
+  let pass = true;
+  cases.forEach(c => {
+    const r = codeResponse(c.val);
+    if (r.impact_code !== c.code || r.item_value !== c.iv ||
+        r.include_in_core_counts !== c.core || r.is_missing !== c.miss) {
+      console.warn('[ICEMAN Step 2 FAILED]', c.label, 'got:', r);
+      pass = false;
+    }
+  });
+  if (pass) console.log('[ICEMAN Step 2] Response-coding self-test passed ✓');
+})();
+
+// ── ICEMAN weighted-score rating algorithm ───────────────────────────────────
+//
+// WEIGHTED SCORE
+// Each applicable core item is assigned a value and a weight that reflect its
+// credibility impact. Definite concerns receive higher weight so they pull the
+// average down more strongly than probable concerns:
+//
+//   Response  Value  Weight
+//   (--)        0     3      — definitely reduces credibility (strong weight)
+//   (-)        30     1.5    — probably reduces or unclear   (moderate weight)
+//   (+)        60     1      — probably increases credibility
+//   (++)       90     1      — definitely increases credibility
+//
+// weighted_score = Σ(value_i × weight_i) / Σ(weight_i)
+//                 summed over all applicable (non-N/A) core items
+//
+// "Unclear" always counts as (-): value '1' captures all options labelled
+// "or unclear". N/A items are excluded from the numerator and denominator.
+//
+// The weighted score is a heuristic display aid, not a validated measurement.
+//
+// PRELIMINARY RATING (strict upper-bound boundaries)
+//   weighted_score > 75  → High      (75 itself = Moderate)
+//   weighted_score > 50  → Moderate  (50 itself = Low)
+//   weighted_score > 25  → Low       (25 itself = Very low)
+//   weighted_score <= 25 → Very low
+//
+// SAFETY RULES (preserve ICEMAN logic after the weighted score)
+//   Rule 1: if all applicable items are (-) or (--), final_rating = Very low.
+//            Even if the preliminary rating is Low, unanimous reduction of
+//            credibility warrants the lowest rating.
+//   Rule 2: if count(--) >= 1 and preliminary_rating is High, cap to Moderate.
+//            A single definite credibility concern is incompatible with High.
+//
+// FINAL SLIDER SCORE
+// Use weighted_score as the slider value, but cap it to the upper bound of the
+// final rating band so the slider never visually contradicts the rating:
+//   Very low → min(weighted_score, 25)
+//   Low      → min(weighted_score, 50)
+//   Moderate → min(weighted_score, 75)
+//   High     → weighted_score  (no cap)
+//
+// ADDITIONAL CONSIDERATIONS
+// Not included in the weighted score (not a core item). Displayed separately.
+// Could later shift the slider slightly, but should not be treated as a core item.
+
+const ICEMAN_LEVELS = ['Very low', 'Low', 'Moderate', 'High'];
+
+const ICEMAN_MEANINGS = {
+  'Very low': 'Minimal to no support for effect modification',
+  'Low':      'Some but insufficient support for effect modification',
+  'Moderate': 'Likely effect modification, but uncertainty remains',
+  'High':     'Very likely effect modification',
+};
+
+// Returns the weighted average score (0–90 range before slider mapping).
+// Returns 0 when the denominator is zero (all items N/A — degenerate edge case).
+function weightedScore(D, Pm, Pp, PP) {
+  const num = 0 * 3 * D + 30 * 1.5 * Pm + 60 * 1 * Pp + 90 * 1 * PP;
+  const den = 3 * D + 1.5 * Pm + 1 * Pp + 1 * PP;
+  return den === 0 ? 0 : num / den;
+}
+
+function ratingFromScore(score) {
+  if (score > 75) return 'High';
+  if (score > 50) return 'Moderate';
+  if (score > 25) return 'Low';
+  return 'Very low';
+}
+
+const RATING_ORDER = ['Very low', 'Low', 'Moderate', 'High'];
+function lowerRating(a, b) {
+  return RATING_ORDER.indexOf(a) <= RATING_ORDER.indexOf(b) ? a : b;
+}
+
+// Caps the slider value to the upper boundary of the final rating band.
+function capSliderToRating(score, rating) {
+  if (rating === 'Very low') return score > 25 ? 19 : score;
+  if (rating === 'Low')      return score > 50 ? 44 : score;
+  if (rating === 'Moderate') return score > 75 ? 69 : score;
+  return score;
+}
+
+// ── Main entry point ──────────────────────────────────────────────────────────
+//
+// Reads the current DOM state for prefix 'r' or 'm' and returns a result object.
+// Never throws.
+
+function computeOverallRating(p, opts = {}) {
+  // Eligibility 1 — interaction p-value check (skipped when ignorePossible=true)
+  if (!opts.ignorePossible) {
+    const possible = document.getElementById(p + '-possible').value;
+    if (possible !== 'yes') {
+      return {
+        blocked: true,
+        reason: 'ICEMAN not applied: interaction p-value ≥ 0.1.',
+        D: null, Pm: null, Pp: null, PP: null, N: null,
+      };
+    }
+  }
+
+  // Eligibility 2 — collect and code core item responses
+  const coreResponses = collectCoreResponses(p);
+  const counts = computeItemCounts(coreResponses);
+  if (counts.blocked) {
+    return {
+      blocked: true,
+      reason: 'Overall rating cannot be generated because one or more core ICEMAN items are missing.',
+      D: null, Pm: null, Pp: null, PP: null, N: null,
+    };
+  }
+
+  const { D, Pm, Pp, PP, N } = counts;
+
+  // Compute weighted score from core items
+  const ws = weightedScore(D, Pm, Pp, PP);
+
+  // Read additional considerations
+  const cfg      = p === 'r' ? RCT_ITEMS : META_ITEMS;
+  const addlIdx  = cfg.findIndex(item => item.commentPlaceholder);
+  const addl_val = addlIdx >= 0 ? getVal(`${p}-q${addlIdx + 1}`) : null;
+
+  // Apply ±5 adjustment from additional considerations, clamp to [0, 100]
+  const addl_adj       = addl_val === 'dec' ? -5 : addl_val === 'inc' ? 5 : 0;
+  const adjusted_score = Math.max(0, Math.min(100, ws + addl_adj));
+
+  // Convert adjusted score to preliminary rating
+  const preliminary_rating = ratingFromScore(adjusted_score);
+
+  // Safety rules (evaluated in priority order)
+  // Rule 1: all applicable items are (-) or (—) → Very low
+  const all_reducing_applied = N > 0 && (D + Pm) === N;
+  // Rule 2: count(-) >= 4 → Very low
+  const pm4_applied          = !all_reducing_applied && Pm >= 4;
+  // Rule 3: count(-) == 3 → cap at Low  (can stack with rule 4)
+  const pm3_applied          = !all_reducing_applied && !pm4_applied && Pm === 3;
+  // Rule 4: count(—) >= 1 → cap at Moderate  (can stack with rule 3)
+  const no_high_applied      = !all_reducing_applied && !pm4_applied && D >= 1;
+
+  let final_rating;
+  if (all_reducing_applied || pm4_applied) {
+    final_rating = 'Very low';
+  } else {
+    final_rating = preliminary_rating;
+    if (pm3_applied)    final_rating = lowerRating(final_rating, 'Low');
+    if (no_high_applied) final_rating = lowerRating(final_rating, 'Moderate');
+  }
+
+  // Slider: cap adjusted_score to the final rating's band, then clamp to [0, 100]
+  const final_slider_score = Math.max(0, Math.min(100, capSliderToRating(adjusted_score, final_rating)));
+
+  return {
+    blocked:             false,
+    reason:              null,
+    weighted_score:      ws,
+    adjusted_score,
+    addl_adj,
+    preliminary_rating,
+    all_reducing_applied,
+    pm4_applied,
+    pm3_applied,
+    no_high_applied,
+    final_rating,
+    rating_meaning:      ICEMAN_MEANINGS[final_rating],
+    final_slider_score,
+    D, Pm, Pp, PP, N,
+    addl_val,
+  };
+}
+
+// ── Self-test — pure logic, no DOM ────────────────────────────────────────────
+// Cases 13–15 require DOM state; verify manually:
+//   13 & 14. possible != 'yes' → "ICEMAN not applied: interaction p-value ≥ 0.1."
+//   15.      Any applicable core item unanswered → "one or more core ICEMAN items are missing"
+//
+// Note: the spec's example values for cases 6, 7, 9 differ slightly from the
+// formula (285/5.5 ≈ 51.82 not 52.5; 270/6 = 45 not 47.1; 360/7 ≈ 51.43 not 55).
+// Actual computed values are used here.
+(() => {
+  // [label, D, Pm, Pp, PP, addl, expWS, expAdj, expPrelim, expFinal, expAllReduc, expPm4, expPm3, expNoHigh, expSlider]
+  const cases = [
+    ['1.  All (+) → Moderate',               0, 0, 5, 0,   null,  60,        60,          'Moderate', 'Moderate', false, false, false, false, 60        ],
+    ['2.  All (++) → High',                  0, 0, 0, 5,   null,  90,        90,          'High',     'High',     false, false, false, false, 90        ],
+    ['3.  Four (+), one (++)',               0, 0, 4, 1,   null,  66,        66,          'Moderate', 'Moderate', false, false, false, false, 66        ],
+    ['4.  Three (+), two (++)',              0, 0, 3, 2,   null,  72,        72,          'Moderate', 'Moderate', false, false, false, false, 72        ],
+    ['5.  Two (+), three (++)',              0, 0, 2, 3,   null,  78,        78,          'High',     'High',     false, false, false, false, 78        ],
+    ['6.  Four (+), one (-)',                0, 1, 4, 0,   null,  285/5.5,   285/5.5,     'Moderate', 'Moderate', false, false, false, false, 285/5.5   ],
+    ['7.  Three (+), two (-)',               0, 2, 3, 0,   null,  45,        45,          'Low',      'Low',      false, false, false, false, 45        ],
+    ['8.  Four (+), one (—)',                1, 0, 4, 0,   null,  240/7,     240/7,       'Low',      'Low',      false, false, false, true,  240/7     ],
+    ['9.  Four (++), one (—)',               1, 0, 0, 4,   null,  360/7,     360/7,       'Moderate', 'Moderate', false, false, false, true,  360/7     ],
+    ['10. D=1, PP=20: High → Mod',          1, 0, 0, 20,  null,  1800/23,   1800/23,     'High',     'Moderate', false, false, false, true,  69        ],
+    ['11. All (-) → all-reducing, Very low', 0, 5, 0, 0,   null,  30,        30,          'Low',      'Very low', true,  false, false, false, 19        ],
+    ['12. All (—) → all-reducing, Very low', 5, 0, 0, 0,   null,  0,         0,           'Very low', 'Very low', true,  false, false, false, 0         ],
+    // Additional considerations ±5 adjustment
+    ['13. Addl dec: Mod stays Mod',          0, 0, 5, 0,   'dec', 60,        55,          'Moderate', 'Moderate', false, false, false, false, 55        ],
+    ['14. Addl dec: Mod → Low',              0, 1, 4, 0,   'dec', 285/5.5,   285/5.5-5,   'Low',      'Low',      false, false, false, false, 285/5.5-5 ],
+    ['15. Addl inc: Low → Mod',              0, 1, 3, 0,   'inc', 50,        55,          'Moderate', 'Moderate', false, false, false, false, 55        ],
+    // count(-) accumulation rules
+    ['16. Pm=4, PP=1, dec: pm4 → Very low', 0, 4, 0, 1,   'dec', 270/7,     270/7-5,     'Low',      'Very low', false, true,  false, false, 19        ],
+    ['17. Pm=3, PP=2: pm3 caps Low',        0, 3, 0, 2,   null,  315/6.5,   315/6.5,     'Low',      'Low',      false, false, true,  false, 315/6.5   ],
+    ['18. Pm=3, PP=3: pm3 caps Mod → Low',  0, 3, 0, 3,   null,  54,        54,          'Moderate', 'Low',      false, false, true,  false, 44        ],
+    ['19. D=1, PP=4: no_high caps Mod',     1, 0, 0, 4,   null,  360/7,     360/7,       'Moderate', 'Moderate', false, false, false, true,  360/7     ],
+    ['20. Mixed D+Pm all-reducing',         2, 3, 0, 0,   null,  135/10.5,  135/10.5,    'Very low', 'Very low', true,  false, false, false, 135/10.5  ],
+  ];
+
+  let pass = true;
+  cases.forEach(([label, D, Pm, Pp, PP, addl, expWS, expAdj, expPrelim, expFinal, expAllReduc, expPm4, expPm3, expNoHigh, expSlider]) => {
+    const ws          = weightedScore(D, Pm, Pp, PP);
+    const addl_adj    = addl === 'dec' ? -5 : addl === 'inc' ? 5 : 0;
+    const adj         = Math.max(0, Math.min(100, ws + addl_adj));
+    const prelim      = ratingFromScore(adj);
+    const N           = D + Pm + Pp + PP;
+    const all_reduc   = N > 0 && (D + Pm) === N;
+    const pm4         = !all_reduc && Pm >= 4;
+    const pm3         = !all_reduc && !pm4 && Pm === 3;
+    const no_high     = !all_reduc && !pm4 && D >= 1;
+    let final         = (all_reduc || pm4) ? 'Very low' : prelim;
+    if (!all_reduc && !pm4) {
+      if (pm3)    final = lowerRating(final, 'Low');
+      if (no_high) final = lowerRating(final, 'Moderate');
+    }
+    const slider      = Math.max(0, Math.min(100, capSliderToRating(adj, final)));
+
+    const ok = Math.abs(ws - expWS) < 0.001 &&
+               Math.abs(adj - expAdj) < 0.001 &&
+               prelim === expPrelim && final === expFinal &&
+               all_reduc === expAllReduc && pm4 === expPm4 &&
+               pm3 === expPm3 && no_high === expNoHigh &&
+               Math.abs(slider - expSlider) < 0.001;
+    if (!ok) {
+      console.warn('[ICEMAN weighted FAILED]', label,
+        { ws, adj, prelim, final, all_reduc, pm4, pm3, no_high, slider },
+        'expected:', { expWS, expAdj, expPrelim, expFinal, expAllReduc, expPm4, expPm3, expNoHigh, expSlider });
+      pass = false;
+    }
+  });
+  if (pass) console.log('[ICEMAN weighted] Self-test passed ✓');
+})();
+// ─────────────────────────────────────────────────────────────────────────────
+
 function badge(v) {
   if (v === null) return ['Not answered', 'b-na'];
   if (v === 'na' || v === 'none') return ['N/A', 'b-na'];
-  if (v === 'inc') return ['Probably increases credibility', 'b-good'];
-  if (v === 'dec') return ['Probably decreases credibility', 'b-low'];
+  if (v === 'inc') return ['Probably increases credibility', 'b-2'];
+  if (v === 'dec') return ['Probably decreases credibility', 'b-1'];
   const n = parseInt(v);
-  if (n === 0) return ['Definitely no / lowest credibility', 'b-low'];
-  if (n === 1) return ['Probably no or unclear', 'b-low'];
-  if (n === 2) return ['Probably yes / supported', 'b-ok'];
-  if (n === 3) return ['Definitely yes / highest credibility', 'b-good'];
+  if (n === 1) return ['Definitely no / lowest credibility', 'b-0'];
+  if (n === 2) return ['Probably no or unclear', 'b-1'];
+  if (n === 3) return ['Probably yes / supported', 'b-2'];
+  if (n === 4) return ['Definitely yes / highest credibility', 'b-3'];
   return [v, 'b-na'];
 }
 function verdictFromScale(val) {
-  if (val < 25) return { label: 'Very low credibility', sub: 'Minimal to no support for effect modification — use overall effect for each subgroup', color: '#A32D2D' };
-  if (val < 50) return { label: 'Low credibility', sub: 'Some but insufficient support for effect modification — use overall effect for each subgroup but note remaining uncertainty', color: '#854F0B' };
-  if (val < 75) return { label: 'Moderate credibility', sub: 'Likely effect modification — use separate effects for each subgroup but note remaining uncertainty', color: '#3B6D11' };
-  return { label: 'High credibility', sub: 'Very likely effect modification — use separate effects for each subgroup', color: '#0F6E56' };
+  if (val > 75)  return { label: 'High credibility',     sub: 'Very likely effect modification — use separate effects for each subgroup',                               color: '#0F6E56' };
+  if (val > 50)  return { label: 'Moderate credibility', sub: 'Likely effect modification — use separate effects for each subgroup but note remaining uncertainty',     color: '#3B6D11' };
+  if (val > 25)  return { label: 'Low credibility',      sub: 'Some but insufficient support for effect modification — use overall effect but note remaining uncertainty', color: '#854F0B' };
+  return          { label: 'Very low credibility',       sub: 'Minimal to no support for effect modification — use overall effect for each subgroup',                   color: '#A32D2D' };
 }
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, ch => ({
@@ -685,34 +1624,17 @@ function genReport(p) {
   const isRct = p === 'r';
   const scaleVal = +document.getElementById(p + '-scale').value;
   const verdict = verdictFromScale(scaleVal);
-  const ref = document.getElementById(p + '-ref').value;
+  const ref = document.getElementById(p + '-ref')?.value || '';
   const outcome = document.getElementById(p + '-outcome').value;
   const mod = document.getElementById(p + '-mod').value;
   const overallComment = document.getElementById(p + '-overallc').value;
 
-  let items;
-  if (isRct) {
-    items = [
-      { label: '1. Direction hypothesized a priori', val: getVal('r-q1'), comment: document.getElementById('r-q1c').value },
-      { label: '2. Supported by prior evidence', val: getVal('r-q2'), comment: document.getElementById('r-q2c').value },
-      { label: '3. Interaction test — chance unlikely', val: getVal('r-q3'), comment: document.getElementById('r-q3c').value },
-      { label: '4. Small number of modifiers tested', val: getVal('r-q4'), comment: document.getElementById('r-q4c').value },
-      { label: '5. Arbitrary cut points avoided', val: getVal('r-q5'), comment: document.getElementById('r-q5c').value },
-      { label: '6. Additional considerations (optional)', val: getVal('r-q6'), comment: document.getElementById('r-q6c').value },
-    ];
-  } else {
-    items = [
-      { label: '1. Within vs between comparison', val: getVal('m-q1'), comment: document.getElementById('m-q1c').value },
-      { label: '2. Similar across trials', val: getVal('m-q2'), comment: document.getElementById('m-q2c').value },
-      { label: '3. Number of studies (between)', val: getVal('m-q3'), comment: document.getElementById('m-q3c').value },
-      { label: '4. Direction a priori', val: getVal('m-q4'), comment: document.getElementById('m-q4c').value },
-      { label: '5. Interaction test — chance unlikely', val: getVal('m-q5'), comment: document.getElementById('m-q5c').value },
-      { label: '6. Small number of modifiers', val: getVal('m-q6'), comment: document.getElementById('m-q6c').value },
-      { label: '7. Random effects model', val: getVal('m-q7'), comment: document.getElementById('m-q7c').value },
-      { label: '8. Arbitrary cut points avoided', val: getVal('m-q8'), comment: document.getElementById('m-q8c').value },
-      { label: '9. Additional considerations (optional)', val: getVal('m-q9'), comment: document.getElementById('m-q9c').value },
-    ];
-  }
+  const cfg = isRct ? RCT_ITEMS : META_ITEMS;
+  const items = cfg.map((item, i) => ({
+    label:   item.reportLabel,
+    val:     getVal(`${p}-q${i + 1}`),
+    comment: document.getElementById(`${p}-q${i + 1}c`).value,
+  }));
 
   const meta = [ref, outcome ? 'Outcome: ' + outcome : '', mod ? 'Effect modifier: ' + mod : ''].filter(Boolean).join(' | ');
   const safeMeta = escapeHtml(meta);
@@ -734,31 +1656,15 @@ function genReport(p) {
   document.getElementById(p + '-report').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function printReport(p) {
-  genReport(p);
-  setTimeout(() => window.print(), 300);
-}
 
 function updateLiveSummary(p) {
   const isRct = p === 'r';
-  const defs = isRct ? [
-    { name:'r-q1', label:'1. Direction a priori',       cid:'r-q1c' },
-    { name:'r-q2', label:'2. Prior evidence',           cid:'r-q2c' },
-    { name:'r-q3', label:'3. Interaction test',         cid:'r-q3c' },
-    { name:'r-q4', label:'4. Multiplicity',             cid:'r-q4c' },
-    { name:'r-q5', label:'5. Cut points',               cid:'r-q5c' },
-    { name:'r-q6', label:'6. Additional (optional)',    cid:'r-q6c' },
-  ] : [
-    { name:'m-q1', label:'1. Within vs between',        cid:'m-q1c' },
-    { name:'m-q2', label:'2. Similar across trials',    cid:'m-q2c' },
-    { name:'m-q3', label:'3. Number of studies',        cid:'m-q3c' },
-    { name:'m-q4', label:'4. Direction a priori',       cid:'m-q4c' },
-    { name:'m-q5', label:'5. Interaction test',         cid:'m-q5c' },
-    { name:'m-q6', label:'6. Multiplicity',             cid:'m-q6c' },
-    { name:'m-q7', label:'7. Random effects model',     cid:'m-q7c' },
-    { name:'m-q8', label:'8. Cut points',               cid:'m-q8c' },
-    { name:'m-q9', label:'9. Additional (optional)',    cid:'m-q9c' },
-  ];
+  const cfg  = isRct ? RCT_ITEMS : META_ITEMS;
+  const defs = cfg.map((item, i) => ({
+    name:  `${p}-q${i + 1}`,
+    label: item.tableLabel,
+    cid:   `${p}-q${i + 1}c`,
+  }));
   const rows = defs.map(d => {
     const [txt, cls] = badge(getVal(d.name));
     const comment = document.getElementById(d.cid).value.trim();
@@ -779,15 +1685,214 @@ function resetForm(p) {
     if (el.tagName === 'INPUT' && el.type === 'text') el.value = '';
     if (el.tagName === 'SELECT') el.value = '';
   });
-  document.getElementById(p + '-scale').value = 50;
+  autoMode[p] = true;
+  document.getElementById(p + '-scale').value = 37.5;
   moveThumb(p);
+  const algoDiv = document.getElementById(p + '-algo-result');
+  if (algoDiv) { algoDiv.style.display = 'none'; algoDiv.innerHTML = ''; }
+  scaleActive[p] = false;
+  const credThumb = document.getElementById(p + '-thumb');
+  if (credThumb) credThumb.style.display = 'none';
+  const credSlider = document.getElementById(p + '-scale');
+  if (credSlider) credSlider.style.pointerEvents = 'none';
+  const credInterp = document.getElementById(p + '-interp');
+  if (credInterp) credInterp.style.display = 'none';
+  const credBar = document.getElementById(p + '-cred-bar');
+  if (credBar) credBar.style.cursor = 'pointer';
   document.getElementById(p + '-report').innerHTML = '';
-  const prefix = p === 'r' ? 'r' : 'm';
-  document.getElementById(prefix + '-items').style.display = 'none';
-  document.getElementById(prefix + '-stopped').style.display = 'none';
+  // clear all validation highlights
+  const tab = `#tab-${p === 'r' ? 'rct' : 'meta'}`;
+  document.querySelectorAll(`${tab} .field-invalid`).forEach(el => el.classList.remove('field-invalid'));
+  document.querySelectorAll(`${tab} .item-invalid`).forEach(el => el.classList.remove('item-invalid'));
+  document.querySelectorAll(`${tab} .comment-warn`).forEach(el => el.classList.remove('comment-warn'));
+  const inlineWarn = document.getElementById(`${p}-inline-warn`);
+  if (inlineWarn) inlineWarn.style.display = 'none';
+  const noWarn = document.getElementById(`${p}-no-warn`);
+  if (noWarn) noWarn.style.display = 'none';
+  if (p === 'm') {
+    [2, 3].forEach(n => {
+      const card = document.getElementById(`m-q${n}`)?.closest('.iceman-item');
+      if (card) card.classList.remove('item-auto-na');
+    });
+  }
   document.getElementById(p + '-live-summary').innerHTML =
     '<div class="live-summary-title">Summary of responses</div>' +
     '<div class="s-label" style="color:#888;font-size:0.84rem;">— Fill in the items above to see a summary —</div>';
+}
+
+function stripHtml(s) { return s.replace(/<[^>]+>/g, '').trim(); }
+
+function getValLabel(name, item) {
+  const val = getVal(name);
+  if (!val) return '—';
+  const opt = item.options.find(o => o.value === val);
+  return opt ? opt.label : val;
+}
+
+// Pre-load docx library so it's ready by the time the user clicks
+const _docxLib = import('https://esm.sh/docx@8.5.0');
+
+// Button handler: re-enables auto mode and applies the computed rating.
+function applyComputedRating(p) {
+  autoMode[p] = true;
+  showScale(p);
+  // Generate ignores possible check — only block on missing items
+  const result    = computeOverallRating(p, { ignorePossible: true });
+  const resultDiv = document.getElementById(p + '-algo-result');
+
+  if (result.blocked) {
+    const { missingItems } = highlightMissing(p);
+    const msg = missingItems
+      ? 'Cannot generate rating — please complete all core items first.'
+      : result.reason;
+    resultDiv.innerHTML = `<div class="algo-blocked">${msg}</div>`;
+    resultDiv.style.display = 'block';
+    return;
+  }
+
+  renderRatingResult(p, result);
+}
+
+async function genDocx(p) {
+  const { Document, Packer, Paragraph, Table, TableRow, TableCell,
+          TextRun, WidthType } = await _docxLib;
+
+  // Block 1: missing preliminary fields
+  const { missingPrelim, missingItems } = highlightMissing(p);
+  if (missingPrelim) {
+    showModal('Preliminary information missing', 'Please complete all preliminary fields (outcome, effect measure, effect modifier, and the interaction p-value question) before downloading.');
+    document.getElementById(`${p}-outcome`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  // Block 2: missing core items
+  if (missingItems) {
+    showModal('Assessment items incomplete', 'Cannot generate the report — one or more core ICEMAN items have not been answered. Please complete all items.');
+    return;
+  }
+
+  // Block 3: overall rating not assigned
+  if (!scaleActive[p]) {
+    showModal('Overall rating missing', 'Please assign an overall credibility rating before downloading. Use "Generate rating from responses" or click the scale to rate manually.');
+    return;
+  }
+
+  // Block 4: possible="no" — warn + confirm override
+  if (document.getElementById(`${p}-possible`).value === 'no') {
+    const proceed = window.confirm(
+      'ICEMAN was developed to assess the credibility of a suggested effect modification (interaction p < 0.1).\n\n' +
+      'It does not apply when there is no suggestion of effect modification. Assessing the credibility of an absence of effect modification requires a different approach.\n\n' +
+      'Download anyway?'
+    );
+    if (!proceed) return;
+  }
+
+  // Soft warning: missing justifications — highlight but proceed
+  const emptyJust = highlightMissingJustifications(p);
+  if (emptyJust.length > 0) {
+    const first = document.getElementById(emptyJust[0]);
+    first?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const proceed = window.confirm(
+      `${emptyJust.length} justification field(s) are empty.\n\nJustifications are important for making your rating transparent to readers. The highlighted fields are empty.\n\nDownload anyway?`
+    );
+    if (!proceed) return;
+    // Clear highlights if user proceeds
+    emptyJust.forEach(id => document.getElementById(id)?.classList.remove('comment-warn'));
+  }
+
+  const isRct     = p === 'r';
+  const outcome   = document.getElementById(p + '-outcome').value.trim() || 'outcome';
+  const mod       = document.getElementById(p + '-mod').value.trim()     || 'effect modifier';
+  const measure   = document.getElementById(p + '-measure').value.trim() || 'effect measure';
+  const cfg       = isRct ? RCT_ITEMS : META_ITEMS;
+  const studyType = isRct ? 'randomized controlled trial' : 'meta-analysis / systematic review';
+
+  const valCode = v => {
+    if (!v || v === 'na') return null;
+    if (v === '4')                return '(++)';
+    if (v === '3' || v === 'inc') return '(+)';
+    if (v === '2' || v === 'dec') return '(-)';
+    if (v === '1')                return '(--)';
+    return null;
+  };
+
+  const tableResponse = (name, item, optional = false) => {
+    const val = getVal(name);
+    if (!val) return optional ? 'None' : '—';
+    if (val === 'na') return 'Not applicable';
+    const opt  = item.options.find(o => o.value === val);
+    const lbl  = opt ? opt.label : val;
+    const code = valCode(val);
+    return code ? `${code} ${lbl}` : lbl;
+  };
+
+  const cell = (text, bold = false) => new TableCell({
+    children: [new Paragraph({ children: [new TextRun({ text: String(text || ''), bold })] })],
+    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+  });
+
+  const headerRow = new TableRow({
+    tableHeader: true,
+    children: ['Item', 'Response', 'Rationale'].map(t => cell(t, true)),
+  });
+
+  const itemRows = cfg.map((item, i) => {
+    const name     = `${p}-q${i + 1}`;
+    const optional = !!item.commentPlaceholder;
+    return new TableRow({
+      children: [
+        cell(item.tableLabel),
+        cell(tableResponse(name, item, optional)),
+        cell(document.getElementById(`${name}c`).value.trim()),
+      ],
+    });
+  });
+
+  const verdict        = verdictFromScale(+document.getElementById(p + '-scale').value);
+  const meaning        = verdict.sub.split(' — ')[0];
+  const overallComment = document.getElementById(p + '-overallc').value.trim();
+  const overallRow = new TableRow({
+    children: [
+      cell('Overall credibility', true),
+      cell(`${verdict.label}: ${meaning}`, true),
+      cell(overallComment, true),
+    ],
+  });
+
+  const title   = `Table X. Does ${mod} modify treatment effects on ${outcome} on the ${measure} scale? ICEMAN credibility assessment for a ${studyType}`;
+  const footnote = '(--) definitely reduces credibility; (-) probably reduces credibility or unclear; ' +
+                   '(+) probably increases credibility; (++) definitely increases credibility. ' +
+                   'Not applicable items receive no code.';
+
+  const doc = new Document({
+    sections: [{
+      children: [
+        new Paragraph({
+          children: [new TextRun({ text: title, bold: true, size: 22 })],
+        }),
+        new Paragraph({ text: '' }),
+        new Table({
+          width: { size: 9000, type: WidthType.DXA },
+          rows: [headerRow, ...itemRows, overallRow],
+        }),
+        new Paragraph({ text: '' }),
+        new Paragraph({
+          children: [new TextRun({ text: footnote, size: 18 })],
+        }),
+        new Paragraph({
+          children: [new TextRun({ text: 'Generated with ICEMAN web tool · Version 1.1 · Schandelmaier et al. CMAJ 2020;192:E901–E906', size: 16 })],
+        }),
+      ],
+    }],
+  });
+
+  const blob = await Packer.toBlob(doc);
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = `ICEMAN - ${outcome} - ${mod}.docx`;
+  a.click();
+  URL.revokeObjectURL(url);
 }
 </script>
 
@@ -796,13 +1901,6 @@ function resetForm(p) {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -867,7 +1965,7 @@ function resetForm(p) {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/www\.iceman\.help");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

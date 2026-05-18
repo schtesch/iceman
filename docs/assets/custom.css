@@ -11,13 +11,51 @@
 
 /* Landing page hero */
 .hero {
-  background: linear-gradient(135deg, #E6F1FB 0%, #E1F5EE 100%);
-  border-radius: 12px;
-  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, #EEF5FC 0%, #EAF7F2 100%);
+  border-radius: 14px;
+  padding: 2.75rem 2.5rem 2.25rem;
   margin-bottom: 2.5rem;
+  box-shadow: 0 2px 12px rgba(24,95,165,0.07);
 }
-.hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
-.hero .lead { font-size: 1.1rem; color: #444; max-width: 680px; }
+.hero-intro { margin-bottom: 1.25rem; }
+.hero-intro h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--iceman-blue); }
+.hero-subtitle { font-size: 1rem; color: #666; margin-bottom: 0.5rem; letter-spacing: 0.01em; }
+.hero .lead { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0; max-width: 680px; }
+
+/* Hero action cards */
+.hero-cards-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.hero-cards-top { margin-top: 1.75rem; }
+.hero-cards-top .hero-card  { flex: 1 1 0; }
+.hero-cards-bottom .hero-card { flex: 1 1 0; }
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  color: var(--iceman-blue);
+  border: 1px solid #c8ddf2;
+  border-radius: 10px;
+  padding: 1rem 1.1rem 0.9rem;
+  text-decoration: none;
+  transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+}
+.hero-card:hover {
+  background: var(--iceman-blue);
+  color: #fff;
+  border-color: var(--iceman-blue);
+  box-shadow: 0 4px 16px rgba(24,95,165,0.18);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.hero-card-icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+.hero-card-title { font-weight: 700; font-size: 0.88rem; line-height: 1.25; margin-bottom: 0.25rem; }
+.hero-card-sub { font-size: 0.75rem; opacity: 0.85; line-height: 1.3; }
 
 /* Download cards */
 .download-grid {
@@ -99,7 +137,7 @@
 .cred-scale-wrap { margin: 1rem 0 0.25rem; }
 .cred-bar {
   height: 10px; border-radius: 5px;
-  background: linear-gradient(to right, #E24B4A, #FAC775, #1D9E75, #0F6E56);
+  background: linear-gradient(to right, #c0392b 0%, #e67e22 25%, #F0C800 55%, #F0C800 70%, #1D9E75 84%, #1a7a4a 100%);
   position: relative; margin-bottom: 4px;
 }
 .cred-labels {
@@ -148,6 +186,34 @@ input.cred-range {
 
 /* Search highlight */
 mark { background: #fff3b0; border-radius: 2px; }
+
+/* Keep citation hover cards available without repeating references on each page. */
+#quarto-bibliography { display: none; }
+
+/* Site footer */
+.site-footer {
+  margin-top: 3rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid #dee2e6;
+  font-size: 0.82rem;
+  color: #888;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.site-footer a { color: #888; text-decoration: underline; }
+.site-footer a:hover { color: var(--iceman-blue); }
+.footer-sep { color: #ccc; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero { padding: 1.75rem 1.25rem 1.5rem; }
+  .hero-intro h1 { font-size: 2rem; }
+  .hero-cards-row { flex-direction: column; }
+  .hero-cards-top .hero-card,
+  .hero-cards-bottom .hero-card { max-width: 100%; }
+}
 
 /* Print */
 @media print {

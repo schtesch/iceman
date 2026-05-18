@@ -1,5 +1,6 @@
 ---
 title: "Practical Considerations"
+description: "Practical guidance for applying, reporting, and interpreting ICEMAN assessments."
 ---
 
 ## Practical considerations {#practical}
@@ -23,7 +24,7 @@ We do not recommend reporting overall credibility as a percentage (e.g. "30% cre
 
 ### Using ICEMAN with other instruments
 
-ICEMAN can be combined with the Cochrane Risk of Bias tool for RCTs [@Higgins2016a-0001] or the ROBIS tool for systematic reviews [@Whiting2016robis-0001], and with the GRADE framework [@Guyatt2011grade-0007]:
+ICEMAN can be combined with the Cochrane Risk of Bias tool for RCTs [@Higgins2016a-0001] or the ROBIS tool for systematic reviews, [@Whiting2016robis-0001] and with the GRADE framework [@Guyatt2011grade-0007]:
 
 - **Moderate or high credibility:** Apply GRADE to subgroup-specific estimates. Note remaining uncertainty if moderate. Considering subgroup-specific estimates may sometimes resolve concerns due to heterogeneity and consequently increase certainty of evidence and strength of recommendation.
 - **Low or very low credibility:** Apply GRADE to the overall effect estimate. Note remaining uncertainty if low, especially if the potential effect modification appears to explain heterogeneity.

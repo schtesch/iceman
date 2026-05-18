@@ -1,0 +1,33 @@
+---
+title: "Frequently asked questions"
+description: "Frequently asked questions about using and reporting ICEMAN assessments."
+---
+
+## Can I use ICEMAN for observational studies?
+
+ICEMAN was developed for randomized controlled trials and meta-analyses of randomized controlled trials. Users have also found it helpful for other study types, such as cohort studies or meta-analyses of observational studies. For these applications, ICEMAN items apply in principle, but the additional risk of confounding and variability in study design should be reflected in the overall credibility rating.
+
+---
+
+## How should I report an ICEMAN assessment in a paper?
+
+- Include the completed ICEMAN form in the appendix of your publication.
+- In the methods section, document that you applied ICEMAN to interactions with a p-value ≤ 0.1.
+- In the results section, report the interaction p-value and the overall credibility rating.
+- Justify ratings of moderate-to-high credibility with reference to the individual items.
+
+---
+
+## What are common mistakes to avoid?
+
+- **Do not use ICEMAN to evaluate consistency across subgroups.** ICEMAN assesses the credibility of a claimed effect modification — it is not a tool for checking whether effects are consistent across subgroup strata.
+- **Skip ICEMAN when the interaction p-value exceeds 0.1.** When the statistical evidence for effect modification is weak, the overall credibility will be low regardless of other items.
+- **Avoid routine application to all subgroup analyses.** ICEMAN is most useful when a specific subgroup effect is being claimed or interpreted, not as a checklist for all reported subgroups.
+
+---
+
+## How does ICEMAN relate to GRADE?
+
+ICEMAN has been incorporated into the GRADE framework for addressing inconsistency in evidence synthesis. When systematic reviewers assess whether heterogeneity in a meta-analysis is explained by a credible subgroup effect, an ICEMAN rating can inform whether to rate down for inconsistency or to present subgroup-specific estimates.
+
+*Further details: Guyatt et al. (2023). Incorporating ICEMAN into GRADE.*
