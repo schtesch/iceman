@@ -107,18 +107,11 @@
     "text": "Instrument to assess the Credibility of Effect Modification ANalyses"
   },
   {
-    "objectID": "index.html#what-is-iceman",
-    "href": "index.html#what-is-iceman",
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
     "title": "ICEMAN",
-    "section": "What is ICEMAN?",
-    "text": "What is ICEMAN?\nICEMAN is a formal instrument for assessing the credibility of possible effect modification, also called a subgroup effect. It helps users judge whether an apparent subgroup effect is likely to be real, or a product of chance or bias. ICEMAN uses structured questions and response options and produces an overall credibility rating from very low to high.\nICEMAN supports several users and use cases. Trial investigators and systematic reviewers can use it to interpret and report a subgroup effect they found in their study or review. Systematic reviewers can use it to assess subgroup effects reported in included studies. Clinicians, patients, peer reviewers, editors, and others can use it when critically reading a study report that claims a subgroup effect.\nWe developed ICEMAN for randomized controlled trials and meta-analyses of randomized controlled trials, but users have also found the instrument helpful for other study types, such as cohort studies or meta-analyses of observational studies. For these applications, users should reflect the additional risk of bias in the overall credibility rating.\nWhen reporting an ICEMAN assessment in a paper, users can download the fillable form for RCTs or meta-analyses and include it in the appendix of their publication. Alternatively, they can complete the tool online and download a reporting table. We also provide templates for summarizing several assessments in a single table. A detailed manual is available as HTML and PDF."
-  },
-  {
-    "objectID": "index.html#which-version-should-i-use",
-    "href": "index.html#which-version-should-i-use",
-    "title": "ICEMAN",
-    "section": "Which version should I use?",
-    "text": "Which version should I use?\n\nUse ICEMAN for RCTs to assess an apparent subgroup effect in a single randomized controlled trial.\nUse ICEMAN for meta-analyses to assess an apparent subgroup effect in a systematic review or meta-analysis of randomized controlled trials."
+    "section": "Welcome!",
+    "text": "Welcome!\nWelcome to the web pages for ICEMAN! ICEMAN is an instrument to help researchers identify credible effect modification (also called subgroup effect, statistical interaction, moderation, or heterogeneity of treatment effects).\nUsers of ICEMAN include\n\nTrial investigators who are planning or considering the results of a subgroup analysis;\nMeta-analysts who are planning or considering the results of a subgroup analysis;\nAuthors of systematic reviews and clinical practice guidelines who assess subgroup claims made in published reports of trials or meta-analyses;\nJournal editors, referees, methods consultants, and others concerned with the quality of subgroup analyses in trials or meta-analyses.\n\nICEMAN comes in two different versions, one for randomized controlled trials and one for meta-analyses of randomized controlled trials. That’s what we developed ICEMAN for, but users have also found it helpful for other study types, such as cohort studies or meta-analyses of observational studies. For these applications, users should reflect the additional risk of bias in the overall credibility rating.\nICEMAN uses structured questions and response options and produces an overall credibility rating from very low to high.\nWhen reporting an ICEMAN assessment in a paper, users can download the fillable form for RCTs or meta-analyses and include it in the appendix of their publication. Alternatively, they can complete the tool online and download a reporting table. We also provide templates for summarizing several assessments in a single table. A detailed manual is available as HTML and PDF."
   },
   {
     "objectID": "index.html#how-to-cite",
