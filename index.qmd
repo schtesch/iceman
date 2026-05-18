@@ -66,7 +66,7 @@ ICEMAN comes in two different versions, one for randomized controlled trials and
 
 ICEMAN uses structured questions and response options and produces an overall credibility rating from very low to high.
 
-When reporting an ICEMAN assessment in a paper, users can download the fillable form for [RCTs](files/ICEMAN RCT 1.1 (6).docx) or [meta-analyses](files/ICEMAN MA 1.1 (8).docx) and include it in the appendix of their publication. Alternatively, they can complete the [tool online](tool.qmd) and download a reporting table. We also provide [templates](files/ICEMAN table templates.docx) for summarizing several assessments in a single table. A detailed manual is available as [HTML](manual/index.qmd) and [PDF](files/ICEMAN%20manual%20.pdf).
+When reporting an ICEMAN assessment in a paper, users can download the fillable form for [RCTs](files/ICEMAN RCT 1.1 (6).docx) or [meta-analyses](files/ICEMAN MA 1.1 (8).docx) and include it in the appendix of their publication. Alternatively, they can complete the [tool online](tool.qmd) and download a reporting table. We also provide [templates](files/ICEMAN table templates.docx) for summarizing several assessments in a single table. A detailed manual is available [here](manual/index.qmd).
 
 ## How to cite
 
