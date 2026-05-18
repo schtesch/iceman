@@ -886,10 +886,10 @@ document.addEventListener('input', e => {
 });
 
 const interpLabels = [
-  'Minimal to no support for effect modification — use overall effect for each subgroup',
-  'Some but insufficient support for effect modification — use overall effect for each subgroup but note remaining uncertainty',
-  'Likely effect modification — use separate effects for each subgroup but note remaining uncertainty',
-  'Very likely effect modification — use separate effects for each subgroup'
+  'minimal to no support for effect modification — use overall effect for each subgroup',
+  'some but insufficient support for effect modification — use overall effect for each subgroup but note remaining uncertainty',
+  'likely effect modification — use separate effects for each subgroup but note remaining uncertainty',
+  'very likely effect modification — use separate effects for each subgroup'
 ];
 const ratingLabels = ['Very low','Low','Moderate','High'];
 const ratingColors = ['#c0392b','#d35400','#9a7d0a','#1a7a4a'];
@@ -933,7 +933,7 @@ function moveThumb(p) {
   const val = +document.getElementById(p + '-scale').value;
   document.getElementById(p + '-thumb').style.left = val + '%';
   const idx = val <= 25 ? 0 : val <= 50 ? 1 : val <= 75 ? 2 : 3;
-  document.getElementById(p + '-interp').textContent = interpLabels[idx];
+  document.getElementById(p + '-interp').innerHTML = `<strong>${ratingLabels[idx]}:</strong> <span style="font-weight:400">${interpLabels[idx]}</span>`;
   updateStickyBar(val);
 }
 
@@ -1454,10 +1454,10 @@ function badge(v) {
   return [v, 'b-na'];
 }
 function verdictFromScale(val) {
-  if (val > 75)  return { label: 'High credibility',     sub: 'Very likely effect modification — use separate effects for each subgroup',                               color: '#0F6E56' };
-  if (val > 50)  return { label: 'Moderate credibility', sub: 'Likely effect modification — use separate effects for each subgroup but note remaining uncertainty',     color: '#3B6D11' };
-  if (val > 25)  return { label: 'Low credibility',      sub: 'Some but insufficient support for effect modification — use overall effect but note remaining uncertainty', color: '#854F0B' };
-  return          { label: 'Very low credibility',       sub: 'Minimal to no support for effect modification — use overall effect for each subgroup',                   color: '#A32D2D' };
+  if (val > 75)  return { label: 'High credibility',     sub: 'Very likely effect modification — use separate effects for each subgroup',                                 display: 'High: very likely effect modification — use separate effects for each subgroup',                                             color: '#0F6E56' };
+  if (val > 50)  return { label: 'Moderate credibility', sub: 'Likely effect modification — use separate effects for each subgroup but note remaining uncertainty',       display: 'Moderate: likely effect modification — use separate effects for each subgroup but note remaining uncertainty',                   color: '#3B6D11' };
+  if (val > 25)  return { label: 'Low credibility',      sub: 'Some but insufficient support for effect modification — use overall effect but note remaining uncertainty', display: 'Low: some but insufficient support for effect modification — use overall effect but note remaining uncertainty',                color: '#854F0B' };
+  return          { label: 'Very low credibility',       sub: 'Minimal to no support for effect modification — use overall effect for each subgroup',                     display: 'Very low: minimal to no support for effect modification — use overall effect for each subgroup',                              color: '#A32D2D' };
 }
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, ch => ({
@@ -1504,7 +1504,7 @@ function genReport(p) {
     ${buildRows(items)}
     <div class="verdict-box">
       <div class="verdict-label" style="color:${verdict.color}">${verdict.label}</div>
-      <div class="verdict-sub">${verdict.sub}</div>
+      <div class="verdict-sub">${verdict.display}</div>
       ${safeOverallComment ? `<div style="font-size:0.84rem;margin-top:0.75rem;text-align:left;border-top:1px solid #dee2e6;padding-top:0.75rem;"><strong>Comment:</strong> ${safeOverallComment}</div>` : ''}
     </div>
     <div style="font-size:0.72rem;color:#aaa;margin-top:1rem;">Generated with ICEMAN web tool · Version 1.1 · Schandelmaier et al. CMAJ 2020;192:E901–E906</div>
