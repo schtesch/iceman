@@ -1697,18 +1697,21 @@ function resetForm(p) {
   });
   autoMode[p] = true;
   document.getElementById(p + '-scale').value = 37.5;
-  moveThumb(p);
   const algoDiv = document.getElementById(p + '-algo-result');
   if (algoDiv) { algoDiv.style.display = 'none'; algoDiv.innerHTML = ''; }
   scaleActive[p] = false;
   const credThumb = document.getElementById(p + '-thumb');
-  if (credThumb) credThumb.style.display = 'none';
+  if (credThumb) { credThumb.style.display = 'none'; credThumb.style.left = '37.5%'; }
   const credSlider = document.getElementById(p + '-scale');
   if (credSlider) credSlider.style.pointerEvents = 'none';
   const credInterp = document.getElementById(p + '-interp');
   if (credInterp) credInterp.style.display = 'none';
   const credBar = document.getElementById(p + '-cred-bar');
   if (credBar) credBar.style.cursor = 'pointer';
+  if (!scaleActive['r'] && !scaleActive['m']) {
+    const sb = document.getElementById('sticky-bar');
+    if (sb) sb.classList.remove('visible');
+  }
   document.getElementById(p + '-report').innerHTML = '';
   // clear all validation highlights
   const tab = `#tab-${p === 'r' ? 'rct' : 'meta'}`;
