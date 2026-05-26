@@ -263,7 +263,7 @@ textarea.comment-box {
       <option value="no">No, stop here</option>
     </select>
     <div id="r-no-warn" class="no-warn">
-      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction p &lt; 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="_blank">See manual for scope of ICEMAN →</a>
+      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction p &lt; 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="iceman-manual">See manual for scope of ICEMAN →</a>
     </div>
   </div>
 
@@ -346,7 +346,7 @@ textarea.comment-box {
       <option value="no">No, stop here</option>
     </select>
     <div id="m-no-warn" class="no-warn">
-      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction or meta-regression p &lt; 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="_blank">See manual for scope of ICEMAN →</a>
+      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction or meta-regression p &lt; 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="iceman-manual">See manual for scope of ICEMAN →</a>
     </div>
   </div>
 
@@ -400,6 +400,9 @@ textarea.comment-box {
 <div id="tip-card"></div>
 
 <script>
+// Release the manual tab name so navigating here doesn't trap a manual tab.
+if (window.name === 'iceman-manual') window.name = '';
+
 // DEV FLAG — set to true to show the scoring-details box (weighted score,
 // item counts, safety-rule notes) after clicking "Generate rating".
 // For developer use only. Set to false before publishing.
@@ -496,7 +499,7 @@ function showTip(btn) {
     }
   }
   const bodyHtml = tipText ? `<div style="margin:0">${tipText}</div>` : '';
-  card.innerHTML = `${bodyHtml}<a class="tip-card-link" href="${manualHref}" target="_blank">Open in handbook for more explanation →</a>`;
+  card.innerHTML = `${bodyHtml}<a class="tip-card-link" href="${manualHref}" target="iceman-manual">Open in handbook for more explanation →</a>`;
   const r = btn.getBoundingClientRect();
   card.style.left = Math.min(r.left, window.innerWidth - 332) + 'px';
   card.style.top  = (r.bottom + 8) + 'px';
@@ -1758,5 +1761,18 @@ async function genDocx(p) {
   a.click();
   URL.revokeObjectURL(url);
 }
+
+function hasFormData(p) {
+  const tab = document.getElementById(`tab-${p === 'r' ? 'rct' : 'meta'}`);
+  if (!tab) return false;
+  if ([...tab.querySelectorAll('input[type=text], textarea')].some(el => el.value.trim())) return true;
+  if ([...tab.querySelectorAll('select')].some(el => el.value)) return true;
+  if (tab.querySelector('input[type=radio]:checked')) return true;
+  return false;
+}
+
+window.addEventListener('beforeunload', e => {
+  if (hasFormData('r') || hasFormData('m')) e.preventDefault();
+});
 </script>
 ```

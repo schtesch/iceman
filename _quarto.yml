@@ -6,6 +6,8 @@ project:
     - "manual/*.qmd"
   resources:
     - "files/"
+    - "CNAME"
+    - ".nojekyll"
     - "robots.txt"
     - "llms.txt"
     - "sitemap.xml"
@@ -23,6 +25,7 @@ website:
         href: tool.qmd
       - text: "Manual"
         href: manual/index.qmd
+        target: iceman-manual
       - text: "About"
         href: about.qmd
 
