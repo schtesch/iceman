@@ -1011,13 +1011,20 @@ function highlightMissing(p) {
 }
 
 // Highlight comment boxes that are empty and return list of their IDs.
+// Skips items where NA is selected (manual or auto-set by dependency logic).
 function highlightMissingJustifications(p) {
   const cfg = p === 'r' ? RCT_ITEMS : META_ITEMS;
   const emptyIds = [];
   cfg.forEach((item, i) => {
-    const cid = `${p}-q${i + 1}c`;
-    const ta = document.getElementById(cid);
+    const name     = `${p}-q${i + 1}`;
+    const cid      = `${name}c`;
+    const ta       = document.getElementById(cid);
     if (!ta) return;
+    // Skip if NA is selected (covers both manual NA and auto-NA from item dependency)
+    if (getVal(name) === 'na') { ta.classList.remove('comment-warn'); return; }
+    // Skip if item card is greyed out by auto-NA dependency (belt-and-suspenders)
+    const itemCard = document.getElementById(name)?.closest('.iceman-item');
+    if (itemCard?.classList.contains('item-auto-na')) { ta.classList.remove('comment-warn'); return; }
     const empty = ta.value.trim() === '';
     ta.classList.toggle('comment-warn', empty);
     if (empty) emptyIds.push(cid);

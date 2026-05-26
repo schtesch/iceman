@@ -10,7 +10,7 @@ ICEMAN is available in two versions:
 - **Randomized controlled trials:** for assessing apparent effect modification in a single randomized trial.
 - **Meta-analyses of randomized controlled trials:** for assessing apparent effect modification in a meta-analysis of randomized trials.
 
-The original CMAJ publication includes ICEMAN version 1.0. This website provides the slightly updated version 1.1, updated in 2022.
+The original [CMAJ publication](https://www.cmaj.ca/content/192/32/E901) includes ICEMAN version 1.0. This website provides the slightly updated version 1.1.
 
 ## Development group
 
@@ -20,7 +20,7 @@ The group included Stefan Schandelmaier, Matthias Briel, Ravi Varadhan, Christop
 
 ## Ongoing projects {#ongoing-projects}
 
-Together with the ICEMAN development group, Alessio Foschiani and Jonathan Nordmann are currently evaluating how researchers have used and cited ICEMAN since publication. The project combines a review of citing studies with interviews of recent ICEMAN users to identify practical challenges, user needs, possible misapplications, and priorities for future versions. Results expected in 2026.
+Together with the ICEMAN development group, Alessio Foschiani and Jonathan Nordmann are currently evaluating how researchers have used and cited ICEMAN since publication. The project combines a review of citing studies with interviews of recent ICEMAN users to identify practical challenges, user needs, possible misapplications, and priorities for future versions. Results are expected in 2026.
 
 [OSF project: Evaluating ICEMAN use six years after publication](https://osf.io/zv3jh/overview)
 
