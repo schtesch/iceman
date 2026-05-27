@@ -4,9 +4,9 @@ description: "Item-by-item guidance for applying ICEMAN to apparent effect modif
 toc-depth: 3
 ---
 
-## Item 1 — Direction of effect modification hypothesized a priori? {#rct-item1}
+## 1 — Was the direction of effect modification correctly hypothesized a priori? {#rct-item1}
 
-**Item explanation:** Credibility is higher if investigators correctly anticipated the direction of the effect modification (e.g. that an intervention is more effective in younger than in older patients), lower if they failed to anticipate a direction, and lowest if they anticipated the opposite direction.
+Credibility is higher if investigators correctly anticipated the direction of the effect modification (e.g. that an intervention is more effective in younger than in older patients), lower if they failed to anticipate a direction, and lowest if they anticipated the opposite direction.
 
 Correct anticipation of an effect modification implies that the investigators had a specific hypothesis in mind — usually based on a biologic or other causal rationale, or sometimes based on prior evidence. In the Bayesian framework, the idea of a specific a priori hypothesis corresponds to using an informative rather than non-informative prior. [@Laber201715; @Henderson2016bayesian-0001]
 
@@ -14,9 +14,7 @@ In addition, the item captures that an explanation stated a priori is much more 
 
 Note that statements of pre-specification may not be reliable, [@Kasenda2014subgroup-0001] nor do they imply a specific hypothesis, nor do they preclude issues of multiple analyses.
 
-**Response options:**
-
-| Option | Description |
+| Response options | Description |
 |--------|-------------|
 | **Definitely no** | Clearly post-hoc, results inconsistent with hypothesized direction, or biologically very implausible |
 | **Probably no or unclear** | Vague hypothesis or hypothesized direction unclear |
@@ -35,17 +33,13 @@ Note that statements of pre-specification may not be reliable, [@Kasenda2014subg
 **Definitely yes — Example:** A trial comparing reamed versus unreamed intramedullary nails for tibial shaft fractures suggested that reamed nails were superior for closed but potentially inferior for open fractures. [@StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001] The investigators correctly anticipated the direction in their published protocol based on a biologic rationale: damage of endosteal blood supply through reamed nails may be more detrimental in open than in closed fractures. [@SPRINTInvestigators2008study]
 :::
 
----
+## 2 — Was the effect modification supported by prior evidence? {#rct-item2}
 
-## Item 2 — Effect modification supported by prior evidence? {#rct-item2}
-
-**Item explanation:** Credibility is higher if the effect modification is supported by prior direct or indirect evidence, lower if observed for the first time (often labelled as exploratory), and lowest if inconsistent with prior evidence.
+Credibility is higher if the effect modification is supported by prior direct or indirect evidence, lower if observed for the first time (often labelled as exploratory), and lowest if inconsistent with prior evidence.
 
 Replication, ideally in another RCT, makes chance a less likely explanation for an apparent effect modification. Attempts for replication and successful replication, however, seem to be rare [@Wallach2017evaluation-0001] and prior evidence will be mostly unclear. Direction plays an important role: if two trials show different directions of effect modification, this markedly reduces credibility.
 
-**Response options:**
-
-| Option | Description |
+| Response options | Description |
 |--------|-------------|
 | **Inconsistent with prior evidence** | Prior evidence suggested a different direction of effect modification |
 | **Little or no support or unclear** | No prior evidence, or consistent with weak/very indirect prior evidence (e.g. animal study at high risk of bias), or unclear |
@@ -62,11 +56,9 @@ Replication, ideally in another RCT, makes chance a less likely explanation for 
 **Strong support — Example:** A trial comparing low-carb versus low-fat diet found effect modification by insulin secretion (interaction p=0.01). [@Ebbeling2007effects-0001] A previous RCT found a similar, significant effect modification (interaction p=0.02). [@Pittas2005a-0001]
 :::
 
----
+## 3 — Does a test for interaction suggest that chance is an unlikely explanation? {#rct-item3}
 
-## Item 3 — Does a test for interaction suggest that chance is an unlikely explanation? {#rct-item3}
-
-**Item explanation:** Credibility is higher if a statistical test for interaction suggests that chance is an unlikely explanation for the apparent effect modification. [@VanderWeele2011interpretation-0001; @Brookes2001subgroup-0001; @Rockette1988strategies-0001] Credibility is lower if an interaction test is compatible with chance — or no test is available and impossible to compute.
+Credibility is higher if a statistical test for interaction suggests that chance is an unlikely explanation for the apparent effect modification. [@VanderWeele2011interpretation-0001; @Brookes2001subgroup-0001; @Rockette1988strategies-0001] Credibility is lower if an interaction test is compatible with chance — or no test is available and impossible to compute.
 
 ::: {.callout-warning}
 **Important:** Showing that an effect is significant in one subgroup and not in another is of little use: it provides no information whether chance might explain differences in effects across subgroups. [@Oxman1992a-0001; @Simon1982patient-0001; @Brookes2001subgroup-0001; @Tanniou2017estimates-0001; @Pocock2002subgroup-0001]
@@ -76,9 +68,7 @@ If no interaction p-value is reported, it can sometimes be calculated based on t
 
 We anchored the response options around typical thresholds for p-values 0.05, 0.01, and 0.005, with a p-value of 0.005 or smaller representing the most credible category. The response options recognise that p-value thresholds of 0.05 or even 0.01 may be too lenient for claiming statistical significance. [@Benjamin2018redefine-0001]
 
-**Response options:**
-
-| Option | Threshold |
+| Response options | Threshold |
 |--------|-----------|
 | **Chance a very likely explanation** | Interaction p-value > 0.05 |
 | **Chance a likely explanation or unclear** | p ≤ 0.05 and > 0.01, or no test reported and not computable |
@@ -95,11 +85,9 @@ We anchored the response options around typical thresholds for p-values 0.05, 0.
 **Unlikely — Example:** The CRASH-2 trial of tranexamic acid in trauma patients found that early treatment (≤1 h) RR 0.68, between 1 and 3 h RR 0.79, and after 3 h RR 1.44. The interaction p-value was smaller than 0.0001. [@CRASH-2Collaborators2011the]
 :::
 
----
+## 4 — Did the authors test only a small number of effect modifiers, or consider multiplicity? {#rct-item4}
 
-## Item 4 — Small number of effect modifiers tested, or multiplicity considered? {#rct-item4}
-
-**Item explanation:** Performing multiple tests is a major concern in the context of effect modification analysis. Because multiple tests increase the risk of a chance finding, [@Mills1993data-0001; @Counsell1994the-0001; @Higgins2004controlling-0001] credibility is higher if investigators have tested only a small number of effect modifiers.
+Performing multiple tests is a major concern in the context of effect modification analysis. Because multiple tests increase the risk of a chance finding, [@Mills1993data-0001; @Counsell1994the-0001; @Higgins2004controlling-0001] credibility is higher if investigators have tested only a small number of effect modifiers.
 
 Multiplicity issues can arise in different ways, [@Li2017an-0001] including multiple candidate effect modifiers, multiple time points, multiple scales, [@Starr2004assessing-0001] multiple outcomes, or multiple methods for testing the interaction.
 
@@ -107,9 +95,7 @@ An alternative to limiting the number of analyses is to statistically adjust the
 
 Assessment of multiplicity crucially depends on reporting; reporting guidelines for effect modification are available. [@Kent2010assessing-0001; @Wang2007statistics-0001; @Knol2012recommendations-0001] Note that retrospective statements about the number of pre-specified subgroup analyses are not always reliable. [@Kasenda2014subgroup-0001]
 
-**Response options:**
-
-| Option | Description |
+| Response options | Description |
 |--------|-------------|
 | **Definitely no** | Explicitly exploratory analysis, or large number of analyses (>10), and multiplicity not considered |
 | **Probably no or unclear** | No mention of number, or 4–10 effect modifiers tested and not considered |
@@ -126,11 +112,9 @@ Assessment of multiplicity crucially depends on reporting; reporting guidelines 
 **Definitely yes — Example:** A trial comparing endarterectomy versus medical therapy. The published study protocol specified only one effect modifier. [@NorthAmericanSymptomaticCarotidEndarterectomy1991methods; @Barnett1998benefit-0001]
 :::
 
----
+## 5 — Were arbitrary cut points avoided? (continuous variables only) {#rct-item5}
 
-## Item 5 — Arbitrary cut points avoided? (continuous variables only) {#rct-item5}
-
-**Item explanation:** Categorising continuous effect modifiers is common [@Fisher2017meta-analytical-0001] but associated with a number of problems [@Royston2006dichotomizing-0001; @Altman2006the-0001]: cut points can introduce multiplicity, reduce power, mask linear or non-linear associations, and complicate comparisons across studies. Analyses that avoid cut points and make use of the full spectrum of values are the most credible.
+Categorising continuous effect modifiers is common [@Fisher2017meta-analytical-0001] but associated with a number of problems [@Royston2006dichotomizing-0001; @Altman2006the-0001]: cut points can introduce multiplicity, reduce power, mask linear or non-linear associations, and complicate comparisons across studies. Analyses that avoid cut points and make use of the full spectrum of values are the most credible.
 
 Credibility is low if investigators selected the best-fitting data-driven cut point to maximise the effect modification. Such cut points are associated with a high rate of false positive claims. [@Royston2006dichotomizing-0001; @Altman1994dangers-0001]
 
@@ -140,9 +124,7 @@ An alternative to use of cut points and potentially complex modelling is to cons
 
 The credibility of a continuous analysis usually increases if investigators present a plot with confidence bands around the regression function and carefully checked the proposed model. Formal interaction tests for continuous effect modification are available and should be applied. [@Royston2004a-0001]
 
-**Response options:**
-
-| Option | Description |
+| Response options | Description |
 |--------|-------------|
 | **Definitely no** | Analysis based on exploratory cut point (e.g. picking cut point associated with highest interaction p-value) |
 | **Probably no or unclear** | Analysis based on cut point(s) of unclear origin |
@@ -160,11 +142,9 @@ The credibility of a continuous analysis usually increases if investigators pres
 **Definitely yes — Example:** A trial comparing interferon-alpha versus medroxyprogesterone in patients with renal carcinoma. [@MedicalResearchCouncilRenalCancerCollaborators1999interferon-alpha-0001] A subsequent analysis treated white cell count as a continuous variable, avoiding arbitrary cut points and maximising the power of the analysis. A plot of the continuous relationship with confidence bands was provided. [@Royston2004is-0001]
 :::
 
----
+## 6 — Are there additional considerations that may increase or decrease credibility? {#rct-item6}
 
-## Item 6 — Optional: Additional considerations {#rct-item6}
-
-**Item explanation:** Methodologists have suggested a number of additional considerations that could be relevant for assessing the credibility of effect modifiers. [@Schandelmaier2019a-0002] They are not part of the core items because they either are less relevant, rarely apply, or are difficult to assess. The only response options are probably decreased and probably increased. Leaving this section blank does not affect credibility.
+Methodologists have suggested a number of additional considerations that could be relevant for assessing the credibility of effect modifiers. [@Schandelmaier2019a-0002] They are not part of the core items because they either are less relevant, rarely apply, or are difficult to assess. The only response options are probably decreased and probably increased. Leaving this section blank does not affect credibility.
 
 **Sensitivity analysis suggesting robustness:** A sensitivity analysis can help to increase the confidence in a proposed effect modification. [@Desai2014challenges-0001; @VanderWeele2015explanation-0001; @Pearce2014confounding-0001]
 
@@ -194,11 +174,9 @@ The credibility of a continuous analysis usually increases if investigators pres
 **Example:** In a trial of reamed versus unreamed nailing of tibial fractures, the difference in re-operations between smokers and non-smokers co-existed in quality of life outcomes. [@StudyToProspectivelyEvaluateReamedIntramedullaryNailsInPatientsWithTibialFracturesInvestigators2008randomized-0001]
 :::
 
----
+## 7 — Overall credibility rating {#rct-item7}
 
-## Item 7 — Overall credibility rating {#rct-item7}
-
-**Item explanation:** The overall rating is a continuous visual analogue scale spanning four credibility areas, corresponding roughly to <25%, 25–50%, 50–75%, and >75% confidence that the apparent effect modification is true and not the result of chance or bias. **The overall rating should be driven by the items that decrease credibility.**
+The overall rating is a continuous visual analogue scale spanning four credibility areas, corresponding roughly to <25%, 25–50%, 50–75%, and >75% confidence that the apparent effect modification is true and not the result of chance or bias. **The overall rating should be driven by the items that decrease credibility.**
 
 Recommended strategy:
 
@@ -215,9 +193,7 @@ Recommended strategy:
 | Moderate | Likely effect modification | Use separate estimates; note remaining uncertainty |
 | High | Very likely effect modification | Use separate estimates for each subgroup |
 
-Section 4 provides more suggestions for using and presenting ICEMAN in context; section 5 provides a more detailed justification why the scale is continuous and why low credibility suggests likely no effect modification.
-
----
+[Practical considerations](practical.qmd) provides more suggestions for using and presenting ICEMAN in context; [Concept and scope of ICEMAN](concepts.qmd) provides a more detailed justification why the scale is continuous and why low credibility suggests likely no effect modification.
 
 ## Worked example — RCT (CRASH-2) {#rct-example}
 

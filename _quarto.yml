@@ -40,40 +40,44 @@ website:
         - section: "ICEMAN for RCTs"
           href: manual/rct.qmd
           contents:
-            - text: "Item 1 — Direction a priori"
+            - text: "1 — Direction a priori"
               href: manual/rct.qmd#rct-item1
-            - text: "Item 2 — Prior evidence"
+            - text: "2 — Prior evidence"
               href: manual/rct.qmd#rct-item2
-            - text: "Item 3 — Interaction test"
+            - text: "3 — Interaction test"
               href: manual/rct.qmd#rct-item3
-            - text: "Item 4 — Multiplicity"
+            - text: "4 — Multiplicity"
               href: manual/rct.qmd#rct-item4
-            - text: "Item 5 — Cut points"
+            - text: "5 — Cut points"
               href: manual/rct.qmd#rct-item5
-            - text: "Item 6 — Additional"
+            - text: "6 — Additional"
               href: manual/rct.qmd#rct-item6
-            - text: "Item 7 — Overall rating"
+            - text: "7 — Overall rating"
               href: manual/rct.qmd#rct-item7
             - text: "Worked example (CRASH-2)"
               href: manual/rct.qmd#rct-example
         - section: "ICEMAN for meta-analyses"
           href: manual/meta.qmd
           contents:
-            - text: "Item 1 — Within vs between"
+            - text: "1 — Within vs between"
               href: manual/meta.qmd#meta-item1
-            - text: "Item 2 — Similarity across trials"
+            - text: "2 — Similarity across trials"
               href: manual/meta.qmd#meta-item2
-            - text: "Item 3 — Number of studies"
+            - text: "3 — Number of studies"
               href: manual/meta.qmd#meta-item3
-            - text: "Items 4–6 — Direction, test, multiplicity"
-              href: manual/meta.qmd#meta-items4-6
-            - text: "Item 7 — Random effects model"
+            - text: "4 — Direction a priori"
+              href: manual/meta.qmd#meta-item4
+            - text: "5 — Interaction test"
+              href: manual/meta.qmd#meta-item5
+            - text: "6 — Multiplicity"
+              href: manual/meta.qmd#meta-item6
+            - text: "7 — Random effects model"
               href: manual/meta.qmd#meta-item7
-            - text: "Item 8 — Cut points"
+            - text: "8 — Cut points"
               href: manual/meta.qmd#meta-item8
-            - text: "Item 9 — Additional"
+            - text: "9 — Additional"
               href: manual/meta.qmd#meta-item9
-            - text: "Item 10 — Overall rating"
+            - text: "10 — Overall rating"
               href: manual/meta.qmd#meta-item10
             - text: "Worked example (cervical cancer)"
               href: manual/meta.qmd#meta-example
@@ -103,5 +107,7 @@ format:
     anchor-sections: false
     link-citations: true
     citations-hover: true
+    grid:
+      sidebar-width: 320px
 
 csl: assets/vancouver-superscript.csl

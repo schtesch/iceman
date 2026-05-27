@@ -1,0 +1,113 @@
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var main = document.getElementById('quarto-document-content');
+  if (!main || !document.getElementById('quarto-sidebar')) return;
+
+  var sections = Array.from(main.querySelectorAll('section.level2'));
+  // Don't accordionise pages with only one section (e.g. Practical considerations)
+  if (sections.length < 2) return;
+
+  sections.forEach(function (section) {
+    var h2 = section.querySelector(':scope > h2');
+    if (!h2) return;
+
+    var id = section.id || ('acc-' + Math.random().toString(36).slice(2));
+    var collapseId = 'acc-body-' + id;
+
+    section.classList.add('acc-item');
+
+    var headerDiv = document.createElement('div');
+    headerDiv.className = 'acc-header';
+
+    var btn = document.createElement('button');
+    btn.className = 'acc-btn collapsed';
+    btn.setAttribute('type', 'button');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', collapseId);
+    btn.innerHTML = h2.innerHTML;
+
+    headerDiv.appendChild(btn);
+
+    var bodyDiv = document.createElement('div');
+    bodyDiv.id = collapseId;
+    bodyDiv.className = 'acc-body collapse';
+
+    var innerDiv = document.createElement('div');
+    innerDiv.className = 'acc-body-inner';
+
+    Array.from(section.children).forEach(function (child) {
+      if (child !== h2) innerDiv.appendChild(child);
+    });
+
+    bodyDiv.appendChild(innerDiv);
+
+    section.innerHTML = '';
+    section.appendChild(headerDiv);
+    section.appendChild(bodyDiv);
+
+    btn.addEventListener('click', function () {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      this.classList.toggle('collapsed', expanded);
+      bodyDiv.classList.toggle('show', !expanded);
+    });
+  });
+
+  // Color all response-option tables by ordered credibility level, not by exact wording.
+  // This keeps variants such as "Inconsistent with prior evidence" colored correctly.
+  main.querySelectorAll('.acc-body-inner table').forEach(function (table) {
+    var firstHeader = table.querySelector('thead th');
+    if (!firstHeader || !/response options/i.test(firstHeader.textContent)) return;
+
+    var colorClasses = ['rt-red', 'rt-orange', 'rt-yellow', 'rt-green'];
+    var colorIndex = 0;
+
+    table.querySelectorAll('tbody tr').forEach(function (row) {
+      row.classList.remove('rt-red', 'rt-orange', 'rt-yellow', 'rt-green', 'rt-na');
+
+      var text = (row.cells[0] ? row.cells[0].textContent : '').toLowerCase();
+      if (text.includes('not applicable')) {
+        row.classList.add('rt-na');
+        return;
+      }
+
+      row.classList.add(colorClasses[Math.min(colorIndex, colorClasses.length - 1)]);
+      colorIndex += 1;
+    });
+  });
+
+  function collapseAll() {
+    main.querySelectorAll('.acc-body.show').forEach(function (body) {
+      body.classList.remove('show');
+      var btn = body.previousElementSibling && body.previousElementSibling.querySelector('.acc-btn');
+      if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.classList.add('collapsed'); }
+    });
+  }
+
+  function expandByHash() {
+    var hash = window.location.hash.slice(1);
+    if (!hash) return;
+    var target = document.getElementById(hash);
+    if (!target) return;
+
+    // Find the acc-body containing the target (either the body itself or an ancestor)
+    var accBody = target.classList.contains('acc-body')
+      ? target
+      : (target.closest ? target.closest('.acc-body') : null);
+    if (!accBody) accBody = document.getElementById('acc-body-' + hash);
+    if (!accBody) return;
+
+    collapseAll();
+    accBody.classList.add('show');
+    var btn = accBody.previousElementSibling && accBody.previousElementSibling.querySelector('.acc-btn');
+    if (btn) { btn.setAttribute('aria-expanded', 'true'); btn.classList.remove('collapsed'); }
+
+    setTimeout(function () {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
+
+  window.addEventListener('hashchange', expandByHash);
+  expandByHash();
+});
+</script>

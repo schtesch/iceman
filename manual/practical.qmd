@@ -1,15 +1,12 @@
 ---
 title: "Practical Considerations"
-description: "Practical guidance for applying, reporting, and interpreting ICEMAN assessments."
 ---
 
-## Practical considerations {#practical}
-
-### Assessment in duplicate
+## Assessment in duplicate
 
 Confidence in the assessment increases if two investigators independently apply ICEMAN, discuss discrepancies, and present a consensus version.
 
-### Reporting
+## Reporting {#reporting}
 
 We recommend specifying use of ICEMAN in the study protocol, and in the methods, results, and interpretation sections of the final publication:
 
@@ -22,7 +19,69 @@ We recommend specifying use of ICEMAN in the study protocol, and in the methods,
 We do not recommend reporting overall credibility as a percentage (e.g. "30% credible").
 :::
 
-### Using ICEMAN with other instruments
+Users can download the fillable ICEMAN form for [RCTs](../files/ICEMAN RCT 1.1 (6).docx) or [meta-analyses](../files/ICEMAN MA 1.1 (8).docx), complete it on their device, and attach it to the appendix of their publication. Alternatively, the [online tool](../tool.qmd) generates a downloadable reporting table directly.
+
+We also provide four table templates for summarising one or more ICEMAN assessments in a publication. [Download all templates (.docx)](../files/ICEMAN table templates.docx)
+
+**Legend for all tables:** (--) definitely reduces credibility; (-) probably reduces credibility or unclear; (+) probably increases credibility; (++) definitely increases credibility. Not applicable items receive no code.
+
+
+**Template1 — Single assessment (RCT).** Full item-level table for one outcome, effect measure, and effect modifier in an RCT.
+
+| Item | Response | Rationale |
+|------|----------|-----------|
+| 1 — Direction of effect modification hypothesized a priori? | (+) Probably yes | Direction stated before analysis. |
+| 2 — Effect modification supported by prior evidence? | (+) Some support | Consistent indirect evidence. |
+| 3 — Chance unlikely explanation of effect modification? | (+) Chance may not explain | Interaction p = 0.008. |
+| 4 — Few effect modifiers tested or multiplicity considered? | (-) Probably no or unclear | Six modifiers tested; no adjustment. |
+| 5 — Arbitrary cut points avoided for continuous modifier? | Not applicable | |
+| 6 — Additional credibility considerations? | None | No additional concerns. |
+| **Overall credibility** | **Moderate:** likely effect modification; use separate subgroup effects, but note uncertainty | Multiplicity lowered credibility. |
+
+
+**Template2 — Single assessment (meta-analysis).** Full item-level table for one outcome, effect measure, and effect modifier in a meta-analysis.
+
+| Item | Response | Rationale |
+|------|----------|-----------|
+| 1 — Based on within- rather than between-trial comparison? | (+) Mostly within | Most information came from within-trial subgroup comparisons. |
+| 2 — Effect modification similar across trials? | (+) Mostly similar | Trial-specific estimates had similar direction, with some variation in magnitude. |
+| 3 — Number of trials large for between-trial comparison? | Not applicable | Assessment did not rely on between-trial comparison. |
+| 4 — Direction of effect modification hypothesized a priori? | (+) Probably yes | Direction stated before analysis. |
+| 5 — Chance unlikely explanation of effect modification? | (+) Chance may not explain | Meta-regression p = 0.008. |
+| 6 — Few effect modifiers tested or multiplicity considered? | (-) Probably no or unclear | Several modifiers tested; no adjustment. |
+| 7 — Random-effects model used? | (++) Definitely yes | Authors explicitly used a random-effects model. |
+| 8 — Arbitrary cut points avoided for continuous modifier? | Not applicable | |
+| 9 — Additional credibility considerations? | None | No additional concerns. |
+| **Overall credibility** | **Moderate:** likely effect modification; use separate subgroup effects, but note uncertainty | Multiplicity lowered credibility. |
+
+
+**Template3 — Multiple effect modifiers.** Compact table comparing ICEMAN items across several candidate effect modifiers.
+
+| Item | Age | Sex | Diabetes status | Baseline severity |
+|------|-----|-----|-----------------|-------------------|
+| Interaction p-value | 0.008 | 0.04 | 0.003 | 0.07 |
+| 1 — Direction a priori? | (+) Probably yes | (-) Probably no or unclear | (++) Definitely yes | (-) Probably no or unclear |
+| 2 — Prior evidence? | (+) Some support | (-) Little or no support | (++) Strong support | (+) Some support |
+| 3 — Chance unlikely? | (+) Chance may not explain | (-) Chance likely | (++) Chance unlikely | (-) Chance likely |
+| 4 — Multiplicity? | (-) Probably no or unclear | (-) Probably no or unclear | (-) Probably no or unclear | (-) Probably no or unclear |
+| 5 — Arbitrary cut points? | Not applicable | Not applicable | Not applicable | (-) Probably no or unclear |
+| 6 — Additional? | None | None | None | None |
+| **Overall credibility** | **Moderate:** likely effect modification, but uncertainty remains | **Low:** some but insufficient support | **High:** very likely effect modification | **Very low:** minimal to no support |
+
+
+**Template4 — Summary table.** One row per assessment; suitable for summarising several assessments across outcomes and effect modifiers.
+
+| Outcome | Effect measure | Effect modifier | Interaction p | Main credibility concerns | Overall credibility |
+|---------|---------------|-----------------|---------------|--------------------------|---------------------|
+| 30-day mortality | Risk ratio | Age | 0.008 | Multiplicity not addressed | Moderate |
+| 30-day mortality | Risk ratio | Sex | 0.04 | Direction not prespecified; weak prior evidence; multiplicity not addressed | Low |
+| Stroke at 1 year | Odds ratio | Diabetes status | 0.003 | None major | High |
+| Pain at 6 months | Mean difference | Baseline severity | 0.07 | Weak statistical support; arbitrary cut point | Very low |
+| Serious adverse events | Risk difference | Age | 0.14 | ICEMAN not applied (p ≥ 0.1) | Not assessed |
+
+: Footnote: Each row represents one candidate effect modification (one outcome, effect measure, and effect modifier). ICEMAN was applied only when the interaction p-value was < 0.1. Full item-level assessments appear in a supplement.
+
+## Using ICEMAN with other instruments
 
 ICEMAN can be combined with the Cochrane Risk of Bias tool for RCTs [@Higgins2016a-0001] or the ROBIS tool for systematic reviews, [@Whiting2016robis-0001] and with the GRADE framework [@Guyatt2011grade-0007]:
 

@@ -1,2 +1,3 @@
 toc: false
 include-in-header: _tab-name.html
+include-after-body: _accordion.html

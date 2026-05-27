@@ -1,12 +1,8 @@
 ---
 title: "Preliminary considerations"
-description: "Preliminary considerations for applying ICEMAN to an apparent effect modification analysis."
 ---
 
-The assessment starts with a set of preliminary considerations to clarify the sources of information and help define the effect modification under consideration.
-
-<span id="prelim-ref"></span>
-**Study or assessment reference:** Use this section to link the completed ICEMAN form to the study, meta-analysis, or publication under consideration, or to assign a custom identifier for tracking completed forms. Examples include an author-year citation, DOI, trial acronym, study registry number. It may also be helpful to specify the comparison of interest, especially if a study includes more than two arms, or to add a link to a published protocol.
+The assessment starts with a set of preliminary considerations to define the apparent effect modification under consideration.
 
 <span id="prelim-outcome"></span>
 **State a single outcome and time-point of interest:** Because ICEMAN refers to a single outcome at a time, users must specify the outcome of interest and, if applicable, the time-point of outcome assessment (e.g. mortality at 1 year follow-up).
@@ -21,14 +17,23 @@ The assessment starts with a set of preliminary considerations to clarify the so
 <span id="prelim-modifier"></span>
 **State a single potential effect modifier of interest:** Specify the potential effect modifier of interest (only one effect modifier per ICEMAN form). Effect modifiers may be patient characteristics (e.g. disease severity, age, or type of tumour), intervention alternatives (e.g. different doses, co-interventions, or modes of administration), or, in a meta-analysis, methodological study characteristics (e.g. risk of bias, outcome definition, type of funding). Note that the instrument does not apply when the effect modifier is another outcome. Note that an effect modifier (e.g. sex) is different from a particular subgroup (e.g. women).
 
-<span id="prelim-prerando"></span>
-**Was the effect modifier measured before randomization?** The instrument applies to potential effect modifiers assessed before randomization, e.g. baseline variables or a stratification variable at randomization. If the effect modifier was measured after randomization, e.g. an intermediate outcome, the assessment of effect modification is complicated and potentially misleading. [@VanderWeele2009on-0001; @Yusuf1991analysis-0001; @Sun2010is-0001; @Sun2014how-0001; @Oxman1992a-0001; @Simon1982patient-0001; @Matsuyama2006estimation-0001; @Hirji2009outcome-0001; @Cuzick1982the-0001; @Cook2004subgroup-0001; @Desai2014challenges-0001; @vanHoorn2017the-0001; @Grady2007chapter-0002; @Moye200721; @Rosenbaum1984the-0001] Those analyses require different methods [@Matsuyama2006estimation-0001; @Desai2014challenges-0001; @Korn2017assessing-0001] and result in less secure conclusions.
+::: {.callout-warning}
+## Warning: effect modifier measured after randomization
 
-There are exceptions in which the instrument does apply to effect modifiers measured after randomization: (1) the effect modifier is a non-modifiable characteristic such as sex or age; (2) for meta-analyses: the effect modifier is a study characteristic such as risk of bias, length of follow-up, or mean received dose.
+ICEMAN applies to effect modifiers assessed before or at randomization (e.g. baseline variables, stratification variables). If the effect modifier was measured after randomization (e.g. an intermediate outcome), the assessment of effect modification is complicated and potentially misleading. [@VanderWeele2009on-0001; @Yusuf1991analysis-0001; @Sun2010is-0001; @Sun2014how-0001; @Oxman1992a-0001; @Simon1982patient-0001; @Matsuyama2006estimation-0001; @Hirji2009outcome-0001; @Cuzick1982the-0001; @Cook2004subgroup-0001; @Desai2014challenges-0001; @vanHoorn2017the-0001; @Grady2007chapter-0002; @Moye200721; @Rosenbaum1984the-0001] Those analyses require different methods [@Matsuyama2006estimation-0001; @Desai2014challenges-0001; @Korn2017assessing-0001] and result in less secure conclusions.
+
+**Exceptions** — the instrument does apply to post-randomization effect modifiers if: (1) the effect modifier is a non-modifiable characteristic such as sex or age; or (2) for meta-analyses, the effect modifier is a study characteristic such as risk of bias, length of follow-up, or mean received dose.
+:::
 
 ::: {.example-block}
 **Example:** An RCT testing strict or conventional management of hyperglycaemia with insulin therapy in ICU patients claimed an effect modification by length of hospital stay. [@VanDenBerghe2006intensive-0001] Length of ICU stay (the apparent effect modifier), however, was shortened by the intervention. This prognostic imbalance between intervention and control group within the length-of-stay subgroups likely created the differences in mortality.
 :::
 
 <span id="prelim-possible"></span>
-**Does the analysis suggest possible effect modification?** Apply ICEMAN version 1.1 only when the analysis indicates possible effect modification. Define this as an interaction test, or, in meta-analyses, an interaction or meta-regression test, with a p-value < 0.1. If the p-value is ≥ 0.1, stop the assessment. ICEMAN evaluates the credibility of suggested effect modification, not the absence of it, and its criteria do not support assessing absence. With p ≥ 0.1, the evidence for effect modification remains very weak. Use the overall effect estimate and state that you did not perform an ICEMAN assessment.
+**Does the analysis suggest possible effect modification? (interaction p < 0.1)?** Do not apply ICEMAN if the interaction p-value is 0.1 or larger, i.e., provides very little statistical support for the existence of an effect modification. ICEMAN is designed to address the possible claim (presence) of an effect modification rather than the claim of no effect modification (absence).
+
+ICEMAN does not currently provide a version for assessing absence of effect modification / consistency of effects across subgroups.
+
+If the interaction p-value is ≥ 0.1, stop the assessment, report that you did not apply ICEMAN, note the lack of statistical evidence for effect modification. Use the overall effect estimate for drawing conclusions.
+
+[Concept and scope of ICEMAN](concepts.qmd) provides additional background information.

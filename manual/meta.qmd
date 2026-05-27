@@ -4,9 +4,9 @@ description: "Item-by-item guidance for applying ICEMAN to apparent effect modif
 toc-depth: 3
 ---
 
-## Item 1 — Within vs between-RCT comparison? {#meta-item1}
+## 1 — Is the analysis of effect modification based on comparison within rather than between trials? {#meta-item1}
 
-**Item explanation:** Effect modification suggested by a comparison between studies (subgroups of studies) are usually much less credible than effect modification suggested by a comparison within studies (subgroups of individuals).
+Effect modification suggested by a comparison between studies (subgroups of studies) are usually much less credible than effect modification suggested by a comparison within studies (subgroups of individuals).
 
 An important concern with between-study comparisons is **study-level confounding**: an association observed between a study-level variable and an outcome may be confounded by other study-level variables. [@Sun2014how-0001; @Fisher2017meta-analytical-0001; @Thompson2002how-0001; @DaveySmith1997meta-analysis-0001; @Berlin1995invited-0001; @Borenstein2009introduction-0001; @Smith2008going; @Hingorani2013prognosis-0001; @Simmonds2007covariate-0001; @Lambert2002a-0001] The power to identify a true within-trial effect modification can be very low and an apparent effect modification might be largely driven by study-level confounding. [@Simmonds2007covariate-0001; @Lambert2002a-0001; @Berlin2002individual-0001]
 
@@ -18,9 +18,7 @@ An analysis of effect modification is definitely free of study-level confounding
 
 A survey of published IPD meta-analyses suggested that only a small proportion of analyses of effect modification separate within- from between-trial information; instead, most analyses seem to combine within and between trial information. [@Fisher2017meta-analytical-0001] Therefore, unless there is a statement to the contrary, analyses of effect modification in an IPD meta-analysis likely combine within and between trial information and might not be free of study-level confounding.
 
-**Response options:**
-
-| Option | Description |
+| Response options | Description |
 |--------|-------------|
 | **Completely between** | Subgroup analysis or meta-regression comparing overall effects of each individual trial (typical for aggregate data meta-analyses) |
 | **Mostly between or unclear** | Most information from overall effects; some trials providing within-trial subgroup information |
@@ -39,19 +37,15 @@ A survey of published IPD meta-analyses suggested that only a small proportion o
 **Completely within — Example:** A meta-analysis of individual patient data from 16 trials compared low intensity interventions for depression with usual care. [@Bower2013influence-0001] The investigators chose a model that estimated the effect modification within each trial and separated out between-trial comparisons, including a forest plot illustrating the heterogeneity of effect modifications across trials.
 :::
 
----
+## 2 — For within-trial comparisons, is the effect modification similar from trial to trial? {#meta-item2}
 
-## Item 2 — Effect modification similar from trial to trial? {#meta-item2}
-
-**Item explanation:** Credibility of effect modification increases if the effect modification has been replicated across independent studies. Replication provides the strongest protection against random error and decreases the likelihood of confounding.
+Credibility of effect modification increases if the effect modification has been replicated across independent studies. Replication provides the strongest protection against random error and decreases the likelihood of confounding.
 
 If the item applies, it is helpful to quantify the magnitude of effect modification for each trial, e.g. by calculating a ratio of risk ratios. [@Song2016cumulative-0001]
 
 Note that this credibility consideration is different from assessing consistency (or heterogeneity) of treatment effects across studies (e.g. expressed by the I²-measure [@Higgins2003measuring-0001]).
 
-**Response options:**
-
-| Option | Description |
+| Response options | Description |
 |--------|-------------|
 | **Not applicable** | No or only one within-RCT comparison available |
 | **Definitely not similar** | Effect modification reported for ≥2 trials with clearly different directions |
@@ -67,15 +61,11 @@ Note that this credibility consideration is different from assessing consistency
 **Definitely similar — Example:** An IPD meta-analysis of fixed-dose aspirin for primary prevention of cardiovascular events found a significant interaction with body weight. [@Rothwell2018effects-0001] All six trials showed the same direction (more effective in lighter patients) with ratios of hazard ratios ranging between 0.5 and 0.9.
 :::
 
----
+## 3 — For between-trial comparisons, is the number of trials large? {#meta-item3}
 
-## Item 3 — Number of studies large? (between-RCT comparisons) {#meta-item3}
+For analysis of effect modification based on between-study comparisons, the credibility increases with the number of studies (analogous to number of observations in a regression analysis). A large number of studies also increases the power of the analysis and improves modelling of between-study dispersion in a random effects model. [@Brookes2001subgroup-0001; @Higgins2004controlling-0001; @Alosh2017tutorial-0001; @Rubio-Aparicio2017analysis-0001]
 
-**Item explanation:** For analysis of effect modification based on between-study comparisons, the credibility increases with the number of studies (analogous to number of observations in a regression analysis). A large number of studies also increases the power of the analysis and improves modelling of between-study dispersion in a random effects model. [@Brookes2001subgroup-0001; @Higgins2004controlling-0001; @Alosh2017tutorial-0001; @Rubio-Aparicio2017analysis-0001]
-
-**Response options:**
-
-| Option | Subgroup analysis | Continuous meta-regression |
+| Response options | Subgroup analysis | Continuous meta-regression |
 |--------|-------------------|---------------------------|
 | **Very small** | 1–2 in smallest subgroup | ≤5 studies total |
 | **Rather small or unclear** | 3–4 in smallest subgroup | 6–10 studies |
@@ -92,36 +82,74 @@ Note that this credibility consideration is different from assessing consistency
 **Large — Example:** A meta-analysis comparing interventions for preventing hospital readmission performed a subgroup analysis by number of activities. The small subgroup included 16 and the larger subgroup 26 studies. [@Leppin2014preventing-0001]
 :::
 
----
+## 4 — Was the direction of effect modification correctly hypothesized a priori? {#meta-item4}
 
-## Items 4–6 — Direction, interaction test, number of modifiers {#meta-items4-6}
+Credibility is higher if investigators correctly anticipated the direction of the effect modification, lower if they failed to anticipate a direction, and lowest if they anticipated the opposite direction.
 
-These items are conceptually identical to RCT items 1, 3, and 4 respectively. See [RCT items 1–4](rct.qmd#rct-item1) for full explanations and response options.
+Correct anticipation of an effect modification implies that investigators had a specific hypothesis in mind, usually based on a biologic or other causal rationale, or sometimes based on prior evidence. An explanation stated a priori is much more credible than a post hoc explanation. If post hoc, investigators had likely considered many possible explanations, thereby creating a multiplicity problem. [@Yusuf1991analysis-0001; @Oxman1992a-0001; @Thompson1994why-0001; @Fletcher2007subgroup-0001; @Dijkman2009how-0001; @Gagnier2013consensus-based-0001; @Varadhan2012review-0001]
 
-::: {.callout-note}
-**Meta-analysis note on Item 4 (direction a priori):** Because meta-analyses are retrospective, investigators may already know the key trials and most promising effect modifiers when they plan the analysis. [@Thompson2002how-0001] If so, this item loses some of its value if it suggests increased credibility. Correct anticipation of direction would essentially be data-driven. The item is more relevant if none of the key trials has tested the effect modifier of interest, and if the analysis is completely based on between-trial comparisons.
+Because meta-analyses are retrospective, investigators may already know the key trials and most promising effect modifiers when they plan the analysis. [@Thompson2002how-0001] If so, this item loses some of its value if it suggests increased credibility: correct anticipation of direction may essentially be data-driven. The item is more relevant if none of the key trials has tested the effect modifier of interest, and if the analysis is completely based on between-trial comparisons.
 
-**Meta-analysis note on Item 6 (number of modifiers):** A potential limitation is that the meta-analysts might have scanned key trials for promising effect modifiers before planning the meta-analysis. If so, a small number of tested effect modifiers might obscure potential multiplicity issues introduced in earlier selection processes in the individual trials.
+| Response options | Description |
+|--------|-------------|
+| **Definitely no** | Clearly post-hoc, results inconsistent with hypothesized direction, or biologically very implausible |
+| **Probably no or unclear** | Vague hypothesis or hypothesized direction unclear |
+| **Probably yes** | No protocol available but unequivocal statement of a priori hypothesis with correct direction |
+| **Definitely yes** | Prior protocol available and includes hypothesis with correct specification of direction, e.g. based on biologic rationale |
 
-Response option examples for Item 6 (number of modifiers tested):
+::: {.example-block}
+**Probably no — Example:** An IPD meta-analysis of fixed-dose aspirin for primary prevention of cardiovascular events found a significant interaction with body weight. [@Rothwell2018effects-0001] The paper does not clarify whether the effect modification was hypothesized a priori.
 
-- **Definitely no:** A meta-analysis investigating interventions to reduce early hospital readmissions reported results for 12 effect modifiers. [@Leppin2014preventing-0001] The authors correctly highlighted the possibility of chance findings due to multiplicity.
-- **Probably no:** In a meta-analysis assessing inpatient rehabilitation versus usual care, all reported meta-regression analyses were pre-specified in an analysis plan. Nevertheless, 9 effect modifiers were tested for 3 outcomes at 2 time points. [@Bachmann2010inpatient-0001]
-- **Probably yes:** An IPD meta-analysis assessed the effect of adding whole brain radiation therapy to stereotactic radiosurgery in patients with brain metastases. The report includes an explicit statement that age was one of three pre-planned effect modifiers. [@Sahgal2015phase-0001]
-- **Definitely yes:** A meta-analysis comparing the effect of low-intensity pulsed ultrasound versus sham ultrasound on bone healing. The investigators had pre-specified the analysis in the published protocol [@Schandelmaier2016prospero] together with two other subgroup hypotheses. The low number of tested effect modifiers and the pre-specified definition makes multiplicity issues less likely. [@Schandelmaier2017low-0001]
+**Probably yes — Example:** An IPD meta-analysis combined three trials comparing high versus low PEEP in ventilated patients. A subgroup analysis suggested that higher pressure was associated with longer survival in patients with ARDS (interaction p=0.02). The authors explicitly stated that they correctly anticipated the effect modification in their protocol which, however, was not published. [@Briel2010higher-0001]
 
-Response option examples for direction (Item 4):
-
-- **Probably no:** An IPD meta-analysis of fixed-dose aspirin for primary prevention of cardiovascular events found a significant interaction with body weight. [@Rothwell2018effects-0001] The paper does not clarify whether the effect modification was hypothesized a priori.
-- **Probably yes:** An IPD meta-analysis combined three trials comparing high versus low PEEP in ventilated patients. A subgroup analysis suggested that higher pressure was associated with longer survival in patients with ARDS (interaction p=0.02). The authors explicitly stated that they correctly anticipated the effect modification in their protocol which, however, was not published. [@Briel2010higher-0001]
-- **Definitely yes:** A meta-analysis comparing transcatheter versus surgical aortic valve replacement. The investigators had anticipated this interaction with correct direction in a published protocol. [@Siemieniuk2016transcatheter-0001]
+**Definitely yes — Example:** A meta-analysis comparing transcatheter versus surgical aortic valve replacement. The investigators had anticipated this interaction with correct direction in a published protocol. [@Siemieniuk2016transcatheter-0001]
 :::
 
----
+## 5 — Does a test for interaction suggest that chance is an unlikely explanation? {#meta-item5}
 
-## Item 7 — Random effects model used? {#meta-item7}
+Credibility is higher if a statistical test for interaction or meta-regression suggests that chance is an unlikely explanation for the apparent effect modification. Credibility is lower if the test is compatible with chance, or if no test is available and impossible to compute.
 
-**Item explanation:** The credibility of claimed effect modification is higher if investigators used a **random effects model** within subgroups, allowing true effects to differ among studies within subgroups and allowing generalisation of results beyond the included studies; this is almost always the model that should be used. [@Borenstein2013meta-analysis-0001; @Borenstein2019common-0001]
+::: {.callout-warning}
+**Important:** Showing that an effect is significant in one subgroup and not in another is of little use: it provides no information whether chance might explain differences in effects across subgroups. [@Oxman1992a-0001; @Simon1982patient-0001; @Brookes2001subgroup-0001; @Tanniou2017estimates-0001; @Pocock2002subgroup-0001]
+:::
+
+If no interaction or meta-regression p-value is reported, it can sometimes be calculated based on the reported data. We anchored the response options around typical thresholds for p-values 0.05, 0.01, and 0.005, with a p-value of 0.005 or smaller representing the most credible category.
+
+| Response options | Threshold |
+|--------|-----------|
+| **Chance a very likely explanation** | Interaction or meta-regression p-value > 0.05 |
+| **Chance a likely explanation or unclear** | p <= 0.05 and > 0.01, or no test reported and not computable |
+| **Chance may not explain** | p <= 0.01 and > 0.005 |
+| **Chance an unlikely explanation** | p <= 0.005 |
+
+## 6 — Did the authors test only a small number of effect modifiers, or consider multiplicity? {#meta-item6}
+
+Performing multiple tests is a major concern in the context of effect modification analysis. Because multiple tests increase the risk of a chance finding, credibility is higher if investigators tested only a small number of effect modifiers or statistically considered multiplicity.
+
+Multiplicity issues can arise through multiple candidate effect modifiers, multiple time points, multiple scales, multiple outcomes, or multiple methods for testing the interaction. Assessment of multiplicity depends heavily on reporting, and retrospective statements about the number of pre-specified subgroup analyses are not always reliable. [@Kasenda2014subgroup-0001]
+
+A potential limitation in meta-analyses is that investigators might have scanned key trials for promising effect modifiers before planning the meta-analysis. If so, a small number of tested effect modifiers might obscure potential multiplicity issues introduced in earlier selection processes in the individual trials.
+
+| Response options | Description |
+|--------|-------------|
+| **Definitely no** | Explicitly exploratory analysis, or large number of analyses (>10), and multiplicity not considered |
+| **Probably no or unclear** | No mention of number, or 4–10 effect modifiers tested and not considered |
+| **Probably yes** | No protocol but unequivocal statement of <=3 effect modifiers tested |
+| **Definitely yes** | Protocol available and <=3 effect modifiers tested, or number considered in analysis |
+
+::: {.example-block}
+**Definitely no — Example:** A meta-analysis investigating interventions to reduce early hospital readmissions reported results for 12 effect modifiers. [@Leppin2014preventing-0001] The authors correctly highlighted the possibility of chance findings due to multiplicity.
+
+**Probably no — Example:** In a meta-analysis assessing inpatient rehabilitation versus usual care, all reported meta-regression analyses were pre-specified in an analysis plan. Nevertheless, 9 effect modifiers were tested for 3 outcomes at 2 time points. [@Bachmann2010inpatient-0001]
+
+**Probably yes — Example:** An IPD meta-analysis assessed the effect of adding whole brain radiation therapy to stereotactic radiosurgery in patients with brain metastases. The report includes an explicit statement that age was one of three pre-planned effect modifiers. [@Sahgal2015phase-0001]
+
+**Definitely yes — Example:** A meta-analysis comparing the effect of low-intensity pulsed ultrasound versus sham ultrasound on bone healing. The investigators had pre-specified the analysis in the published protocol [@Schandelmaier2016prospero] together with two other subgroup hypotheses. The low number of tested effect modifiers and the pre-specified definition makes multiplicity issues less likely. [@Schandelmaier2017low-0001]
+:::
+
+## 7 — Did the authors use a random effects model? {#meta-item7}
+
+The credibility of claimed effect modification is higher if investigators used a **random effects model** within subgroups, allowing true effects to differ among studies within subgroups and allowing generalisation of results beyond the included studies; this is almost always the model that should be used. [@Borenstein2013meta-analysis-0001; @Borenstein2019common-0001]
 
 The credibility is lower if investigators used: (a) a **common effect (fixed effect, singular) model** — implying all studies within subgroups are based on the same population; [@Borenstein2013meta-analysis-0001; @Borenstein2019common-0001] or (b) a **fixed effects model** — implying results will only apply to the studies included in the subgroup but cannot be generalised beyond them. [@Borenstein2013meta-analysis-0001; @Borenstein2019common-0001]
 
@@ -131,9 +159,7 @@ If investigators state that they used a **mixed effects model** without further 
 
 The question also applies to individual-participant data meta-analysis, for which an empirical study has shown that most do not apply a random effects model. [@Simmonds2015a-0001]
 
-**Response options:**
-
-| Option | Description |
+| Response options | Description |
 |--------|-------------|
 | **Definitely no** | Fixed (or common) effect model explicitly stated |
 | **Probably no or unclear** | Probably no random effects model, or unclear |
@@ -148,11 +174,9 @@ The question also applies to individual-participant data meta-analysis, for whic
 **Definitely yes — Example:** In a meta-analysis assessing the effect of inpatient rehabilitation versus usual care, the authors explicitly specified a random effects model for between-study differences in the methods section. [@Bachmann2010inpatient-0001]
 :::
 
----
+## 8 — Were arbitrary cut points avoided? (continuous variables only) {#meta-item8}
 
-## Item 8 — Arbitrary cut points avoided? (continuous, meta-analyses) {#meta-item8}
-
-**Item explanation:** Categorising continuous effect modifiers is common [@Fisher2017meta-analytical-0001] but associated with problems. [@Royston2006dichotomizing-0001; @Altman2006the-0001] In the context of meta-analysis, cut points can cause additional problems: if two studies assessed the same continuous effect modifier but used different cut points, it may be impossible to combine the within-study results in a meaningful way unless individual patient data are available. Credibility is low if investigators selected the best-fitting data-driven cut point. [@Royston2006dichotomizing-0001; @Altman1994dangers-0001]
+Categorising continuous effect modifiers is common [@Fisher2017meta-analytical-0001] but associated with problems. [@Royston2006dichotomizing-0001; @Altman2006the-0001] In the context of meta-analysis, cut points can cause additional problems: if two studies assessed the same continuous effect modifier but used different cut points, it may be impossible to combine the within-study results in a meaningful way unless individual patient data are available. Credibility is low if investigators selected the best-fitting data-driven cut point. [@Royston2006dichotomizing-0001; @Altman1994dangers-0001]
 
 Provided individual participant data is available, it is also possible to average functions across several studies and base conclusions on the resulting mean function (i.e. a meta-analysis of interactions [@Wang2016meta-stepp-0001; @Kasenda2016multivariable-0001]).
 
@@ -166,9 +190,7 @@ See [RCT Item 5](rct.qmd#rct-item5) for full response option descriptions.
 **Definitely yes — Example:** An IPD meta-analysis investigated whether patients with ARDS benefit from higher PEEP ventilation strategies. [@Kasenda2016multivariable-0001] A continuous analysis suggested a non-linear effect modification by degree of hypoxaemia. A previous analysis dichotomised the effect modifier and could not reveal the potential non-linear relationship. [@Briel2010higher-0001]
 :::
 
----
-
-## Item 9 — Optional: Additional considerations {#meta-item9}
+## 9 — Are there additional considerations that may increase or decrease credibility? {#meta-item9}
 
 Similar to [RCT Item 6](rct.qmd#rct-item6), with additional meta-analysis-specific considerations.
 
@@ -210,13 +232,26 @@ Similar to [RCT Item 6](rct.qmd#rct-item6), with additional meta-analysis-specif
 **Example:** A meta-analysis comparing transcatheter versus surgical aortic valve replacement. [@Siemieniuk2016transcatheter-0001] The qualitative interaction was consistent across outcomes mortality, stroke, acute kidney injury, and bleeding.
 :::
 
----
+## 10 — Overall credibility rating {#meta-item10}
 
-## Item 10 — Overall credibility rating {#meta-item10}
+The overall rating is a continuous visual analogue scale spanning four credibility areas, corresponding roughly to <25%, 25–50%, 50–75%, and >75% confidence that the apparent effect modification is true and not the result of chance or bias. **The overall rating should be driven by the items that decrease credibility.**
 
-Same continuous scale and decision strategy as [RCT Item 7](rct.qmd#rct-item7). See that section for the full strategy table and interpretation.
+Recommended strategy:
 
----
+- All responses definitely or probably reduced credibility or unclear → **very low credibility**
+- Two or more responses definitely reduced credibility → maximum usually **low credibility**
+- One response definitely reduced credibility → maximum usually **moderate credibility**
+- Two responses probably reduced credibility → maximum usually **moderate credibility**
+- No responses definitely or probably reduced credibility → **high credibility very likely**
+
+| Credibility | Interpretation | Implication |
+|-------------|----------------|-------------|
+| Very low | Very likely no effect modification | Use overall estimate for each subgroup |
+| Low | Likely no effect modification | Use overall estimate; note remaining uncertainty |
+| Moderate | Likely effect modification | Use separate estimates; note remaining uncertainty |
+| High | Very likely effect modification | Use separate estimates for each subgroup |
+
+[Practical considerations](practical.qmd) provides more suggestions for using and presenting ICEMAN in context; [Concept and scope of ICEMAN](concepts.qmd) provides a more detailed justification why the scale is continuous and why low credibility suggests likely no effect modification.
 
 ## Worked example — Meta-analysis (cervical cancer) {#meta-example}
 

@@ -8,6 +8,7 @@
 
 /* Navbar branding */
 .navbar-brand { font-weight: 600; letter-spacing: -0.02em; }
+.navbar-nav .nav-link { padding-left: 0.6rem; padding-right: 0.6rem; }
 
 /* Landing page hero */
 .hero {
@@ -95,16 +96,7 @@
 /* Manual page */
 .manual-section { margin-bottom: 2.5rem; }
 .response-table th { background: #f0f4f8; }
-.example-block {
-  background: #f8f9fa;
-  border-left: 3px solid var(--iceman-blue);
-  border-radius: 0 6px 6px 0;
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  color: #444;
-  margin: 0.75rem 0;
-}
-.example-block strong { color: var(--iceman-blue); }
+/* see manual accordion section below */
 
 /* ICEMAN tool page — radio options */
 .iceman-item {
@@ -188,13 +180,12 @@ input.cred-range {
 mark { background: #fff3b0; border-radius: 2px; }
 
 /* Keep citation hover cards available without repeating references on each page. */
-#quarto-bibliography { display: none; }
+#quarto-appendix { display: none; }
 
 /* Site footer */
 .site-footer {
   margin-top: 3rem;
   padding: 0.9rem 0;
-  border-top: 1px solid #dee2e6;
   font-size: 0.82rem;
   color: #888;
   display: flex;
@@ -205,6 +196,67 @@ mark { background: #fff3b0; border-radius: 2px; }
 .site-footer a { color: #888; text-decoration: underline; }
 .site-footer a:hover { color: var(--iceman-blue); }
 .footer-sep { color: #ccc; }
+
+/* ── Manual accordion ── */
+.acc-item { margin-bottom: 0; }
+
+.acc-header { border-top: 1px solid #dee2e6; }
+
+.acc-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #212529;
+  cursor: pointer;
+  gap: 0.6rem;
+  line-height: 1.4;
+}
+.acc-btn::before {
+  content: '▶';
+  font-size: 0.65rem;
+  color: #185FA5;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.acc-btn:not(.collapsed)::before { transform: rotate(90deg); }
+.acc-btn:hover { background: #f8f9fa; color: #185FA5; }
+.acc-btn:focus { outline: 2px solid #185FA5; outline-offset: -2px; }
+
+.acc-body-inner {
+  padding: 1.5rem 1.25rem 1.75rem;
+}
+.acc-body-inner > p:first-child { margin-top: 0; }
+
+/* ── Example block redesign: left-border accent ── */
+.example-block {
+  border-left: 3px solid #185FA5;
+  padding: 0.6rem 1rem 0.6rem 1.1rem;
+  margin: 1.75rem 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+.example-block p { margin: 0.4rem 0; }
+
+/* ── Response table spacing and row colors ── */
+.acc-body-inner table {
+  margin: 1.75rem 0;
+  width: 100%;
+}
+.acc-body-inner table th { background: #f4f6f8; font-weight: 600; }
+.acc-body-inner .callout { margin: 1.75rem 0; }
+
+.rt-red    td { background: #fdeaea; }
+.rt-orange td { background: #fef0e6; }
+.rt-yellow td { background: #fdfae6; }
+.rt-green  td { background: #e6f5ee; }
+.rt-na     td { background: #f5f5f5; color: #666; }
 
 /* Mobile */
 @media (max-width: 600px) {

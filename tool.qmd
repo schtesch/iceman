@@ -421,7 +421,7 @@ const RCT_PRELIM = {
     measure:  { text: 'Specify one effect measure (e.g. relative risk, risk difference, hazard ratio). Credibility ratings can differ between relative and absolute measures — complete a separate form for each.', anchor: '#prelim-measure' },
     modifier: { text: 'State one potential effect modifier — a patient or intervention characteristic. Note: ICEMAN does not apply to effect modifiers measured after randomisation (e.g. another outcome), with exceptions (see manual).', anchor: '#prelim-modifier' },
     prerando: { text: 'ICEMAN applies to modifiers assessed before or at randomisation (e.g. baseline variables). Post-randomisation modifiers require different methods. See the handbook for exceptions.', anchor: '#prelim-prerando' },
-    possible: { text: 'ICEMAN applies when the statstical analysis shows at least some signal of possible effect modification, such as an interaction p-value of 0.1 or smaller. Do not apply ICEMAN when the p-value is larger than 0.1, or when the data suggest no effect modification.', anchor: '#prelim-possible' },
+    possible: { text: 'ICEMAN applies when the statistical analysis shows at least some signal of possible effect modification, such as an interaction p-value of 0.1 or smaller. Do not apply ICEMAN when the p-value is larger than 0.1, or when the data suggest no effect modification.', anchor: '#prelim-possible' },
   },
 };
 
@@ -522,11 +522,11 @@ card.addEventListener('mouseout',  e => { if (!card.contains(e.relatedTarget)) h
 // ── Item content ─────────────────────────────────────────────────────────────
 const OVERALL_TIPS = {
   rct: {
-    text: 'The overall rating should be driven by the items that decrease credibility. Sensible strategy:<ul style="margin:0.5rem 0 0 1.1rem;padding:0"><li>All responses red or orange → very low</li><li>Two or more responses red → maximum usually low</li><li>One response red → maximum usually moderate</li><li>Two responses orange → maximum usually moderate</li><li>No responses red or orange → high very likely</li></ul>',
+    text: 'The overall rating should be driven by the items that decrease credibility. Sensible strategy:<ul style="margin:0.5rem 0 0 1.1rem;padding:0"><li>All definitely or probably reduced → very low</li><li>Two or more definitely reduced → maximum usually low</li><li>One definitely reduced → maximum usually moderate</li><li>Two probably reduced → maximum usually moderate</li><li>No definitely or probably reduced → high very likely</li></ul>',
     manualHref: 'manual/rct.html#rct-item7',
   },
   meta: {
-    text: 'The overall rating should be driven by the items that decrease credibility. Sensible strategy:<ul style="margin:0.5rem 0 0 1.1rem;padding:0"><li>All responses red or orange → very low</li><li>Two or more responses red → maximum usually low</li><li>One response red → maximum usually moderate</li><li>Two responses orange → maximum usually moderate</li><li>No responses red or orange → high very likely</li></ul>',
+    text: 'The overall rating should be driven by the items that decrease credibility. Sensible strategy:<ul style="margin:0.5rem 0 0 1.1rem;padding:0"><li>All definitely or probably reduced → very low</li><li>Two or more definitely reduced → maximum usually low</li><li>One definitely reduced → maximum usually moderate</li><li>Two probably reduced → maximum usually moderate</li><li>No definitely or probably reduced → high very likely</li></ul>',
     manualHref: 'manual/meta.html#meta-item10',
   },
 };
@@ -677,7 +677,7 @@ const META_ITEMS = [
     num: '4 of 9',
     q: 'Was the direction of effect modification correctly hypothesized a priori?',
     hint: 'Because meta-analyses are retrospective, investigators may already know key trials and promising effect modifiers.',
-    manualLink: 'manual/rct.qmd#rct-item1',
+    manualLink: 'manual/meta.qmd#meta-item4',
     summaryLabel: '4. Direction a priori',
     tableLabel: 'Direction of effect modification hypothesized a priori?',
     reportLabel: '4. Direction a priori',
@@ -692,7 +692,7 @@ const META_ITEMS = [
     num: '5 of 9',
     q: 'Does a test for interaction suggest that chance is an unlikely explanation of the apparent effect modification? <small style="font-weight:400;color:#666">(consider irrespective of number of effect modifiers)</small>',
     hint: null,
-    manualLink: 'manual/rct.qmd#rct-item3',
+    manualLink: 'manual/meta.qmd#meta-item5',
     summaryLabel: '5. Interaction test',
     tableLabel: 'Chance unlikely explanation of effect modification?',
     reportLabel: '5. Interaction test — chance unlikely',
@@ -707,7 +707,7 @@ const META_ITEMS = [
     num: '6 of 9',
     q: 'Did the authors test only a small number of effect modifiers or consider the number in their statistical analysis?',
     hint: null,
-    manualLink: 'manual/rct.qmd#rct-item4',
+    manualLink: 'manual/meta.qmd#meta-item6',
     summaryLabel: '6. Multiplicity',
     tableLabel: 'Few effect modifiers tested or multiplicity considered?',
     reportLabel: '6. Small number of modifiers',
@@ -783,7 +783,7 @@ function renderItems(items, prefix) {
       `<label class="radio-row"><input type="radio" name="${name}" value="${o.value}"><span><span class="rl${rlColor(o.value)}">${o.label}</span>${o.desc ? `<br><span class="rd">${o.desc}</span>` : ''}</span></label>`
     ).join('');
     return `
-<div class="iceman-item">
+<div class="iceman-item" id="${prefix}-item-${n}" style="scroll-margin-top:72px">
   <div class="item-num">Item ${item.num}</div>
   <div class="item-q">${item.q} <button class="tip-trigger" data-tip-type="item" data-item-prefix="${prefix}" data-item-idx="${i}">?</button></div>
   <div id="${name}">${opts}</div>
@@ -1092,7 +1092,7 @@ function renderRatingResult(p, result) {
     <div class="algo-counts">${scoreLine} &nbsp;·&nbsp; ${countsLine}</div>
     ${ruleNotes}
   </div>`;
-  if (DEV_ALGO_BOX) resultDiv.style.display = 'block';
+  resultDiv.style.display = DEV_ALGO_BOX ? 'block' : 'none';
   document.getElementById(p + '-scale').value = result.final_slider_score;
   moveThumb(p);
 }
@@ -1457,10 +1457,10 @@ function badge(v) {
   if (v === 'inc') return ['Probably increases credibility', 'b-2'];
   if (v === 'dec') return ['Probably decreases credibility', 'b-1'];
   const n = parseInt(v);
-  if (n === 1) return ['Definitely no / lowest credibility', 'b-0'];
-  if (n === 2) return ['Probably no or unclear', 'b-1'];
-  if (n === 3) return ['Probably yes / supported', 'b-2'];
-  if (n === 4) return ['Definitely yes / highest credibility', 'b-3'];
+  if (n === 1) return ['Definitely no / decreased credibility', 'b-0'];
+  if (n === 2) return ['Probably no or unclear / decreased credibility', 'b-1'];
+  if (n === 3) return ['Probably yes / increased credibility', 'b-2'];
+  if (n === 4) return ['Definitely yes / increased credibility', 'b-3'];
   return [v, 'b-na'];
 }
 function verdictFromScale(val) {
@@ -1528,15 +1528,20 @@ function updateLiveSummary(p) {
   const isRct = p === 'r';
   const cfg  = isRct ? RCT_ITEMS : META_ITEMS;
   const defs = cfg.map((item, i) => ({
-    name:  `${p}-q${i + 1}`,
-    label: item.tableLabel,
-    cid:   `${p}-q${i + 1}c`,
+    name:   `${p}-q${i + 1}`,
+    itemId: `${p}-item-${i + 1}`,
+    label:  item.tableLabel,
+    cid:    `${p}-q${i + 1}c`,
   }));
   const rows = defs.map(d => {
-    const [txt, cls] = badge(getVal(d.name));
+    const val = getVal(d.name);
+    const [txt, cls] = badge(val);
     const comment = document.getElementById(d.cid).value.trim();
     const commentHtml = comment ? `<div class="s-comment">${comment}</div>` : '';
-    return `<div class="summary-row"><div><div class="s-label">${d.label}</div>${commentHtml}</div><span class="${cls}">${txt}</span></div>`;
+    const badgeHtml = val === null
+      ? `<a class="${cls}" href="#${d.itemId}" style="text-decoration:none;cursor:pointer">↑ answer</a>`
+      : `<span class="${cls}">${txt}</span>`;
+    return `<div class="summary-row"><div><div class="s-label">${d.label}</div>${commentHtml}</div>${badgeHtml}</div>`;
   }).join('');
   document.getElementById(p + '-live-summary').innerHTML =
     `<div class="live-summary-title">Summary of responses</div>${rows}`;
