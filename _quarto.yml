@@ -23,20 +23,29 @@ website:
         href: index.qmd
       - text: "ICEMAN online"
         href: tool.qmd
-      - text: "Manual"
+      - text: "User manual"
         href: manual/index.qmd
         target: iceman-manual
       - text: "About"
         href: about.qmd
 
   sidebar:
-    - title: "Manual"
+    - title: "User manual"
       style: "docked"
       search: true
       collapse-level: 1
       contents:
-        - text: "Preliminary considerations"
+        - section: "How to use ICEMAN"
           href: manual/index.qmd
+          contents:
+            - text: "Assessment in duplicate"
+              href: manual/index.qmd#assessment-in-duplicate
+            - text: "Reporting"
+              href: manual/index.qmd#reporting
+            - text: "Using ICEMAN with other instruments"
+              href: manual/index.qmd#using-iceman-with-other-instruments
+        - text: "Preliminary considerations"
+          href: manual/preliminary.qmd
         - section: "ICEMAN for RCTs"
           href: manual/rct.qmd
           contents:
@@ -81,15 +90,6 @@ website:
               href: manual/meta.qmd#meta-item10
             - text: "Worked example (cervical cancer)"
               href: manual/meta.qmd#meta-example
-        - section: "Practical considerations"
-          href: manual/practical.qmd
-          contents:
-            - text: "Assessment in duplicate"
-              href: manual/practical.qmd#assessment-in-duplicate
-            - text: "Reporting"
-              href: manual/practical.qmd#reporting
-            - text: "Using ICEMAN with other instruments"
-              href: manual/practical.qmd#using-iceman-with-other-instruments
         - text: "Concept and scope of ICEMAN"
           href: manual/concepts.qmd
         - text: "Frequently asked questions"

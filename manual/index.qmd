@@ -1,39 +1,97 @@
 ---
-title: "Preliminary considerations"
+title: "How to use ICEMAN"
 ---
+## Users and applications
 
-The assessment starts with a set of preliminary considerations to define the apparent effect modification under consideration.
+Users of ICEMAN include
 
-<span id="prelim-outcome"></span>
-**State a single outcome and time-point of interest:** Because ICEMAN refers to a single outcome at a time, users must specify the outcome of interest and, if applicable, the time-point of outcome assessment (e.g. mortality at 1 year follow-up).
+- **Trial investigators** who are planning or considering the results of a subgroup analysis;
+- **Meta-analysts** who are planning or considering the results of a subgroup analysis;
+- **Authors of systematic reviews and clinical practice guidelines who assess subgroup claims** made in published reports of trials or meta-analyses;
+- **Journal editors, referees, methods consultants**, and others concerned with the quality of subgroup analyses in trials or meta-analyses.
 
-<span id="prelim-measure"></span>
-**State a single effect measure of interest:** Specify a single effect measure of interest (e.g. relative risk, risk difference, odds ratio, or hazard ratio for binary outcomes, or difference or ratio of means for continuous outcomes). The type of effect measure is a key consideration because the magnitude of effect modification typically differs between effect measures, and in particular between measures of relative versus absolute effect. [@Engels2000heterogeneity-0001; @Venekamp2014subgroup-0001; @Rhodes2016empirical-0001; @White2005assessing-0001] Therefore, the credibility rating is likely to differ depending on the chosen effect measure.
+## Assessment in duplicate
 
-::: {.example-block}
-**Example:** An RCT showed that a lifestyle modification program can prevent diabetes. [@Knowler2002reduction] A subgroup analysis divided patients into four groups according to their predicted risk of developing diabetes. On the relative hazard ratio scale, the effect was consistent across risk groups (no suggestion of effect modification). On the absolute risk difference scale, however, the effect was much greater in high-risk than in low-risk patients. [@Kent2018personalized-0001]
-:::
+Confidence in the assessment increases if two investigators independently apply ICEMAN, discuss discrepancies, and present a consensus version.
 
-<span id="prelim-modifier"></span>
-**State a single potential effect modifier of interest:** Specify the potential effect modifier of interest (only one effect modifier per ICEMAN form). Effect modifiers may be patient characteristics (e.g. disease severity, age, or type of tumour), intervention alternatives (e.g. different doses, co-interventions, or modes of administration), or, in a meta-analysis, methodological study characteristics (e.g. risk of bias, outcome definition, type of funding). Note that the instrument does not apply when the effect modifier is another outcome. Note that an effect modifier (e.g. sex) is different from a particular subgroup (e.g. women).
+## Reporting {#reporting}
+
+We recommend specifying use of ICEMAN in the study protocol, and in the methods, results, and interpretation sections of the final publication:
+
+- **Protocol:** "We will assess the credibility of potentially relevant effect modification using ICEMAN."
+- **Methods:** "We used ICEMAN to assess the credibility of potentially relevant effect modification."
+- **Results:** "We judged the credibility of the potential effect modification as low, with uncertainty arising from lack of prior evidence and an inconclusive test of interaction (see supplement)."
+- **Interpretation:** "A formal credibility assessment rated the apparent effect modification as likely spurious. We recommend considering the overall effect estimate for all patients."
 
 ::: {.callout-warning}
-## Warning: effect modifier measured after randomization
-
-ICEMAN applies to effect modifiers assessed before or at randomization (e.g. baseline variables, stratification variables). If the effect modifier was measured after randomization (e.g. an intermediate outcome), the assessment of effect modification is complicated and potentially misleading. [@VanderWeele2009on-0001; @Yusuf1991analysis-0001; @Sun2010is-0001; @Sun2014how-0001; @Oxman1992a-0001; @Simon1982patient-0001; @Matsuyama2006estimation-0001; @Hirji2009outcome-0001; @Cuzick1982the-0001; @Cook2004subgroup-0001; @Desai2014challenges-0001; @vanHoorn2017the-0001; @Grady2007chapter-0002; @Moye200721; @Rosenbaum1984the-0001] Those analyses require different methods [@Matsuyama2006estimation-0001; @Desai2014challenges-0001; @Korn2017assessing-0001] and result in less secure conclusions.
-
-**Exceptions** — the instrument does apply to post-randomization effect modifiers if: (1) the effect modifier is a non-modifiable characteristic such as sex or age; or (2) for meta-analyses, the effect modifier is a study characteristic such as risk of bias, length of follow-up, or mean received dose.
+We do not recommend reporting overall credibility as a percentage (e.g. "30% credible").
 :::
 
-::: {.example-block}
-**Example:** An RCT testing strict or conventional management of hyperglycaemia with insulin therapy in ICU patients claimed an effect modification by length of hospital stay. [@VanDenBerghe2006intensive-0001] Length of ICU stay (the apparent effect modifier), however, was shortened by the intervention. This prognostic imbalance between intervention and control group within the length-of-stay subgroups likely created the differences in mortality.
-:::
+Users can download the fillable ICEMAN form for [RCTs](../files/iceman-rct-form.docx) or [meta-analyses](../files/iceman-meta-analysis-form.docx), complete it on their device, and attach it to the appendix of their publication. Alternatively, the [online tool](../tool.qmd) generates a downloadable reporting table directly.
 
-<span id="prelim-possible"></span>
-**Does the analysis suggest possible effect modification? (interaction p < 0.1)?** Do not apply ICEMAN if the interaction p-value is 0.1 or larger, i.e., provides very little statistical support for the existence of an effect modification. ICEMAN is designed to address the possible claim (presence) of an effect modification rather than the claim of no effect modification (absence).
+We also provide four table templates for summarising one or more ICEMAN assessments in a publication. [Download all templates (.docx)](../files/iceman-table-templates.docx)
 
-ICEMAN does not currently provide a version for assessing absence of effect modification / consistency of effects across subgroups.
+**Legend for all tables:** (--) definitely reduces credibility; (-) probably reduces credibility or unclear; (+) probably increases credibility; (++) definitely increases credibility. Not applicable items receive no code.
 
-If the interaction p-value is ≥ 0.1, stop the assessment, report that you did not apply ICEMAN, note the lack of statistical evidence for effect modification. Use the overall effect estimate for drawing conclusions.
 
-[Concept and scope of ICEMAN](concepts.qmd) provides additional background information.
+**Template1 — Single assessment (RCT).** Full item-level table for one outcome, effect measure, and effect modifier in an RCT.
+
+| Item | Response | Rationale |
+|------|----------|-----------|
+| 1 — Direction of effect modification hypothesized a priori? | (+) Probably yes | Direction stated before analysis. |
+| 2 — Effect modification supported by prior evidence? | (+) Some support | Consistent indirect evidence. |
+| 3 — Chance unlikely explanation of effect modification? | (+) Chance may not explain | Interaction p = 0.008. |
+| 4 — Few effect modifiers tested or multiplicity considered? | (-) Probably no or unclear | Six modifiers tested; no adjustment. |
+| 5 — Arbitrary cut points avoided for continuous modifier? | Not applicable | |
+| 6 — Additional credibility considerations? | None | No additional concerns. |
+| **Overall credibility** | **Moderate:** likely effect modification; use separate subgroup effects, but note uncertainty | Multiplicity lowered credibility. |
+
+
+**Template2 — Single assessment (meta-analysis).** Full item-level table for one outcome, effect measure, and effect modifier in a meta-analysis.
+
+| Item | Response | Rationale |
+|------|----------|-----------|
+| 1 — Based on within- rather than between-trial comparison? | (+) Mostly within | Most information came from within-trial subgroup comparisons. |
+| 2 — Effect modification similar across trials? | (+) Mostly similar | Trial-specific estimates had similar direction, with some variation in magnitude. |
+| 3 — Number of trials large for between-trial comparison? | Not applicable | Assessment did not rely on between-trial comparison. |
+| 4 — Direction of effect modification hypothesized a priori? | (+) Probably yes | Direction stated before analysis. |
+| 5 — Chance unlikely explanation of effect modification? | (+) Chance may not explain | Meta-regression p = 0.008. |
+| 6 — Few effect modifiers tested or multiplicity considered? | (-) Probably no or unclear | Several modifiers tested; no adjustment. |
+| 7 — Random-effects model used? | (++) Definitely yes | Authors explicitly used a random-effects model. |
+| 8 — Arbitrary cut points avoided for continuous modifier? | Not applicable | |
+| 9 — Additional credibility considerations? | None | No additional concerns. |
+| **Overall credibility** | **Moderate:** likely effect modification; use separate subgroup effects, but note uncertainty | Multiplicity lowered credibility. |
+
+
+**Template3 — Multiple effect modifiers.** Compact table comparing ICEMAN items across several candidate effect modifiers.
+
+| Item | Age | Sex | Diabetes status | Baseline severity |
+|------|-----|-----|-----------------|-------------------|
+| Interaction p-value | 0.008 | 0.04 | 0.003 | 0.07 |
+| 1 — Direction a priori? | (+) Probably yes | (-) Probably no or unclear | (++) Definitely yes | (-) Probably no or unclear |
+| 2 — Prior evidence? | (+) Some support | (-) Little or no support | (++) Strong support | (+) Some support |
+| 3 — Chance unlikely? | (+) Chance may not explain | (-) Chance likely | (++) Chance unlikely | (-) Chance likely |
+| 4 — Multiplicity? | (-) Probably no or unclear | (-) Probably no or unclear | (-) Probably no or unclear | (-) Probably no or unclear |
+| 5 — Arbitrary cut points? | Not applicable | Not applicable | Not applicable | (-) Probably no or unclear |
+| 6 — Additional? | None | None | None | None |
+| **Overall credibility** | **Moderate:** likely effect modification, but uncertainty remains | **Low:** some but insufficient support | **High:** very likely effect modification | **Very low:** minimal to no support |
+
+
+**Template4 — Summary table.** One row per assessment; suitable for summarising several assessments across outcomes and effect modifiers.
+
+| Outcome | Effect measure | Effect modifier | Interaction p | Main credibility concerns | Overall credibility |
+|---------|---------------|-----------------|---------------|--------------------------|---------------------|
+| 30-day mortality | Risk ratio | Age | 0.008 | Multiplicity not addressed | Moderate |
+| 30-day mortality | Risk ratio | Sex | 0.04 | Direction not prespecified; weak prior evidence; multiplicity not addressed | Low |
+| Stroke at 1 year | Odds ratio | Diabetes status | 0.003 | None major | High |
+| Pain at 6 months | Mean difference | Baseline severity | 0.07 | Weak statistical support; arbitrary cut point | Very low |
+| Serious adverse events | Risk difference | Age | 0.14 | ICEMAN not applied (p > 0.1) | Not assessed |
+
+: Footnote: Each row represents one candidate effect modification (one outcome, effect measure, and effect modifier). ICEMAN was applied only when the interaction p-value was 0.1 or smaller. Full item-level assessments appear in a supplement.
+
+## Using ICEMAN with other instruments
+
+ICEMAN can be combined with the Cochrane Risk of Bias tool for RCTs [@Higgins2016a-0001] or the ROBIS tool for systematic reviews, [@Whiting2016robis-0001] and with the GRADE framework [@Guyatt2011grade-0007]:
+
+- **Moderate or high credibility:** Apply GRADE to subgroup-specific estimates. Note remaining uncertainty if moderate. Considering subgroup-specific estimates may sometimes resolve concerns due to heterogeneity and consequently increase certainty of evidence and strength of recommendation.
+- **Low or very low credibility:** Apply GRADE to the overall effect estimate. Note remaining uncertainty if low, especially if the potential effect modification appears to explain heterogeneity.

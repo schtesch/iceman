@@ -16,7 +16,7 @@ ICEMAN was developed for randomized controlled trials and meta-analyses of rando
 ## What are common mistakes to avoid?
 
 - **Do not use ICEMAN to evaluate consistency across subgroups.** ICEMAN assesses the credibility of a claimed effect modification — it is not a tool for checking whether effects are consistent across subgroup strata.
-- **Skip ICEMAN when the interaction p-value exceeds 0.1.** When the statistical evidence for effect modification is weak, the overall credibility will be low regardless of other items.
+- **Skip ICEMAN when the interaction p-value is larger than 0.1.** When the statistical evidence for effect modification is weak, the overall credibility will be low regardless of other items.
 - **Avoid routine application to all subgroup analyses.** ICEMAN is most useful when a specific subgroup effect is being claimed or interpreted, not as a checklist for all reported subgroups.
 
 ## How does ICEMAN relate to GRADE?

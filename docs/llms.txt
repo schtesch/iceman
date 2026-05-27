@@ -11,10 +11,9 @@ ICEMAN is the Instrument to assess the Credibility of Effect Modification ANalys
 
 ## Downloads
 
-- [ICEMAN for RCTs, version 1.1](https://www.iceman.help/files/ICEMAN%20RCT%201.1%20(6).docx)
-- [ICEMAN for meta-analyses, version 1.1](https://www.iceman.help/files/ICEMAN%20MA%201.1%20(8).docx)
-- [Reporting templates](https://www.iceman.help/files/ICEMAN%20table%20templates.docx)
-- [PDF manual](https://www.iceman.help/files/ICEMAN%20manual%20.pdf)
+- [ICEMAN for RCTs, version 1.1](https://www.iceman.help/files/iceman-rct-form.docx)
+- [ICEMAN for meta-analyses, version 1.1](https://www.iceman.help/files/iceman-meta-analysis-form.docx)
+- [Reporting templates](https://www.iceman.help/files/iceman-table-templates.docx)
 
 ## Primary Citation
 

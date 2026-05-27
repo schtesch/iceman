@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!main || !document.getElementById('quarto-sidebar')) return;
 
   var sections = Array.from(main.querySelectorAll('section.level2'));
-  // Don't accordionise pages with only one section (e.g. Practical considerations)
+  // Don't accordionise pages with only one section (e.g. How to use ICEMAN)
   if (sections.length < 2) return;
 
   sections.forEach(function (section) {

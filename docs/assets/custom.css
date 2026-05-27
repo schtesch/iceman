@@ -93,10 +93,10 @@
   font-size: 0.75rem; padding: 2px 10px;
 }
 
-/* Manual page */
+/* User manual page */
 .manual-section { margin-bottom: 2.5rem; }
 .response-table th { background: #f0f4f8; }
-/* see manual accordion section below */
+/* see user manual accordion section below */
 
 /* ICEMAN tool page — radio options */
 .iceman-item {
@@ -168,7 +168,7 @@ input.cred-range {
 .overall-verdict .verdict-label { font-size: 1.3rem; font-weight: 700; }
 .overall-verdict .verdict-sub   { font-size: 0.9rem; color: #555; margin-top: 4px; }
 
-/* Manual link badges in tool */
+/* User manual link badges in tool */
 .manual-link {
   font-size: 0.75rem; color: var(--iceman-blue);
   text-decoration: none; border: 1px solid var(--iceman-blue);
@@ -197,7 +197,7 @@ mark { background: #fff3b0; border-radius: 2px; }
 .site-footer a:hover { color: var(--iceman-blue); }
 .footer-sep { color: #ccc; }
 
-/* ── Manual accordion ── */
+/* ── User manual accordion ── */
 .acc-item { margin-bottom: 0; }
 
 .acc-header { border-top: 1px solid #dee2e6; }

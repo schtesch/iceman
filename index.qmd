@@ -32,17 +32,17 @@ twitter-card:
     </a>
   </div>
   <div class="hero-cards-row hero-cards-bottom">
-    <a href="files/ICEMAN RCT 1.1 (6).docx" class="hero-card">
+    <a href="files/iceman-rct-form.docx" class="hero-card">
       <div class="hero-card-icon">📄</div>
       <div class="hero-card-title">Download ICEMAN for RCTs</div>
       <div class="hero-card-sub">Version 1.1 (.docx)</div>
     </a>
-    <a href="files/ICEMAN MA 1.1 (8).docx" class="hero-card">
+    <a href="files/iceman-meta-analysis-form.docx" class="hero-card">
       <div class="hero-card-icon">📄</div>
       <div class="hero-card-title">Download ICEMAN for Meta-analyses</div>
       <div class="hero-card-sub">Version 1.1 (.docx)</div>
     </a>
-    <a href="files/ICEMAN table templates.docx" class="hero-card">
+    <a href="files/iceman-table-templates.docx" class="hero-card">
       <div class="hero-card-icon">📄</div>
       <div class="hero-card-title">Reporting templates</div>
       <div class="hero-card-sub">Different summary tables, (.docx)</div>
@@ -66,7 +66,7 @@ ICEMAN comes in two different versions, one for randomized controlled trials and
 
 ICEMAN uses structured questions and response options and produces an overall credibility rating from very low to high.
 
-When reporting an ICEMAN assessment in a paper, users can download the fillable form for [RCTs](files/ICEMAN RCT 1.1 (6).docx) or [meta-analyses](files/ICEMAN MA 1.1 (8).docx) and include it in the appendix of their publication. Alternatively, they can complete the [tool online](tool.qmd) and download a reporting table. We also provide [templates](files/ICEMAN table templates.docx) for summarizing several assessments in a single table and a detailed [user manual](manual/index.qmd){target="iceman-manual"}.
+When reporting an ICEMAN assessment in a paper, users can download the fillable form for [RCTs](files/iceman-rct-form.docx) or [meta-analyses](files/iceman-meta-analysis-form.docx) and include it in the appendix of their publication. Alternatively, they can complete the [tool online](tool.qmd) and download a reporting table. We also provide [templates](files/iceman-table-templates.docx) for summarizing several assessments in a single table and a detailed [user manual](manual/index.qmd){target="iceman-manual"}.
 
 ## How to cite
 

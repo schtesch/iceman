@@ -1,7 +1,5 @@
 ---
 title: "ICEMAN for Randomized Controlled Trials"
-description: "Item-by-item guidance for applying ICEMAN to apparent effect modification in randomized controlled trials."
-toc-depth: 3
 ---
 
 ## 1 — Was the direction of effect modification correctly hypothesized a priori? {#rct-item1}
@@ -193,7 +191,7 @@ Recommended strategy:
 | Moderate | Likely effect modification | Use separate estimates; note remaining uncertainty |
 | High | Very likely effect modification | Use separate estimates for each subgroup |
 
-[Practical considerations](practical.qmd) provides more suggestions for using and presenting ICEMAN in context; [Concept and scope of ICEMAN](concepts.qmd) provides a more detailed justification why the scale is continuous and why low credibility suggests likely no effect modification.
+[How to use ICEMAN](index.qmd) provides more suggestions for using and presenting ICEMAN in context; [Concept and scope of ICEMAN](concepts.qmd) provides a more detailed justification why the scale is continuous and why low credibility suggests likely no effect modification.
 
 ## Worked example — RCT (CRASH-2) {#rct-example}
 

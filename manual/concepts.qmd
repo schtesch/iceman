@@ -1,6 +1,5 @@
 ---
 title: "Concept and scope of ICEMAN"
-description: "Conceptual scope and interpretation principles for ICEMAN credibility assessments."
 ---
 
 **The assessment assumes scepticism regarding possible effect modification.** The instrument reflects the generally sceptical view on effect modification found in the theoretical literature and supported by meta-research, including the very small proportion of subgroup explorations that show apparent effect modification. Moreover, attempts to replicate subgroup effects are rare and, if undertaken, rarely successful. [@Wallach2017evaluation-0001]

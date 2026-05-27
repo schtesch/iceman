@@ -1,7 +1,5 @@
 ---
 title: "ICEMAN for Meta-analyses"
-description: "Item-by-item guidance for applying ICEMAN to apparent effect modification in meta-analyses of randomized controlled trials."
-toc-depth: 3
 ---
 
 ## 1 — Is the analysis of effect modification based on comparison within rather than between trials? {#meta-item1}
@@ -251,7 +249,7 @@ Recommended strategy:
 | Moderate | Likely effect modification | Use separate estimates; note remaining uncertainty |
 | High | Very likely effect modification | Use separate estimates for each subgroup |
 
-[Practical considerations](practical.qmd) provides more suggestions for using and presenting ICEMAN in context; [Concept and scope of ICEMAN](concepts.qmd) provides a more detailed justification why the scale is continuous and why low credibility suggests likely no effect modification.
+[How to use ICEMAN](index.qmd) provides more suggestions for using and presenting ICEMAN in context; [Concept and scope of ICEMAN](concepts.qmd) provides a more detailed justification why the scale is continuous and why low credibility suggests likely no effect modification.
 
 ## Worked example — Meta-analysis (cervical cancer) {#meta-example}
 

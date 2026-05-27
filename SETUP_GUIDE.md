@@ -7,8 +7,8 @@ Your project folder (`iceman-site/`) contains:
 iceman-site/
 ├── _quarto.yml          ← site config (navbar, theme, bibliography)
 ├── index.qmd            ← landing page (downloads, citation, overview)
-├── manual/              ← split users manual pages
-├── manual.qmd           ← legacy one-page manual
+├── manual/              ← split user manual pages
+├── manual.qmd           ← legacy one-page user manual
 ├── tool.qmd             ← interactive assessment forms
 ├── references.bib       ← your 149 BibTeX references
 ├── manual_numbering.csv ← PDF number → BibTeX key mapping
@@ -57,26 +57,26 @@ pip install jupyter
 
 Copy the entire `iceman-site/` folder to wherever you keep your projects.
 
-Also copy into the folder root:
-- `ICEMAN manual .pdf`
-- `ICEMAN RCT 1.1 (6).docx`
-- `ICEMAN MA 1.1 (8).docx`
+Also copy into the `files/` folder:
+- `iceman-rct-form.docx`
+- `iceman-meta-analysis-form.docx`
+- `iceman-table-templates.docx`
 
 These are listed under `project.resources` in `_quarto.yml` so Quarto copies them into `docs/` for download.
 
 ---
 
-## Step 4 — Add citation keys to the manual (optional but recommended)
+## Step 4 — Add citation keys to the user manual (optional but recommended)
 
 Your CSV maps PDF reference numbers (1–149) to BibTeX keys.
-For example, reference [60] in the manual = `collaborators2011importance` in your .bib file.
+For example, reference [60] in the user manual = `collaborators2011importance` in your .bib file.
 
-To make references clickable in the manual, you can add inline citations like:
+To make references clickable in the user manual, you can add inline citations like:
 ```
 [@Hahn2000assessing-0001]
 ```
 
-The manual pages in `manual/` use the bibliography configured in `_quarto.yml`;
+The user manual pages in `manual/` use the bibliography configured in `_quarto.yml`;
 Quarto will automatically render citations using Vancouver style.
 
 ---
@@ -153,7 +153,7 @@ To add actual fillable PDF forms for download:
 | Site title / navbar links | `_quarto.yml` |
 | Colours and fonts | `assets/custom.css` |
 | Landing page text / citation | `index.qmd` |
-| Manual content | `manual/*.qmd` |
+| User manual content | `manual/*.qmd` |
 | Assessment form items | `tool.qmd` |
 | Add a new page | Create `newpage.qmd`, add to `_quarto.yml` navbar |
 

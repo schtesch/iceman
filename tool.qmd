@@ -254,7 +254,7 @@ textarea.comment-box {
   </div>
   <div class="fgroup" style="margin-bottom:0.75rem">
     <div class="field-label-row">
-      <label>Does the analysis suggest a possible effect modification (interaction p &lt; 0.1)?</label>
+      <label>Does the analysis suggest a possible effect modification (interaction p ≤ 0.1)?</label>
       <button class="tip-trigger" data-tip="possible">?</button>
     </div>
     <select id="r-possible">
@@ -263,7 +263,7 @@ textarea.comment-box {
       <option value="no">No, stop here</option>
     </select>
     <div id="r-no-warn" class="no-warn">
-      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction p &lt; 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="iceman-manual">See manual for scope of ICEMAN →</a>
+      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction p ≤ 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="iceman-manual">See user manual for scope of ICEMAN →</a>
     </div>
   </div>
 
@@ -337,7 +337,7 @@ textarea.comment-box {
   </div>
   <div class="fgroup" style="margin-bottom:0.75rem">
     <div class="field-label-row">
-      <label>Does the analysis suggest a possible effect modification (interaction p &lt; 0.1)?</label>
+      <label>Does the analysis suggest a possible effect modification (interaction or meta-regression p ≤ 0.1)?</label>
       <button class="tip-trigger" data-tip="possible">?</button>
     </div>
     <select id="m-possible">
@@ -346,7 +346,7 @@ textarea.comment-box {
       <option value="no">No, stop here</option>
     </select>
     <div id="m-no-warn" class="no-warn">
-      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction or meta-regression p &lt; 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="iceman-manual">See manual for scope of ICEMAN →</a>
+      <strong>Note:</strong> ICEMAN was developed to assess the credibility of a <em>suggested</em> effect modification (interaction or meta-regression p ≤ 0.1). It does not apply when there is no suggestion of effect modification. Assessing the credibility of an <em>absence</em> of effect modification requires a different approach not covered by ICEMAN. <a href="manual/concepts.html" target="iceman-manual">See user manual for scope of ICEMAN →</a>
     </div>
   </div>
 
@@ -419,8 +419,8 @@ const RCT_PRELIM = {
     ref:      { text: 'Link this form to the trial — e.g. author-year citation, DOI, trial acronym, or registry number. You may also note the comparison of interest.', anchor: '#prelim-ref' },
     outcome:  { text: 'ICEMAN applies to one outcome at a time. Specify the outcome and, where relevant, the time-point of assessment (e.g. mortality at 1 year).', anchor: '#prelim-outcome' },
     measure:  { text: 'Specify one effect measure (e.g. relative risk, risk difference, hazard ratio). Credibility ratings can differ between relative and absolute measures — complete a separate form for each.', anchor: '#prelim-measure' },
-    modifier: { text: 'State one potential effect modifier — a patient or intervention characteristic. Note: ICEMAN does not apply to effect modifiers measured after randomisation (e.g. another outcome), with exceptions (see manual).', anchor: '#prelim-modifier' },
-    prerando: { text: 'ICEMAN applies to modifiers assessed before or at randomisation (e.g. baseline variables). Post-randomisation modifiers require different methods. See the handbook for exceptions.', anchor: '#prelim-prerando' },
+    modifier: { text: 'State one potential effect modifier — a patient or intervention characteristic. Note: ICEMAN does not apply to effect modifiers measured after randomisation (e.g. another outcome), with exceptions (see user manual).', anchor: '#prelim-modifier' },
+    prerando: { text: 'ICEMAN applies to modifiers assessed before or at randomisation (e.g. baseline variables). Post-randomisation modifiers require different methods. See the user manual for exceptions.', anchor: '#prelim-prerando' },
     possible: { text: 'ICEMAN applies when the statistical analysis shows at least some signal of possible effect modification, such as an interaction p-value of 0.1 or smaller. Do not apply ICEMAN when the p-value is larger than 0.1, or when the data suggest no effect modification.', anchor: '#prelim-possible' },
   },
 };
@@ -437,8 +437,8 @@ const META_PRELIM = {
     outcome:  { text: 'ICEMAN applies to one outcome at a time. Specify the outcome and, where relevant, the time-point of assessment (e.g. mortality at 1 year).', anchor: '#prelim-outcome' },
     measure:  { text: 'Specify one effect measure (e.g. relative risk, risk difference, hazard ratio). Credibility ratings can differ between relative and absolute measures — complete a separate form for each.', anchor: '#prelim-measure' },
     modifier: { text: 'State one potential effect modifier — a patient, intervention, or study characteristic (e.g. risk of bias, follow-up length). Note: ICEMAN does not apply when the modifier is another outcome.', anchor: '#prelim-modifier' },
-    prerando: { text: 'ICEMAN applies to modifiers assessed before or at randomisation. For meta-analyses, study-level characteristics (e.g. risk of bias) are also eligible. See the handbook for exceptions.', anchor: '#prelim-prerando' },
-    possible: { text: 'Apply ICEMAN only when interaction or meta-regression p < 0.1. With p ≥ 0.1, use the overall effect estimate and state that no ICEMAN assessment was performed.', anchor: '#prelim-possible' },
+    prerando: { text: 'ICEMAN applies to modifiers assessed before or at randomisation. For meta-analyses, study-level characteristics (e.g. risk of bias) are also eligible. See the user manual for exceptions.', anchor: '#prelim-prerando' },
+    possible: { text: 'Apply ICEMAN only when interaction or meta-regression p ≤ 0.1. With p > 0.1, use the overall effect estimate and state that no ICEMAN assessment was performed.', anchor: '#prelim-possible' },
   },
 };
 
@@ -447,7 +447,7 @@ const META_PRELIM = {
 const GENERAL_TIPS = {
   'study-type': {
     text: 'Select whether you assess effect modification in an individual randomized controlled trial or a meta-analysis of trials. For other study types, such as cohort studies or meta-analyses of observational studies, choose the version that fits best and lower your overall credibility rating to reflect the additional uncertainty.',
-    anchor: 'manual/index.html',
+    anchor: 'manual/preliminary.html',
   },
 };
 
@@ -495,11 +495,11 @@ function showTip(btn) {
       const tip = (isRct ? RCT_PRELIM : META_PRELIM).tips[key];
       if (!tip) return;
       tipText = tip.text;
-      manualHref = 'manual/index.html' + tip.anchor;
+      manualHref = 'manual/preliminary.html' + tip.anchor;
     }
   }
   const bodyHtml = tipText ? `<div style="margin:0">${tipText}</div>` : '';
-  card.innerHTML = `${bodyHtml}<a class="tip-card-link" href="${manualHref}" target="iceman-manual">Open in handbook for more explanation →</a>`;
+  card.innerHTML = `${bodyHtml}<a class="tip-card-link" href="${manualHref}" target="iceman-manual">Open in user manual for more explanation →</a>`;
   const r = btn.getBoundingClientRect();
   card.style.left = Math.min(r.left, window.innerWidth - 332) + 'px';
   card.style.top  = (r.bottom + 8) + 'px';
@@ -1306,7 +1306,7 @@ function computeOverallRating(p, opts = {}) {
     if (possible !== 'yes') {
       return {
         blocked: true,
-        reason: 'ICEMAN not applied: interaction p-value ≥ 0.1.',
+        reason: 'ICEMAN not applied: interaction p-value > 0.1.',
         D: null, Pm: null, Pp: null, PP: null, N: null,
       };
     }
@@ -1383,7 +1383,7 @@ function computeOverallRating(p, opts = {}) {
 
 // ── Self-test — pure logic, no DOM ────────────────────────────────────────────
 // Cases 13–15 require DOM state; verify manually:
-//   13 & 14. possible != 'yes' → "ICEMAN not applied: interaction p-value ≥ 0.1."
+//   13 & 14. possible != 'yes' → "ICEMAN not applied: interaction p-value > 0.1."
 //   15.      Any applicable core item unanswered → "one or more core ICEMAN items are missing"
 //
 // Note: the spec's example values for cases 6, 7, 9 differ slightly from the
@@ -1655,7 +1655,7 @@ async function genDocx(p) {
   // Block 4: possible="no" — warn + confirm override
   if (document.getElementById(`${p}-possible`).value === 'no') {
     const proceed = window.confirm(
-      'ICEMAN was developed to assess the credibility of a suggested effect modification (interaction p < 0.1).\n\n' +
+      'ICEMAN was developed to assess the credibility of a suggested effect modification (interaction p ≤ 0.1).\n\n' +
       'It does not apply when there is no suggestion of effect modification. Assessing the credibility of an absence of effect modification requires a different approach.\n\n' +
       'Download anyway?'
     );
