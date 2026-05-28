@@ -73,6 +73,17 @@
     ]
   },
   {
+    "objectID": "manual/index.html#users-and-applications",
+    "href": "manual/index.html#users-and-applications",
+    "title": "How to use ICEMAN",
+    "section": "",
+    "text": "Users of ICEMAN include\n\nTrial investigators who are planning or considering the results of a subgroup analysis;\nMeta-analysts who are planning or considering the results of a subgroup analysis;\nAuthors of systematic reviews and clinical practice guidelines who assess subgroup claims made in published reports of trials or meta-analyses;\nJournal editors, referees, methods consultants, and others concerned with the quality of subgroup analyses in trials or meta-analyses.",
+    "crumbs": [
+      "User manual",
+      "How to use ICEMAN"
+    ]
+  },
+  {
     "objectID": "manual/index.html#assessment-in-duplicate",
     "href": "manual/index.html#assessment-in-duplicate",
     "title": "How to use ICEMAN",
@@ -470,17 +481,6 @@
     "crumbs": [
       "User manual",
       "ICEMAN for RCTs"
-    ]
-  },
-  {
-    "objectID": "manual/index.html#users-and-applications",
-    "href": "manual/index.html#users-and-applications",
-    "title": "How to use ICEMAN",
-    "section": "",
-    "text": "Users of ICEMAN include\n\nTrial investigators who are planning or considering the results of a subgroup analysis;\nMeta-analysts who are planning or considering the results of a subgroup analysis;\nAuthors of systematic reviews and clinical practice guidelines who assess subgroup claims made in published reports of trials or meta-analyses;\nJournal editors, referees, methods consultants, and others concerned with the quality of subgroup analyses in trials or meta-analyses.",
-    "crumbs": [
-      "User manual",
-      "How to use ICEMAN"
     ]
   }
 ]
