@@ -1,26 +1,27 @@
 /* ── ICEMAN custom styles ── */
 
 :root {
-  --iceman-blue: #185FA5;
+  --iceman-primary: #3B2140;
   --iceman-teal: #0F6E56;
-  --iceman-light: #E6F1FB;
+  --iceman-light: #DCEEF6;
 }
 
 /* Navbar branding */
 .navbar-brand { font-weight: 600; letter-spacing: -0.02em; }
+.navbar-brand .navbar-logo { max-height: 34px; height: 34px; width: auto; }
 .navbar-nav .nav-link { padding-left: 0.6rem; padding-right: 0.6rem; }
 
 /* Landing page hero */
 .hero {
-  background: linear-gradient(135deg, #EEF5FC 0%, #EAF7F2 100%);
+  background: linear-gradient(135deg, #EEF7FB 0%, #F4EFF6 100%);
   border-radius: 14px;
   padding: 2.75rem 2.5rem 2.25rem;
   margin-bottom: 2.5rem;
-  box-shadow: 0 2px 12px rgba(24,95,165,0.07);
+  box-shadow: 0 2px 12px rgba(59,33,64,0.07);
 }
-.hero-intro { margin-bottom: 1.25rem; }
-.hero-intro h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--iceman-blue); }
-.hero-subtitle { font-size: 1rem; color: #666; margin-bottom: 0.5rem; letter-spacing: 0.01em; }
+.hero-intro { margin-bottom: 1.75rem; }
+.hero-logo { margin: 0.5rem 0 0; }
+.hero-logo img { display: block; width: 100%; max-width: 440px; height: auto; }
 .hero .lead { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0; max-width: 680px; }
 
 /* Hero action cards */
@@ -39,18 +40,18 @@
   align-items: center;
   text-align: center;
   background: #fff;
-  color: var(--iceman-blue);
-  border: 1px solid #c8ddf2;
+  color: var(--iceman-primary);
+  border: 1px solid #D9CFDE;
   border-radius: 10px;
   padding: 1rem 1.1rem 0.9rem;
   text-decoration: none;
   transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
 }
 .hero-card:hover {
-  background: var(--iceman-blue);
+  background: var(--iceman-primary);
   color: #fff;
-  border-color: var(--iceman-blue);
-  box-shadow: 0 4px 16px rgba(24,95,165,0.18);
+  border-color: var(--iceman-primary);
+  box-shadow: 0 4px 16px rgba(59,33,64,0.18);
   transform: translateY(-2px);
   text-decoration: none;
 }
@@ -82,7 +83,7 @@
 /* Citation box */
 .cite-box {
   background: #f8f9fa;
-  border-left: 4px solid var(--iceman-blue);
+  border-left: 4px solid var(--iceman-primary);
   border-radius: 0 8px 8px 0;
   padding: 1rem 1.25rem;
   font-size: 0.9rem;
@@ -95,8 +96,18 @@
 
 /* User manual page */
 .manual-section { margin-bottom: 2.5rem; }
-.response-table th { background: #f0f4f8; }
+.response-table th { background: #F4EFF6; }
 /* see user manual accordion section below */
+
+/* ICEMAN tool page — title with logo mark */
+.tool-page .quarto-title h1.title {
+  display: flex; align-items: center; gap: 0.6rem;
+  color: var(--iceman-primary);
+}
+.tool-page .quarto-title h1.title::before {
+  content: ""; flex-shrink: 0; width: 2.75rem; height: 2.75rem;
+  background: url("logo/svg/iceman-mark.svg") center / contain no-repeat;
+}
 
 /* ICEMAN tool page — radio options */
 .iceman-item {
@@ -107,7 +118,7 @@
   background: #fff;
 }
 .iceman-item .item-num {
-  font-size: 0.75rem; font-weight: 600; color: var(--iceman-blue);
+  font-size: 0.75rem; font-weight: 600; color: var(--iceman-primary);
   text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;
 }
 .iceman-item .item-q { font-weight: 600; margin-bottom: 0.4rem; }
@@ -119,8 +130,8 @@
   border: 1px solid transparent; margin-bottom: 4px;
   transition: all 0.1s;
 }
-.radio-row:hover { background: #f0f4f8; border-color: #b8d0e8; }
-.radio-row.selected { background: #e6f1fb; border-color: var(--iceman-blue); }
+.radio-row:hover { background: #F4EFF6; border-color: #D9CFDE; }
+.radio-row.selected { background: #DCEEF6; border-color: var(--iceman-primary); }
 .radio-row input[type=radio] { margin-top: 3px; flex-shrink: 0; }
 .radio-row .rl { font-weight: 600; font-size: 0.9rem; }
 .radio-row .rd { font-size: 0.82rem; color: #666; }
@@ -170,8 +181,8 @@ input.cred-range {
 
 /* User manual link badges in tool */
 .manual-link {
-  font-size: 0.75rem; color: var(--iceman-blue);
-  text-decoration: none; border: 1px solid var(--iceman-blue);
+  font-size: 0.75rem; color: var(--iceman-primary);
+  text-decoration: none; border: 1px solid var(--iceman-primary);
   border-radius: 4px; padding: 1px 7px; margin-left: 8px;
 }
 .manual-link:hover { background: var(--iceman-light); }
@@ -194,7 +205,7 @@ mark { background: #fff3b0; border-radius: 2px; }
   flex-wrap: wrap;
 }
 .site-footer a { color: #888; text-decoration: underline; }
-.site-footer a:hover { color: var(--iceman-blue); }
+.site-footer a:hover { color: var(--iceman-primary); }
 .footer-sep { color: #ccc; }
 
 /* ── User manual accordion ── */
@@ -220,13 +231,13 @@ mark { background: #fff3b0; border-radius: 2px; }
 .acc-btn::before {
   content: '▶';
   font-size: 0.65rem;
-  color: #185FA5;
+  color: #3B2140;
   flex-shrink: 0;
   transition: transform 0.2s;
 }
 .acc-btn:not(.collapsed)::before { transform: rotate(90deg); }
-.acc-btn:hover { background: #f8f9fa; color: #185FA5; }
-.acc-btn:focus { outline: 2px solid #185FA5; outline-offset: -2px; }
+.acc-btn:hover { background: #f8f9fa; color: #3B2140; }
+.acc-btn:focus { outline: 2px solid #3B2140; outline-offset: -2px; }
 
 .acc-body-inner {
   padding: 1.5rem 1.25rem 1.75rem;
@@ -235,7 +246,7 @@ mark { background: #fff3b0; border-radius: 2px; }
 
 /* ── Example block redesign: left-border accent ── */
 .example-block {
-  border-left: 3px solid #185FA5;
+  border-left: 3px solid #3B2140;
   padding: 0.6rem 1rem 0.6rem 1.1rem;
   margin: 1.75rem 0;
   background: transparent;
@@ -261,7 +272,6 @@ mark { background: #fff3b0; border-radius: 2px; }
 /* Mobile */
 @media (max-width: 600px) {
   .hero { padding: 1.75rem 1.25rem 1.5rem; }
-  .hero-intro h1 { font-size: 2rem; }
   .hero-cards-row { flex-direction: column; }
   .hero-cards-top .hero-card,
   .hero-cards-bottom .hero-card { max-width: 100%; }

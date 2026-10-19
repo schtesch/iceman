@@ -11,13 +11,26 @@ project:
     - "robots.txt"
     - "llms.txt"
     - "sitemap.xml"
+    - "favicon.ico"
+    - "apple-touch-icon.png"
+    - "assets/logo/png/iceman-project-card-1200x630.png"
 
 website:
   title: "ICEMAN"
   site-url: "https://www.iceman.help"
-  favicon: assets/favicon.svg
+  favicon: favicon.ico
+  open-graph:
+    image: /assets/logo/png/iceman-project-card-1200x630.png
+    image-width: 1200
+    image-height: 630
+  twitter-card:
+    image: /assets/logo/png/iceman-project-card-1200x630.png
+    card-style: summary_large_image
   description: "ICEMAN is an instrument for assessing the credibility of effect modification analyses in randomized trials and meta-analyses."
   navbar:
+    title: false
+    logo: assets/logo/svg/iceman-lockup-compact-header.svg
+    logo-alt: "ICEMAN"
     left:
       - text: "Home"
         href: index.qmd
@@ -100,8 +113,9 @@ link-citations: true
 
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, assets/iceman.scss]
     css: assets/custom.css
+    include-in-header: assets/head-icons.html
     toc: true
     toc-depth: 3
     anchor-sections: false

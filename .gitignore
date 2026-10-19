@@ -16,3 +16,7 @@ handbook/claude/settings.json.local
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Temporary assistant worktrees and generated copies.
+/.claude/worktrees/
+/docs/.claude/worktrees/

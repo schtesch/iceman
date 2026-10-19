@@ -1,6 +1,7 @@
 ---
-title: "ICEMAN Assessment Tool"
+title: "ICEMAN online tool"
 toc: false
+body-classes: tool-page
 ---
 
 ```{=html}
@@ -11,7 +12,7 @@ toc: false
   background:transparent; cursor:pointer; font-size:0.9rem; font-weight:500;
   transition:all 0.15s;
 }
-.tab-btn.active { background:#185FA5; color:#fff; border-color:#185FA5; }
+.tab-btn.active { background:#3B2140; color:#fff; border-color:#3B2140; }
 .tab-pane { display:none; }
 .tab-pane.active { display:block; }
 
@@ -20,24 +21,24 @@ toc: false
   padding:1.25rem 1.25rem 1rem; margin-bottom:1.25rem; background:#fff;
 }
 .item-num {
-  font-size:0.72rem; font-weight:700; color:#185FA5;
+  font-size:0.72rem; font-weight:700; color:#3B2140;
   text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.2rem;
 }
 .item-q { font-weight:600; font-size:1rem; margin-bottom:0.3rem; }
 .item-hint { font-size:0.84rem; color:#666; margin-bottom:1rem; line-height:1.5; }
 .manual-link {
-  font-size:0.72rem; color:#185FA5; text-decoration:none;
-  border:1px solid #185FA5; border-radius:4px; padding:1px 7px; margin-left:8px;
+  font-size:0.72rem; color:#3B2140; text-decoration:none;
+  border:1px solid #3B2140; border-radius:4px; padding:1px 7px; margin-left:8px;
 }
-.manual-link:hover { background:#e6f1fb; }
+.manual-link:hover { background:#DCEEF6; }
 
 .radio-row {
   display:flex; align-items:flex-start; gap:10px;
   padding:8px 10px; border-radius:7px; cursor:pointer;
   border:1px solid transparent; margin-bottom:4px; transition:all 0.1s;
 }
-.radio-row:hover { background:#f0f4f8; border-color:#b8d0e8; }
-.radio-row.selected { background:#e6f1fb; border-color:#185FA5; }
+.radio-row:hover { background:#F4EFF6; border-color:#D9CFDE; }
+.radio-row.selected { background:#DCEEF6; border-color:#3B2140; }
 .radio-row input[type=radio] { margin-top:3px; flex-shrink:0; }
 .rl { font-weight:600; font-size:0.9rem; }
 .rl-red    { color:#c0392b; }
@@ -103,7 +104,7 @@ textarea.comment-box {
   padding:1.25rem; margin-bottom:1.25rem; background:#f4f8fd;
 }
 .live-summary-title {
-  font-size:0.72rem; font-weight:700; color:#185FA5;
+  font-size:0.72rem; font-weight:700; color:#3B2140;
   text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.75rem;
 }
 .summary-row {
@@ -118,13 +119,13 @@ textarea.comment-box {
 .field-label-row { display:flex; align-items:center; margin-bottom:4px; }
 .field-label-row label { margin-bottom:0; }
 .tip-trigger {
-  font-size:0.72rem; font-weight:700; color:#185FA5; cursor:pointer;
-  border:1px solid #185FA5; border-radius:50%;
+  font-size:0.72rem; font-weight:700; color:#3B2140; cursor:pointer;
+  border:1px solid #3B2140; border-radius:50%;
   width:18px; height:18px; padding:0; line-height:1;
   display:inline-flex; align-items:center; justify-content:center;
   background:transparent; flex-shrink:0; margin-left:8px;
 }
-.tip-trigger:hover { background:#e6f1fb; }
+.tip-trigger:hover { background:#DCEEF6; }
 #tip-card {
   display:none; position:fixed; z-index:9999;
   background:#fff; border:1px solid #c5d8ef; border-radius:10px;
@@ -134,7 +135,7 @@ textarea.comment-box {
 }
 .tip-card-link {
   display:block; margin-top:0.75rem; font-size:0.78rem;
-  color:#185FA5; text-decoration:none;
+  color:#3B2140; text-decoration:none;
   border-top:1px solid #dee2e6; padding-top:0.75rem;
 }
 .tip-card-link:hover { text-decoration:underline; }
@@ -146,9 +147,9 @@ textarea.comment-box {
 }
 .action-row { display:flex; gap:10px; margin-top:1.5rem; flex-wrap:wrap; }
 .btn-tool { padding:9px 20px; border-radius:8px; border:1px solid #ced4da; cursor:pointer; font-size:0.9rem; font-weight:500; background:#fff; }
-.btn-tool.primary { background:#185FA5; color:#fff; border-color:#185FA5; }
+.btn-tool.primary { background:#3B2140; color:#fff; border-color:#3B2140; }
 .btn-tool.primary:hover { background:#0d4a80; }
-.btn-tool:hover { background:#f0f4f8; }
+.btn-tool:hover { background:#F4EFF6; }
 .stopped-msg { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:1rem 1.25rem; margin-top:1rem; font-size:0.9rem; }
 .field-invalid { border:2px solid #c0392b !important; background:#fff8f8 !important; }
 .item-invalid { border-color:#c0392b !important; box-shadow:0 0 0 3px #fdeaea; }
@@ -157,7 +158,7 @@ textarea.comment-box {
 .inline-warn { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:0.75rem 1rem; margin:0.75rem 0; font-size:0.875rem; display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem; }
 .inline-warn button { background:none; border:none; cursor:pointer; font-size:1.1rem; color:#888; padding:0; flex-shrink:0; line-height:1; }
 .no-warn { display:none; background:#fef3cd; border:1px solid #e6a817; border-left:4px solid #e6a817; border-radius:0 8px 8px 0; padding:0.85rem 1rem; margin-top:0.75rem; font-size:0.875rem; line-height:1.55; color:#5a3e00; }
-.no-warn a { color:#185FA5; }
+.no-warn a { color:#3B2140; }
 #val-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:10000; align-items:center; justify-content:center; }
 #val-modal.open { display:flex; }
 #val-modal-box { background:#fff; border-radius:12px; padding:1.5rem 1.75rem; max-width:400px; width:90%; border-top:4px solid #c0392b; }

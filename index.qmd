@@ -1,7 +1,7 @@
 ---
 title: ""
 toc: false
-image: assets/og-image.png
+image: /assets/logo/png/iceman-project-card-1200x630.png
 open-graph:
   title: "ICEMAN"
   description: "A structured instrument for assessing the credibility of subgroup effects in randomized trials and meta-analyses."
@@ -9,13 +9,12 @@ open-graph:
 twitter-card:
   title: "ICEMAN"
   description: "A structured instrument for assessing the credibility of subgroup effects in randomized trials and meta-analyses."
-  card-style: summary
+  card-style: summary_large_image
 ---
 
 ```{=html}
 <div class="hero-intro">
-  <h1>ICEMAN</h1>
-  <p class="hero-subtitle">Instrument to assess the credibility of effect modification analyses</p>
+  <h1 class="hero-logo"><img src="assets/logo/svg/iceman-lockup-hero.svg" alt="ICEMAN: Instrument to assess the credibility of effect modification analyses" width="454" height="117"></h1>
 </div>
 <div class="hero">
   <p class="lead">Quick links</p>

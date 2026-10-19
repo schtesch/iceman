@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+<title>ICEMAN</title>
+<rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="#A9D0E1"></rect>
+<rect x="1" y="1" width="29" height="29" rx="5.5" fill="#DCEEF6"></rect>
+<rect x="18" y="3" width="1" height="26" fill="#9F89A6"></rect>
+<polygon points="11.5,7 15.5,3 19.5,7 15.5,11" fill="#3B2140"></polygon>
+<rect x="4" y="15" width="12" height="2" fill="#3B2140"></rect>
+<rect x="7" y="13" width="6" height="6" fill="#3B2140"></rect>
+<rect x="15" y="24" width="12" height="2" fill="#3B2140"></rect>
+<rect x="18" y="22" width="6" height="6" fill="#3B2140"></rect>
+<rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="none" stroke="#79AEC5" stroke-width="1"></rect>
+</svg>
