@@ -159,6 +159,8 @@ textarea.comment-box {
 .inline-warn button { background:none; border:none; cursor:pointer; font-size:1.1rem; color:#888; padding:0; flex-shrink:0; line-height:1; }
 .no-warn { display:none; background:#fef3cd; border:1px solid #e6a817; border-left:4px solid #e6a817; border-radius:0 8px 8px 0; padding:0.85rem 1rem; margin-top:0.75rem; font-size:0.875rem; line-height:1.55; color:#5a3e00; }
 .no-warn a { color:#3B2140; }
+.exc-note { display:none; background:#EEF7FB; border:1px solid #A9D0E1; border-left:4px solid #79AEC5; border-radius:0 8px 8px 0; padding:0.85rem 1rem; margin-top:0.75rem; font-size:0.875rem; line-height:1.55; color:#2B3A42; }
+.exc-note a { color:#3B2140; }
 #val-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:10000; align-items:center; justify-content:center; }
 #val-modal.open { display:flex; }
 #val-modal-box { background:#fff; border-radius:12px; padding:1.5rem 1.75rem; max-width:400px; width:90%; border-top:4px solid #c0392b; }
@@ -231,6 +233,31 @@ textarea.comment-box {
   <div class="prelim-grid">
     <div class="fgroup">
       <div class="field-label-row">
+        <label>Effect modifier</label>
+        <button class="tip-trigger" data-tip="modifier">?</button>
+      </div>
+      <input type="text" id="r-mod">
+    </div>
+    <div class="fgroup">
+      <div class="field-label-row">
+        <label>Was the effect modifier measured before or at randomization?</label>
+        <button class="tip-trigger" data-tip="prerando">?</button>
+      </div>
+      <select id="r-prerando">
+        <option value="">Select…</option>
+        <option value="yes">Yes, continue</option>
+        <option value="exception">No, but an exception applies (see user manual)</option>
+        <option value="no">No, stop here and refer to user manual</option>
+      </select>
+      <div id="r-prerando-exc" class="exc-note">
+        <strong>Exception:</strong> ICEMAN still applies to an effect modifier measured after randomization if it is a non-modifiable characteristic such as sex or age. <a href="manual/preliminary.html#prelim-prerando" target="iceman-manual">See user manual →</a>
+      </div>
+      <div id="r-prerando-warn" class="no-warn">
+        <strong>Note:</strong> ICEMAN applies to effect modifiers measured before or at randomization. If the effect modifier was measured after randomization (e.g. an intermediate outcome), the analysis of effect modification is complicated and potentially misleading, and requires different methods not covered by ICEMAN. <a href="manual/preliminary.html#prelim-prerando" target="iceman-manual">See user manual for further instructions →</a>
+      </div>
+    </div>
+    <div class="fgroup">
+      <div class="field-label-row">
         <label>Outcome and time-point</label>
         <button class="tip-trigger" data-tip="outcome">?</button>
       </div>
@@ -243,13 +270,6 @@ textarea.comment-box {
       </div>
       <input type="text" id="r-measure">
     </div>
-  </div>
-  <div class="fgroup" style="margin-bottom:0.75rem">
-    <div class="field-label-row">
-      <label>Effect modifier</label>
-      <button class="tip-trigger" data-tip="modifier">?</button>
-    </div>
-    <input type="text" id="r-mod">
   </div>
   <div class="fgroup" style="margin-bottom:0.75rem">
     <div class="field-label-row">
@@ -314,6 +334,31 @@ textarea.comment-box {
   <div class="prelim-grid">
     <div class="fgroup">
       <div class="field-label-row">
+        <label>Effect modifier</label>
+        <button class="tip-trigger" data-tip="modifier">?</button>
+      </div>
+      <input type="text" id="m-mod">
+    </div>
+    <div class="fgroup">
+      <div class="field-label-row">
+        <label>Was the effect modifier measured before or at randomization?</label>
+        <button class="tip-trigger" data-tip="prerando">?</button>
+      </div>
+      <select id="m-prerando">
+        <option value="">Select…</option>
+        <option value="yes">Yes, continue</option>
+        <option value="exception">No, but an exception applies (see user manual)</option>
+        <option value="no">No, stop here and refer to user manual</option>
+      </select>
+      <div id="m-prerando-exc" class="exc-note">
+        <strong>Exception:</strong> ICEMAN still applies to an effect modifier measured after randomization if (1) it is a non-modifiable characteristic such as sex or age, or (2) it is a study characteristic such as risk of bias, length of follow-up, or mean received dose. <a href="manual/preliminary.html#prelim-prerando" target="iceman-manual">See user manual →</a>
+      </div>
+      <div id="m-prerando-warn" class="no-warn">
+        <strong>Note:</strong> ICEMAN applies to effect modifiers measured before or at randomization. If the effect modifier was measured after randomization (e.g. an intermediate outcome), the analysis of effect modification is complicated and potentially misleading, and requires different methods not covered by ICEMAN. <a href="manual/preliminary.html#prelim-prerando" target="iceman-manual">See user manual for further instructions →</a>
+      </div>
+    </div>
+    <div class="fgroup">
+      <div class="field-label-row">
         <label>Outcome and time-point</label>
         <button class="tip-trigger" data-tip="outcome">?</button>
       </div>
@@ -326,13 +371,6 @@ textarea.comment-box {
       </div>
       <input type="text" id="m-measure">
     </div>
-  </div>
-  <div class="fgroup" style="margin-bottom:0.75rem">
-    <div class="field-label-row">
-      <label>Effect modifier</label>
-      <button class="tip-trigger" data-tip="modifier">?</button>
-    </div>
-    <input type="text" id="m-mod">
   </div>
   <div class="fgroup" style="margin-bottom:0.75rem">
     <div class="field-label-row">
@@ -418,8 +456,8 @@ const RCT_PRELIM = {
     ref:      { text: 'Link this form to the trial — e.g. author-year citation, DOI, trial acronym, or registry number. You may also note the comparison of interest.', anchor: '#prelim-ref' },
     outcome:  { text: 'ICEMAN applies to one outcome at a time. Specify the outcome and, where relevant, the time-point of assessment (e.g. mortality at 1 year).', anchor: '#prelim-outcome' },
     measure:  { text: 'Specify one effect measure (e.g. relative risk, risk difference, hazard ratio). Credibility ratings can differ between relative and absolute measures — complete a separate form for each.', anchor: '#prelim-measure' },
-    modifier: { text: 'State one potential effect modifier — a patient or intervention characteristic. Note: ICEMAN does not apply to effect modifiers measured after randomisation (e.g. another outcome), with exceptions (see user manual).', anchor: '#prelim-modifier' },
-    prerando: { text: 'ICEMAN applies to modifiers assessed before or at randomisation (e.g. baseline variables). Post-randomisation modifiers require different methods. See the user manual for exceptions.', anchor: '#prelim-prerando' },
+    modifier: { text: 'State one potential effect modifier — a patient or intervention characteristic. Note: ICEMAN does not apply when the modifier is another outcome.', anchor: '#prelim-modifier' },
+    prerando: { text: 'ICEMAN applies to effect modifiers measured before or at randomization (e.g. baseline variables). Effect modifiers measured after randomization (e.g. an intermediate outcome) require different methods. <strong>Exception:</strong> ICEMAN still applies if the effect modifier is a non-modifiable characteristic such as sex or age.', anchor: '#prelim-prerando' },
     possible: { text: 'ICEMAN applies when the statistical analysis shows at least some signal of possible effect modification, such as an interaction p-value of 0.1 or smaller. Do not apply ICEMAN when the p-value is larger than 0.1, or when the data suggest no effect modification.', anchor: '#prelim-possible' },
   },
 };
@@ -436,7 +474,7 @@ const META_PRELIM = {
     outcome:  { text: 'ICEMAN applies to one outcome at a time. Specify the outcome and, where relevant, the time-point of assessment (e.g. mortality at 1 year).', anchor: '#prelim-outcome' },
     measure:  { text: 'Specify one effect measure (e.g. relative risk, risk difference, hazard ratio). Credibility ratings can differ between relative and absolute measures — complete a separate form for each.', anchor: '#prelim-measure' },
     modifier: { text: 'State one potential effect modifier — a patient, intervention, or study characteristic (e.g. risk of bias, follow-up length). Note: ICEMAN does not apply when the modifier is another outcome.', anchor: '#prelim-modifier' },
-    prerando: { text: 'ICEMAN applies to modifiers assessed before or at randomisation. For meta-analyses, study-level characteristics (e.g. risk of bias) are also eligible. See the user manual for exceptions.', anchor: '#prelim-prerando' },
+    prerando: { text: 'ICEMAN applies to effect modifiers measured before or at randomization (e.g. baseline variables). Effect modifiers measured after randomization (e.g. an intermediate outcome) require different methods. <strong>Exceptions:</strong> ICEMAN still applies if the effect modifier is (1) a non-modifiable characteristic such as sex or age, or (2) a study characteristic such as risk of bias, length of follow-up, or mean received dose.', anchor: '#prelim-prerando' },
     possible: { text: 'Apply ICEMAN only when interaction or meta-regression p ≤ 0.1. With p > 0.1, use the overall effect estimate and state that no ICEMAN assessment was performed.', anchor: '#prelim-possible' },
   },
 };
@@ -846,16 +884,22 @@ function switchTab(t, btn) {
   if (ph) ph.style.display = 'none';
 }
 
-// Items are always visible; these handlers clear validation state and trigger live rating.
-['r-possible','m-possible'].forEach(id => {
-  document.getElementById(id).addEventListener('change', e => {
+// Items are always visible; these handlers clear validation state, toggle the
+// note shown for each answer, and trigger live rating.
+const PRELIM_NOTES = {
+  prerando: { no: 'prerando-warn', exception: 'prerando-exc' },
+  possible: { no: 'no-warn' },
+};
+['r', 'm'].forEach(p => Object.entries(PRELIM_NOTES).forEach(([key, notes]) => {
+  document.getElementById(`${p}-${key}`).addEventListener('change', e => {
     e.target.classList.remove('field-invalid');
-    const p = id.startsWith('r-') ? 'r' : 'm';
-    const noWarn = document.getElementById(`${p}-no-warn`);
-    if (noWarn) noWarn.style.display = e.target.value === 'no' ? 'block' : 'none';
+    Object.entries(notes).forEach(([val, suffix]) => {
+      const note = document.getElementById(`${p}-${suffix}`);
+      if (note) note.style.display = e.target.value === val ? 'block' : 'none';
+    });
     tryLiveRate(p);
   });
-});
+}));
 
 document.addEventListener('click', e => {
   const row = e.target.closest('.radio-row');
@@ -994,11 +1038,13 @@ function highlightMissing(p) {
     el.classList.toggle('field-invalid', empty);
     if (empty) missingPrelim = true;
   });
-  const poss = document.getElementById(`${p}-possible`);
-  if (poss && poss.value === '') {
-    poss.classList.add('field-invalid');
-    missingPrelim = true;
-  }
+  ['prerando', 'possible'].forEach(key => {
+    const sel = document.getElementById(`${p}-${key}`);
+    if (sel && sel.value === '') {
+      sel.classList.add('field-invalid');
+      missingPrelim = true;
+    }
+  });
   const cfg = p === 'r' ? RCT_ITEMS : META_ITEMS;
   cfg.forEach((item, i) => {
     if (item.commentPlaceholder) return;
@@ -1581,8 +1627,10 @@ function resetForm(p) {
   document.querySelectorAll(`${tab} .comment-warn`).forEach(el => el.classList.remove('comment-warn'));
   const inlineWarn = document.getElementById(`${p}-inline-warn`);
   if (inlineWarn) inlineWarn.style.display = 'none';
-  const noWarn = document.getElementById(`${p}-no-warn`);
-  if (noWarn) noWarn.style.display = 'none';
+  Object.values(PRELIM_NOTES).flatMap(Object.values).forEach(suffix => {
+    const note = document.getElementById(`${p}-${suffix}`);
+    if (note) note.style.display = 'none';
+  });
   if (p === 'm') {
     [2, 3].forEach(n => {
       const card = document.getElementById(`m-q${n}`)?.closest('.iceman-item');
@@ -1634,8 +1682,8 @@ async function genDocx(p) {
   // Block 1: missing preliminary fields
   const { missingPrelim, missingItems } = highlightMissing(p);
   if (missingPrelim) {
-    showModal('Preliminary information missing', 'Please complete all preliminary fields (outcome, effect measure, effect modifier, and the interaction p-value question) before downloading.');
-    document.getElementById(`${p}-outcome`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    showModal('Preliminary information missing', 'Please complete all preliminary fields (effect modifier, measurement before or at randomization, outcome, effect measure, and the interaction p-value question) before downloading.');
+    document.getElementById(`${p}-mod`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
 
@@ -1651,7 +1699,17 @@ async function genDocx(p) {
     return;
   }
 
-  // Block 4: possible="no" — warn + confirm override
+  // Block 4: prerando="no" — warn + confirm override
+  if (document.getElementById(`${p}-prerando`).value === 'no') {
+    const proceed = window.confirm(
+      'ICEMAN applies to effect modifiers measured before or at randomization.\n\n' +
+      'You indicated that the effect modifier was measured after randomization and that no exception applies. See the user manual for further instructions.\n\n' +
+      'Download anyway?'
+    );
+    if (!proceed) return;
+  }
+
+  // Block 5: possible="no" — warn + confirm override
   if (document.getElementById(`${p}-possible`).value === 'no') {
     const proceed = window.confirm(
       'ICEMAN was developed to assess the credibility of a suggested effect modification (interaction p ≤ 0.1).\n\n' +

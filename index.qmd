@@ -52,7 +52,7 @@ twitter-card:
 
 ## Welcome! 
 
-Welcome to the web pages for ICEMAN! ICEMAN is an instrument to help researchers identify credible effect modification (also called subgroup effect, statistical interaction, moderation, or heterogeneity of treatment effects). 
+Welcome to the web pages for ICEMAN - the instrument to help researchers identify credible effect modification (also called subgroup effect, statistical interaction, moderation, or heterogeneity of treatment effects). 
 
 Users of ICEMAN include 
 
