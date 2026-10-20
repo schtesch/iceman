@@ -31,7 +31,7 @@ Users can download the fillable ICEMAN form for [RCTs](../files/iceman-rct-form.
 
 We also provide four table templates for summarising one or more ICEMAN assessments in a publication. [Download all templates (.docx)](../files/iceman-table-templates.docx)
 
-**Legend for all tables:** (--) definitely reduces credibility; (-) probably reduces credibility or unclear; (+) probably increases credibility; (++) definitely increases credibility. Not applicable items receive no code.
+**Legend for all tables:** (--) definitely reduces credibility; (-) probably reduces credibility or unclear; (+) probably increases credibility; (++) definitely increases credibility.
 
 
 **Template1 — Single assessment (RCT).** Full item-level table for one outcome, effect measure, and effect modifier in an RCT.

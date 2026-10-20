@@ -10,6 +10,6 @@
 | 6 Additional credibility considerations? | None | No additional concerns. |
 | **Overall credibility**  | **Moderate:** likely effect modification; use separate subgroup effects, but note uncertainty) | Multiplicity lowered credibility. |
 
-(--) definitely reduces credibility; (-) probably reduces credibility or unclear; (+) probably increases credibility; (++) definitely increases credibility. Not applicable items receive no code.
+(--) definitely reduces credibility; (-) probably reduces credibility or unclear; (+) probably increases credibility; (++) definitely increases credibility.
 
 Generated with ICEMAN web tool for RCTs 1.1 · www.ICEMAN.help · Schandelmaier et al. CMAJ 2020;192:E901–E906
