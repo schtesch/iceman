@@ -1800,8 +1800,519 @@ function getValLabel(name, item) {
   return opt ? opt.label : val;
 }
 
-// Pre-load docx library so it's ready by the time the user clicks
-const _docxLib = import('https://esm.sh/docx@8.5.0');
+// ── Word download ─────────────────────────────────────────────────────────────
+//
+// The download fills in the original ICEMAN form (files/*.docx) in place, so its
+// wording and layout match the published instrument, and adds the summary table
+// for reporting on a new page. A short contents block on page 1 names both parts.
+
+// Pre-load the zip library so it's ready by the time the user clicks
+const _zipLib = import('https://esm.sh/jszip@3.10.1').then(m => m.default);
+
+const W_NS   = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+const R_NS   = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships';
+const XML_NS = 'http://www.w3.org/XML/1998/namespace';
+const FORM_FILES    = { r: 'files/iceman-rct-form.docx', m: 'files/iceman-meta-analysis-form.docx' };
+const REPORTING_URL = 'https://www.iceman.help/manual/index.html#reporting';
+const ANSWER_COLOR  = 'FF0000';   // entered text, in the red the form uses for its own marks
+
+// Summary table codes: (--) and (-) reduce credibility, (+) and (++) increase it
+const RESPONSE_CODES = { '1': '(--)', '2': '(-)', dec: '(-)', '3': '(+)', inc: '(+)', '4': '(++)' };
+const CODE_LEGEND    = '(--) definitely reduces credibility; (-) probably reduces credibility or unclear; ' +
+                       '(+) probably increases credibility; (++) definitely increases credibility. ' +
+                       'Not applicable items receive no code.';
+const FOOTER_CREDIT  = 'Generated with ICEMAN web tool · Version 1.1 · Schandelmaier et al. CMAJ 2020;192:E901–E906 · www.iceman.help';
+
+// Child order Word requires inside run and paragraph properties
+const RPR_ORDER = ['rStyle', 'rFonts', 'b', 'bCs', 'i', 'iCs', 'caps', 'smallCaps', 'strike', 'dstrike',
+  'outline', 'shadow', 'emboss', 'imprint', 'noProof', 'snapToGrid', 'vanish', 'webHidden', 'color',
+  'spacing', 'w', 'kern', 'position', 'sz', 'szCs', 'highlight', 'u', 'effect', 'bdr', 'shd', 'fitText',
+  'vertAlign', 'rtl', 'cs', 'em', 'lang', 'eastAsianLayout', 'specVanish', 'oMath'];
+const PPR_ORDER = ['pStyle', 'keepNext', 'keepLines', 'pageBreakBefore', 'framePr', 'widowControl', 'numPr',
+  'suppressLineNumbers', 'pBdr', 'shd', 'tabs', 'suppressAutoHyphens', 'kinsoku', 'wordWrap',
+  'overflowPunct', 'topLinePunct', 'autoSpaceDE', 'autoSpaceDN', 'bidi', 'adjustRightInd', 'snapToGrid',
+  'spacing', 'ind', 'contextualSpacing', 'mirrorIndents', 'suppressOverlap', 'jc', 'textDirection',
+  'textAlignment', 'textboxTightWrap', 'outlineLvl', 'divId', 'cnfStyle', 'rPr', 'sectPr', 'pPrChange'];
+
+const wEls  = (root, name) => [...root.getElementsByTagNameNS(W_NS, name)];
+const wKids = (el, name) => [...el.childNodes].filter(n => n.namespaceURI === W_NS && (!name || n.localName === name));
+const wKid  = (el, name) => (el && wKids(el, name)[0]) || null;
+const wText = el => wEls(el, 't').map(t => t.textContent).join('');
+const wAttr = (el, name) => el?.getAttributeNS(W_NS, name) ?? null;
+
+function wUp(el, name) {
+  while (el && !(el.namespaceURI === W_NS && el.localName === name)) el = el.parentNode;
+  return el;
+}
+
+// Escape text for XML and drop characters XML does not allow
+function xmlEsc(s) {
+  return String(s ?? '')
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F￾￿]/g, '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function wRPr(o = {}) {
+  const props = (o.bold ? '<w:b/>' : '') + (o.italic ? '<w:i/>' : '') +
+                (o.color ? `<w:color w:val="${o.color}"/>` : '') +
+                (o.size ? `<w:sz w:val="${o.size}"/><w:szCs w:val="${o.size}"/>` : '') +
+                (o.underline ? '<w:u w:val="single"/>' : '');
+  return props ? `<w:rPr>${props}</w:rPr>` : '';
+}
+
+// A run of text; line breaks become <w:br/>
+function wRun(text, o = {}) {
+  const lines = String(text ?? '').split(/\r?\n/).map(l => `<w:t xml:space="preserve">${xmlEsc(l)}</w:t>`);
+  return `<w:r>${wRPr(o)}${lines.join('<w:br/>')}</w:r>`;
+}
+
+// A field such as PAGEREF. Word formats an updated result like the start of the
+// field code, so every run of the field carries the same properties.
+function wField(instr, cached, o = {}) {
+  const rPr = wRPr(o);
+  return `<w:r>${rPr}<w:fldChar w:fldCharType="begin"/></w:r>` +
+         `<w:r>${rPr}<w:instrText xml:space="preserve"> ${instr} </w:instrText></w:r>` +
+         `<w:r>${rPr}<w:fldChar w:fldCharType="separate"/></w:r>` + wRun(cached, o) +
+         `<w:r>${rPr}<w:fldChar w:fldCharType="end"/></w:r>`;
+}
+
+// Parse a WordprocessingML snippet into nodes owned by doc
+function wNodes(doc, xml) {
+  const parsed = new DOMParser().parseFromString(
+    `<w:frag xmlns:w="${W_NS}" xmlns:r="${R_NS}">${xml}</w:frag>`, 'application/xml');
+  if (parsed.getElementsByTagName('parsererror').length) throw new Error('Invalid Word XML snippet');
+  return [...parsed.documentElement.childNodes].map(n => doc.importNode(n, true));
+}
+
+// Insert or replace a property element, keeping the child order Word expects
+function wSetOrdered(parent, el, order) {
+  const old = wKid(parent, el.localName);
+  if (old) { parent.replaceChild(el, old); return el; }
+  const rank = order.indexOf(el.localName);
+  const next = wKids(parent).find(n => order.indexOf(n.localName) > rank);
+  parent.insertBefore(el, next || null);
+  return el;
+}
+
+// The w:rPr / w:pPr of a run or paragraph, created as first child if missing
+function wProps(el, name) {
+  let pr = wKid(el, name);
+  if (!pr) { pr = el.ownerDocument.createElementNS(W_NS, 'w:' + name); el.insertBefore(pr, el.firstChild); }
+  return pr;
+}
+
+const serializeXml = xml => {
+  const s = new XMLSerializer().serializeToString(xml);
+  return s.startsWith('<?xml') ? s : '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n' + s;
+};
+
+// Put an X into the n-th "[  ]" checkbox of a paragraph. Brackets and spaces can
+// sit in separate runs, so the search runs over the paragraph's joined text.
+function tickBox(para, n = 0) {
+  const ts = wEls(para, 't');
+  const m = [...ts.map(t => t.textContent).join('').matchAll(/\[( +)\]/g)][n];
+  if (!m) return false;
+  const start = m.index + 1, end = start + m[1].length;
+  let offset = 0, placed = false;
+  for (const t of ts) {
+    const s = t.textContent, from = offset;
+    offset += s.length;
+    if (offset <= start || from >= end) continue;
+    const a = Math.max(start, from) - from, b = Math.min(end, offset) - from;
+    if (placed) { t.textContent = s.slice(0, a) + s.slice(b); continue; }
+    placed = true;
+    const run = wUp(t, 'r');
+    if (wKids(run).filter(k => k.localName !== 'rPr').length !== 1) {   // unusual run: edit the text only
+      t.textContent = s.slice(0, a) + 'X' + s.slice(b);
+      continue;
+    }
+    // Split the run so that only the X is marked: bold, in the answer colour
+    [[s.slice(0, a), false], ['X', true], [s.slice(b), false]].forEach(([txt, mark]) => {
+      if (!txt) return;
+      const r = run.cloneNode(true);
+      const rt = wKid(r, 't');
+      rt.textContent = txt;
+      rt.setAttributeNS(XML_NS, 'xml:space', 'preserve');
+      if (mark) {
+        const [b, color] = wNodes(r.ownerDocument, `<w:b/><w:color w:val="${ANSWER_COLOR}"/>`);
+        wSetOrdered(wProps(r, 'rPr'), b, RPR_ORDER);
+        wSetOrdered(wProps(r, 'rPr'), color, RPR_ORDER);
+      }
+      run.parentNode.insertBefore(r, run);
+    });
+    run.parentNode.removeChild(run);
+  }
+  return placed;
+}
+
+// Form paragraphs that received entered text (used for the page estimate)
+const answeredParas = new WeakSet();
+
+// Append entered text to a form paragraph, in the paragraph's own font size
+function appendAnswer(para, text) {
+  if (!text) return;
+  answeredParas.add(para);
+  const sizes = wEls(para, 'sz').map(s => wAttr(s, 'val'));
+  const gap = /\s$/.test(wText(para)) || /^\s/.test(text) ? '' : ' ';
+  wNodes(para.ownerDocument, wRun(gap + text, { size: sizes[sizes.length - 1] || '18', color: ANSWER_COLOR }))
+    .forEach(n => para.appendChild(n));
+}
+
+// Mark the overall rating on the form's continuous line: the row of spaces above
+// the line becomes an X on a centred tab stop at the slider position.
+function markScale(para, value) {
+  const doc = para.ownerDocument;
+  const cell = wUp(para, 'tc'), row = wUp(cell, 'tr'), tbl = wUp(row, 'tbl');
+  const grid = wKids(wKid(tbl, 'tblGrid'), 'gridCol').map(g => +wAttr(g, 'w'));
+  let col = +(wAttr(wKid(wKid(row, 'trPr'), 'gridBefore'), 'val') || 0), width = 0;
+  for (const c of wKids(row, 'tc')) {
+    const span = +(wAttr(wKid(wKid(c, 'tcPr'), 'gridSpan'), 'val') || 1);
+    if (c === cell) { width = grid.slice(col, col + span).reduce((sum, w) => sum + w, 0); break; }
+    col += span;
+  }
+  if (width < 1000) throw new Error('Unexpected layout of the overall rating scale');
+  const runs = wKids(para, 'r');
+  const rPr = runs.length ? wKid(runs[0], 'rPr') : null;
+  runs.forEach(r => para.removeChild(r));
+  const pos = Math.min(Math.max(Math.round(value / 100 * width), 60), width - 60);
+  wSetOrdered(wProps(para, 'pPr'), wNodes(doc, `<w:tabs><w:tab w:val="center" w:pos="${pos}"/></w:tabs>`)[0], PPR_ORDER);
+  ['tab', 't'].forEach(kind => {
+    const r = doc.createElementNS(W_NS, 'w:r');
+    if (rPr) r.appendChild(rPr.cloneNode(true));
+    r.appendChild(doc.createElementNS(W_NS, 'w:' + kind)).textContent = kind === 't' ? 'X' : '';
+    para.appendChild(r);
+  });
+}
+
+// Fill the form's document.xml in place. Throws if the form's structure is not
+// what this code expects, e.g. after the Word file was edited.
+function fillForm(doc, p) {
+  const cfg = p === 'r' ? RCT_ITEMS : META_ITEMS;
+  const paras = wEls(doc, 'p');
+  const field = id => document.getElementById(`${p}-${id}`).value.trim();
+  const find = prefix => {
+    const para = paras.find(x => wText(x).trimStart().startsWith(prefix));
+    if (!para) throw new Error(`Form line not found: "${prefix}"`);
+    return para;
+  };
+
+  // Preliminary considerations
+  appendAnswer(find('State a single candidate effect modifier'), field('mod'));
+  appendAnswer(find('State a single outcome and time-point'), field('outcome'));
+  appendAnswer(find('State a single effect measure'), field('measure'));
+  const prerando = find('Was the effect modifier measured before or at randomization');
+  const pr = field('prerando');
+  if (pr === 'yes') tickBox(prerando, 0);
+  if (pr === 'no' || pr === 'exception') tickBox(prerando, 1);
+  if (pr === 'exception') appendAnswer(prerando, '  Exception applies (see manual); assessment continued.');
+
+  // Items: question line (may hold a "not applicable" box), option boxes, comment line
+  const blocks = [];
+  for (const x of paras) {
+    const text = wText(x);
+    const q = text.match(/^\s*(\d+)\s*(?::|Optional\b)/);
+    if (q && +q[1] === blocks.length + 1 && blocks.length <= cfg.length) {
+      blocks.push({ question: x, options: [], comment: null, scale: null });
+    } else if (blocks.length) {
+      const b = blocks[blocks.length - 1];
+      if (/^\s*\[ +\]/.test(text)) b.options.push(x);
+      else if (/^\s*Comment\s*:/.test(text) && !b.comment) b.comment = x;
+      else if (text.length > 40 && !text.trim()) b.scale = x;
+    }
+  }
+  const fits = blocks.length === cfg.length + 1 && blocks.every(b => b.comment) && blocks[cfg.length].scale &&
+               cfg.every((item, i) => blocks[i].options.length === (item.commentPlaceholder ? 2 : 4));
+  if (!fits) throw new Error('Unexpected structure of the ICEMAN form');
+
+  cfg.forEach((item, i) => {
+    const b = blocks[i], v = getVal(`${p}-q${i + 1}`);
+    if (v === 'na') tickBox(b.question, 0);
+    else if (v === 'dec' || v === 'inc') tickBox(b.options[v === 'dec' ? 0 : 1], 0);
+    else if (v) tickBox(b.options[+v - 1], 0);
+    appendAnswer(b.comment, document.getElementById(`${p}-q${i + 1}c`).value.trim());
+  });
+  const overall = blocks[cfg.length];
+  markScale(overall.scale, +document.getElementById(`${p}-scale`).value);
+  appendAnswer(overall.comment, field('overallc'));
+  wSetOrdered(wProps(overall.comment, 'pPr'), wNodes(doc, '<w:spacing w:after="120"/>')[0], PPR_ORDER);
+}
+
+// The forms print "page/2" with a typed total; make the total a live NUMPAGES field
+function livePageTotal(footer) {
+  const ts = wEls(footer, 't');
+  for (let i = 0; i < ts.length; i++) {
+    const s = ts[i].textContent;
+    let run = null;
+    if (/^.*\/\s*\d+\s*$/.test(s)) {
+      ts[i].textContent = s.replace(/\d+\s*$/, '');
+      run = wUp(ts[i], 'r');
+    } else if (/\/\s*$/.test(s) && /^\s*\d+\s*$/.test(ts[i + 1]?.textContent ?? '')) {
+      run = wUp(ts[i], 'r');
+      const typed = wUp(ts[i + 1], 'r');
+      typed.parentNode.removeChild(typed);
+    }
+    if (run) {
+      const rPr = wKid(run, 'rPr');
+      wNodes(footer, wField('NUMPAGES', '2')).reverse().forEach(n => {
+        if (rPr) n.insertBefore(rPr.cloneNode(true), n.firstChild);
+        run.parentNode.insertBefore(n, run.nextSibling);
+      });
+      return;
+    }
+  }
+}
+
+// Changes for the completed form: it leaves out the instructions for filling it in
+// (the heading, its bullet points and the empty lines up to the form table) and the
+// prompt to mark the rating line, and has a smaller title with "Version 1.1" upright
+function tidyCompletedForm(doc, body) {
+  let el = wKids(body, 'p').find(x => wText(x).trimStart().startsWith('Consider the following important instructions'));
+  while (el && el.localName === 'p') {
+    const next = el.nextElementSibling;
+    body.removeChild(el);
+    el = next;
+  }
+  const prompt = wEls(doc, 'p').find(x => wText(x).trimStart().startsWith('Place a mark on the continuous line'));
+  if (prompt && wKids(prompt.parentNode, 'p').length > 1) prompt.parentNode.removeChild(prompt);
+
+  const setSize = rPr => wNodes(doc, '<w:sz w:val="21"/><w:szCs w:val="22"/>').forEach(n => wSetOrdered(rPr, n, RPR_ORDER));
+  for (const para of wKids(body, 'p')) {
+    if (wText(para).trimStart().startsWith('Version')) {
+      wEls(para, 'i').forEach(i => i.parentNode.removeChild(i));
+      break;
+    }
+    const pPr = wProps(para, 'pPr');
+    setSize(wKid(pPr, 'rPr') || wSetOrdered(pPr, doc.createElementNS(W_NS, 'w:rPr'), PPR_ORDER));
+    wKids(para, 'r').forEach(r => setSize(wProps(r, 'rPr')));
+  }
+}
+
+// Intro line naming one part of the download; the contents block links to its bookmark
+function partIntroXml(text, bookmark, id, newPage = false) {
+  return `<w:p><w:pPr>${newPage ? '<w:pageBreakBefore/>' : ''}` +
+         `<w:spacing w:before="${newPage ? 0 : 280}" w:after="${newPage ? 120 : 280}"/></w:pPr>` +
+         `<w:bookmarkStart w:id="${id}" w:name="${bookmark}"/>${wRun(text, { italic: true, size: 20 })}` +
+         `<w:bookmarkEnd w:id="${id}"/></w:p>`;
+}
+
+// Credit line below the page number
+function addFooterCredit(footer) {
+  const root = footer.documentElement;
+  let top = wUp(wEls(footer, 'instrText')[0], 'p');
+  while (top && top.parentNode !== root) top = top.parentNode;
+  const [credit] = wNodes(footer,
+    `<w:p><w:pPr><w:jc w:val="center"/></w:pPr>${wRun(FOOTER_CREDIT, { size: 16, color: '595959' })}</w:p>`);
+  root.insertBefore(credit, top ? top.nextSibling : null);
+}
+
+function addHyperlinkRel(rels, url) {
+  const id = 'rIdIcemanReporting';
+  const rel = rels.createElementNS(rels.documentElement.namespaceURI, 'Relationship');
+  rel.setAttribute('Id', id);
+  rel.setAttribute('Type', R_NS + '/hyperlink');
+  rel.setAttribute('Target', url);
+  rel.setAttribute('TargetMode', 'External');
+  rels.documentElement.appendChild(rel);
+  return id;
+}
+
+// Contents block for the top of page 1
+function contentsXml(summaryPage, linkId) {
+  const text = { size: 18, italic: true }, tabPos = 10400;
+  const entry = (num, label, anchor, pageXml) =>
+    `<w:p><w:pPr><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="${tabPos}"/></w:tabs><w:spacing w:before="0" w:after="20"/></w:pPr>` +
+    `<w:hyperlink w:anchor="${anchor}" w:history="1">${wRun(`${num}   ${label}`, text)}</w:hyperlink>` +
+    `<w:r>${wRPr(text)}<w:tab/></w:r>${wRun('page ', text)}${pageXml}</w:p>`;
+  const border = ['top', 'left', 'bottom', 'right']
+    .map(side => `<w:${side} w:val="single" w:sz="4" w:space="0" w:color="A9D0E1"/>`).join('');
+  return '<w:tbl><w:tblPr><w:tblW w:w="5000" w:type="pct"/>' +
+      `<w:tblBorders>${border}</w:tblBorders>` +
+      '<w:tblCellMar><w:top w:w="100" w:type="dxa"/><w:left w:w="160" w:type="dxa"/>' +
+      '<w:bottom w:w="100" w:type="dxa"/><w:right w:w="160" w:type="dxa"/></w:tblCellMar></w:tblPr>' +
+    '<w:tblGrid><w:gridCol w:w="10766"/></w:tblGrid>' +
+    '<w:tr><w:trPr><w:cantSplit/></w:trPr><w:tc><w:tcPr><w:tcW w:w="5000" w:type="pct"/>' +
+      '<w:shd w:val="clear" w:color="auto" w:fill="EEF7FB"/></w:tcPr>' +
+      `<w:p><w:pPr><w:spacing w:before="0" w:after="60"/></w:pPr>${wRun(
+        'This file contains two editable versions of an ICEMAN credibility assessment', { ...text, bold: true, size: 20 })}</w:p>` +
+      entry('1', 'Original ICEMAN form (version 1.1)', 'ICEMAN_form', wRun('1', text)) +
+      entry('2', 'Summary table', 'ICEMAN_summary', wField('PAGEREF ICEMAN_summary \\h', summaryPage, text)) +
+      '<w:p><w:pPr><w:spacing w:before="80" w:after="0"/></w:pPr>' +
+        wRun('To combine several ICEMAN ratings (e.g., several effect modifiers, outcomes, or time-points) in one table, ' +
+             'use the reporting templates on the ICEMAN website: ', text) +
+        `<w:hyperlink r:id="${linkId}" w:history="1">` +
+          wRun('www.iceman.help/manual/index.html#reporting', { ...text, color: '0563C1', underline: true }) +
+        '</w:hyperlink></w:p>' +
+    '</w:tc></w:tr></w:tbl>' +
+    '<w:p><w:pPr><w:spacing w:before="0" w:after="0"/><w:rPr><w:sz w:val="16"/></w:rPr></w:pPr></w:p>';
+}
+
+// Summary table, starting on a new page
+function summaryXml(p) {
+  const cfg = p === 'r' ? RCT_ITEMS : META_ITEMS;
+  const field = id => document.getElementById(`${p}-${id}`).value.trim();
+  const sz = 18, widths = [3700, 2900, 4166];
+  const studyType = p === 'r' ? 'randomized controlled trial' : 'meta-analysis / systematic review';
+  const title = `Table X. Does ${field('mod') || 'effect modifier'} modify treatment effects on ` +
+                `${field('outcome') || 'outcome'} on the ${field('measure') || 'effect measure'} scale? ` +
+                `ICEMAN credibility assessment for a ${studyType}`;
+
+  const response = (item, i) => {
+    const v = getVal(`${p}-q${i + 1}`);
+    if (!v) return wRun(item.commentPlaceholder ? 'None' : 'Not answered', { size: sz });
+    if (v === 'na') return wRun('Not applicable', { size: sz });
+    const label = item.options.find(o => o.value === v)?.label ?? v;
+    return wRun(`${RESPONSE_CODES[v]} ${label}`, { size: sz });
+  };
+  const cell = (i, runs, shade) =>
+    `<w:tc><w:tcPr><w:tcW w:w="${widths[i]}" w:type="dxa"/>` +
+    (shade ? '<w:shd w:val="clear" w:color="auto" w:fill="F2F2F2"/>' : '') + '</w:tcPr>' +
+    `<w:p><w:pPr><w:spacing w:before="0" w:after="0"/></w:pPr>${runs}</w:p></w:tc>`;
+  const row = (runs, header = false) =>
+    `<w:tr><w:trPr><w:cantSplit/>${header ? '<w:tblHeader/>' : ''}</w:trPr>` +
+    runs.map((r, i) => cell(i, r, header)).join('') + '</w:tr>';
+  const text = (s, bold = false) => wRun(s, { size: sz, bold });
+
+  const verdict = verdictFromScale(+document.getElementById(p + '-scale').value);
+  const rows = [
+    row(['Item', 'Response', 'Rationale'].map(s => text(s, true)), true),
+    ...cfg.map((item, i) => row([
+      text(`${i + 1} ${item.tableLabel}`),
+      response(item, i),
+      text(document.getElementById(`${p}-q${i + 1}c`).value.trim()),
+    ])),
+    row([text('Overall credibility', true), text(`${verdict.label}: ${verdict.sub.split(' — ')[0]}`, true),
+         text(field('overallc'), true)]),
+  ];
+  const lines = ['top', 'left', 'bottom', 'right', 'insideH', 'insideV']
+    .map(side => `<w:${side} w:val="single" w:sz="4" w:space="0" w:color="808080"/>`).join('');
+
+  return partIntroXml('2) Summary table. Useful when space is limited, e.g., when reporting an assessment ' +
+                      'as a table in the main manuscript.', 'ICEMAN_summary', 9002, true) +
+    `<w:p><w:pPr><w:keepNext/><w:spacing w:before="0" w:after="80"/></w:pPr>${wRun(title, { bold: true, size: 20 })}</w:p>` +
+    `<w:tbl><w:tblPr><w:tblW w:w="5000" w:type="pct"/><w:tblBorders>${lines}</w:tblBorders><w:tblLayout w:type="fixed"/>` +
+      '<w:tblCellMar><w:top w:w="40" w:type="dxa"/><w:left w:w="100" w:type="dxa"/>' +
+      '<w:bottom w:w="40" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar></w:tblPr>' +
+      `<w:tblGrid>${widths.map(w => `<w:gridCol w:w="${w}"/>`).join('')}</w:tblGrid>${rows.join('')}</w:tbl>` +
+    `<w:p><w:pPr><w:spacing w:before="80" w:after="40"/></w:pPr>${wRun(CODE_LEGEND, { size: 16 })}</w:p>`;
+}
+
+// Page on which Word starts the summary table, stored in the contents block's page
+// reference. Word refreshes that field when printing or saving as PDF but shows the
+// stored value on screen, so it should be right. Word keeps each row of the form
+// table on one page; the estimate stacks the rows onto letter pages using the row
+// heights Word gives the forms with one-line answers (points, measured in Word), plus
+// one line height for every further line of entered text. Lines wrap word by word at
+// the width of a full-width form cell, using Calibri's character widths. Re-measure if
+// the form files change: with a different number of rows the estimate falls back to page 3.
+const FORM_LAYOUT = {
+  r: { firstTop: 219.75, pageTop: 38.35, pageBottom: 722.4, lineWidth: 534.05, rows: [
+    17.3, 16.8, 16.85, 17.3, 16.85, 17.3, 16.8, 16.85, 46.75, 17.3, 16.85, 16.8, 58.0, 17.3, 24.75,
+    24.8, 35.5, 17.3, 16.85, 16.85, 42.05, 17.3, 16.85, 16.8, 32.3, 17.3, 16.8, 17.3, 271.2] },
+  m: { firstTop: 216.0, pageTop: 35.8, pageBottom: 722.4, lineWidth: 535.5, rows: [
+    15.9, 15.9, 15.4, 15.45, 15.45, 15.85, 15.9, 15.45, 68.75, 15.85, 15.45, 15.45, 46.75, 15.9, 15.4,
+    15.9, 35.55, 15.9, 15.4, 15.45, 46.75, 16.35, 24.8, 24.75, 46.75, 15.9, 15.45, 15.4, 57.55, 16.35,
+    15.4, 15.45, 24.8, 15.85, 15.45, 15.9, 46.75, 15.9, 15.45, 15.4, 267.9] },
+};
+const LINE_HEIGHT = 10.2;   // points per line of 9 pt text in the form
+
+// Calibri advance widths (1/2048 em) for ASCII 32–126; other characters count as 1000
+const CALIBRI_WIDTHS = [463, 667, 821, 1020, 1038, 1464, 1397, 452, 621, 621, 1020, 1020, 511, 627, 517, 791,
+  1038, 1038, 1038, 1038, 1038, 1038, 1038, 1038, 1038, 1038, 548, 548, 1020, 1020, 1020, 949, 1831, 1185, 1114,
+  1092, 1260, 1000, 941, 1292, 1276, 516, 653, 1064, 861, 1751, 1322, 1356, 1058, 1378, 1112, 941, 998, 1314,
+  1162, 1822, 1063, 998, 959, 628, 791, 628, 1020, 1020, 596, 981, 1076, 866, 1076, 1019, 625, 964, 1076, 470,
+  490, 931, 470, 1636, 1076, 1080, 1076, 1076, 714, 801, 686, 1076, 925, 1464, 887, 927, 809, 644, 943, 644, 1020];
+const textWidth = (s, pt) => [...s].reduce((sum, ch) => {
+  const c = ch.codePointAt(0);
+  return sum + (c >= 32 && c < 127 ? CALIBRI_WIDTHS[c - 32] : 1000);
+}, 0) * pt / 2048;
+
+// Lines that text of 9 pt needs in a line of the given width, wrapping word by word
+function wrappedLines(text, width) {
+  const space = textWidth(' ', 9);
+  let lines = 1, used = 0;
+  for (const word of text.split(' ')) {
+    const w = textWidth(word, 9);
+    if (used && used + space + w > width) { lines += 1; used = w; }
+    else used += (used ? space : 0) + w;
+    while (used > width) { lines += 1; used -= width; }   // a word longer than a line
+  }
+  return lines;
+}
+
+// Lines a form paragraph needs: its text is split at line breaks, then wrapped
+function paraLines(para, width) {
+  const parts = [''];
+  wEls(para, 'r').forEach(r => wKids(r).forEach(k => {
+    if (k.localName === 't') parts[parts.length - 1] += k.textContent;
+    else if (k.localName === 'tab') parts[parts.length - 1] += ' ';
+    else if (k.localName === 'br') parts.push('');
+  }));
+  return parts.reduce((n, part) => n + wrappedLines(part, width), 0);
+}
+
+function estimateSummaryPage(p, formTable) {
+  const layout = FORM_LAYOUT[p];
+  const rows = wKids(formTable, 'tr');
+  if (rows.length !== layout.rows.length) return 3;
+  let page = 1, y = layout.firstTop;
+  rows.forEach((tr, i) => {
+    const extra = wEls(tr, 'p').filter(x => answeredParas.has(x))
+      .reduce((n, x) => n + paraLines(x, layout.lineWidth) - 1, 0);
+    const h = layout.rows[i] + extra * LINE_HEIGHT;
+    if (y + h > layout.pageBottom && y > layout.pageTop + 1) { page += 1; y = layout.pageTop; }
+    y += h;
+  });
+  return page + 1;
+}
+
+// Build the download: completed form + summary table, as a .docx Blob
+async function buildIcemanDocx(p) {
+  const JSZip = await _zipLib;
+  const res = await fetch(FORM_FILES[p]);
+  if (!res.ok) throw new Error(`Could not load ${FORM_FILES[p]} (${res.status})`);
+  const zip = await JSZip.loadAsync(await res.arrayBuffer());
+  const parse = async path => new DOMParser().parseFromString(await zip.file(path).async('string'), 'application/xml');
+
+  const doc  = await parse('word/document.xml');
+  const rels = await parse('word/_rels/document.xml.rels');
+  const body = wKid(doc.documentElement, 'body');
+  const sectPr = wKid(body, 'sectPr');
+  const title = wKids(body, 'p')[0];
+
+  fillForm(doc, p);
+  tidyCompletedForm(doc, body);
+
+  const footerId = wKids(sectPr, 'footerReference').find(f => wAttr(f, 'type') === 'default')?.getAttributeNS(R_NS, 'id');
+  const footerRel = [...rels.documentElement.children].find(r => r.getAttribute('Id') === footerId);
+  if (footerRel) {
+    const path = 'word/' + footerRel.getAttribute('Target');
+    const footer = await parse(path);
+    livePageTotal(footer);
+    addFooterCredit(footer);
+    zip.file(path, serializeXml(footer));
+  }
+
+  // Empty paragraphs after the form could push a blank page before the summary
+  for (let el = sectPr.previousElementSibling; el && el.localName === 'p' && !wText(el).trim()
+       && !wEls(el, 'drawing').length; el = sectPr.previousElementSibling) {
+    body.removeChild(el);
+  }
+
+  const linkId = addHyperlinkRel(rels, REPORTING_URL);
+  const formTable = wKids(body, 'tbl').find(t => wText(t).includes('CREDIBILITY ASSESSMENT'));
+  const summaryPage = formTable ? estimateSummaryPage(p, formTable) : 3;
+  const intro = partIntroXml('1) Original ICEMAN form. Useful for maximal transparency, typically provided ' +
+                             'in supplementary material.', 'ICEMAN_form', 9001);
+  wNodes(doc, contentsXml(summaryPage, linkId) + intro).forEach(n => body.insertBefore(n, title));
+  wNodes(doc, summaryXml(p)).forEach(n => body.insertBefore(n, sectPr));
+
+  zip.file('word/document.xml', serializeXml(doc));
+  zip.file('word/_rels/document.xml.rels', serializeXml(rels));
+  return zip.generateAsync({
+    type: 'blob', compression: 'DEFLATE',
+    mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  });
+}
 
 // Button handler: re-enables auto mode and applies the computed rating.
 function applyComputedRating(p) {
@@ -1825,9 +2336,6 @@ function applyComputedRating(p) {
 }
 
 async function genDocx(p) {
-  const { Document, Packer, Paragraph, Table, TableRow, TableCell,
-          TextRun, WidthType } = await _docxLib;
-
   // Block 1: missing preliminary fields
   const { missingPrelim, missingItems } = highlightMissing(p);
   if (missingPrelim) {
@@ -1881,99 +2389,23 @@ async function genDocx(p) {
     emptyJust.forEach(id => document.getElementById(id)?.classList.remove('comment-warn'));
   }
 
-  const isRct     = p === 'r';
-  const outcome   = document.getElementById(p + '-outcome').value.trim() || 'outcome';
-  const mod       = document.getElementById(p + '-mod').value.trim()     || 'effect modifier';
-  const measure   = document.getElementById(p + '-measure').value.trim() || 'effect measure';
-  const cfg       = isRct ? RCT_ITEMS : META_ITEMS;
-  const studyType = isRct ? 'randomized controlled trial' : 'meta-analysis / systematic review';
-
-  const valCode = v => {
-    if (!v || v === 'na') return null;
-    if (v === '4')                return '(++)';
-    if (v === '3' || v === 'inc') return '(+)';
-    if (v === '2' || v === 'dec') return '(-)';
-    if (v === '1')                return '(--)';
-    return null;
-  };
-
-  const tableResponse = (name, item, optional = false) => {
-    const val = getVal(name);
-    if (!val) return optional ? 'None' : '—';
-    if (val === 'na') return 'Not applicable';
-    const opt  = item.options.find(o => o.value === val);
-    const lbl  = opt ? opt.label : val;
-    const code = valCode(val);
-    return code ? `${code} ${lbl}` : lbl;
-  };
-
-  const cell = (text, bold = false) => new TableCell({
-    children: [new Paragraph({ children: [new TextRun({ text: String(text || ''), bold })] })],
-    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-  });
-
-  const headerRow = new TableRow({
-    tableHeader: true,
-    children: ['Item', 'Response', 'Rationale'].map(t => cell(t, true)),
-  });
-
-  const itemRows = cfg.map((item, i) => {
-    const name     = `${p}-q${i + 1}`;
-    const optional = !!item.commentPlaceholder;
-    return new TableRow({
-      children: [
-        cell(item.tableLabel),
-        cell(tableResponse(name, item, optional)),
-        cell(document.getElementById(`${name}c`).value.trim()),
-      ],
-    });
-  });
-
-  const verdict        = verdictFromScale(+document.getElementById(p + '-scale').value);
-  const meaning        = verdict.sub.split(' — ')[0];
-  const overallComment = document.getElementById(p + '-overallc').value.trim();
-  const overallRow = new TableRow({
-    children: [
-      cell('Overall credibility', true),
-      cell(`${verdict.label}: ${meaning}`, true),
-      cell(overallComment, true),
-    ],
-  });
-
-  const title   = `Table X. Does ${mod} modify treatment effects on ${outcome} on the ${measure} scale? ICEMAN credibility assessment for a ${studyType}`;
-  const footnote = '(--) definitely reduces credibility; (-) probably reduces credibility or unclear; ' +
-                   '(+) probably increases credibility; (++) definitely increases credibility. ' +
-                   'Not applicable items receive no code.';
-
-  const doc = new Document({
-    sections: [{
-      children: [
-        new Paragraph({
-          children: [new TextRun({ text: title, bold: true, size: 22 })],
-        }),
-        new Paragraph({ text: '' }),
-        new Table({
-          width: { size: 9000, type: WidthType.DXA },
-          rows: [headerRow, ...itemRows, overallRow],
-        }),
-        new Paragraph({ text: '' }),
-        new Paragraph({
-          children: [new TextRun({ text: footnote, size: 18 })],
-        }),
-        new Paragraph({
-          children: [new TextRun({ text: 'Generated with ICEMAN web tool · Version 1.1 · Schandelmaier et al. CMAJ 2020;192:E901–E906', size: 16 })],
-        }),
-      ],
-    }],
-  });
-
-  const blob = await Packer.toBlob(doc);
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
+  let blob;
+  try {
+    blob = await buildIcemanDocx(p);
+  } catch (err) {
+    console.error(err);
+    showModal('Download failed', 'The Word file could not be created. Please try again, or let us know if the problem persists.');
+    return;
+  }
+  const safe = s => s.replace(/[\\/:*?"<>|]+/g, ' ').trim();
+  const outcome = safe(document.getElementById(p + '-outcome').value) || 'outcome';
+  const mod     = safe(document.getElementById(p + '-mod').value)     || 'effect modifier';
+  const url = URL.createObjectURL(blob);
+  const a   = document.createElement('a');
   a.href     = url;
   a.download = `ICEMAN - ${outcome} - ${mod}.docx`;
   a.click();
-  URL.revokeObjectURL(url);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 function hasFormData(p) {
